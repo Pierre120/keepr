@@ -1,0 +1,5 @@
+/*
+You can delete or rename this file
+Just make sure that you commit this
+changes in git.
+*/
