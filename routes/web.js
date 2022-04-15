@@ -5,14 +5,16 @@ let router = express.Router();
 
 let initRoutes = (app) => {
   router.get('/', (req, res) => {
-    return res.send('<h1>Hello World!</h1>');
+    return res.render('index');
   }); // Landing page
 
   router.get('/register'); // Register page
 
   router.get('/app'); // App/Home page
 
-  router.get('/workspace'); // workspace
+  router.get('/workspace', (req, res) => {
+    return res.render('dashboard', { layout: './layouts/workspac' })
+  }); // workspace
 
   return app.use('/', router); // Set the router
 };
