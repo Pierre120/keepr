@@ -13,7 +13,7 @@ let initRoutes = (app) => {
   router.get('/app'); // App/Home page
 
   router.get('/workspace', (req, res) => {
-    return res.render('dashboard', { layout: './layouts/workspac' })
+    return res.render('dashboard', { layout: './layouts/workspace' })
   }); // workspace
 
   return app.use('/', router); // Set the router
