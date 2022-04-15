@@ -1,0 +1,30 @@
+{
+  "name": "keepr",
+  "version": "1.0.0",
+  "description": "An online inventory management web application.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pierre120/keepr.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "ejs",
+    "javascript",
+    "html",
+    "css",
+    "mongodb",
+    "mongoose",
+    "inventory"
+  ],
+  "author": "Airon John Cruz, Faith Juliamae Griffin, Pierre Vincent Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pierre120/keepr/issues"
+  },
+  "homepage": "https://github.com/Pierre120/keepr#readme"
+}
