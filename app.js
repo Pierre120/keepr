@@ -2,6 +2,7 @@
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const initRoutes = require('./routes/web');
 
 const app = express();
 const PORT = 5000;
@@ -14,4 +15,11 @@ app.use('/img', express.static(__dirname + 'public/img'));
 
 // Set Templating Engine
 app.use(ejsLayouts);
-app.use('view engine', 'ejs');
+app.set('view engine', 'ejs');
+app.set('layout', './layouts/login');
+
+// Navigation or routing
+initRoutes(app);
+
+// Listen on local host port
+app.listen(PORT, () => console.log(`App listening on port: ${PORT}`));
