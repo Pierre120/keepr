@@ -5,7 +5,7 @@ let router = express.Router();
 
 let initRoutes = (app) => {
   router.get('/', (req, res) => {
-    return res.render('index');
+    return res.send('<h1>Hello World!</h1>');
   }); // Landing page
 
   router.get('/register'); // Register page
