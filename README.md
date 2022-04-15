@@ -26,3 +26,4 @@ npm run dev
 ## IMPORTANT NOTES FOR COLLABORATORS
 - Tab: 2 spaces
 - Create a branch for a specific feature
+- Don't create a pull request unless the feature is done
