@@ -54,6 +54,11 @@
   --bs-danger-rgb: 220, 53, 69;
   --bs-light-rgb: 229, 229, 229;
   --bs-dark-rgb: 33, 37, 41;
+  --bs-darkpurple-rgb: 80, 63, 191;
+  --bs-lightpurple-rgb: 113, 98, 217;
+  --bs-teal-rgb: 108, 217, 177;
+  --bs-pink-rgb: 242, 119, 164;
+  --bs-white-rgb: 255, 255, 255;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -11568,6 +11573,45 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+.text-darkpurple {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-darkpurple-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-lightpurple {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-lightpurple-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-teal {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-teal-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-pink {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
+}
+
+.bg-darkpurple {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-lightpurple {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-lightpurple-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-teal {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-teal-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-pink {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
 }
 
 /*# sourceMappingURL=custom.css.map */

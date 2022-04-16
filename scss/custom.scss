@@ -15,9 +15,6 @@ $light: #E5E5E5;
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 
-
-// Then add additional custom code here
-
 // Custom theme color map
 $custom-colors: (
     "darkpurple": #503FBF,
@@ -29,7 +26,54 @@ $custom-colors: (
 
 // Merge custom-colors map to theme-colors map
 $theme-colors: map-merge($theme-colors, $custom-colors);
+$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
 // Import all components of Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+
+// Then add additional custom code here
+
+
+// Text colors
+.text-darkpurple {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-darkpurple-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-lightpurple {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-lightpurple-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-teal {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-teal-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-pink {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
+}
+
+
+// Background colors
+.bg-darkpurple {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-lightpurple {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-lightpurple-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-teal {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-teal-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-pink {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
+}
