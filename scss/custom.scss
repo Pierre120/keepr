@@ -11,8 +11,9 @@
 $light: #E5E5E5;
 
 
-// Import bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
+// Import necessary Bootstrap files
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
 
 
 // Then add additional custom code here
@@ -28,4 +29,7 @@ $custom-colors: (
 
 // Merge custom-colors map to theme-colors map
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Import all components of Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
 
