@@ -5,10 +5,19 @@
 }
 
 
+$dark-purple: #503FBF;
+$light-purple: #7162D9;
+$teal: #6CD9B1;
+$pink: #F277A4;
+
 // Include any default variable overrides here (though functions won't be available)
 
 // Override $light color theme
 $light: #E5E5E5;
+
+// Overide theme-colors
+$primary: $light-purple;
+$secondary: $teal;
 
 
 // Import necessary Bootstrap files
@@ -17,10 +26,10 @@ $light: #E5E5E5;
 
 // Custom theme color map
 $custom-colors: (
-    "darkpurple": #503FBF,
-    "lightpurple": #7162D9,
-    "teal": #6CD9B1,
-    "pink": #F277A4,
+    "darkpurple": $dark-purple,
+    "lightpurple": $light-purple,
+    "teal": $teal,
+    "pink": $pink,
     "white": $white,
 );
 
