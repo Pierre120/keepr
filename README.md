@@ -37,5 +37,5 @@ Every changes made to the SASS files it will automatically compile it to CSS.
 - Tab: 2 spaces
 - Create a branch for a specific feature
 - Don't create a pull request unless the feature is done
-- Be sure to re-compile the SASS files when there are modifications
+- Be sure to recompile the SASS files when there are modifications
 - `Ctrl + C` for terminating the run commands
