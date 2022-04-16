@@ -1,11 +1,11 @@
-
-// Include any default variable overrides here (though functions won't be available)
-
 // Reset margins and paddings
 * {
     margin: 0;
     padding: 0;
 }
+
+
+// Include any default variable overrides here (though functions won't be available)
 
 // Override $light color theme
 $light: #E5E5E5;
@@ -16,7 +16,6 @@ $light: #E5E5E5;
 
 
 // Then add additional custom code here
-
 
 // Custom theme color map
 $custom-colors: (
@@ -29,3 +28,4 @@ $custom-colors: (
 
 // Merge custom-colors map to theme-colors map
 $theme-colors: map-merge($theme-colors, $custom-colors);
+
