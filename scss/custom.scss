@@ -24,6 +24,7 @@ $secondary: $teal;
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 
+
 // Custom theme color map
 $custom-colors: (
     "darkpurple": $dark-purple,
@@ -42,7 +43,7 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
 
 // Then add additional custom code here
-
+@import "sections/login";
 
 // Text colors
 .text-darkpurple {
@@ -85,4 +86,8 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 .bg-pink {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
+}
+
+@mixin gradient {
+    background: linear-gradient(to right, rgba($primary, 0.95), rgba($primary, 0.50));
 }
