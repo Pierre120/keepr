@@ -1,7 +1,7 @@
 // Reset margins and paddings
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -26,11 +26,11 @@ $secondary: $teal;
 
 // Custom theme color map
 $custom-colors: (
-    "darkpurple": $dark-purple,
-    "lightpurple": $light-purple,
-    "teal": $teal,
-    "pink": $pink,
-    "white": $white,
+  "darkpurple": $dark-purple,
+  "lightpurple": $light-purple,
+  "teal": $teal,
+  "pink": $pink,
+  "white": $white,
 );
 
 // Merge custom-colors map to theme-colors map
@@ -46,43 +46,43 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
 // Text colors
 .text-darkpurple {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-darkpurple-rgb), var(--bs-text-opacity)) !important;
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-darkpurple-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-lightpurple {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-lightpurple-rgb), var(--bs-text-opacity)) !important;
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-lightpurple-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-teal {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-teal-rgb), var(--bs-text-opacity)) !important;
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-teal-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-pink {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
 }
 
 
 // Background colors
 .bg-darkpurple {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity)) !important;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-lightpurple {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-lightpurple-rgb), var(--bs-bg-opacity)) !important;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-lightpurple-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-teal {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-teal-rgb), var(--bs-bg-opacity)) !important;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-teal-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-pink {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
 }
