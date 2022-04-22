@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?&family=Montserrat&family=Oswald&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -11612,6 +11613,14 @@ textarea.form-control-lg {
 .bg-pink {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
 }
 
 /*# sourceMappingURL=style.css.map */
