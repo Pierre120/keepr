@@ -11623,4 +11623,18 @@ textarea.form-control-lg {
   font-family: "Oswald", sans-serif;
 }
 
+.workspace-nav {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+.workspace-nav:hover {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity));
+}
+
+.back-workspace {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
