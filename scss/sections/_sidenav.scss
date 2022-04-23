@@ -1,0 +1,18 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+.workspace-nav {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+
+  &:hover {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity));
+  }
+
+  &:active {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity));
+    font-size: 1.25rem;
+  }
+}
