@@ -15,8 +15,12 @@
   <%- include('../partials/header.ejs') %>
 
   <div class="row mx-0">
-    <%- include('../partials/sidenav.ejs') %>
-    <%- body  %>
+    <div class="col-3 p-0">
+      <%- include('../partials/sidenav.ejs') %>
+    </div>
+    <div class="col-auto p-0">
+      <%- body  %>
+    </div>
   </div>
 
 </body>
