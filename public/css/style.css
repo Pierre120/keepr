@@ -11640,13 +11640,17 @@ textarea.form-control-lg {
 }
 
 .workspace-nav {
-  width: inherit;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
 }
 .workspace-nav:hover {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity));
+}
+
+#main-content {
+  padding-top: 8vh;
+  padding-bottom: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
