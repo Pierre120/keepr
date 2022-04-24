@@ -11644,8 +11644,15 @@ textarea.form-control-lg {
   font-size: 1rem;
 }
 .workspace-nav:hover {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity));
+  background-color: #503FBF;
+}
+
+#back-workspace {
+  background-color: #fff;
+}
+#back-workspace:hover {
+  background-color: #503FBF;
+  color: #fff;
 }
 
 #main-content {
