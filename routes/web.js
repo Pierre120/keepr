@@ -13,19 +13,19 @@ let initRoutes = (app) => {
   router.get('/app'); // App/Home page
 
   router.get('/workspace/dashboard', (req, res) => {
-    return res.render('dashboard', { layout: './layouts/workspace', active: 0 })
+    return res.render('dashboard', { ind: 0, layout: './layouts/workspace' })
   }); // dashboard
 
   router.get('/workspace/inventory', (req, res) => {
-    return res.render('index', { layout: './layouts/workspace', active: 1 })
+    return res.render('index', { ind: 1, layout: './layouts/workspace' })
   }); // inventory
 
   router.get('/workspace/collaborators', (req, res) => {
-    return res.render('dashboard', { layout: './layouts/workspace', active: 2 })
+    return res.render('dashboard', { ind: 2, layout: './layouts/workspace' })
   }); // collaborators
 
   router.get('/workspace/history', (req, res) => {
-    return res.render('index', { layout: './layouts/workspace', active: 3 })
+    return res.render('index', { ind: 3, layout: './layouts/workspace' })
   }); // history
 
   return app.use('/', router); // Set the router
