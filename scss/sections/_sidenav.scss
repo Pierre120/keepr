@@ -1,6 +1,14 @@
 @use '../custom' as *;
 @use '../components/typography' as *;
 
+#sidenav {
+  height: 92vh;
+  width: inherit;
+  left: 0;
+  top: 8vh;
+  position: fixed;
+}
+
 .workspace-nav {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
