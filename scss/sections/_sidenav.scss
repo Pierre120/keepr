@@ -22,8 +22,7 @@
   font-size: 1rem;
 
   &:hover {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-darkpurple-rgb), var(--bs-bg-opacity));
+    background-color: $dark-purple;
   }
 }
 
@@ -31,6 +30,7 @@
   background-color: $white;
 
   &:hover {
+    background-color: $dark-purple;
     color: $white;
   }
 }
