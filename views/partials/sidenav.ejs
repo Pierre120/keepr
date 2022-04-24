@@ -1,4 +1,5 @@
-<nav id="sidenav" class="navbar navbar-expand-lg d-flex align-items-stretch mx-0 p-0">
+<nav id="sidenav" role="navigation"
+      class="navbar navbar-expand-lg d-flex align-items-stretch mx-0 p-0">
   
   <div class="row mx-0">
     <div class="d-flex mx-0 p-4 justify-content-center align-items-center 
@@ -8,23 +9,34 @@
 
     <ul class="nav nav-pills flex-column px-0 w-100 bg-lightpurple" id="nav-section">
       <li class="nav-item">
-        <a class="nav-link text-white workspace-nav" aria-current="page" href="/workspace">Dashboard</a>
+        <button class="nav-link text-white workspace-nav active" type="button"
+                data-bs-toggle="pill" aria-current="page" href="/workspace">Dashboard</button>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white workspace-nav" href="#">Inventory</a>
+        <button class="nav-link text-white workspace-nav" type="button"
+                data-bs-toggle="pill"
+                href="#">Inventory</button>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white workspace-nav" href="#">Collaborators</a>
+        <button class="nav-link text-white workspace-nav" type="button"
+                data-bs-toggle="pill"
+                href="#">Collaborators</button>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white workspace-nav"  href="#">History</a>
+        <button class="nav-link text-white workspace-nav" type="button" 
+                data-bs-toggle="pill"
+                href="#">History</button>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white workspace-nav"  href="#">Delete Workspace</a>
+        <button class="nav-link text-white workspace-nav" type="button" 
+                data-bs-toggle="pill"
+                href="#">Delete Workspace</button>
       </li>
       <li class="nav-item mb-4 mt-auto">
-        <a class="nav-link text-center back-workspace bg-white
-                border border-lightpurple" href="#">Back to Workspaces</a>
+        <button class="nav-link text-center back-workspace bg-white
+                border border-lightpurple" type="button"
+                data-bs-toggle="pill"
+                href="#">Back to Workspaces</button>
       </li>
     </ul>
   </div>
