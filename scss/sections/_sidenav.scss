@@ -1,0 +1,36 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+#sidenav {
+  height: 92vh;
+  width: inherit;
+  left: 0;
+  top: 8vh;
+  position: fixed;
+}
+
+#workspace-name {
+  height: 30vh;
+}
+
+#nav-section {
+  height: 62vh;
+}
+
+.workspace-nav {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: $dark-purple;
+  }
+}
+
+#back-workspace {
+  background-color: $white;
+
+  &:hover {
+    background-color: $dark-purple;
+    color: $white;
+  }
+}

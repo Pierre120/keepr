@@ -1,0 +1,41 @@
+<% let activeButton = ['', '', '', '']; %>
+<% activeButton[active] = 'active';     %>
+
+<nav id="sidenav" role="navigation"
+      class="navbar navbar-expand-lg d-flex align-items-stretch mx-0 p-0">
+  
+  <div class="row mx-0">
+    <div class="d-flex mx-0 p-4 justify-content-center align-items-center 
+              border border-2 border-top-0 border-lightpurple bg-white" id="workspace-name">
+      <p class="fs-1 oswald text-center text-wrap m-0">Tatak Tech Solutions</p>
+    </div>
+
+    <ul class="nav nav-pills flex-column px-0 w-100 bg-lightpurple" id="nav-section">
+      <li class="nav-item">
+        <a class="nav-link text-white workspace-nav <%= activeButton[0] %>" 
+            role="button" href="/workspace/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white workspace-nav <%= activeButton[1] %>" 
+            role="button" href="/workspace/inventory">Inventory</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-start workspace-nav <%= activeButton[2] %>" 
+            role="button" href="/workspace/collaborators">Collaborators</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white text-start workspace-nav <%= activeButton[3] %>" 
+            role="button" href="/workspace/history">History</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white workspace-nav" 
+            role="button" href="#">Delete Workspace</a>
+      </li>
+      <li class="nav-item mb-4 mt-auto">
+        <a id="back-workspace" class="nav-link text-center workspace-nav border border-1 border-lightpurple" 
+            role="button" href="/">Back to Workspaces</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
