@@ -1,0 +1,15 @@
+#bg-plain {
+    background-image: radial-gradient($light-purple, rgba(113, 98, 217, 0.5));
+    height:100%; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+}
+
+#bg-container {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 25%;
+    background: #FEF9F9;
+    border-radius: 10px;
+}

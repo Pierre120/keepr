@@ -1,11 +1,21 @@
+#login-bg {
+    background-image: radial-gradient($light-purple, rgba(113, 98, 217, 0.5));
+}
 
-.login-whole {
-    position:fixed;
-    padding:0;
-    margin:0;
+#login-container {
+    width: 420px;
+    height: 600px;
+    display: block;
+    position: relative;
+    margin: auto;
+    background: #FEF9F9;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) 
+            drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+            drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    padding: 10px;
+    border-radius: 25px
+}
 
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
+form {
+    
 }

@@ -8,7 +8,9 @@ let initRoutes = (app) => {
     return res.render('index');
   }); // Landing page
 
-  router.get('/register'); // Register page
+  router.get('/register', (req,res) =>{
+    return res.render('register-contents', { layout: './layouts/register' })
+  });// Register page
 
   router.get('/app'); // App/Home page
 
