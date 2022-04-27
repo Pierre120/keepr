@@ -11629,6 +11629,9 @@ textarea.form-control-lg {
 }
 
 #back-to-top-btn {
+  position: fixed;
+  right: 3vw;
+  bottom: 5vh;
   background-color: #fff;
 }
 #back-to-top-btn svg {
