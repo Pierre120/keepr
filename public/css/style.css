@@ -11628,6 +11628,24 @@ textarea.form-control-lg {
   font-family: "Oswald", sans-serif;
 }
 
+#back-to-top-btn {
+  position: fixed;
+  right: 3vw;
+  bottom: 5vh;
+  background-color: #fff;
+  border-color: #C4C4C4;
+  display: none;
+}
+#back-to-top-btn svg {
+  color: #F277A4;
+}
+#back-to-top-btn:hover {
+  background-color: #F277A4;
+}
+#back-to-top-btn:hover svg {
+  color: #fff;
+}
+
 #sidenav {
   height: 92vh;
   width: inherit;
