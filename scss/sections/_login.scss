@@ -1,21 +1,55 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
 #login-bg {
-    background-image: radial-gradient($light-purple, rgba(113, 98, 217, 0.5));
+    background-image: radial-gradient($primary, rgba(113, 98, 217, 0.5));
 }
 
 #login-container {
-    width: 420px;
-    height: 600px;
+    width: 20vw;
+    height: 55vh;
     display: block;
     position: relative;
     margin: auto;
     background: #FEF9F9;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) 
-            drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+            drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) 
             drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    padding: 10px;
-    border-radius: 25px
+    padding: 1vh;
+    border-radius: 25px;
 }
 
-form {
-    
+.login-label {
+    font-weight: 400; 
+    color: $primary;
+}
+
+.blob-right {
+    z-index: -1;
+    position: absolute;
+    width: 30rem;
+    height: 20rem;
+    align-self:flex-start;
+    background: transparent;
+}
+
+.blob-right:nth-child(2) {
+    filter:blur(80px);
+}
+
+.blob-left {
+    z-index: -1;
+    position: absolute;
+    width: 30rem;
+    height: 20rem;
+    align-self:flex-end;
+    background: transparent;
+}
+
+.blob-left:nth-child(2) {
+    filter:blur(80px);
+}
+
+.register-link:hover{
+    text-decoration:double;
 }

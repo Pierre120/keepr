@@ -8,5 +8,7 @@
 
 
 // IMPORT SECTIONS
+@use 'sections/login';
+@use 'sections/register';
 @use 'sections/sidenav';
 @use 'sections/workspace';

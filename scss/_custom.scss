@@ -43,8 +43,6 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
 
 // Then add additional custom code here
-@import "sections/login";
-@import "sections/register";
 
 // Text colors
 .text-darkpurple {
