@@ -28,6 +28,10 @@ let initRoutes = (app) => {
     return res.render('index', { active: 3, layout: './layouts/workspace' })
   }); // history
 
+  router.get('account/user', (req, res) => {
+    return res.render('account');
+  });
+
   return app.use('/', router); // Set the router
 };
 
