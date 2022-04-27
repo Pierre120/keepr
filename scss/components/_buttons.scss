@@ -1,0 +1,18 @@
+@use '../custom' as *;
+
+#back-to-top-btn {
+  background-color: $white;
+
+  svg {
+    color: $pink;
+  }
+
+  &:hover {
+    background-color: $pink;
+
+    svg {
+      color: $white;
+    }
+  }
+
+}
