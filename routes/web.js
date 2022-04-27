@@ -36,6 +36,10 @@ let initRoutes = (app) => {
     return res.render('account', { layout: './layouts/account-page' });
   });
 
+  router.get('/search-results/query', (req, res) => {
+    return res.render('search_results', { layout: './layouts/results-page' });
+  });
+
   return app.use('/', router); // Set the router
 };
 
