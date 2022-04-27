@@ -29,7 +29,7 @@ let initRoutes = (app) => {
   }); // history
 
   router.get('account/user', (req, res) => {
-    return res.render('account');
+    return res.render('account', { layout: './layouts/account-page' });
   });
 
   return app.use('/', router); // Set the router
