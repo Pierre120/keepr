@@ -26,6 +26,7 @@ $secondary: $light-purple;
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 
+
 // Custom theme color map
 $custom-colors: (
   "darkpurple": $dark-purple,
@@ -44,7 +45,6 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 
 
 // Then add additional custom code here
-
 
 // Text colors
 .text-darkpurple {
