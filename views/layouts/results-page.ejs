@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Workspace</title>
-  
+  <title>Search</title>
+
   <link rel="stylesheet" href="../css/style.css">
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
@@ -14,14 +14,9 @@
 <body>
   <%- include('../partials/header.ejs') %>
 
-  <div class="row mx-0">
-    <div class="col-2 p-0">
-      <%- include('../partials/sidenav.ejs') %>
-    </div>
-    <div class="col-10 px-0 main-content">
-      <%- body  %>
-    </div>
+  <div class="container-xl px-0 main-content">
+    <%- body %>
   </div>
-
+  
 </body>
 </html>

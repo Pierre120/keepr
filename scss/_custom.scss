@@ -86,3 +86,8 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
 }
+
+.main-content {
+  padding-top: 8vh;
+  padding-bottom: 1.5rem;
+}
