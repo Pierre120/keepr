@@ -28,7 +28,7 @@ let initRoutes = (app) => {
     return res.render('index', { active: 3, layout: './layouts/workspace' })
   }); // history
 
-  router.get('account/user', (req, res) => {
+  router.get('/accounts/user', (req, res) => {
     return res.render('account', { layout: './layouts/account-page' });
   });
 
