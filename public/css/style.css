@@ -11646,6 +11646,25 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.keepr-card {
+  border-radius: 0.3rem;
+}
+.keepr-card .card-title {
+  font-family: "Montserrat", sans-serif;
+}
+.keepr-card .card-text {
+  font-family: "Montserrat", sans-serif;
+}
+.keepr-card .card-text-first {
+  margin-top: 1.5rem;
+}
+.keepr-card hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+}
+
 #login-bg {
   background-image: radial-gradient(#503FBF, rgba(113, 98, 217, 0.5));
 }

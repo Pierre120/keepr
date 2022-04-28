@@ -3,6 +3,8 @@
 
 .keepr-card {
   border-radius: $border-radius-lg;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
 
   .card-title {
     font-family: 'Montserrat', sans-serif;
