@@ -11670,6 +11670,31 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
+.keepr-card-filled {
+  border-radius: 0.3rem;
+  border-width: 0;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+.keepr-card-filled .card-title {
+  font-family: "Montserrat", sans-serif;
+}
+.keepr-card-filled .card-text {
+  font-family: "Montserrat", sans-serif;
+}
+.keepr-card-filled .card-text-first {
+  margin-top: 1.75rem;
+}
+.keepr-card-filled hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+  width: 85%;
+  height: 4px;
+  opacity: 1;
+}
+
 #login-bg {
   background-image: radial-gradient(#503FBF, rgba(113, 98, 217, 0.5));
 }
