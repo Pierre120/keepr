@@ -10,5 +10,9 @@
 
   .card-text {
     font-family: 'Montserrat', sans-serif;
+
+    &:first-child {
+      margin-top: 1rem;
+    }
   }
 }
