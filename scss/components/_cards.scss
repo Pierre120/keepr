@@ -12,6 +12,10 @@
     font-family: 'Montserrat', sans-serif;
   }
 
+  .card-text-first {
+    margin-top: 1.5rem;
+  }
+
   hr {
     margin-top: 0;
     margin-bottom: 0;
@@ -20,6 +24,3 @@
   }
 }
 
-.card-text:first-child {
-  margin-top: 1rem;
-}
