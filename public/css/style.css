@@ -11650,6 +11650,7 @@ textarea.form-control-lg {
   border-radius: 0.3rem;
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  color: #666666;
 }
 .keepr-card .card-title {
   font-family: "Montserrat", sans-serif;
@@ -11661,6 +11662,8 @@ textarea.form-control-lg {
   margin-top: 1.75rem;
 }
 .keepr-card hr {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
   margin-top: 0;
   margin-bottom: 0;
   position: absolute;
@@ -11686,6 +11689,8 @@ textarea.form-control-lg {
   margin-top: 1.75rem;
 }
 .keepr-card-filled hr {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
   margin-top: 0;
   margin-bottom: 0;
   position: absolute;
