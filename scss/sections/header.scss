@@ -1,0 +1,59 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+
+.btn-outline-success{
+    background-color: #6CD9B1;
+    margin-left: 10;
+    margin-right: 10;
+}
+
+.searchbar{
+    width: 500px;
+    border-radius: 30px;
+}
+
+.header-1{
+    float: left;
+    margin-right: 375px;
+}
+
+.logout{
+    margin-left: 8px;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 12px;
+
+}
+
+.light-dark{
+    background-image: url('ldmode.png');
+    background-size: auto;
+    margin-left: 8px;
+    border-radius: 50%;
+    width : 45px;
+    height: 45px;
+    border-width: 1px;
+    border-color: black;
+    overflow: hidden;
+    background-color: yellow;
+
+    
+}
+
+.profile{
+    margin-left: 8px;
+    margin-right: 15px;
+    border-radius: 50%;
+    width : 45px;
+    height: 45px;
+    border-width: 1px;
+    border-color: black;
+    background-color:#F277A4;
+}
+
+.header-2{
+    height: 45px;
+    margin-right: 20px;
+}
+
