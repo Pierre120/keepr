@@ -11648,6 +11648,8 @@ textarea.form-control-lg {
 
 .keepr-card {
   border-radius: 0.3rem;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
 }
 .keepr-card .card-title {
   font-family: "Montserrat", sans-serif;
@@ -11656,13 +11658,16 @@ textarea.form-control-lg {
   font-family: "Montserrat", sans-serif;
 }
 .keepr-card .card-text-first {
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 .keepr-card hr {
   margin-top: 0;
   margin-bottom: 0;
   position: absolute;
   left: 0;
+  width: 85%;
+  height: 4px;
+  opacity: 1;
 }
 
 #login-bg {
