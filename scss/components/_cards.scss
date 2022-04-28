@@ -3,4 +3,12 @@
 
 .keepr-card {
   border-radius: $border-radius-lg;
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text {
+    font-family: 'Montserrat', sans-serif;
+  }
 }
