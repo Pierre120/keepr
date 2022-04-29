@@ -11707,7 +11707,7 @@ textarea.form-control-lg {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(1cm);
+    transform: translateY(5mm);
   }
   to {
     opacity: 1;
