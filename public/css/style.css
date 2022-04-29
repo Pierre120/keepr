@@ -11701,7 +11701,7 @@ textarea.form-control-lg {
 }
 
 .fade-in-up {
-  animation: fadeInUp 1s 1s ease both;
+  animation: fadeInUp 500ms 500ms ease both;
 }
 
 @keyframes fadeInUp {
