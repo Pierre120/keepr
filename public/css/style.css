@@ -11651,6 +11651,7 @@ textarea.form-control-lg {
   background-color: #C4C4C4;
   border: 1px solid #666666;
   width: 100%;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
 }
 .add-btn span {
   font-family: "Montserrat", sans-serif;
