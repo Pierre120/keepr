@@ -1,0 +1,66 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+.keepr-card {
+  border-radius: $border-radius-lg;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  color: #666666;
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text-first {
+    margin-top: 1.75rem;
+  }
+
+  hr {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 85%;
+    height: 4px;
+    opacity: 1;
+  }
+}
+
+
+.keepr-card-filled {
+  border-radius: $border-radius-lg;
+  border-width: 0;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  color: $white;
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text-first {
+    margin-top: 1.75rem;
+  }
+
+  hr {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 85%;
+    height: 4px;
+    opacity: 1;
+  }
+}
+
