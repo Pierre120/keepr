@@ -11646,6 +11646,19 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.add-btn {
+  color: #666666;
+  background-color: #C4C4C4;
+  border: 1px solid #666666;
+  width: 100%;
+}
+.add-btn span {
+  font-family: "Montserrat", sans-serif;
+}
+.add-btn p {
+  font-family: "Montserrat", sans-serif;
+}
+
 .keepr-card {
   border-radius: 0.3rem;
   border-width: 1px;
