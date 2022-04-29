@@ -1,4 +1,5 @@
 @use '../custom' as *;
+@use '../components/typography' as *;
 
 #back-to-top-btn {
   position: fixed;
@@ -20,4 +21,8 @@
     }
   }
 
+}
+
+.add-btn {
+  
 }
