@@ -28,7 +28,7 @@
     <div class="col-9">
 
       <!-- `Add Item` button-->
-      <button type="button" class="btn btn-lg add-btn text-start w-100">
+      <button type="button" class="btn btn-lg add-btn text-start w-100 mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
         </svg>
@@ -36,7 +36,7 @@
       </button>
 
       <!-- Item list -->
-      <div class="d-grid gap-2">
+      <div class="d-grid gap-3">
         <% for(let item of sampleList.items) {                                       %>
         <div class="card keepr-card border-<%= sampleList.workspaceColor %>">
           <div class="card-body">
@@ -45,11 +45,11 @@
             <p class="card-text card-text-first fs-6 fst-italic text-truncate">
               <%- item.description %>
             </p>
-            <p class="card-text fs-5 fst-<%= sampleList.workspaceColor %>">
-              Qty: <%- item.qty %>
+            <p class="card-text fs-6 fst-<%= sampleList.workspaceColor %>">
+              <strong>Qty:</strong> <%- item.qty %>
             </p>
-            <p class="card-text fs-5 fst-<%= sampleList.workspaceColor %>">
-              Assigned people: <span class="fs-6 fst-talic">
+            <p class="card-text fs-6 fst-<%= sampleList.workspaceColor %>">
+              <strong>Assigned people:</strong> <span class="fs-6 fst-talic">
                 <% for(let indiv = 0; indiv < item.assignedPeople.length; indiv++) { %>
                     <%- item.assignedPeople[indiv] %>
                 <%   if(indiv < item.assignedPeople.length - 1) {                    %>
