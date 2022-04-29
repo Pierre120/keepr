@@ -11775,6 +11775,74 @@ textarea.form-control-lg {
   background-color: #f06094;
 }
 
+.keepr-card {
+  border-radius: 0.3rem;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  color: #666666;
+}
+.keepr-card .card-title {
+  font-family: "Montserrat", sans-serif;
+}
+.keepr-card .card-text {
+  font-family: "Montserrat", sans-serif;
+}
+.keepr-card .card-text-first {
+  margin-top: 1.75rem;
+}
+.keepr-card hr {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+  width: 85%;
+  height: 4px;
+  opacity: 1;
+}
+
+.keepr-card-filled {
+  border-radius: 0.3rem;
+  border-width: 0;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+.keepr-card-filled .card-title {
+  font-family: "Montserrat", sans-serif;
+}
+.keepr-card-filled .card-text {
+  font-family: "Montserrat", sans-serif;
+}
+.keepr-card-filled .card-text-first {
+  margin-top: 1.75rem;
+}
+.keepr-card-filled hr {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+  width: 85%;
+  height: 4px;
+  opacity: 1;
+}
+
+.fade-in-up {
+  animation: fadeInUp 500ms 500ms ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(5mm);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 #login-bg {
   background-image: radial-gradient(#503FBF, rgba(113, 98, 217, 0.5));
 }
