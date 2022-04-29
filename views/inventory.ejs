@@ -1,28 +1,3 @@
-<% let sampleList = {                                                                                                         %>
-<%   workspaceColor: 'pink',                                                                                                  %>
-<%   items: [                                                                                                                 %>
-<%     {                                                                                                                      %>
-<%       itemName: 'Super Cheesecake',                                                                                        %>
-<%       description: "Super yummy-licious extravagant all-in-one cheese that will make you feel like you can save the day."  %>
-<%       qty: '2 slices',                                                                                                     %>
-<%       assignedPeople: ['@bohx_airon','@bohx_faith']                                                                        %>
-<%     },                                                                                                                     %>
-<%     {                                                                                                                      %>
-<%       itemName: 'Putakte Cheesecake',                                                                                      %>
-<%       description: "Sa sobrang sarap mapapasigaw ka na lng ng \"Putakte ka ng ina mo!\"."                                  %>
-<%       qty: '3 whole',                                                                                                      %>
-<%       assignedPeople: ['@bohx_airon','@bohx_faith','@bohx_pierre']                                                         %>
-<%     },                                                                                                                     %>
-<%     {                                                                                                                      %>
-<%       itemName: 'Cheesey Cheesecake',                                                                                      %>
-<%       description: "Basta cheesecake ito na may additional cheese drizzle sa taas. May mala-lava cake feeling din ito."    %>
-<%       qty: '6 whole',                                                                                                      %>
-<%       assignedPeople: ['@bohx_pierre']                                                                                     %>
-<%     }                                                                                                                      %>
-<%   ]                                                                                                                        %>
-<% }                                                                                                                          %>
-
-
 <div class="container-lg my-3">
   <div class="row justify-content-center">
     <!-- Inventory/Item list Column-->
@@ -37,13 +12,38 @@
       </button>
 
       <!-- Item list -->
-
+      <div class="d-grid">
+        <% for(let item of sampleList.items) {                                       %>
+        <div class="card keepr-card gap-2 border-<%= sampleList.workspaceColor %>">
+          <div class="card-body">
+            <h4 class="card-title"><%- item.itemName %></h4>
+            <hr class="text-<%= sampleList.workspaceColor %>">
+            <p class="card-text card-text-first fs-6 fst-italic text-truncate">
+              <%- item.description %>
+            </p>
+            <p class="card-text fs-5 fst-<%= sampleList.workspaceColor %>">
+              Qty: <%- item.qty %>
+            </p>
+            <p class="card-text fs-5 fst-<%= sampleList.workspaceColor %>">
+              Assigned people: <span class="fs-6 fst-talic">
+                <% for(let indiv = 0; indiv < item.assignedPeople.length; indiv++) { %>
+                    <%- item.assignedPeople[indiv] %>
+                <%   if(indiv < item.assignedPeople.length - 1) {                    %>
+                       ,
+                <%   }                                                               %>
+                <% }                                                                 %>
+              </span>
+            </p>
+          </div>
+        </div>
+        <% }                                                                         %>
+      </div>
 
     </div>
 
     <!-- `Sort by` button Column-->
     <div class="col-2">
-      <%- include('./partials/sort_btn.ejs') %>
+      <%- include('./partials/sort_btn.ejs'); %>
     </div>
   </div>
 </div>
