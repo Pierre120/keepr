@@ -11700,6 +11700,20 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
+.fade-in-up {
+  animation: fadeInUp 1s 1s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1cm);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 #login-bg {
   background-image: radial-gradient(#503FBF, rgba(113, 98, 217, 0.5));
 }
