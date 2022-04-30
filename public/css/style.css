@@ -11892,14 +11892,16 @@ textarea.form-control-lg {
   color: #666666;
 }
 .item-list-card .item-desc {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
 }
 .item-list-card .item-qty {
   font-size: 0.9rem;
+  margin-bottom: 0.8rem;
 }
 .item-list-card .item-assigned-people {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .item-list-card hr {
   border-top-right-radius: 0.25rem;

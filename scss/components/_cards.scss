@@ -85,20 +85,22 @@
     @extend .fst-italic;
     @extend .text-truncate;
     // @extend .montserrat;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
   }
 
   .item-qty {
     @extend .card-text;
     // @extend .montserrat;
     font-size: 0.9rem;
+    margin-bottom: 0.8rem;
   }
 
   .item-assigned-people {
     @extend .card-text;
     // @extend .montserrat;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 
     span {
       @extend .fst-italic;
