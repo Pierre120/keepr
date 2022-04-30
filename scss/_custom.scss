@@ -9,6 +9,7 @@ $dark-purple: #503FBF;
 $light-purple: #7162D9;
 $teal: #6CD9B1;
 $pink: #F277A4;
+$gray: #666666;
 
 $white-btn-border-color: #C4C4C4;
 
@@ -37,6 +38,7 @@ $custom-colors: (
   "teal": $teal,
   "pink": $pink,
   "white": $white,
+  "gray": $gray
 );
 
 // Merge custom-colors map to theme-colors map
@@ -70,6 +72,11 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
   color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
 }
 
+.text-gray {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-gray-rgb), var(--bs-text-opacity)) !important;
+}
+
 
 // Background colors
 .bg-darkpurple {
@@ -90,6 +97,11 @@ $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
 .bg-pink {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-gray {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-gray-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .main-content {

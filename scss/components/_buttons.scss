@@ -1,5 +1,5 @@
 @use '../custom' as *;
-@use '../components/typography' as *;
+@use 'typography' as *;
 
 #back-to-top-btn {
   position: fixed;
@@ -23,17 +23,32 @@
 
 }
 
-.add-btn {
-  color: $add-btn-color;
-  background-color: $add-btn-bg-color;
-  border: 1px solid $add-btn-color;
-  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+.back-btn {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .mt-4;
+  @extend .text-center;
+  @extend .montserrat;
+  @extend .border;
+  @extend .shadow;
+  background-color: $pink;
+  color: $white;
 
-  span {
-    font-family: 'Montserrat', sans-serif;
+  &:hover{
+    color: $white;
+    background-color: darken($pink, 5%);
   }
+}
 
-  p {
-    font-family: 'Montserrat', sans-serif;
+.edit-btn {
+  @extend .shadow;
+}
+
+.edit-btn:hover {
+  @extend .border-teal;
+  @extend .bg-teal;
+  @extend .shadow;
+  .bi {
+    @extend .text-white;
   }
 }
