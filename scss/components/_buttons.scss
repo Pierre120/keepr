@@ -24,17 +24,23 @@
 }
 
 .add-btn {
+  @extend .btn;
+  @extend .btn-lg;
+  @extend .text-start;
+  @extend .w-100;
+  @extend .mb-4;
   color: $add-btn-color;
   background-color: $add-btn-bg-color;
   border: 1px solid $add-btn-color;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
 
   span {
-    font-family: 'Montserrat', sans-serif;
+    @extend .montserrat;
+    @extend .fs-6;
   }
 
   p {
-    font-family: 'Montserrat', sans-serif;
+    @extend .montserrat;
   }
 }
 
