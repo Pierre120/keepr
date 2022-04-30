@@ -40,11 +40,11 @@
   }
 }
 
-.edit-btn, .deleteItem-btn {
+.edit-acct-btn, .edit-item-btn, .delete-item-btn {
   @extend .shadow;
 }
 
-.edit-btn:hover {
+.edit-acct-btn:hover {
   @extend .border-teal;
   @extend .bg-teal;
   @extend .shadow;
@@ -54,6 +54,13 @@
 }
 
 .deleteItem-btn:hover {
+  .bi {
+    @extend .text-white;
+  }
+}
+
+.edit-item-btn:hover {
+  @extend .bg-gray;
   .bi {
     @extend .text-white;
   }

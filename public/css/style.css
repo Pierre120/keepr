@@ -7136,7 +7136,7 @@ textarea.form-control-lg {
   display: none !important;
 }
 
-.shadow, .back-btn, .edit-btn, .deleteItem-btn, .edit-btn:hover {
+.shadow, .back-btn, .edit-acct-btn, .edit-item-btn, .delete-item-btn, .edit-acct-btn:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
@@ -7312,7 +7312,7 @@ textarea.form-control-lg {
   border-color: #7162D9 !important;
 }
 
-.border-teal, .card:hover, .edit-btn:hover {
+.border-teal, .card-account:hover, .edit-acct-btn:hover {
   border-color: #6CD9B1 !important;
 }
 
@@ -8166,7 +8166,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-white, .edit-btn:hover .bi, .deleteItem-btn:hover .bi {
+.text-white, .edit-acct-btn:hover .bi, .deleteItem-btn:hover .bi, .edit-item-btn:hover .bi {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
@@ -11720,7 +11720,7 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-lightpurple-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-teal, .edit-btn:hover {
+.bg-teal, .edit-acct-btn:hover {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-teal-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -11730,7 +11730,7 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-gray {
+.bg-gray, .edit-item-btn:hover {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-gray-rgb), var(--bs-bg-opacity)) !important;
 }
