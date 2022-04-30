@@ -67,3 +67,14 @@
     @extend .text-white;
   }
 }
+
+.sort-btn {
+  @extend .btn;
+  @extend .btn-outline-pink;
+  @extend .shadow-sm;
+  padding: 0.5rem 3rem;
+
+  &:hover {
+    color: $pink;
+  }
+}
