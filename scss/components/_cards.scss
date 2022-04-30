@@ -64,3 +64,43 @@
   }
 }
 
+
+.item-list-card {
+  @extend .card;
+  @extend .keepr-card;
+
+  .item-name {
+    @extend .card-title;
+    @extend .oswald;
+    @extend .fs-5;
+  }
+
+  .item-desc {
+    @extend .card-text;
+    @extend .card-text-first;
+    @extend .fst-italic;
+    @extend .text-truncate;
+    @extend .montserrat;
+    font-size: 0.75rem;
+  }
+
+  .item-qty {
+    @extend .card-text;
+    @extend .montserrat;
+    @extend .fs-6;
+  }
+
+  .item-assigned-people {
+    @extend .card-text;
+    @extend .montserrat;
+    @extend .fs-6;
+
+
+    span {
+      @extend .fs-6;
+      @extend .fst-italic;
+    }
+  }
+
+}
+
