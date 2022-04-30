@@ -11628,10 +11628,74 @@ textarea.form-control-lg {
   font-family: "Oswald", sans-serif;
 }
 
-.btn-outline-success {
+/* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  cursor: pointer;
+}
+
+.header-name {
+  width: 500px;
+  font-size: 25px;
+  vertical-align: top;
+}
+
+.header-left-elements {
+  list-style: none;
+  margin-right: 5%;
+  margin-left: -50px;
+}
+
+.header-left-elements li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.header-left-elements li a {
+  transition: all 0.3s ease 0s;
+}
+
+.header-left-elements li a:hover {
+  color: rgb(27, 102, 27);
+}
+
+.header-1 {
+  margin-left: -20%;
+}
+
+.light-dark, .logout, .success {
+  padding: 9px 25px;
+  background-color: rgb(9, 168, 129);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.profile {
+  margin-right: 60px;
+  cursor: pointer;
+}
+
+.light-dark:hover, .logout:hover, .success:hover {
+  background-color: rgba(9, 168, 129, 0.8);
+}
+
+.header-2 button, .header-1 button {
+  margin-left: 5px;
   background-color: #6CD9B1;
-  margin-left: 10;
-  margin-right: 10;
+}
+
+.logout, .success, .light-dark {
+  border-radius: 12px;
 }
 
 .searchbar {
@@ -11639,45 +11703,13 @@ textarea.form-control-lg {
   border-radius: 30px;
 }
 
-.header-1 {
-  float: left;
-  margin-right: 375px;
-}
-
-.logout {
-  margin-left: 8px;
-  border-width: 1px;
-  border-color: black;
-  border-radius: 12px;
-}
-
 .light-dark {
-  background-image: url("ldmode.png");
-  background-size: auto;
-  margin-left: 8px;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  border-width: 1px;
-  border-color: black;
+  margin-right: 8px;
   overflow: hidden;
-  background-color: yellow;
 }
 
-.profile {
-  margin-left: 8px;
-  margin-right: 15px;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  border-width: 1px;
-  border-color: black;
-  background-color: #F277A4;
-}
-
-.header-2 {
-  height: 45px;
-  margin-right: 20px;
+.profile-img {
+  border-radius: 60%;
 }
 
 /*# sourceMappingURL=header.css.map */

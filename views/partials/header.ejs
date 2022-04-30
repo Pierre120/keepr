@@ -1,15 +1,43 @@
+<!--<nav class="navbar navbar-dark bg-lightpurple w-100 position-fixed" style="height: 8vh;top: 0;z-index:1090;">
+    <div class="container-fluid entire-header">
+      <div class="left-header">
+        <a href="/workspace/dashboard" ><img class="header-logo" src="../img/register_logo.png" alt="keepr-logo"></img></a>
+        <a class="navbar-brand header-name" href="#">Tatak Tech Solutions</a>
+      </div>
+        <form class="d-flex header-1">
+            <input class="form-control me-2 searchbar" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <form class="d-flex header-2">
+            <button class="btn btn-outline-success light-dark" type="submit"></button>
+            <button class="btn btn-outline-success profile" type="submit"></button>
+            <button class="btn btn-outline-success logout" type="submit"  href="/workspace/logout">Logout</button>
+        </form>
+    </div>
+</nav>-->
+ 
+
+
 <nav class="navbar navbar-dark bg-lightpurple w-100 position-fixed" style="height: 8vh;top: 0;z-index:1090;">
-    <div class="container-fluid">
-      <image source="register_logo.png"></image>
-      <a class="navbar-brand">Navbar</a>
+  <div class="container-fluid entire-header header">
+      <ul class="header-left-elements">
+          <li><a href="/workspace/dashboard" ><img class="header-logo" src="../img/landing_logo_withName.png" alt="keepr-logo"></img></a></li>
+      </ul>
       <form class="d-flex header-1">
-        <input class="form-control me-2 searchbar" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2 searchbar" type="search" placeholder= "Find an item" aria-label="Search">
+        <button class="btn btn-outline-success success text-center" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg></button>
       </form>
       <form class="d-flex header-2">
-        <button class="btn btn-outline-success light-dark" type="submit"></button>
-        <button class="btn btn-outline-success profile" type="submit"></button>
-        <button class="btn btn-outline-success logout" type="submit">Logout</button>
-      </form>
-    </div>
-  </nav>
+        <button class="btn btn-outline-success light-dark text-center" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-brightness-low" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm.5-9.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+        </svg></button>
+        <a class="profile" href="/workspace/account-page"><img class="profile-img " src = "../img/profile-img.jpg" height= "50"></img></a>
+        <button class="btn btn-outline-success logout text-center" type="submit"  href="/workspace/logout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+          <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg> Logout</button>
+    </form>
+  </div>
+</nav>
