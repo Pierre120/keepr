@@ -7136,7 +7136,7 @@ textarea.form-control-lg {
   display: none !important;
 }
 
-.shadow, .back-btn, .edit-btn, .edit-btn:hover {
+.shadow, .back-btn, .edit-btn, .deleteItem-btn, .edit-btn:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
@@ -8166,7 +8166,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-white, .edit-btn:hover .bi {
+.text-white, .edit-btn:hover .bi, .deleteItem-btn:hover .bi {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }

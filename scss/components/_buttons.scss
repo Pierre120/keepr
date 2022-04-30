@@ -40,7 +40,7 @@
   }
 }
 
-.edit-btn {
+.edit-btn, .deleteItem-btn {
   @extend .shadow;
 }
 
@@ -48,6 +48,12 @@
   @extend .border-teal;
   @extend .bg-teal;
   @extend .shadow;
+  .bi {
+    @extend .text-white;
+  }
+}
+
+.deleteItem-btn:hover {
   .bi {
     @extend .text-white;
   }
