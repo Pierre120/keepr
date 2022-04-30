@@ -61,7 +61,7 @@
   }
 }
 
-.edit-acct-btn {
+.edit-acct-btn, .edit-item-btn, .delete-item-btn {
   @extend .shadow;
 }
 
@@ -82,5 +82,18 @@
 
   &:hover {
     color: $white;
+  }
+}
+
+.deleteItem-btn:hover {
+  .bi {
+    @extend .text-white;
+  }
+}
+
+.edit-item-btn:hover {
+  @extend .bg-gray;
+  .bi {
+    @extend .text-white;
   }
 }

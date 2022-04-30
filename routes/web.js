@@ -31,11 +31,11 @@ let initRoutes = (app) => {
   }); // history
 
   router.get('/workspace/item', (req, res) => {
-    return res.render('item', { layout: './layouts/item-page' })
+    return res.render('item', { layout: './layouts/item-page', backLink: '/workspace/inventory' })
   });
 
   router.get('/accounts/user', (req, res) => {
-    return res.render('account', { layout: './layouts/account-page' });
+    return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
   });
 
   router.get('/search-results/query', (req, res) => {
