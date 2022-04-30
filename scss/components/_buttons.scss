@@ -40,11 +40,11 @@
   }
 }
 
-.edit-btn {
+.edit-acct-btn {
   @extend .shadow;
 }
 
-.edit-btn:hover {
+.edit-acct-btn:hover {
   @extend .border-teal;
   @extend .bg-teal;
   @extend .shadow;
