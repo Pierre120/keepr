@@ -7052,7 +7052,7 @@ textarea.form-control-lg {
   content: "";
 }
 
-.text-truncate, .item-list-card .item-desc {
+.text-truncate, .item-list-card .item-desc, .item-list-card .item-assigned-people {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
