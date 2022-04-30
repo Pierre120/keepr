@@ -5,7 +5,7 @@
   border-radius: $border-radius-lg;
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
-  color: #666666;
+  color: $gray;
 
   .card-title {
     font-family: 'Montserrat', sans-serif;
@@ -67,39 +67,54 @@
 
 .item-list-card {
   @extend .card;
-  @extend .keepr-card;
+  @extend .montserrat;
+  border-radius: $border-radius-lg;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  color: $gray;
 
   .item-name {
     @extend .card-title;
     @extend .oswald;
+    @extend .fw-bold;
     @extend .fs-5;
   }
 
   .item-desc {
     @extend .card-text;
-    @extend .card-text-first;
     @extend .fst-italic;
     @extend .text-truncate;
-    @extend .montserrat;
-    font-size: 0.75rem;
+    // @extend .montserrat;
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
   }
 
   .item-qty {
     @extend .card-text;
-    @extend .montserrat;
-    @extend .fs-6;
+    // @extend .montserrat;
+    font-size: 0.9rem;
   }
 
   .item-assigned-people {
     @extend .card-text;
-    @extend .montserrat;
-    @extend .fs-6;
-
+    // @extend .montserrat;
+    font-size: 0.8rem;
 
     span {
-      @extend .fs-6;
       @extend .fst-italic;
     }
+  }
+
+  hr {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 85%;
+    height: 4px;
+    opacity: 1;
   }
 
 }

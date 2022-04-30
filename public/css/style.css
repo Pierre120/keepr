@@ -8027,7 +8027,7 @@ textarea.form-control-lg {
   font-size: 1.25rem !important;
 }
 
-.fs-6, .item-list-card .item-qty, .item-list-card .item-assigned-people, .item-list-card .item-assigned-people span {
+.fs-6 {
   font-size: 1rem !important;
 }
 
@@ -8051,7 +8051,7 @@ textarea.form-control-lg {
   font-weight: 400 !important;
 }
 
-.fw-bold {
+.fw-bold, .item-list-card .item-name {
   font-weight: 700 !important;
 }
 
@@ -11745,7 +11745,7 @@ textarea.form-control-lg {
   padding-bottom: 1.5rem;
 }
 
-.montserrat, .item-list-card .item-desc, .item-list-card .item-qty, .item-list-card .item-assigned-people, .back-btn {
+.montserrat, .item-list-card, .back-btn {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -11771,6 +11771,19 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.add-btn {
+  color: #666666;
+  background-color: #C4C4C4;
+  border: 1px solid #666666;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+}
+.add-btn span {
+  font-family: "Montserrat", sans-serif;
+}
+.add-btn p {
+  font-family: "Montserrat", sans-serif;
+}
+
 .back-btn {
   background-color: #F277A4;
   color: #fff;
@@ -11780,22 +11793,22 @@ textarea.form-control-lg {
   background-color: #f06094;
 }
 
-.keepr-card, .item-list-card {
+.keepr-card {
   border-radius: 0.3rem;
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   color: #666666;
 }
-.keepr-card .card-title, .item-list-card .card-title, .item-list-card .item-name {
+.keepr-card .card-title, .keepr-card .item-list-card .item-name, .item-list-card .keepr-card .item-name {
   font-family: "Montserrat", sans-serif;
 }
-.keepr-card .card-text, .item-list-card .card-text, .item-list-card .item-assigned-people, .item-list-card .item-qty, .item-list-card .item-desc {
+.keepr-card .card-text, .keepr-card .item-list-card .item-assigned-people, .item-list-card .keepr-card .item-assigned-people, .keepr-card .item-list-card .item-qty, .item-list-card .keepr-card .item-qty, .keepr-card .item-list-card .item-desc, .item-list-card .keepr-card .item-desc {
   font-family: "Montserrat", sans-serif;
 }
-.keepr-card .card-text-first, .item-list-card .card-text-first, .item-list-card .item-desc {
+.keepr-card .card-text-first {
   margin-top: 1.75rem;
 }
-.keepr-card hr, .item-list-card hr {
+.keepr-card hr {
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   margin-top: 0;
@@ -11819,7 +11832,7 @@ textarea.form-control-lg {
 .keepr-card-filled .card-text, .keepr-card-filled .item-list-card .item-assigned-people, .item-list-card .keepr-card-filled .item-assigned-people, .keepr-card-filled .item-list-card .item-qty, .item-list-card .keepr-card-filled .item-qty, .keepr-card-filled .item-list-card .item-desc, .item-list-card .keepr-card-filled .item-desc {
   font-family: "Montserrat", sans-serif;
 }
-.keepr-card-filled .card-text-first, .keepr-card-filled .item-list-card .item-desc, .item-list-card .keepr-card-filled .item-desc {
+.keepr-card-filled .card-text-first {
   margin-top: 1.75rem;
 }
 .keepr-card-filled hr {
@@ -11834,9 +11847,34 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
-.item-list-card .item-desc {
-  font-size: 0.75rem;
+.item-list-card {
+  border-radius: 0.3rem;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  color: #666666;
 }
+.item-list-card .item-desc {
+  font-size: 0.8rem;
+  margin-top: 1.5rem;
+}
+.item-list-card .item-qty {
+  font-size: 0.9rem;
+}
+.item-list-card .item-assigned-people {
+  font-size: 0.8rem;
+}
+.item-list-card hr {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+  width: 85%;
+  height: 4px;
+  opacity: 1;
+}
+
 .fade-in-up {
   animation: fadeInUp 500ms 500ms ease both;
 }
