@@ -1,0 +1,65 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+.card:hover {
+  @extend .border-teal;
+}
+
+.container-profile-pic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .frame {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
+
+  .frame .picture {
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .frame .uploadPic {
+    font-weight: 600;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(90, 92, 105, 0.7);
+    color: #f8f9fc;
+    font-size: 12px;
+  }
+
+  frame .uploadPic {
+    cursor: pointer;
+}
+
+  .frame:hover .uploadPic,
+  .uploadProfilePic:focus ~ .uploadPic {
+    opacity: 1;
+  }
+
+  .uploadPic {
+    display: none;
+  }
