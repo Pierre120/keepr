@@ -38,18 +38,18 @@
       <!-- Item list -->
       <div class="d-grid gap-3">
         <% for(let item of sampleList.items) {                                       %>
-        <div class="card keepr-card border-<%= sampleList.workspaceColor %>">
+        <div class="item-list-card border-<%= sampleList.workspaceColor %>">
           <div class="card-body">
-            <h4 class="card-title"><%- item.itemName %></h4>
+            <h4 class="item-name"><%- item.itemName %></h4>
             <hr class="text-<%= sampleList.workspaceColor %>">
-            <p class="card-text card-text-first fs-6 fst-italic text-truncate">
+            <p class="item-desc">
               <%- item.description %>
             </p>
-            <p class="card-text fs-6 fst-<%= sampleList.workspaceColor %>">
+            <p class="item-qty">
               <strong>Qty:</strong> <%- item.qty %>
             </p>
-            <p class="card-text fs-6 fst-<%= sampleList.workspaceColor %>">
-              <strong>Assigned people:</strong> <span class="fs-6 fst-talic">
+            <p class="item-assigned-people">
+              <strong>Assigned people:</strong> <span>
                 <% for(let indiv = 0; indiv < item.assignedPeople.length; indiv++) { %>
                     <%- item.assignedPeople[indiv] %>
                 <%   if(indiv < item.assignedPeople.length - 1) {                    %>
