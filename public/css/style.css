@@ -7136,7 +7136,7 @@ textarea.form-control-lg {
   display: none !important;
 }
 
-.shadow {
+.shadow, .back-btn, .edit-btn, .edit-btn:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
@@ -7312,7 +7312,7 @@ textarea.form-control-lg {
   border-color: #7162D9 !important;
 }
 
-.border-teal {
+.border-teal, .card:hover, .edit-btn:hover {
   border-color: #6CD9B1 !important;
 }
 
@@ -8166,7 +8166,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-white {
+.text-white, .edit-btn:hover .bi {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
@@ -11720,7 +11720,7 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-lightpurple-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-teal {
+.bg-teal, .edit-btn:hover {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-teal-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -12034,37 +12034,42 @@ input[type=submit]:hover {
   padding-bottom: 1.5rem;
 }
 
-.profile-pic-wrapper {
+.container-profile-pic {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.pic-holder {
-  text-align: center;
-  position: relative;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+.frame {
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
 }
 
-.pic-holder .pic {
-  height: 100%;
-  width: 100%;
+.frame .picture {
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center;
+  height: 100%;
+  width: 100%;
 }
 
-.pic-holder .upload-file-block,
-.pic-holder .upload-loader {
+.frame .uploadPic {
+  font-weight: 600;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
   position: absolute;
   top: 0;
   left: 0;
@@ -12073,29 +12078,19 @@ input[type=submit]:hover {
   background-color: rgba(90, 92, 105, 0.7);
   color: #f8f9fc;
   font-size: 12px;
-  font-weight: 600;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
 }
 
-.pic-holder .upload-file-block {
+frame .uploadPic {
   cursor: pointer;
 }
 
-.pic-holder:hover .upload-file-block,
-.uploadProfileInput:focus ~ .upload-file-block {
+.frame:hover .uploadPic,
+.uploadProfilePic:focus ~ .uploadPic {
   opacity: 1;
 }
 
-.pic-holder.uploadInProgress .upload-file-block {
+.uploadPic {
   display: none;
-}
-
-.pic-holder.uploadInProgress .upload-loader {
-  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

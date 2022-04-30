@@ -30,11 +30,25 @@
   @extend .text-center;
   @extend .montserrat;
   @extend .border;
+  @extend .shadow;
   background-color: $pink;
   color: $white;
 
   &:hover{
     color: $white;
     background-color: darken($pink, 5%);
+  }
+}
+
+.edit-btn {
+  @extend .shadow;
+}
+
+.edit-btn:hover {
+  @extend .border-teal;
+  @extend .bg-teal;
+  @extend .shadow;
+  .bi {
+    @extend .text-white;
   }
 }
