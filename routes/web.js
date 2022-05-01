@@ -38,6 +38,10 @@ let initRoutes = (app) => {
     return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
   });
 
+  router.get('/accounts/jojo', (req, res) => {
+    return res.render('others-account', { layout: './layouts/account-page', backLink: '/workspace/collaborators' });
+  });
+
   router.get('/search-results/query', (req, res) => {
     return res.render('search_results', { layout: './layouts/results-page' });
   });
