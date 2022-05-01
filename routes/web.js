@@ -41,6 +41,7 @@ let initRoutes = (app) => {
   router.get('/accounts/jojo', (req, res) => {
     return res.render('others-account', { 
       layout: './layouts/account-page',
+      backLink: '/workspace/inventory',
       username: 'Giorgo Giovanna',
       displayName: 'J0J0' 
     });
