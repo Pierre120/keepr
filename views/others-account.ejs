@@ -1,0 +1,42 @@
+<div class="row">
+  <!-- `Go Back` button -->
+  <div class="col-2 align-items-start">
+    <%- include('./partials/backBtn.ejs') %>
+  </div>
+
+  <div class = "col-8 align-items-center">
+    <h1 class="mt-3 border-bottom border-3 oswald text-gray display-4">VIEW ACCOUNT</h1>
+
+    <!-- Profile pic/icon -->
+    <div class="container-profile-pic m-3">
+      <div class="frame picture" id="profilePic" style="background-image: url('https://source.unsplash.com/random/150x150')">
+      </div>
+    </div>
+
+    <div class="d-grid gap-4 fade-in-up">
+      <div class="card keepr-card card-account">
+        <div class="card-body">
+          <h2 class="oswald fw-bolder">
+            Username
+          </h2>
+          <p class="card-text card-text-first ">
+            <%- username %>
+          </p>
+        </div>
+      </div>
+
+      <div class="card keepr-card card-account">
+        <div class="card-body">
+          <h2 class="oswald fw-bolder">
+            Display Name
+          </h2>
+          <p class="card-text card-text-first ">
+            <%- displayName %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-2">
+  </div>
+</div>
