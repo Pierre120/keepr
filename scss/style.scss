@@ -6,6 +6,8 @@
 // IMPORT COMPONENTS
 @use 'components/typography';
 @use 'components/buttons';
+@use 'components/cards';
+@use 'components/animations';
 
 
 // IMPORT SECTIONS
@@ -14,3 +16,5 @@
 @use 'sections/sidenav';
 @use 'sections/workspace';
 @use 'sections/header';
+@use 'sections/account';
+@use 'sections/home';

@@ -12,18 +12,20 @@ let initRoutes = (app) => {
     return res.render('register-contents', { layout: './layouts/register' })
   });// Register page
 
-  router.get('/app'); // App/Home page
+  router.get('/app', (req, res) => {
+      return res.render('home', {layout: './layouts/home_layout'})
+  }); // App/Home page
 
   router.get('/workspace/dashboard', (req, res) => {
     return res.render('dashboard', { active: 0, layout: './layouts/workspace' })
   }); // dashboard
 
   router.get('/workspace/inventory', (req, res) => {
-    return res.render('index', { active: 1, layout: './layouts/workspace' })
+    return res.render('inventory', { active: 1, layout: './layouts/workspace' })
   }); // inventory
 
   router.get('/workspace/collaborators', (req, res) => {
-    return res.render('dashboard', { active: 2, layout: './layouts/workspace' })
+    return res.render('collaborators', { active: 2, layout: './layouts/workspace' })
   }); // collaborators
 
   router.get('/workspace/history', (req, res) => {
@@ -31,11 +33,11 @@ let initRoutes = (app) => {
   }); // history
 
   router.get('/workspace/item', (req, res) => {
-    return res.render('item', { layout: './layouts/item-page' })
+    return res.render('item', { layout: './layouts/item-page', backLink: '/workspace/inventory' })
   });
 
   router.get('/accounts/user', (req, res) => {
-    return res.render('account', { layout: './layouts/account-page' });
+    return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
   });
 
   router.get('/search-results/query', (req, res) => {

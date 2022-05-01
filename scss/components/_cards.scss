@@ -1,0 +1,121 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+.keepr-card {
+  border-radius: $border-radius-lg;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  color: $gray;
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text-first {
+    margin-top: 1.75rem;
+  }
+
+  hr {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 85%;
+    height: 4px;
+    opacity: 1;
+  }
+}
+
+
+.keepr-card-filled {
+  border-radius: $border-radius-lg;
+  border-width: 0;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  color: $white;
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text-first {
+    margin-top: 1.75rem;
+  }
+
+  hr {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 85%;
+    height: 4px;
+    opacity: 1;
+  }
+}
+
+
+.item-list-card {
+  @extend .card;
+  @extend .montserrat;
+  border-radius: $border-radius-lg;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  color: $gray;
+
+  .item-name {
+    @extend .card-title;
+    @extend .oswald;
+    @extend .fw-bold;
+    @extend .fs-5;
+  }
+
+  .item-desc {
+    @extend .card-text;
+    @extend .fst-italic;
+    @extend .text-truncate;
+    font-size: 0.85rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .item-qty {
+    @extend .card-text;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .item-assigned-people {
+    @extend .card-text;
+    @extend .text-truncate;
+    font-size: 0.9rem;
+
+    span {
+      @extend .fst-italic;
+    }
+  }
+
+  hr {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 85%;
+    height: 4px;
+    opacity: 1;
+  }
+
+}
+
