@@ -40,8 +40,17 @@ let initRoutes = (app) => {
     return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
   });
 
+  router.get('/accounts/jojo', (req, res) => {
+    return res.render('others-account', { 
+      layout: './layouts/account-page',
+      backLink: '/workspace/collaborators',
+      username: 'Giorgo Giovanna',
+      displayName: 'J0J0' 
+    });
+  });
+
   router.get('/search-results/query', (req, res) => {
-    return res.render('search_results', { layout: './layouts/results-page' });
+    return res.render('search-results', { layout: './layouts/results-page' });
   });
 
   return app.use('/', router); // Set the router
