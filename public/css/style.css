@@ -11945,7 +11945,7 @@ textarea.form-control-lg {
   opacity: 1;
 }
 
-.fade-in-up {
+.fade-in-up, #bg-container {
   animation: fadeInUp 500ms 500ms ease both;
 }
 
