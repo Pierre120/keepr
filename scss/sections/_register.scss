@@ -1,5 +1,6 @@
 @use '../custom' as *;
 @use '../components/typography' as *;
+@use '../components/animations' as *;
 
 #bg-plain {
     background-image: radial-gradient($primary, rgba(113, 98, 217, 0.5));
@@ -9,7 +10,8 @@
 }
 
 #bg-container {
-    position: absolute;
+    @extend .position-absolute;
+    @extend .fade-in-up;
     width: 100%;
     height: 50%;
     top: 25%;
@@ -18,7 +20,8 @@
 }
 
 .center {
-    position:absolute;
+    @extend .position-absolute;
+    @extend .text-center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -26,10 +29,11 @@
 }
 
 .center h1{
-    text-align: center;
+    @extend .text-gray;
+    @extend .text-center;
+    @extend .oswald;
     padding: 0 0 10px 0;
-    border-bottom: 1px solid #503FBF;
-    color: #666666;
+    border-bottom: 1px solid $dark-purple;
 }
 
 .center form{
@@ -37,14 +41,14 @@
     box-sizing: border-box
 }
 
-form .txt_field{
-    position:relative;
+form .text-field{
+    @extend .position-relative;
     border-bottom: 2px solid #C4C4C4;
     margin: 30px 0
 }
 
-.txt_field input{
-    width:100%;
+.text-field input{
+    @extend .w-100;
     padding: 0 5px;
     height: 40px;
     font-size: 16px;
@@ -53,53 +57,37 @@ form .txt_field{
     outline: none;
 }
 
-.txt_field label{
-    position: absolute; 
+.text-field label{
+    @extend .position-absolute;
+    @extend .text-darkpurple;
+    @extend .fs-6;
+    @extend .montserrat;
+    @extend .fw-light;
     top: 50%;
     left: 5px; 
-    color:#503FBF;
     transform: translateY(-50%);
-    font-size:16px;
     pointer-events: none;
     transition: .5s
 }
 
-.txt_field span::before{
+.text-field span::before{
+    @extend .position-absolute;
+    @extend .bg-darkpurple;
     content:'';
-    position: absolute;
     top: 40px;
     left: 0;
     width: 0%;
     height: 2px;
-    background: #503FBF;
     transition: .5s;
 }
 
-.txt_field input:focus ~ label,
-.txt_field input:valid ~ label{
+.text-field input:focus ~ label,
+.text-field input:valid ~ label{
+    @extend .text-darkpurple;
     top:-5px;
-    color:#503FBF;
 }
 
-.txt_field input:focus ~ span::before,
-.txt_field input:valid ~ span::before{
-    width: 100%;
-}
-
-input[type="submit"]{
-    width: 100%;
-    height: 50px; 
-    border: 1px solid;
-    background: #6CD9B1;
-    border-radius: 25px;
-    font-size: 18px;
-    color:#FEF9F9;
-    font-weight: 700;
-    cursor: pointer;
-    outline: none;
-}
-
-input[type="submit"]:hover{
-    border-color: #6CD9B1;
-    transition: .5s;
+.text-field input:focus ~ span::before,
+.text-field input:valid ~ span::before{
+    @extend .w-100;
 }
