@@ -633,7 +633,7 @@ progress {
   color: #6c757d;
 }
 
-.container,
+.container, .center,
 .container-fluid,
 .container-xxl,
 .container-xl,
@@ -648,27 +648,27 @@ progress {
 }
 
 @media (min-width: 576px) {
-  .container-sm, .container {
+  .container-sm, .container, .center {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
+  .container-md, .container-sm, .container, .center {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
+  .container-lg, .container-md, .container-sm, .container, .center {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
+  .container-xl, .container-lg, .container-md, .container-sm, .container, .center {
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container, .center {
     max-width: 1320px;
   }
 }
@@ -789,7 +789,7 @@ progress {
   width: 91.66666667%;
 }
 
-.col-12 {
+.col-12, #bg-container {
   flex: 0 0 auto;
   width: 100%;
 }
@@ -4358,7 +4358,7 @@ textarea.form-control-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
-.navbar > .container,
+.navbar > .container, .navbar > .center,
 .navbar > .container-fluid,
 .navbar > .container-sm,
 .navbar > .container-md,
@@ -7222,7 +7222,7 @@ textarea.form-control-lg {
   position: relative !important;
 }
 
-.position-absolute, #bg-container, .center, .text-field label, .text-field span::before {
+.position-absolute, .text-field label, .text-field span::before {
   position: absolute !important;
 }
 
@@ -7960,7 +7960,7 @@ textarea.form-control-lg {
   padding-bottom: 1.5rem !important;
 }
 
-.py-5 {
+.py-5, #bg-container {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
 }
@@ -12015,20 +12015,17 @@ textarea.form-control-lg {
   height: 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  padding-top: auto;
+  padding-bottom: auto;
 }
 
 #bg-container {
   width: 100%;
-  height: 60%;
-  top: 20%;
   background: #FEF9F9;
   border-radius: 10px;
 }
 
 .center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 400px;
 }
 
