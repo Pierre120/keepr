@@ -7,24 +7,22 @@
     height:100%; 
     background-repeat: no-repeat; 
     background-attachment: fixed;
+    padding-top: auto;
+    padding-bottom: auto;
 }
 
 #bg-container {
-    @extend .position-absolute;
+    @extend .col-12;
     @extend .fade-in-up;
+    @extend .py-5;
     width: 100%;
-    height: 60%;
-    top: 20%;
     background: #FEF9F9;
     border-radius: 10px;
 }
 
 .center {
-    @extend .position-absolute;
+    @extend .container;
     @extend .text-center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 400px;
 }
 
