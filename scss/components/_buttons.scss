@@ -116,3 +116,22 @@
     transition: 0.5;
   }
 }
+
+.login-btn {
+  @extend .btn;
+  @extend .montserrat;
+  @extend .btn-lg;
+  @extend .bg-teal;
+  @extend .text-white;
+  @extend .text-center;
+  @extend .rounded-pill;
+  @extend .shadow-sm;
+  border: 1px solid;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    @extend .border-teal;
+    transition: 0.5;
+  }
+}
