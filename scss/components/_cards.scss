@@ -54,6 +54,9 @@
 
 
 .item-list-card {
+  @extend .btn;
+  @extend .text-start;
+  @extend .p-0;
   @extend .card;
   @extend .montserrat;
   @extend .text-decoration-none;
