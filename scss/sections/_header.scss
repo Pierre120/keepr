@@ -132,20 +132,12 @@ header{
     margin-left: -20%;
 }
 
-.light-dark, .logout, .success{
-    padding: 9px 25px;
-    background-color: rgb(9, 168, 129, 1);
-    border:none;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
 .profile{
     margin-right: 60px;
     cursor: pointer;
 }
 
-.light-dark:hover, .logout:hover, .success:hover{
+ .logout:hover {
     background-color: rgba(9, 168, 129,0.8);
 }
 
@@ -154,19 +146,10 @@ header{
     background-color: #6CD9B1;
 }
 
-.logout, .success, .light-dark{
-    border-radius: 12px;
-}
-
 
 .searchbar{
     width: 500px;
     border-radius: 30px;
-}
-
-.light-dark{
-    margin-right: 8px;
-    overflow: hidden;
 }
 
 .profile-img{

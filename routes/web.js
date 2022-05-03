@@ -4,7 +4,7 @@ const express = require('express');
 let router = express.Router();
 
 let initRoutes = (app) => {
-  router.get('/', (req, res) => {
+  router.get('/index', (req, res) => {
     return res.render('index');
   }); // Landing page
 
