@@ -6,7 +6,7 @@
 <!-- Item search results -->
 <div class="d-grid gap-2 fade-in-up">
   <% for(let item of sampleList.items) {                                       %>
-  <div class="item-list-card border-<%= sampleList.workspaceColor %>">
+  <a class="item-list-card border-<%= sampleList.workspaceColor %>" href="<%= item.path %>">
     <div class="card-body">
       <h4 class="item-name"><%- item.itemName %></h4>
       <hr class="text-<%= sampleList.workspaceColor %>">
@@ -17,6 +17,6 @@
         <strong>Qty: <%- item.qty %></strong>
       </p>
     </div>
-  </div>
+  </a>
   <% }                                                                         %>
 </div>
