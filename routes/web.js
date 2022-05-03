@@ -78,6 +78,7 @@ let initRoutes = (app) => {
     return res.render('item', {
       layout: './layouts/item-page',
       backLink: '/workspace/inventory',
+      title: sampleData[0].itemName,
       sampleItem: sampleData[0]
     });
   });
