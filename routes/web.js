@@ -22,7 +22,7 @@ const sampleData = [
     itemName: 'Jojo Cheesecake',
     description: "Cheesecake's design is inspired from the anime 'JoJo's Bizarre Adventure'.",
     qty: '2 whole',
-    assignedPeople: ['@bohx_pierre']
+    assignedPeople: ['@bohx_airon','@bohx_pierre']
   },
   {
     productCode: 'UCHCKE1212',
@@ -36,7 +36,7 @@ const sampleData = [
     itemName: 'Halo-halo Cheesecake',
     description: "Make your cheesecake cheesier with Cheesy Cheesecake. Topped with 7 types of cheese which includes mozzarella, cheddar, blue cheese, parmesan, feta cheese, brie and cream cheese.",
     qty: '3 slices',
-    assignedPeople: ['@bohx_pierre']
+    assignedPeople: ['@bohx_faith','@bohx_pierre']
   }
 ];
 // --- END SAMPLE DATA ---
