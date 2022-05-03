@@ -34,7 +34,7 @@ const sampleData = [
   {
     productCode: 'HCHCKE7878',
     itemName: 'Halo-halo Cheesecake',
-    description: "Make your cheesecake cheesier with Cheesy Cheesecake. Topped with 7 types of cheese which includes mozzarella, cheddar, blue cheese, parmesan, feta cheese, brie and cream cheese.",
+    description: "Halo-halo Cheesecake is the offspring of two well-known desserts, the halo-halo and cheesecake.",
     qty: '3 slices',
     assignedPeople: ['@bohx_faith','@bohx_pierre']
   }
