@@ -2,18 +2,12 @@
 @use '../components/typography' as *;
 
 .keepr-card {
+  @extend .card;
+  @extend .montserrat;
   border-radius: $border-radius-lg;
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
   color: $gray;
-
-  .card-title {
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .card-text {
-    font-family: 'Montserrat', sans-serif;
-  }
 
   .card-text-first {
     margin-top: 1.75rem;
