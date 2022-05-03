@@ -59,7 +59,11 @@ let initRoutes = (app) => {
   }); // dashboard
 
   router.get('/workspace/inventory', (req, res) => {
-    return res.render('inventory', { active: 1, layout: './layouts/workspace' })
+    return res.render('inventory', { 
+      active: 1,
+      layout: './layouts/workspace',
+      sampleItems: sampleData
+    });
   }); // inventory
 
   router.get('/workspace/collaborators', (req, res) => {
