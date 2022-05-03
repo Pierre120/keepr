@@ -11966,7 +11966,7 @@ textarea.form-control-lg {
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   color: #666666;
-  transition: box-shadow 50ms ease-in-out;
+  transition: box-shadow 150ms ease-in-out;
 }
 .item-list-card .item-desc {
   font-size: 0.85rem;
