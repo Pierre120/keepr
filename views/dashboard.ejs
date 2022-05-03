@@ -73,15 +73,18 @@
         <div class="card-body">
           <h4 class="card-title">Recent Updates</h4>
           <hr class="text-teal">
-          <p class="card-text card-text-first fst-italic">
-            April 33, 2022 - <strong>@bohx_airon</strong> decremented <strong>Super Cheesecake</strong> stock count
-          </p>
-          <p class="card-text fst-italic">
-            April 32, 2022 - <strong>@bohx_faith</strong> incremented <strong>Super Cheesecake</strong> stock count
-          </p>
-          <p class="card-text fst-italic">
-            April 31, 2022 - <strong>@bohx_pierre</strong> decremented <strong>Putakte Cheesecake</strong> stock count
-          </p>
+          <% const maxUpdates = 3; %>
+          <% for(let i=0; i < maxUpdates; i++) { %>
+            <% if (i === 0) { %>
+            <p class="card-text card-text-first fst-italic">
+              <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> <%- updates[i].detail %>
+            </p>
+            <% } else { %>
+            <p class="card-text fst-italic">
+              <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> <%- updates[i].detail %>
+            </p>
+            <% } %>
+          <% } %>
         </div>
       </div>
     </div>
