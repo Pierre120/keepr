@@ -49,7 +49,7 @@ const sampleData = [
 let router = express.Router();
 
 let initRoutes = (app) => {
-  router.get('/', (req, res) => {
+  router.get('/index', (req, res) => {
     return res.render('index');
   }); // Landing page
 
@@ -57,7 +57,9 @@ let initRoutes = (app) => {
     return res.render('register-contents', { layout: './layouts/register' })
   });// Register page
 
-  router.get('/app'); // App/Home page
+  router.get('/app', (req, res) => {
+      return res.render('home', {layout: './layouts/home_layout'})
+  }); // App/Home page
 
   router.get('/workspace/dashboard', (req, res) => {
     return res.render('dashboard', { active: 0, layout: './layouts/workspace' })
@@ -72,11 +74,11 @@ let initRoutes = (app) => {
   }); // inventory
 
   router.get('/workspace/collaborators', (req, res) => {
-    return res.render('dashboard', { active: 2, layout: './layouts/workspace' })
+    return res.render('collaborators', { active: 2, layout: './layouts/workspace' })
   }); // collaborators
 
   router.get('/workspace/history', (req, res) => {
-    return res.render('index', { active: 3, layout: './layouts/workspace' })
+    return res.render('history', { active: 3, layout: './layouts/workspace' })
   }); // history
 
 

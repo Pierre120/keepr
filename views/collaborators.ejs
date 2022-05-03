@@ -1,0 +1,62 @@
+<div class="container-md w-75 fade-in-up">  
+    <div class="row mx-0 mb-4 main-content">
+        <div class="col add-workspace">
+        <button type="button" class="add-btn text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="17.5rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg><br>
+            <span >Add Collaborator</span>
+          </button>
+          </div>
+    <div class="col">
+        <div class="card collaborator-card text-center border-pink">
+          <div class="card-body">
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+            <h3 class="card-title title-1 montserrat">@bohx_Faith</h3>
+            <hr class="text-pink">
+              <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">Assigned Items:</p>
+              <p class="card-text fs-5 fst-italic mb-1 text-start collaborator-content-2">Super Cheesecake</p>
+              <p class="card-text fs-5 fst-italic text-start collaborator-content-2">Putakte Cheesecake<br><span class="collab-edit-btn"><%-include('partials/editAcctBtn.ejs'); %></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mx-0 mb-4">
+        <div class="col">
+          <div class="card collaborator-card  text-center border-teal">
+            <div class="card-body">
+              <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+              <h3 class="card-title title-1 montserrat">@bohx_Pierre</h3>
+              <hr class="text-teal">
+                <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">Assigned Items:</p>
+                <p class="card-text fs-5 fst-italic mb-1 text-start collaborator-content-2">Blueberry Cheesecake</p>
+                <p class="card-text fs-5 fst-italic text-start collaborator-content-2">Lemon Cheesecake <br><span class="collab-edit-btn"><%-include('partials/editAcctBtn.ejs'); %></span></p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card collaborator-card  text-center border-lightpurple">
+            <div class="card-body">
+              <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>
+              <h3 class="card-title title-1 montserrat">@bohx_Airon</h3>
+              <hr class="text-lightpurple">
+                <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">Assigned Items:</p>
+                <p class="card-text fs-5 fst-italic mb-1 text-start collaborator-content-2">Putakte Cheesecake</p>
+                <p class="card-text fs-5 fst-italic text-start collaborator-content-2">Basta Cheesecake <br><span class="collab-edit-btn"><%-include('partials/editAcctBtn.ejs'); %></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <%- include('./partials/backToTopBtn.ejs') %>
+

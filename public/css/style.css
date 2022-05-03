@@ -2511,7 +2511,7 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, .btn-check[disabled] + .item-list-card, .btn-check[disabled] + .add-btn, .btn-check[disabled] + .back-btn, .btn-check[disabled] + .sort-btn, .btn-check[disabled] + .reg-btn, .btn-check[disabled] + .login-btn, .btn-check:disabled + .btn, .btn-check:disabled + .item-list-card, .btn-check:disabled + .add-btn, .btn-check:disabled + .back-btn, .btn-check:disabled + .sort-btn, .btn-check:disabled + .reg-btn, .btn-check:disabled + .login-btn {
+.btn-check[disabled] + .btn, .btn-check[disabled] + .item-list-card, .btn-check[disabled] + .add-btn, .btn-check[disabled] + .back-btn, .btn-check[disabled] + .sort-btn, .btn-check[disabled] + .logout-btn, .btn-check[disabled] + .reg-btn, .btn-check[disabled] + .login-btn, .btn-check:disabled + .btn, .btn-check:disabled + .item-list-card, .btn-check:disabled + .add-btn, .btn-check:disabled + .back-btn, .btn-check:disabled + .sort-btn, .btn-check:disabled + .logout-btn, .btn-check:disabled + .reg-btn, .btn-check:disabled + .login-btn {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
@@ -2671,11 +2671,11 @@ textarea.form-control-lg {
 .input-group > .form-select:focus {
   z-index: 3;
 }
-.input-group .btn, .input-group .item-list-card, .input-group .add-btn, .input-group .back-btn, .input-group .sort-btn, .input-group .reg-btn, .input-group .login-btn {
+.input-group .btn, .input-group .item-list-card, .input-group .add-btn, .input-group .back-btn, .input-group .sort-btn, .input-group .logout-btn, .input-group .reg-btn, .input-group .login-btn {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus, .input-group .item-list-card:focus, .input-group .add-btn:focus, .input-group .back-btn:focus, .input-group .sort-btn:focus, .input-group .reg-btn:focus, .input-group .login-btn:focus {
+.input-group .btn:focus, .input-group .item-list-card:focus, .input-group .add-btn:focus, .input-group .back-btn:focus, .input-group .sort-btn:focus, .input-group .logout-btn:focus, .input-group .reg-btn:focus, .input-group .login-btn:focus {
   z-index: 3;
 }
 
@@ -2702,6 +2702,7 @@ textarea.form-control-lg {
 .input-group-lg > .add-btn,
 .input-group-lg > .back-btn,
 .input-group-lg > .sort-btn,
+.input-group-lg > .logout-btn,
 .input-group-lg > .reg-btn,
 .input-group-lg > .login-btn {
   padding: 0.5rem 1rem;
@@ -2717,6 +2718,7 @@ textarea.form-control-lg {
 .input-group-sm > .add-btn,
 .input-group-sm > .back-btn,
 .input-group-sm > .sort-btn,
+.input-group-sm > .logout-btn,
 .input-group-sm > .reg-btn,
 .input-group-sm > .login-btn {
   padding: 0.25rem 0.5rem;
@@ -2923,7 +2925,7 @@ textarea.form-control-lg {
   z-index: 3;
 }
 
-.btn, .item-list-card, .add-btn, .back-btn, .sort-btn, .reg-btn, .login-btn {
+.btn, .item-list-card, .add-btn, .back-btn, .sort-btn, .logout-btn, .reg-btn, .login-btn {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -2941,18 +2943,18 @@ textarea.form-control-lg {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn, .item-list-card, .add-btn, .back-btn, .sort-btn, .reg-btn, .login-btn {
+  .btn, .item-list-card, .add-btn, .back-btn, .sort-btn, .logout-btn, .reg-btn, .login-btn {
     transition: none;
   }
 }
-.btn:hover, .item-list-card:hover, .add-btn:hover, .back-btn:hover, .sort-btn:hover, .reg-btn:hover, .login-btn:hover {
+.btn:hover, .item-list-card:hover, .add-btn:hover, .back-btn:hover, .sort-btn:hover, .logout-btn:hover, .reg-btn:hover, .login-btn:hover {
   color: #212529;
 }
-.btn-check:focus + .btn, .btn-check:focus + .item-list-card, .btn-check:focus + .add-btn, .btn-check:focus + .back-btn, .btn-check:focus + .sort-btn, .btn-check:focus + .reg-btn, .btn-check:focus + .login-btn, .btn:focus, .item-list-card:focus, .add-btn:focus, .back-btn:focus, .sort-btn:focus, .reg-btn:focus, .login-btn:focus {
+.btn-check:focus + .btn, .btn-check:focus + .item-list-card, .btn-check:focus + .add-btn, .btn-check:focus + .back-btn, .btn-check:focus + .sort-btn, .btn-check:focus + .logout-btn, .btn-check:focus + .reg-btn, .btn-check:focus + .login-btn, .btn:focus, .item-list-card:focus, .add-btn:focus, .back-btn:focus, .sort-btn:focus, .logout-btn:focus, .reg-btn:focus, .login-btn:focus {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(80, 63, 191, 0.25);
 }
-.btn:disabled, .item-list-card:disabled, .add-btn:disabled, .back-btn:disabled, .sort-btn:disabled, .reg-btn:disabled, .login-btn:disabled, .btn.disabled, .disabled.item-list-card, .disabled.add-btn, .disabled.back-btn, .disabled.sort-btn, .disabled.reg-btn, .disabled.login-btn, fieldset:disabled .btn, fieldset:disabled .item-list-card, fieldset:disabled .add-btn, fieldset:disabled .back-btn, fieldset:disabled .sort-btn, fieldset:disabled .reg-btn, fieldset:disabled .login-btn {
+.btn:disabled, .item-list-card:disabled, .add-btn:disabled, .back-btn:disabled, .sort-btn:disabled, .logout-btn:disabled, .reg-btn:disabled, .login-btn:disabled, .btn.disabled, .disabled.item-list-card, .disabled.add-btn, .disabled.back-btn, .disabled.sort-btn, .disabled.logout-btn, .disabled.reg-btn, .disabled.login-btn, fieldset:disabled .btn, fieldset:disabled .item-list-card, fieldset:disabled .add-btn, fieldset:disabled .back-btn, fieldset:disabled .sort-btn, fieldset:disabled .logout-btn, fieldset:disabled .reg-btn, fieldset:disabled .login-btn {
   pointer-events: none;
   opacity: 0.65;
 }
@@ -3257,31 +3259,31 @@ textarea.form-control-lg {
   border-color: #7162D9;
 }
 
-.btn-teal {
+.btn-teal, .logout-btn {
   color: #000;
   background-color: #6CD9B1;
   border-color: #6CD9B1;
 }
-.btn-teal:hover {
+.btn-teal:hover, .logout-btn:hover {
   color: #000;
   background-color: #82dfbd;
   border-color: #7bddb9;
 }
-.btn-check:focus + .btn-teal, .btn-teal:focus {
+.btn-check:focus + .btn-teal, .btn-check:focus + .logout-btn, .btn-teal:focus, .logout-btn:focus {
   color: #000;
   background-color: #82dfbd;
   border-color: #7bddb9;
   box-shadow: 0 0 0 0.25rem rgba(92, 184, 150, 0.5);
 }
-.btn-check:checked + .btn-teal, .btn-check:active + .btn-teal, .btn-teal:active, .btn-teal.active, .show > .btn-teal.dropdown-toggle {
+.btn-check:checked + .btn-teal, .btn-check:checked + .logout-btn, .btn-check:active + .btn-teal, .btn-check:active + .logout-btn, .btn-teal:active, .logout-btn:active, .btn-teal.active, .active.logout-btn, .show > .btn-teal.dropdown-toggle, .show > .dropdown-toggle.logout-btn {
   color: #000;
   background-color: #89e1c1;
   border-color: #7bddb9;
 }
-.btn-check:checked + .btn-teal:focus, .btn-check:active + .btn-teal:focus, .btn-teal:active:focus, .btn-teal.active:focus, .show > .btn-teal.dropdown-toggle:focus {
+.btn-check:checked + .btn-teal:focus, .btn-check:checked + .logout-btn:focus, .btn-check:active + .btn-teal:focus, .btn-check:active + .logout-btn:focus, .btn-teal:active:focus, .logout-btn:active:focus, .btn-teal.active:focus, .active.logout-btn:focus, .show > .btn-teal.dropdown-toggle:focus, .show > .dropdown-toggle.logout-btn:focus {
   box-shadow: 0 0 0 0.25rem rgba(92, 184, 150, 0.5);
 }
-.btn-teal:disabled, .btn-teal.disabled {
+.btn-teal:disabled, .logout-btn:disabled, .btn-teal.disabled, .disabled.logout-btn {
   color: #000;
   background-color: #6CD9B1;
   border-color: #6CD9B1;
@@ -3739,13 +3741,13 @@ textarea.form-control-lg {
   color: #6c757d;
 }
 
-.btn-lg, .add-btn, .back-btn, .login-btn, .btn-group-lg > .btn, .btn-group-lg > .item-list-card, .btn-group-lg > .add-btn, .btn-group-lg > .back-btn, .btn-group-lg > .sort-btn, .btn-group-lg > .reg-btn, .btn-group-lg > .login-btn {
+.btn-lg, .add-btn, .back-btn, .login-btn, .btn-group-lg > .btn, .btn-group-lg > .item-list-card, .btn-group-lg > .add-btn, .btn-group-lg > .back-btn, .btn-group-lg > .sort-btn, .btn-group-lg > .logout-btn, .btn-group-lg > .reg-btn, .btn-group-lg > .login-btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
 
-.btn-sm, .reg-btn, .btn-group-sm > .btn, .btn-group-sm > .item-list-card, .btn-group-sm > .add-btn, .btn-group-sm > .back-btn, .btn-group-sm > .sort-btn, .btn-group-sm > .reg-btn, .btn-group-sm > .login-btn {
+.btn-sm, .reg-btn, .btn-group-sm > .btn, .btn-group-sm > .item-list-card, .btn-group-sm > .add-btn, .btn-group-sm > .back-btn, .btn-group-sm > .sort-btn, .btn-group-sm > .logout-btn, .btn-group-sm > .reg-btn, .btn-group-sm > .login-btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -4100,23 +4102,25 @@ textarea.form-control-lg {
   display: inline-flex;
   vertical-align: middle;
 }
-.btn-group > .btn, .btn-group > .item-list-card, .btn-group > .add-btn, .btn-group > .back-btn, .btn-group > .sort-btn, .btn-group > .reg-btn, .btn-group > .login-btn,
+.btn-group > .btn, .btn-group > .item-list-card, .btn-group > .add-btn, .btn-group > .back-btn, .btn-group > .sort-btn, .btn-group > .logout-btn, .btn-group > .reg-btn, .btn-group > .login-btn,
 .btn-group-vertical > .btn,
 .btn-group-vertical > .item-list-card,
 .btn-group-vertical > .add-btn,
 .btn-group-vertical > .back-btn,
 .btn-group-vertical > .sort-btn,
+.btn-group-vertical > .logout-btn,
 .btn-group-vertical > .reg-btn,
 .btn-group-vertical > .login-btn {
   position: relative;
   flex: 1 1 auto;
 }
-.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .item-list-card, .btn-group > .btn-check:checked + .add-btn, .btn-group > .btn-check:checked + .back-btn, .btn-group > .btn-check:checked + .sort-btn, .btn-group > .btn-check:checked + .reg-btn, .btn-group > .btn-check:checked + .login-btn,
+.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .item-list-card, .btn-group > .btn-check:checked + .add-btn, .btn-group > .btn-check:checked + .back-btn, .btn-group > .btn-check:checked + .sort-btn, .btn-group > .btn-check:checked + .logout-btn, .btn-group > .btn-check:checked + .reg-btn, .btn-group > .btn-check:checked + .login-btn,
 .btn-group > .btn-check:focus + .btn,
 .btn-group > .btn-check:focus + .item-list-card,
 .btn-group > .btn-check:focus + .add-btn,
 .btn-group > .btn-check:focus + .back-btn,
 .btn-group > .btn-check:focus + .sort-btn,
+.btn-group > .btn-check:focus + .logout-btn,
 .btn-group > .btn-check:focus + .reg-btn,
 .btn-group > .btn-check:focus + .login-btn,
 .btn-group > .btn:hover,
@@ -4124,6 +4128,7 @@ textarea.form-control-lg {
 .btn-group > .add-btn:hover,
 .btn-group > .back-btn:hover,
 .btn-group > .sort-btn:hover,
+.btn-group > .logout-btn:hover,
 .btn-group > .reg-btn:hover,
 .btn-group > .login-btn:hover,
 .btn-group > .btn:focus,
@@ -4131,6 +4136,7 @@ textarea.form-control-lg {
 .btn-group > .add-btn:focus,
 .btn-group > .back-btn:focus,
 .btn-group > .sort-btn:focus,
+.btn-group > .logout-btn:focus,
 .btn-group > .reg-btn:focus,
 .btn-group > .login-btn:focus,
 .btn-group > .btn:active,
@@ -4138,6 +4144,7 @@ textarea.form-control-lg {
 .btn-group > .add-btn:active,
 .btn-group > .back-btn:active,
 .btn-group > .sort-btn:active,
+.btn-group > .logout-btn:active,
 .btn-group > .reg-btn:active,
 .btn-group > .login-btn:active,
 .btn-group > .btn.active,
@@ -4145,6 +4152,7 @@ textarea.form-control-lg {
 .btn-group > .active.add-btn,
 .btn-group > .active.back-btn,
 .btn-group > .active.sort-btn,
+.btn-group > .active.logout-btn,
 .btn-group > .active.reg-btn,
 .btn-group > .active.login-btn,
 .btn-group-vertical > .btn-check:checked + .btn,
@@ -4152,6 +4160,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn-check:checked + .add-btn,
 .btn-group-vertical > .btn-check:checked + .back-btn,
 .btn-group-vertical > .btn-check:checked + .sort-btn,
+.btn-group-vertical > .btn-check:checked + .logout-btn,
 .btn-group-vertical > .btn-check:checked + .reg-btn,
 .btn-group-vertical > .btn-check:checked + .login-btn,
 .btn-group-vertical > .btn-check:focus + .btn,
@@ -4159,6 +4168,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn-check:focus + .add-btn,
 .btn-group-vertical > .btn-check:focus + .back-btn,
 .btn-group-vertical > .btn-check:focus + .sort-btn,
+.btn-group-vertical > .btn-check:focus + .logout-btn,
 .btn-group-vertical > .btn-check:focus + .reg-btn,
 .btn-group-vertical > .btn-check:focus + .login-btn,
 .btn-group-vertical > .btn:hover,
@@ -4166,6 +4176,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .add-btn:hover,
 .btn-group-vertical > .back-btn:hover,
 .btn-group-vertical > .sort-btn:hover,
+.btn-group-vertical > .logout-btn:hover,
 .btn-group-vertical > .reg-btn:hover,
 .btn-group-vertical > .login-btn:hover,
 .btn-group-vertical > .btn:focus,
@@ -4173,6 +4184,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .add-btn:focus,
 .btn-group-vertical > .back-btn:focus,
 .btn-group-vertical > .sort-btn:focus,
+.btn-group-vertical > .logout-btn:focus,
 .btn-group-vertical > .reg-btn:focus,
 .btn-group-vertical > .login-btn:focus,
 .btn-group-vertical > .btn:active,
@@ -4180,6 +4192,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .add-btn:active,
 .btn-group-vertical > .back-btn:active,
 .btn-group-vertical > .sort-btn:active,
+.btn-group-vertical > .logout-btn:active,
 .btn-group-vertical > .reg-btn:active,
 .btn-group-vertical > .login-btn:active,
 .btn-group-vertical > .btn.active,
@@ -4187,6 +4200,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .active.add-btn,
 .btn-group-vertical > .active.back-btn,
 .btn-group-vertical > .active.sort-btn,
+.btn-group-vertical > .active.logout-btn,
 .btn-group-vertical > .active.reg-btn,
 .btn-group-vertical > .active.login-btn {
   z-index: 1;
@@ -4201,27 +4215,29 @@ textarea.form-control-lg {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), .btn-group > .item-list-card:not(:first-child), .btn-group > .add-btn:not(:first-child), .btn-group > .back-btn:not(:first-child), .btn-group > .sort-btn:not(:first-child), .btn-group > .reg-btn:not(:first-child), .btn-group > .login-btn:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > .item-list-card:not(:first-child), .btn-group > .add-btn:not(:first-child), .btn-group > .back-btn:not(:first-child), .btn-group > .sort-btn:not(:first-child), .btn-group > .logout-btn:not(:first-child), .btn-group > .reg-btn:not(:first-child), .btn-group > .login-btn:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .login-btn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .login-btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
 .btn-group > .btn-group:not(:last-child) > .item-list-card,
 .btn-group > .btn-group:not(:last-child) > .add-btn,
 .btn-group > .btn-group:not(:last-child) > .back-btn,
 .btn-group > .btn-group:not(:last-child) > .sort-btn,
+.btn-group > .btn-group:not(:last-child) > .logout-btn,
 .btn-group > .btn-group:not(:last-child) > .reg-btn,
 .btn-group > .btn-group:not(:last-child) > .login-btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.btn-group > .btn:nth-child(n+3), .btn-group > .item-list-card:nth-child(n+3), .btn-group > .add-btn:nth-child(n+3), .btn-group > .back-btn:nth-child(n+3), .btn-group > .sort-btn:nth-child(n+3), .btn-group > .reg-btn:nth-child(n+3), .btn-group > .login-btn:nth-child(n+3),
+.btn-group > .btn:nth-child(n+3), .btn-group > .item-list-card:nth-child(n+3), .btn-group > .add-btn:nth-child(n+3), .btn-group > .back-btn:nth-child(n+3), .btn-group > .sort-btn:nth-child(n+3), .btn-group > .logout-btn:nth-child(n+3), .btn-group > .reg-btn:nth-child(n+3), .btn-group > .login-btn:nth-child(n+3),
 .btn-group > :not(.btn-check) + .btn,
 .btn-group > :not(.btn-check) + .item-list-card,
 .btn-group > :not(.btn-check) + .add-btn,
 .btn-group > :not(.btn-check) + .back-btn,
 .btn-group > :not(.btn-check) + .sort-btn,
+.btn-group > :not(.btn-check) + .logout-btn,
 .btn-group > :not(.btn-check) + .reg-btn,
 .btn-group > :not(.btn-check) + .login-btn,
 .btn-group > .btn-group:not(:first-child) > .btn,
@@ -4229,6 +4245,7 @@ textarea.form-control-lg {
 .btn-group > .btn-group:not(:first-child) > .add-btn,
 .btn-group > .btn-group:not(:first-child) > .back-btn,
 .btn-group > .btn-group:not(:first-child) > .sort-btn,
+.btn-group > .btn-group:not(:first-child) > .logout-btn,
 .btn-group > .btn-group:not(:first-child) > .reg-btn,
 .btn-group > .btn-group:not(:first-child) > .login-btn {
   border-top-left-radius: 0;
@@ -4246,12 +4263,12 @@ textarea.form-control-lg {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .reg-btn + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .item-list-card + .dropdown-toggle-split, .btn-group-sm > .add-btn + .dropdown-toggle-split, .btn-group-sm > .back-btn + .dropdown-toggle-split, .btn-group-sm > .sort-btn + .dropdown-toggle-split, .btn-group-sm > .reg-btn + .dropdown-toggle-split, .btn-group-sm > .login-btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .reg-btn + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .item-list-card + .dropdown-toggle-split, .btn-group-sm > .add-btn + .dropdown-toggle-split, .btn-group-sm > .back-btn + .dropdown-toggle-split, .btn-group-sm > .sort-btn + .dropdown-toggle-split, .btn-group-sm > .logout-btn + .dropdown-toggle-split, .btn-group-sm > .reg-btn + .dropdown-toggle-split, .btn-group-sm > .login-btn + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .add-btn + .dropdown-toggle-split, .back-btn + .dropdown-toggle-split, .login-btn + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .item-list-card + .dropdown-toggle-split, .btn-group-lg > .add-btn + .dropdown-toggle-split, .btn-group-lg > .back-btn + .dropdown-toggle-split, .btn-group-lg > .sort-btn + .dropdown-toggle-split, .btn-group-lg > .reg-btn + .dropdown-toggle-split, .btn-group-lg > .login-btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .add-btn + .dropdown-toggle-split, .back-btn + .dropdown-toggle-split, .login-btn + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .item-list-card + .dropdown-toggle-split, .btn-group-lg > .add-btn + .dropdown-toggle-split, .btn-group-lg > .back-btn + .dropdown-toggle-split, .btn-group-lg > .sort-btn + .dropdown-toggle-split, .btn-group-lg > .logout-btn + .dropdown-toggle-split, .btn-group-lg > .reg-btn + .dropdown-toggle-split, .btn-group-lg > .login-btn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -4261,31 +4278,33 @@ textarea.form-control-lg {
   align-items: flex-start;
   justify-content: center;
 }
-.btn-group-vertical > .btn, .btn-group-vertical > .item-list-card, .btn-group-vertical > .add-btn, .btn-group-vertical > .back-btn, .btn-group-vertical > .sort-btn, .btn-group-vertical > .reg-btn, .btn-group-vertical > .login-btn,
+.btn-group-vertical > .btn, .btn-group-vertical > .item-list-card, .btn-group-vertical > .add-btn, .btn-group-vertical > .back-btn, .btn-group-vertical > .sort-btn, .btn-group-vertical > .logout-btn, .btn-group-vertical > .reg-btn, .btn-group-vertical > .login-btn,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
-.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .item-list-card:not(:first-child), .btn-group-vertical > .add-btn:not(:first-child), .btn-group-vertical > .back-btn:not(:first-child), .btn-group-vertical > .sort-btn:not(:first-child), .btn-group-vertical > .reg-btn:not(:first-child), .btn-group-vertical > .login-btn:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .item-list-card:not(:first-child), .btn-group-vertical > .add-btn:not(:first-child), .btn-group-vertical > .back-btn:not(:first-child), .btn-group-vertical > .sort-btn:not(:first-child), .btn-group-vertical > .logout-btn:not(:first-child), .btn-group-vertical > .reg-btn:not(:first-child), .btn-group-vertical > .login-btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .login-btn:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .login-btn:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .item-list-card,
 .btn-group-vertical > .btn-group:not(:last-child) > .add-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .back-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .sort-btn,
+.btn-group-vertical > .btn-group:not(:last-child) > .logout-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .reg-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .login-btn {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .item-list-card ~ .btn, .btn-group-vertical > .add-btn ~ .btn, .btn-group-vertical > .back-btn ~ .btn, .btn-group-vertical > .sort-btn ~ .btn, .btn-group-vertical > .reg-btn ~ .btn, .btn-group-vertical > .login-btn ~ .btn, .btn-group-vertical > .btn ~ .item-list-card, .btn-group-vertical > .item-list-card ~ .item-list-card, .btn-group-vertical > .add-btn ~ .item-list-card, .btn-group-vertical > .back-btn ~ .item-list-card, .btn-group-vertical > .sort-btn ~ .item-list-card, .btn-group-vertical > .reg-btn ~ .item-list-card, .btn-group-vertical > .login-btn ~ .item-list-card, .btn-group-vertical > .btn ~ .add-btn, .btn-group-vertical > .item-list-card ~ .add-btn, .btn-group-vertical > .add-btn ~ .add-btn, .btn-group-vertical > .back-btn ~ .add-btn, .btn-group-vertical > .sort-btn ~ .add-btn, .btn-group-vertical > .reg-btn ~ .add-btn, .btn-group-vertical > .login-btn ~ .add-btn, .btn-group-vertical > .btn ~ .back-btn, .btn-group-vertical > .item-list-card ~ .back-btn, .btn-group-vertical > .add-btn ~ .back-btn, .btn-group-vertical > .back-btn ~ .back-btn, .btn-group-vertical > .sort-btn ~ .back-btn, .btn-group-vertical > .reg-btn ~ .back-btn, .btn-group-vertical > .login-btn ~ .back-btn, .btn-group-vertical > .btn ~ .sort-btn, .btn-group-vertical > .item-list-card ~ .sort-btn, .btn-group-vertical > .add-btn ~ .sort-btn, .btn-group-vertical > .back-btn ~ .sort-btn, .btn-group-vertical > .sort-btn ~ .sort-btn, .btn-group-vertical > .reg-btn ~ .sort-btn, .btn-group-vertical > .login-btn ~ .sort-btn, .btn-group-vertical > .btn ~ .reg-btn, .btn-group-vertical > .item-list-card ~ .reg-btn, .btn-group-vertical > .add-btn ~ .reg-btn, .btn-group-vertical > .back-btn ~ .reg-btn, .btn-group-vertical > .sort-btn ~ .reg-btn, .btn-group-vertical > .reg-btn ~ .reg-btn, .btn-group-vertical > .login-btn ~ .reg-btn, .btn-group-vertical > .btn ~ .login-btn, .btn-group-vertical > .item-list-card ~ .login-btn, .btn-group-vertical > .add-btn ~ .login-btn, .btn-group-vertical > .back-btn ~ .login-btn, .btn-group-vertical > .sort-btn ~ .login-btn, .btn-group-vertical > .reg-btn ~ .login-btn, .btn-group-vertical > .login-btn ~ .login-btn,
+.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .item-list-card ~ .btn, .btn-group-vertical > .add-btn ~ .btn, .btn-group-vertical > .back-btn ~ .btn, .btn-group-vertical > .sort-btn ~ .btn, .btn-group-vertical > .logout-btn ~ .btn, .btn-group-vertical > .reg-btn ~ .btn, .btn-group-vertical > .login-btn ~ .btn, .btn-group-vertical > .btn ~ .item-list-card, .btn-group-vertical > .item-list-card ~ .item-list-card, .btn-group-vertical > .add-btn ~ .item-list-card, .btn-group-vertical > .back-btn ~ .item-list-card, .btn-group-vertical > .sort-btn ~ .item-list-card, .btn-group-vertical > .logout-btn ~ .item-list-card, .btn-group-vertical > .reg-btn ~ .item-list-card, .btn-group-vertical > .login-btn ~ .item-list-card, .btn-group-vertical > .btn ~ .add-btn, .btn-group-vertical > .item-list-card ~ .add-btn, .btn-group-vertical > .add-btn ~ .add-btn, .btn-group-vertical > .back-btn ~ .add-btn, .btn-group-vertical > .sort-btn ~ .add-btn, .btn-group-vertical > .logout-btn ~ .add-btn, .btn-group-vertical > .reg-btn ~ .add-btn, .btn-group-vertical > .login-btn ~ .add-btn, .btn-group-vertical > .btn ~ .back-btn, .btn-group-vertical > .item-list-card ~ .back-btn, .btn-group-vertical > .add-btn ~ .back-btn, .btn-group-vertical > .back-btn ~ .back-btn, .btn-group-vertical > .sort-btn ~ .back-btn, .btn-group-vertical > .logout-btn ~ .back-btn, .btn-group-vertical > .reg-btn ~ .back-btn, .btn-group-vertical > .login-btn ~ .back-btn, .btn-group-vertical > .btn ~ .sort-btn, .btn-group-vertical > .item-list-card ~ .sort-btn, .btn-group-vertical > .add-btn ~ .sort-btn, .btn-group-vertical > .back-btn ~ .sort-btn, .btn-group-vertical > .sort-btn ~ .sort-btn, .btn-group-vertical > .logout-btn ~ .sort-btn, .btn-group-vertical > .reg-btn ~ .sort-btn, .btn-group-vertical > .login-btn ~ .sort-btn, .btn-group-vertical > .btn ~ .logout-btn, .btn-group-vertical > .item-list-card ~ .logout-btn, .btn-group-vertical > .add-btn ~ .logout-btn, .btn-group-vertical > .back-btn ~ .logout-btn, .btn-group-vertical > .sort-btn ~ .logout-btn, .btn-group-vertical > .logout-btn ~ .logout-btn, .btn-group-vertical > .reg-btn ~ .logout-btn, .btn-group-vertical > .login-btn ~ .logout-btn, .btn-group-vertical > .btn ~ .reg-btn, .btn-group-vertical > .item-list-card ~ .reg-btn, .btn-group-vertical > .add-btn ~ .reg-btn, .btn-group-vertical > .back-btn ~ .reg-btn, .btn-group-vertical > .sort-btn ~ .reg-btn, .btn-group-vertical > .logout-btn ~ .reg-btn, .btn-group-vertical > .reg-btn ~ .reg-btn, .btn-group-vertical > .login-btn ~ .reg-btn, .btn-group-vertical > .btn ~ .login-btn, .btn-group-vertical > .item-list-card ~ .login-btn, .btn-group-vertical > .add-btn ~ .login-btn, .btn-group-vertical > .back-btn ~ .login-btn, .btn-group-vertical > .sort-btn ~ .login-btn, .btn-group-vertical > .logout-btn ~ .login-btn, .btn-group-vertical > .reg-btn ~ .login-btn, .btn-group-vertical > .login-btn ~ .login-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .item-list-card,
 .btn-group-vertical > .btn-group:not(:first-child) > .add-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .back-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .sort-btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .logout-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .reg-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .login-btn {
   border-top-left-radius: 0;
@@ -5275,7 +5294,7 @@ textarea.form-control-lg {
   display: none;
 }
 
-.btn .badge, .item-list-card .badge, .add-btn .badge, .back-btn .badge, .sort-btn .badge, .reg-btn .badge, .login-btn .badge {
+.btn .badge, .item-list-card .badge, .add-btn .badge, .back-btn .badge, .sort-btn .badge, .logout-btn .badge, .reg-btn .badge, .login-btn .badge {
   position: relative;
   top: -1px;
 }
@@ -6852,7 +6871,7 @@ textarea.form-control-lg {
   background-color: currentColor;
   opacity: 0.5;
 }
-.placeholder.btn::before, .placeholder.item-list-card::before, .placeholder.add-btn::before, .placeholder.back-btn::before, .placeholder.sort-btn::before, .placeholder.reg-btn::before, .placeholder.login-btn::before {
+.placeholder.btn::before, .placeholder.item-list-card::before, .placeholder.add-btn::before, .placeholder.back-btn::before, .placeholder.sort-btn::before, .placeholder.logout-btn::before, .placeholder.reg-btn::before, .placeholder.login-btn::before {
   display: inline-block;
   content: "";
 }
@@ -7235,7 +7254,7 @@ textarea.form-control-lg {
   display: table-cell !important;
 }
 
-.d-flex {
+.d-flex, header, .header-nav {
   display: flex !important;
 }
 
@@ -7267,7 +7286,7 @@ textarea.form-control-lg {
   position: static !important;
 }
 
-.position-relative, form .text-field, #login-container {
+.position-relative, .header-logo, form .text-field, #login-container {
   position: relative !important;
 }
 
@@ -7471,7 +7490,7 @@ textarea.form-control-lg {
   width: 75% !important;
 }
 
-.w-100, .text-field input, .text-field input:focus ~ span::before,
+.w-100, header, .text-field input, .text-field input:focus ~ span::before,
 .text-field input:valid ~ span::before, .add-btn {
   width: 100% !important;
 }
@@ -7504,7 +7523,7 @@ textarea.form-control-lg {
   height: 75% !important;
 }
 
-.h-100 {
+.h-100, header {
   height: 100% !important;
 }
 
@@ -7560,7 +7579,7 @@ textarea.form-control-lg {
   flex-shrink: 1 !important;
 }
 
-.flex-wrap {
+.flex-wrap, .header-nav {
   flex-wrap: wrap !important;
 }
 
@@ -7600,7 +7619,7 @@ textarea.form-control-lg {
   justify-content: flex-start !important;
 }
 
-.justify-content-end {
+.justify-content-end, .header-nav {
   justify-content: flex-end !important;
 }
 
@@ -7608,7 +7627,7 @@ textarea.form-control-lg {
   justify-content: center !important;
 }
 
-.justify-content-between {
+.justify-content-between, header {
   justify-content: space-between !important;
 }
 
@@ -7628,7 +7647,7 @@ textarea.form-control-lg {
   align-items: flex-end !important;
 }
 
-.align-items-center {
+.align-items-center, header {
   align-items: center !important;
 }
 
@@ -7720,7 +7739,7 @@ textarea.form-control-lg {
   order: 6 !important;
 }
 
-.m-0 {
+.m-0, .header-logo {
   margin: 0 !important;
 }
 
@@ -7930,7 +7949,7 @@ textarea.form-control-lg {
   margin-left: auto !important;
 }
 
-.p-0, .item-list-card {
+.p-0, .header-logo, .item-list-card {
   padding: 0 !important;
 }
 
@@ -7974,7 +7993,7 @@ textarea.form-control-lg {
   padding-left: 1rem !important;
 }
 
-.px-4 {
+.px-4, header {
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;
 }
@@ -7989,7 +8008,7 @@ textarea.form-control-lg {
   padding-bottom: 0 !important;
 }
 
-.py-1 {
+.py-1, header {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }
@@ -11901,6 +11920,51 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox:checked + .label .ball {
+  transform: translateX(24px);
+}
+
+.label {
+  width: 50px;
+  height: 26px;
+  background-color: #F277A4;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.moon, .sun {
+  color: #fff;
+}
+
+/*.sun{
+ // color: #f39c12;
+
+}*/
+.ball {
+  width: 22px;
+  height: 22px;
+  background-color: rgba(var(--bs-teal-rgb), 5);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.logout-btn {
+  border-radius: 0.5rem;
+}
+
 .reg-btn {
   border: 1px solid;
   cursor: pointer;
@@ -11997,6 +12061,33 @@ textarea.form-control-lg {
 }
 .item-list-card:focus {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.collaborator-card {
+  border-radius: 0.3rem;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  color: #666666;
+}
+.collaborator-card .card-title, .collaborator-card .item-list-card .item-name, .item-list-card .collaborator-card .item-name {
+  font-family: "Montserrat", sans-serif;
+}
+.collaborator-card .card-text, .collaborator-card .item-list-card .item-desc, .item-list-card .collaborator-card .item-desc, .collaborator-card .item-list-card .item-qty, .item-list-card .collaborator-card .item-qty, .collaborator-card .item-list-card .item-assigned-people, .item-list-card .collaborator-card .item-assigned-people {
+  font-family: "Montserrat", sans-serif;
+}
+.collaborator-card .card-text-first {
+  margin-top: 1.75rem;
+}
+.collaborator-card hr {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  opacity: 1;
 }
 
 .fade-in-up, #bg-container {
@@ -12163,6 +12254,148 @@ form .text-field {
   padding-bottom: 1.5rem;
 }
 
+/* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} */
+.header-container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  z-index: 10;
+  /* position:absolute;
+  top: 10;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 100px;
+  z-index: 10; */
+}
+
+/*.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    //padding:30px 10%;
+}*/
+.header-logo {
+  width: 80%;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.header-nav li {
+  list-style: none;
+  margin: 0 10px;
+}
+
+.prof-pic {
+  color: #F277A4;
+}
+
+.search {
+  position: relative;
+  width: 40%;
+  height: 60%;
+}
+
+.search input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0 10px 0 45px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #666666;
+  background-color: #fff;
+  outline: none;
+  border: 1px solid #666666;
+  border-radius: 0.5rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.search input::placeholder {
+  color: #C4C4C4;
+}
+
+/*@media(max-width: 991px)
+{
+    header{
+        padding: 10px 20px;
+        flex-direction: column;
+    }
+}*/
+.search-logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  color: #666666;
+  border-right: 1px solid #666666;
+  padding-right: 10px;
+}
+
+.header-name {
+  width: 500px;
+  font-size: 25px;
+  vertical-align: top;
+}
+
+.header-left-elements {
+  list-style: none;
+  margin-right: 5%;
+  margin-left: -50px;
+}
+
+.header-left-elements li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.header-left-elements li a {
+  transition: all 0.3s ease 0s;
+}
+
+.header-left-elements li a:hover {
+  color: rgb(27, 102, 27);
+}
+
+.header-1 {
+  margin-left: -20%;
+}
+
+.profile {
+  margin-right: 60px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background-color: rgba(9, 168, 129, 0.8);
+}
+
+.header-2 button, .header-1 button {
+  margin-left: 5px;
+  background-color: #6CD9B1;
+}
+
+.searchbar {
+  width: 500px;
+  border-radius: 30px;
+}
+
+.profile-img {
+  border-radius: 60%;
+}
+
 .container-profile-pic {
   display: flex;
   flex-direction: column;
@@ -12221,5 +12454,131 @@ frame .uploadPic {
 .uploadPic {
   display: none;
 }
+
+.home-title {
+  margin-top: 5%;
+}
+
+.h-200 {
+  height: 200px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.h-200:hover {
+  cursor: pointer;
+}
+
+.workspace-content {
+  padding-top: 16vh;
+}
+
+.title-1 {
+  padding-top: 1vh;
+}
+
+/*.collaborator-card{
+  height: 420px;
+  width: 350px;
+} */
+.text-start {
+  text-align: left;
+}
+
+.collaborator-content-1 {
+  padding-top: 3vh;
+  margin-left: 0.5rem !important;
+}
+
+.collaborator-content-2 {
+  margin-left: 0.5rem !important;
+}
+
+.collab-edit-btn {
+  float: right;
+  margin-right: 0.25rem;
+}
+
+.outer-layer {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #E3E3E3;
+  border-radius: 15px;
+}
+
+.table-box {
+  margin: 50px auto;
+}
+
+.hist-header {
+  width: 80%;
+  padding: 4px 0;
+}
+
+.table-row {
+  display: table;
+  width: 90%;
+  margin: 5px auto;
+  background: #fff;
+  padding: 12px 0;
+  color: #555;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 50, 0.3);
+  border-radius: 5px;
+}
+
+.table-cell {
+  display: table-cell;
+  width: 25%;
+  text-align: center;
+  padding: 4px 0;
+  border-right: 1px solid #d6d4d4;
+  vertical-align: middle;
+}
+
+.cell-header {
+  color: #4129D9;
+  box-shadow: none;
+  border-right: none;
+}
+
+.last-cell {
+  border-right: none;
+}
+
+.hist-black-line {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+  margin-left: 4%;
+  width: 95%;
+  height: 40px;
+  opacity: 1;
+}
+
+.hist-buttons {
+  float: right;
+  margin: 5px auto;
+  position: relative;
+}
+
+.hist-margin-left {
+  margin-left: 3%;
+}
+
+.hist-sort {
+  float: right;
+  margin: auto auto;
+  padding-top: 47px;
+}
+
+.row-contents {
+  margin: 0 auto;
+}
+
+/*.history-delete, .history-sort{
+    background-color: #fff;
+}*/
 
 /*# sourceMappingURL=style.css.map */

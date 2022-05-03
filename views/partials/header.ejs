@@ -1,9 +1,50 @@
-<nav class="navbar navbar-dark bg-lightpurple w-100 position-fixed" style="height: 8vh;top: 0;z-index:1090;">
-    <div class="container-fluid">
-      <a class="navbar-brand">Navbar</a>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
+<!--<nav class="navbar navbar-dark bg-lightpurple w-100 position-fixed" style="height: 8vh;top: 0;z-index:1090;">
+  <div class="container-fluid entire-header header h-100">
+      <ul class="header-left-elements">
+          <li><a href="/workspace/dashboard" ><img class="header-logo" src="../img/landing_logo_withName.png" alt="keepr-logo"></img></a></li>
+      </ul>
+      <form class="d-flex header-1">
+        <input class="form-control me-2 searchbar" type="search" placeholder= "Find an item" aria-label="Search">
+        <button class="btn btn-outline-success success text-center" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg></button>
       </form>
+      <form class="d-flex header-2">
+        <button class="btn btn-outline-success light-dark text-center" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-brightness-low" viewBox="0 0 16 16">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm.5-9.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 11a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm5-5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm-11 0a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9.743-4.036a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm-7.779 7.779a.5.5 0 1 1-.707-.707.5.5 0 0 1 .707.707zm7.072 0a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707zM3.757 4.464a.5.5 0 1 1 .707-.707.5.5 0 0 1-.707.707z"/>
+        </svg></button>
+        <a class="profile" href="/workspace/account-page"><img class="profile-img " src = "../img/profile-img.jpg" height= "50"></img></a>
+        <button class="btn btn-outline-success logout text-center" type="submit"  href="/workspace/logout"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+          <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg> Logout</button>
+    </form>
+  </div>
+</nav>-->
+
+<nav class="navbar navbar-dark bg-lightpurple w-100 position-fixed header-container" style="height: 8vh;top: 0;z-index:1090;">
+  <header>
+    <a href="/app"><img  class="header-logo" src="../img/landing_logo_withName.png" alt="keepr-logo"></img></a>
+    <div class="search">
+      <input type="search" placeholder= "Find an item" aria-label="Search">
+      <a href="/search-results/query"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-search search-logo" viewBox="0 0 16 16">
+        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+      </svg></a>
     </div>
-  </nav>
+    <div class="header-nav">
+      <a href="/accounts/user" class="text-end pe-3"><svg xmlns="http://www.w3.org/2000/svg" width="15%" height="auto" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
+        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+      </svg></a>
+      <div>
+        <%-include('dark-mode-switch.ejs'); %>
+      </div> 
+        <a class="logout-btn px-4 ms-5 text-start text-white" href="/index" type="button">
+          <span class="fs-4 montserrat">
+          <svg class="p-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+          <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+        </svg> Logout</span></a>
+    </div>
+  </header> 
+</nav>
