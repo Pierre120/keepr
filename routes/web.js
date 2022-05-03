@@ -75,7 +75,11 @@ let initRoutes = (app) => {
   }); // history
 
   router.get('/workspace/SCHCKE3434', (req, res) => {
-    return res.render('item', { layout: './layouts/item-page', backLink: '/workspace/inventory' })
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      sampleItem: sampleData[0]
+    });
   });
 
   router.get('/accounts/user', (req, res) => {
