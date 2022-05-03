@@ -34,7 +34,7 @@
     <div class="row row-cols-2 mx-0 mb-4 main-content">
 
       <!-- Add Collaborator button -->
-      <div class="col add-workspace px-5 py-3">
+      <div class="col add-workspace px-5 py-4">
         <button type="button" class="add-btn d-flex align-items-center h-100">
           <div class="w-100 text-center pb-4">
             <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="10rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
@@ -47,14 +47,18 @@
         <!-- END Add Collaborator button -->
 
       <% for(let person of collaborators) { %>
-      <div class="col px-5 py-3">
+      <div class="col px-5 py-4">
         <div class="card collaborator-card text-center h-100 border-<%= person.themeColor %>">
           <div class="card-body">
             <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
             </svg>
-            <h3 class="card-title title-1 montserrat"><a href="#"><%- person.username %></a></h3>
+            <h3 class="card-title title-1 montserrat">
+              <a class="collab-user" href="#">
+                <%- person.username %>
+              </a>
+            </h3>
             <hr class="text-<%=person.themeColor%>">
             <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">
               <strong>Assigned Items:</strong>

@@ -1,7 +1,4 @@
-/*.collaborator-card{
-  height: 420px;
-  width: 350px;
-} */
+@use '../custom' as *;
 
 .text-start{
   text-align: left;
@@ -19,4 +16,14 @@
 .collab-edit-btn{
   float:right;
   margin-right: 0.25rem;
+}
+
+.collab-user {
+  @extend .text-decoration-none;
+  background-color: transparent;
+  color: $gray;
+
+  &:hover {
+    color: $black;
+  }
 }

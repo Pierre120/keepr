@@ -8237,7 +8237,7 @@ textarea.form-control-lg {
   text-align: center !important;
 }
 
-.text-decoration-none, .item-list-card, .home-card {
+.text-decoration-none, .collab-user, .item-list-card, .home-card {
   text-decoration: none !important;
 }
 
@@ -12515,10 +12515,6 @@ frame .uploadPic {
   padding-top: 1vh;
 }
 
-/*.collaborator-card{
-  height: 420px;
-  width: 350px;
-} */
 .text-start {
   text-align: left;
 }
@@ -12535,6 +12531,14 @@ frame .uploadPic {
 .collab-edit-btn {
   float: right;
   margin-right: 0.25rem;
+}
+
+.collab-user {
+  background-color: transparent;
+  color: #666666;
+}
+.collab-user:hover {
+  color: #000;
 }
 
 .outer-layer {
