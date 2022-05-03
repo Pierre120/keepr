@@ -61,6 +61,7 @@
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
   color: $gray;
+  transition: box-shadow 50ms ease-in-out;
 
   .item-name {
     @extend .card-title;
@@ -107,8 +108,8 @@
   }
 
   &:hover {
-    
-
+    color: $gray;
+    box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.20);
   }
 
 }

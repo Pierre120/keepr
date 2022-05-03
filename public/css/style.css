@@ -8175,7 +8175,7 @@ textarea.form-control-lg {
   text-align: center !important;
 }
 
-.text-decoration-none {
+.text-decoration-none, .item-list-card {
   text-decoration: none !important;
 }
 
@@ -11947,6 +11947,7 @@ textarea.form-control-lg {
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   color: #666666;
+  transition: box-shadow 50ms ease-in-out;
 }
 .item-list-card .item-desc {
   font-size: 0.85rem;
@@ -11970,6 +11971,10 @@ textarea.form-control-lg {
   width: 85%;
   height: 4px;
   opacity: 1;
+}
+.item-list-card:hover {
+  color: #666666;
+  box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.2);
 }
 
 .fade-in-up, #bg-container {
