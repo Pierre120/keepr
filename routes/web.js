@@ -27,7 +27,7 @@ const sampleData = [
   {
     productCode: 'UCHCKE1212',
     itemName: 'Ube Cheesecake',
-    description: "Make your cheesecake more ube-licious with a mix of the Filipino delicacy, ube.",
+    description: "Make your cheesecake more ube-licious with a mix of a Filipino delicacy, ube.",
     qty: '2 whole',
     assignedPeople: ['@bohx_airon','@bohx_faith','@bohx_pierre']
   },
@@ -100,6 +100,15 @@ let initRoutes = (app) => {
       backLink: '/workspace/inventory',
       title: sampleData[2].itemName,
       sampleItem: sampleData[2]
+    });
+  });
+
+  router.get('/workspace/UCHCKE1212', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[3].itemName,
+      sampleItem: sampleData[3]
     });
   });
 
