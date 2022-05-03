@@ -19,7 +19,7 @@
       <!-- Item list -->
       <div class="d-grid gap-3 fade-in-up">
         <% for(let item of sampleList.items) {                                       %>
-        <div class="item-list-card border-<%= sampleList.workspaceColor %>">
+        <a class="item-list-card border-<%= sampleList.workspaceColor %>">
           <div class="card-body">
             <h4 class="item-name"><%- item.itemName %></h4>
             <hr class="text-<%= sampleList.workspaceColor %>">
@@ -34,13 +34,13 @@
                 <% for(let indiv = 0; indiv < item.assignedPeople.length; indiv++) { %>
                     <%- item.assignedPeople[indiv] %>
                 <%   if(indiv < item.assignedPeople.length - 1) {                    %>
-                       ,
+                      ,
                 <%   }                                                               %>
                 <% }                                                                 %>
               </span>
             </p>
           </div>
-        </div>
+        </a>
         <% }                                                                         %>
       </div>
 
