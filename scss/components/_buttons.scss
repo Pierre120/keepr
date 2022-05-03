@@ -147,3 +147,40 @@
   background-color:#6CD9B1;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5);
 }
+.reg-btn {
+  @extend .btn;
+  @extend .montserrat;
+  @extend .btn-sm;
+  @extend .bg-teal;
+  @extend .text-white;
+  @extend .text-center;
+  @extend .rounded-pill;
+  @extend .shadow-sm;
+  border: 1px solid;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    @extend .border-teal;
+    transition: 0.5;
+  }
+}
+
+.login-btn {
+  @extend .btn;
+  @extend .montserrat;
+  @extend .btn-lg;
+  @extend .bg-teal;
+  @extend .text-white;
+  @extend .text-center;
+  @extend .rounded-pill;
+  @extend .shadow-sm;
+  border: 1px solid;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    @extend .border-teal;
+    transition: 0.5;
+  }
+}

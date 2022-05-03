@@ -1,14 +1,13 @@
 <div class="container-fluid">
   <div class="row">
-    
-    <div class="col-md-6 vh-100" style="background-image: url('img/landing_banner.png'); background-size: cover">
+    <div class="col-6 vh-100" style="background-image: url('img/landing_banner.png'); background-size: cover">
         <div>
-          <img src="img/landing_logo_withName.png" style="padding: 30px 25px 25px 10px;"/>
-          <h1 class="oswald" style="color: #FEF9F9; font-size:150px; padding: 180px 0px 100px 10px; letter-spacing:5px">
+          <img src="img/landing_logo_withName.png" class="p-5"/>
+          <h1 class="oswald text-white p-5 mb-5" style="font-size:150px">
             You got it,<br>we stock it.
           </h1>
 
-          <p class="montserrat" style="color: #FEF9F9; font-size:medium; font-style:italic; padding: 50px 10px 20px 10px; ">
+          <p class="montserrat text-white p-5 fs-6 fst-italic">
             company vision mission<br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempus pretium eros. Praesent sed velit justo. 
             Nunc venenatis convallis porta. Duis viverra lobortis pellentesque. Proin semper maximus accumsan. Cras ut justo diam. 
@@ -18,7 +17,8 @@
         </div>
     </div>
 
-    <div class="col-md-6 d-flex">
+    <div class="col-6 d-flex">
+      <!--start of blobs-->
       <div class="blob-right" style="margin-top:20px; margin-left:200px">
         <svg viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150%"id="blobSvg">
           <g transform="translate(167.2222137451172, -19.961448669433594)">
@@ -106,7 +106,7 @@
           </g>
         </svg>
       </div>
-      <div class="blob-left" style="margin-bottom:80px; filter:blur(80px);">
+      <div class="blob-left" style="margin-bottom:80px;">
         <svg viewBox="0 0 800 500" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120%"id="blobSvg">
           <g transform="translate(167.2222137451172, -19.961448669433594)">
             <defs>
@@ -135,49 +135,28 @@
           </g>
         </svg>
       </div>
+      <!--end of blobs-->
 
         <div id="login-container">
-          <form name="login form" style="
-          width: auto;
-          height: 50vh;
-          display: block;
-          position: relative;
-          margin: 1vh;
-          padding: 2vh;">
-            <h1 class="oswald text-center" style="font-weight: 600; color: #666666; padding-bottom:2vh">LOGIN</h1>
+          <form name="login form" class="d-grid grid-3 mx-5 my-3">
+            <h1 class="oswald text-center text-gray p-4">LOGIN</h1>
 
-            <div class="mb-3" style="padding-bottom: 1vh;">
-              <label for="username" class="form-label montserrat login-label" style="font-size: 20px;">Username</label>
-              <input type="text" class="form-control text-center" style="background: #FEF9F9;
-              border: 1px solid #C4C4C4;
-              box-sizing: border-box;
-              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-              border-radius: 10px;">
+            <div class="mb-4">
+              <label for="username" class="login-label">Username</label>
+              <input type="text" class="login-input">
             </div>
 
-            <div class="mb-3" style="padding-bottom: 3vh;">
-              <label for="password" class="form-label montserrat login-label" style="font-size: 20px;">Password</label>
-              <input type="password" class="form-control text-center" style="background: #FEF9F9;
-              border: 1px solid #C4C4C4;
-              box-sizing: border-box;
-              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-              border-radius: 10px;">
+            <div class="mb-5">
+              <label for="password" class="login-label">Password</label>
+              <input type="password" class="login-input">
             </div>
 
-            <div class="mb-3 text-center"> 
-              <button type="submit" class="btn btn-primary" style="
-              width:7vw;
-              height:auto;
-              font-size: 20px;
-              background: #6CD9B1;
-              border: #6CD9B1;
-              color:#FEF9F9;
-              box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-              border-radius: 10px;">Login</button>
+            <div class="mb-4 text-center"> 
+              <%- include('partials/loginBtn.ejs') %>
+              <p class="text-center montserrat" style="font-size:small">Don't have an account yet? 
+                <a class="register-link text-pink" href="/register">Register</a>
+              </p>
             </div>
-            <p class="text-center montserrat" style="font-size:small">Don't have an account yet? 
-              <a class="register-link" href="/register" style="color: #F277A4;">Register</a>
-            </p>
           </form>
         </div>
     </div>
