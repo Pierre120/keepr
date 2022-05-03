@@ -74,6 +74,8 @@ let initRoutes = (app) => {
     return res.render('index', { active: 3, layout: './layouts/workspace' })
   }); // history
 
+
+  // --- ITEMS PAGE ---
   router.get('/workspace/SCHCKE3434', (req, res) => {
     return res.render('item', {
       layout: './layouts/item-page',
@@ -82,6 +84,17 @@ let initRoutes = (app) => {
       sampleItem: sampleData[0]
     });
   });
+
+  router.get('/workspace/CCHCKE0909', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[1].itemName,
+      sampleItem: sampleData[1]
+    });
+  });
+
+  // --- END ITEMS PAGE ---
 
   router.get('/accounts/user', (req, res) => {
     return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
