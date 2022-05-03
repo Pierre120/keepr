@@ -11834,7 +11834,7 @@ textarea.form-control-lg {
   padding-bottom: 1.5rem;
 }
 
-.montserrat, .text-field label, .login-label, .keepr-card, .keepr-card-filled, .item-list-card, .add-btn span, .add-btn p, .back-btn, .reg-btn, .login-btn {
+.montserrat, .workspace-nav, .text-field label, .login-label, .keepr-card, .keepr-card-filled, .item-list-card, .add-btn span, .add-btn p, .back-btn, .reg-btn, .login-btn {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -12117,7 +12117,6 @@ form .text-field {
 }
 
 .workspace-nav {
-  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
 }
 .workspace-nav:hover {
