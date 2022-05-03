@@ -1,28 +1,12 @@
 <%  const sampleList = new Object();
     sampleList.workspaceColor = 'pink';
-    sampleList.items = [
-      {
-        itemName: 'Super Cheesecake',
-        description: "Super yummy-licious extravagant all-in-one cheese that will make you feel like you can save the day.",
-        qty: '2 slices'
-      },
-      {
-        itemName: 'Putakte Cheesecake',
-        description: "Sa sobrang sarap mapapasigaw ka na lng ng \"Putakte ka ng ina mo!\".",
-        qty: '3 whole'
-      },
-      {
-        itemName: 'Cheesey Cheesecake',
-        description: "Basta cheesecake ito na may additional cheese drizzle sa taas. May mala-lava cake feeling din ito.",
-        qty: '6 whole'
-      }
-    ];
+    sampleList.items = sampleItems;
 %>
 
 <!-- Item search results -->
 <div class="d-grid gap-2 fade-in-up">
   <% for(let item of sampleList.items) {                                       %>
-  <div class="item-list-card border-<%= sampleList.workspaceColor %>">
+  <a class="item-list-card border-<%= sampleList.workspaceColor %>" href="<%= item.path %>">
     <div class="card-body">
       <h4 class="item-name"><%- item.itemName %></h4>
       <hr class="text-<%= sampleList.workspaceColor %>">
@@ -33,6 +17,6 @@
         <strong>Qty: <%- item.qty %></strong>
       </p>
     </div>
-  </div>
+  </a>
   <% }                                                                         %>
 </div>

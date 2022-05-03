@@ -1,19 +1,90 @@
+<%
+  const updates = [
+    {
+      date: 'April 30, 2022',
+      user: '@bohx_airon',
+      action: 'decremented',
+      item: 'Super Cheesecake',
+      detail: 'stock count'
+    },
+    {
+      date: 'April 29, 2022',
+      user: '@bohx_faith',
+      action: 'incremented',
+      item: 'Super Cheesecake',
+      detail: 'stock count'
+    },
+    {
+      date: 'April 28, 2022',
+      user: '@bohx_pierre',
+      action: 'decremented',
+      item: 'Cheesey Cheesecake',
+      detail: 'stock count'
+    },
+    {
+      date: 'April 25, 2022',
+      user: '@giorgo_giovanna',
+      action: 'incremented',
+      item: 'Cheesey Cheesecake',
+      detail: 'stock count'
+    },
+    {
+      date: 'April 30, 2022',
+      user: '@JuanDelaCruz_96',
+      action: 'incremented',
+      item: 'Jojo Cheesecake',
+      detail: 'stock count'
+    }
+  ];
+%>
+<%
+  const lowStock = [
+    {
+      item: 'Super Cheesecake',
+      qty: '0'
+    },
+    {
+      item: 'Cheesey Cheesecake',
+      qty: '1'
+    },
+    {
+      item: 'Jojo Cheesecake',
+      qty: '2'
+    },
+    {
+      item: 'Ube Cheesecake',
+      qty: '2'
+    },
+    {
+      item: 'Halo-halo Cheesecake',
+      qty: '3'
+    }
+  ];
+%>
+<% const topItem = 'Super Cheesecake'; %>
+<% const totalItems = 5; %>
+<% const totalCollaborators = 4; %>
+
+
 <div class="container-md w-75 fade-in-up">
   <div class="row mx-0 my-4">
     <div class="col">
-      <div class="card keepr-card border-teal">
+      <div class="keepr-card border-teal">
         <div class="card-body">
           <h4 class="card-title">Recent Updates</h4>
           <hr class="text-teal">
-          <p class="card-text card-text-first fst-italic">
-            April 33, 2022 - <strong>@bohx_airon</strong> decremented <strong>Super Cheesecake</strong> stock count
-          </p>
-          <p class="card-text fst-italic">
-            April 32, 2022 - <strong>@bohx_faith</strong> incremented <strong>Super Cheesecake</strong> stock count
-          </p>
-          <p class="card-text fst-italic">
-          <!-- -->  April 31, 2022 - <strong>@bohx_pierre</strong> decremented <strong>Putakte Cheesecake</strong> stock count
-          </p>
+          <% const maxUpdates = 3; %>
+          <% for(let i=0; i < maxUpdates; i++) { %>
+            <% if (i === 0) { %>
+            <p class="card-text card-text-first fst-italic text-truncate">
+              <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> <%- updates[i].detail %>
+            </p>
+            <% } else { %>
+            <p class="card-text fst-italic text-truncate">
+              <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> <%- updates[i].detail %>
+            </p>
+            <% } %>
+          <% } %>
         </div>
       </div>
     </div>
@@ -21,22 +92,37 @@
 
   <div class="row mx-0 mb-4">
     <div class="col">
-      <div class="card keepr-card-filled bg-pink">
+      <div class="keepr-card-filled bg-pink h-100">
         <div class="card-body">
           <h4 class="card-title">Low on Stock</h4>
           <hr>
-          <p class="card-text card-text-first fs-5 fst-italic mb-1">item 1 - 0</p>
-          <p class="card-text fs-5 fst-italic mb-1">item 2 - 2</p>
-          <p class="card-text fs-5 fst-italic">item 3 - 3</p>
+          <% const maxItems = 3; %>
+          <% for(let i=0; i < maxItems; i++) { %>
+            <% if(i === 0) { %>
+            <p class="card-text card-text-first fs-5 fst-italic mb-1 text-truncate">
+              <%- lowStock[i].item %> - <%- lowStock[i].qty %>
+            </p>
+            <% } else if (i === maxItems-1) { %>
+            <p class="card-text fs-5 fst-italic text-truncate">
+              <%- lowStock[i].item %> - <%- lowStock[i].qty %>
+            </p>
+            <% } else { %>
+            <p class="card-text fs-5 fst-italic mb-1 text-truncate">
+              <%- lowStock[i].item %> - <%- lowStock[i].qty %>
+            </p>
+            <% } %>
+          <% } %>
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="card keepr-card-filled bg-lightpurple h-100">
+      <div class="keepr-card-filled bg-lightpurple h-100">
         <div class="card-body">
           <h4 class="card-title">Top Item</h4>
           <hr>
-          <p class="card-text fs-4 fst-italic mt-5">Yummy-licious</p>
+          <p class="card-text card-text-first fs-4 fst-italic">
+            <%- topItem %>
+          </p>
         </div>
       </div>
     </div>
@@ -44,20 +130,24 @@
 
   <div class="row mx-0">
     <div class="col">
-      <div class="card keepr-card-filled bg-teal">
+      <div class="keepr-card-filled bg-teal h-100">
         <div class="card-body">
           <h4 class="card-title">Total Listed Items</h4>
           <hr>
-          <p class="card-text card-text-first fs-1 fst-italic">69</p>
+          <p class="card-text card-text-first fs-1 fst-italic">
+            <%- totalItems %>
+          </p>
         </div>
       </div>
     </div>
     <div class="col">
-      <div class="card keepr-card-filled bg-darkpurple">
+      <div class="keepr-card-filled bg-darkpurple h-100">
         <div class="card-body">
           <h4 class="card-title">Total Collaborators</h4>
           <hr>
-          <p class="card-text card-text-first fs-1 fst-italic">2</p>
+          <p class="card-text card-text-first fs-1 fst-italic">
+            <%- totalCollaborators %>
+          </p>
         </div>
       </div>
     </div>

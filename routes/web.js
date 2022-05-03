@@ -1,6 +1,51 @@
 // Imports
 const express = require('express');
 
+// --- ITEM SAMPLE DATA ---
+const sampleData = [
+  {
+    productCode: 'SCHCKE3434',
+    itemName: 'Super Cheesecake',                                                                                       
+    description: 'This is a traditional 9" Cheesecake, sides completely surrounded by our famous Graham Cracker Crust.',
+    qty: '0 slices',
+    assignedPeople: ['@bohx_airon','@bohx_faith'],
+    path: '/workspace/SCHCKE3434'
+  },
+  {
+    productCode: 'CCHCKE0909',
+    itemName: 'Cheesey Cheesecake',
+    description: "Make your cheesecake cheesier with Cheesy Cheesecake. Topped with 7 types of cheese which includes mozzarella, cheddar, blue cheese, parmesan, feta cheese, brie and cream cheese.",
+    qty: '1 whole',
+    assignedPeople: ['@bohx_pierre'],
+    path: '/workspace/CCHCKE0909'
+  },
+  {
+    productCode: 'JCHCKE7070',
+    itemName: 'Jojo Cheesecake',
+    description: "Cheesecake's design is inspired from the anime 'JoJo's Bizarre Adventure'.",
+    qty: '2 whole',
+    assignedPeople: ['@bohx_airon','@bohx_pierre'],
+    path: '/workspace/JCHCKE7070'
+  },
+  {
+    productCode: 'UCHCKE1212',
+    itemName: 'Ube Cheesecake',
+    description: "Make your cheesecake more ube-licious with a mix of a Filipino delicacy, ube.",
+    qty: '2 whole',
+    assignedPeople: ['@bohx_airon','@bohx_faith','@bohx_pierre'],
+    path: '/workspace/UCHCKE1212'
+  },
+  {
+    productCode: 'HCHCKE7878',
+    itemName: 'Halo-halo Cheesecake',
+    description: "Halo-halo Cheesecake is the offspring of two well-known desserts, the halo-halo and cheesecake.",
+    qty: '3 slices',
+    assignedPeople: ['@bohx_faith','@bohx_pierre'],
+    path: '/workspace/HCHCKE7878'
+  }
+];
+// --- END SAMPLE DATA ---
+
 let router = express.Router();
 
 let initRoutes = (app) => {
@@ -21,7 +66,11 @@ let initRoutes = (app) => {
   }); // dashboard
 
   router.get('/workspace/inventory', (req, res) => {
-    return res.render('inventory', { active: 1, layout: './layouts/workspace' })
+    return res.render('inventory', { 
+      active: 1,
+      layout: './layouts/workspace',
+      sampleItems: sampleData
+    });
   }); // inventory
 
   router.get('/workspace/collaborators', (req, res) => {
@@ -32,9 +81,54 @@ let initRoutes = (app) => {
     return res.render('history', { active: 3, layout: './layouts/workspace' })
   }); // history
 
-  router.get('/workspace/item', (req, res) => {
-    return res.render('item', { layout: './layouts/item-page', backLink: '/workspace/inventory' })
+
+  // --- ITEMS PAGE ---
+  router.get('/workspace/SCHCKE3434', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[0].itemName,
+      sampleItem: sampleData[0]
+    });
   });
+
+  router.get('/workspace/CCHCKE0909', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[1].itemName,
+      sampleItem: sampleData[1]
+    });
+  });
+
+  router.get('/workspace/JCHCKE7070', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[2].itemName,
+      sampleItem: sampleData[2]
+    });
+  });
+
+  router.get('/workspace/UCHCKE1212', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[3].itemName,
+      sampleItem: sampleData[3]
+    });
+  });
+
+  router.get('/workspace/HCHCKE7878', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[4].itemName,
+      sampleItem: sampleData[4]
+    });
+  });
+
+  // --- END ITEMS PAGE ---
 
   router.get('/accounts/user', (req, res) => {
     return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
@@ -50,7 +144,10 @@ let initRoutes = (app) => {
   });
 
   router.get('/search-results/query', (req, res) => {
-    return res.render('search-results', { layout: './layouts/results-page' });
+    return res.render('search-results', {
+      layout: './layouts/results-page',
+      sampleItems: sampleData
+    });
   });
 
   return app.use('/', router); // Set the router
