@@ -1,6 +1,46 @@
 // Imports
 const express = require('express');
 
+// --- ITEM SAMPLE DATA ---
+const sampleItems = [
+  {
+    productCode: 'SCHCKE3434',
+    itemName: 'Super Cheesecake',                                                                                       
+    description: 'This is a traditional 9" Cheesecake, sides completely surrounded by our famous Graham Cracker Crust.',
+    qty: '0 slices',
+    assignedPeople: ['@bohx_airon','@bohx_faith']
+  },
+  {
+    productCode: 'CCHCKE0909',
+    itemName: 'Cheesey Cheesecake',
+    description: "Make your cheesecake cheesier with Cheesy Cheesecake. Topped with 7 types of cheese which includes mozzarella, cheddar, blue cheese, parmesan, feta cheese, brie and cream cheese.",
+    qty: '1 whole',
+    assignedPeople: ['@bohx_pierre']
+  },
+  {
+    productCode: 'JCHCKE7070',
+    itemName: 'Jojo Cheesecake',
+    description: "Cheesecake's design is inspired from the anime 'JoJo's Bizarre Adventure'.",
+    qty: '2 whole',
+    assignedPeople: ['@bohx_pierre']
+  },
+  {
+    productCode: 'UCHCKE1212',
+    itemName: 'Ube Cheesecake',
+    description: "Make your cheesecake more ube-licious with a mix of the Filipino delicacy, ube.",
+    qty: '2 whole',
+    assignedPeople: ['@bohx_airon','@bohx_faith','@bohx_pierre']
+  },
+  {
+    productCode: 'HCHCKE7878',
+    itemName: 'Halo-halo Cheesecake',
+    description: "Make your cheesecake cheesier with Cheesy Cheesecake. Topped with 7 types of cheese which includes mozzarella, cheddar, blue cheese, parmesan, feta cheese, brie and cream cheese.",
+    qty: '3 slices',
+    assignedPeople: ['@bohx_pierre']
+  }
+];
+// --- END SAMPLE DATA ---
+
 let router = express.Router();
 
 let initRoutes = (app) => {
