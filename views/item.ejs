@@ -8,7 +8,7 @@
   </div>
   <div class = "col-8 align-items-center">
     <h1 class="mt-3 p-1 border-bottom border-3 oswald text-gray display-4">
-      Super cheesecake
+      <%- item.itemName %>
       <%- include('partials/deleteItemBtn.ejs') %>
     </h1>
     <div class="d-grid gap-3 mt-5">
@@ -20,7 +20,7 @@
                 <%- include('partials/editItemBtn.ejs') %>
               </h4>
               <hr class="text-darkpurple">
-              <p class="card-text card-text-first fs-4 fst-italic mt-5">SCHCKE3434</p>
+              <p class="card-text card-text-first fs-4 fst-italic mt-5"><%- item.productCode %></p>
             </div>
           </div>
         </div>
@@ -31,7 +31,7 @@
                 <%- include('partials/editItemBtn.ejs') %>
               </h4>
               <hr class="text-teal">
-              <p class="card-text fs-4 fst-italic mt-5">96 kg</p>
+              <p class="card-text fs-4 fst-italic mt-5"><%- item.qty %></p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
               </h4>
               <hr class="text-gray">
               <p class="card-text card-text-first fs-4 fst-italic mt-5">
-                This is a traditional 9" Cheesecake, sides completely surrounded our famous Graham Cracker Crust.
+                <%- item.description %>
               </p>
             </div>
           </div>
