@@ -27,14 +27,14 @@ const sampleData = [
   {
     productCode: 'UCHCKE1212',
     itemName: 'Ube Cheesecake',
-    description: "Make your cheesecake more ube-licious with a mix of the Filipino delicacy, ube.",
+    description: "Make your cheesecake more ube-licious with a mix of a Filipino delicacy, ube.",
     qty: '2 whole',
     assignedPeople: ['@bohx_airon','@bohx_faith','@bohx_pierre']
   },
   {
     productCode: 'HCHCKE7878',
     itemName: 'Halo-halo Cheesecake',
-    description: "Make your cheesecake cheesier with Cheesy Cheesecake. Topped with 7 types of cheese which includes mozzarella, cheddar, blue cheese, parmesan, feta cheese, brie and cream cheese.",
+    description: "Halo-halo Cheesecake is the offspring of two well-known desserts, the halo-halo and cheesecake.",
     qty: '3 slices',
     assignedPeople: ['@bohx_faith','@bohx_pierre']
   }
@@ -74,9 +74,54 @@ let initRoutes = (app) => {
     return res.render('index', { active: 3, layout: './layouts/workspace' })
   }); // history
 
-  router.get('/workspace/item', (req, res) => {
-    return res.render('item', { layout: './layouts/item-page', backLink: '/workspace/inventory' })
+
+  // --- ITEMS PAGE ---
+  router.get('/workspace/SCHCKE3434', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[0].itemName,
+      sampleItem: sampleData[0]
+    });
   });
+
+  router.get('/workspace/CCHCKE0909', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[1].itemName,
+      sampleItem: sampleData[1]
+    });
+  });
+
+  router.get('/workspace/JCHCKE7070', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[2].itemName,
+      sampleItem: sampleData[2]
+    });
+  });
+
+  router.get('/workspace/UCHCKE1212', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[3].itemName,
+      sampleItem: sampleData[3]
+    });
+  });
+
+  router.get('/workspace/HCHCKE7878', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[4].itemName,
+      sampleItem: sampleData[4]
+    });
+  });
+
+  // --- END ITEMS PAGE ---
 
   router.get('/accounts/user', (req, res) => {
     return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
