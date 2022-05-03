@@ -1,61 +1,86 @@
+<% // Sample Data
+  const collaborators = [
+    {
+      username: '@bohx_faith',
+      themeColor: 'pink',
+      assignedItems: ['Ube CheeseCake', 'Cheesey Cheesecake', 'Super Cheesecake', 'Jojo Cheesecake']
+    },
+    {
+      username: '@bohx_airon',
+      themeColor: 'lightpurple',
+      assignedItems: ['Jojo CheeseCake', 'Cheesey Cheesecake', 'Ube Cheesecake']
+    },
+    {
+      username: '@bohx_pierre',
+      themeColor: 'darkpurple',
+      assignedItems: ['Cheesey CheeseCake', 'Jojo Cheesecake', 'Halo-halo Cheesecake']
+    },
+    {
+      username: '@GiovanniGiorgio',
+      themeColor: 'teal',
+      assignedItems: ['Jojo Cheesecake']
+    },
+    {
+      username: '@mamma_mia',
+      themeColor: 'pink',
+      assignedItems: ['Cheesey CheeseCake', 'Halo-halo Cheesecake', 'Ube Cheesecake', 'Super Cheesecake']
+    }
+  ];
+%>
+<% const maxItems = 3; %>
+
+
 <div class="container-md w-75 fade-in-up">  
-    <div class="row mx-0 mb-4 main-content">
-        <div class="col add-workspace">
-        <button type="button" class="add-btn text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="17.5rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+    <div class="row row-cols-2 mx-0 mb-4 main-content">
+
+      <!-- Add Collaborator button -->
+      <div class="col add-workspace px-5 py-4">
+        <button type="button" class="add-btn d-flex align-items-center h-100">
+          <div class="w-100 text-center pb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="10rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
             </svg><br>
-            <span >Add Collaborator</span>
-          </button>
+            <span>Add Collaborator</span>
           </div>
-    <div class="col">
-        <div class="card collaborator-card text-center border-pink">
+        </button>
+      </div>
+        <!-- END Add Collaborator button -->
+
+      <% for(let person of collaborators) { %>
+      <div class="col px-5 py-4">
+        <div class="card collaborator-card text-center h-100 border-<%= person.themeColor %>">
           <div class="card-body">
             <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
             </svg>
-            <h3 class="card-title title-1 montserrat">@bohx_Faith</h3>
-            <hr class="text-pink">
-              <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">Assigned Items:</p>
-              <p class="card-text fs-5 fst-italic mb-1 text-start collaborator-content-2">Super Cheesecake</p>
-              <p class="card-text fs-5 fst-italic text-start collaborator-content-2">Putakte Cheesecake<br><span class="collab-edit-btn"><%-include('partials/editAcctBtn.ejs'); %></span></p>
-            </div>
+            <h3 class="card-title title-1 montserrat">
+              <a class="collab-user" href="#">
+                <%- person.username %>
+              </a>
+            </h3>
+            <hr class="text-<%=person.themeColor%>">
+            <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">
+              <strong>Assigned Items:</strong>
+            </p>
+            <% let i = 0; %>
+            <% for(let item of person.assignedItems) { %>
+              <p class="card-text fs-5 fst-italic text-start collaborator-content-2 mb-1">
+                <%- item %>
+              </p>
+              <% i++; %>
+              <% if(i >= maxItems) { break; } %>
+            <% } %>
+            <!-- see more option here soon!-->
+            <br>
+            <span class="collab-edit-btn"><%-include('partials/editAcctBtn.ejs'); %></span>
           </div>
         </div>
       </div>
-      <div class="row mx-0 mb-4">
-        <div class="col">
-          <div class="card collaborator-card  text-center border-teal">
-            <div class="card-body">
-              <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-              </svg>
-              <h3 class="card-title title-1 montserrat">@bohx_Pierre</h3>
-              <hr class="text-teal">
-                <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">Assigned Items:</p>
-                <p class="card-text fs-5 fst-italic mb-1 text-start collaborator-content-2">Blueberry Cheesecake</p>
-                <p class="card-text fs-5 fst-italic text-start collaborator-content-2">Lemon Cheesecake <br><span class="collab-edit-btn"><%-include('partials/editAcctBtn.ejs'); %></span></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card collaborator-card  text-center border-lightpurple">
-            <div class="card-body">
-              <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-              </svg>
-              <h3 class="card-title title-1 montserrat">@bohx_Airon</h3>
-              <hr class="text-lightpurple">
-                <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">Assigned Items:</p>
-                <p class="card-text fs-5 fst-italic mb-1 text-start collaborator-content-2">Putakte Cheesecake</p>
-                <p class="card-text fs-5 fst-italic text-start collaborator-content-2">Basta Cheesecake <br><span class="collab-edit-btn"><%-include('partials/editAcctBtn.ejs'); %></span></p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <% } %>
+
+    </div>
+
     </div>
   
     <%- include('./partials/backToTopBtn.ejs') %>
