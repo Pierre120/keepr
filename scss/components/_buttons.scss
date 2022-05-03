@@ -97,3 +97,53 @@
     @extend .text-white;
   }
 }
+
+.checkbox{
+  opacity: 0;
+  position: absolute;  
+}
+
+.checkbox:checked + .label .ball{
+  transform: translateX(24px);
+}
+
+.label{
+  width: 50px;
+  height: 26px;
+  background-color: #F277A4;
+  display: flex;
+  border-radius: 50px;
+  align-items: center;
+  position:relative;
+  justify-content: space-between;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.moon, .sun{
+  //color: #f1c40f;
+  color: #fff;
+}
+
+/*.sun{
+ // color: #f39c12;
+
+}*/
+
+.ball{
+  width:22px;
+  height: 22px;
+  background-color: #285346;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.logout{
+  color:  #fff;
+  border-color: #6CD9B1;
+  background-color:#6CD9B1;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.5);
+}

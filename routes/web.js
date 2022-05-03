@@ -29,7 +29,7 @@ let initRoutes = (app) => {
   }); // collaborators
 
   router.get('/workspace/history', (req, res) => {
-    return res.render('index', { active: 3, layout: './layouts/workspace' })
+    return res.render('history', { active: 3, layout: './layouts/workspace' })
   }); // history
 
   router.get('/workspace/item', (req, res) => {
