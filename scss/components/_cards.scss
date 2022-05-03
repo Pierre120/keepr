@@ -54,12 +54,17 @@
 
 
 .item-list-card {
+  @extend .btn;
+  @extend .text-start;
+  @extend .p-0;
   @extend .card;
   @extend .montserrat;
+  @extend .text-decoration-none;
   border-radius: $border-radius-lg;
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
   color: $gray;
+  transition: box-shadow 150ms ease-in-out;
 
   .item-name {
     @extend .card-title;
@@ -105,5 +110,13 @@
     opacity: 1;
   }
 
+  &:hover {
+    color: $gray;
+    box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.25);
+  }
+
+  &:focus {
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  }
 }
 
