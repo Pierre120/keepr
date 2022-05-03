@@ -65,8 +65,13 @@
               <hr class="text-pink">
               <p class="card-text fs-4 fst-italic mt-5">
                 <ul style="list-style-type:disc;">
-                  <li class="card-text card-text-first fs-5 fst-italic mb-1">Juan Dela Cruz</li>
-                  <li class="card-text fs-5 fst-italic mb-1">Pedro Gil</li>
+                <% for(let i=0; i < item.assignedPeople.length; i++) { %>
+                  <% if(i === 0) { %>
+                  <li class="card-text card-text-first fs-5 fst-italic mb-1"><%- item.assignedPeople[i] %></li>
+                  <% } else { %>
+                  <li class="card-text fs-5 fst-italic mb-1"><%- item.assignedPeople[i] %></li>
+                  <% } %>
+                <% } %>
                 </ul>
               </p>
             </div>
