@@ -2,7 +2,7 @@
 const express = require('express');
 
 // --- ITEM SAMPLE DATA ---
-const sampleItems = [
+const sampleData = [
   {
     productCode: 'SCHCKE3434',
     itemName: 'Super Cheesecake',                                                                                       
