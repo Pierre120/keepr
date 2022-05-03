@@ -94,6 +94,15 @@ let initRoutes = (app) => {
     });
   });
 
+  router.get('/workspace/JCHCKE7070', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[2].itemName,
+      sampleItem: sampleData[2]
+    });
+  });
+
   // --- END ITEMS PAGE ---
 
   router.get('/accounts/user', (req, res) => {
