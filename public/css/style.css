@@ -4849,7 +4849,7 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.card, .item-list-card {
+.card, .keepr-card, .keepr-card-filled, .item-list-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -4860,26 +4860,28 @@ textarea.form-control-lg {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
-.card > hr, .item-list-card > hr {
+.card > hr, .keepr-card > hr, .keepr-card-filled > hr, .item-list-card > hr {
   margin-right: 0;
   margin-left: 0;
 }
-.card > .list-group, .item-list-card > .list-group {
+.card > .list-group, .keepr-card > .list-group, .keepr-card-filled > .list-group, .item-list-card > .list-group {
   border-top: inherit;
   border-bottom: inherit;
 }
-.card > .list-group:first-child, .item-list-card > .list-group:first-child {
+.card > .list-group:first-child, .keepr-card > .list-group:first-child, .keepr-card-filled > .list-group:first-child, .item-list-card > .list-group:first-child {
   border-top-width: 0;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
-.card > .list-group:last-child, .item-list-card > .list-group:last-child {
+.card > .list-group:last-child, .keepr-card > .list-group:last-child, .keepr-card-filled > .list-group:last-child, .item-list-card > .list-group:last-child {
   border-bottom-width: 0;
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
-.card > .card-header + .list-group, .item-list-card > .card-header + .list-group,
+.card > .card-header + .list-group, .keepr-card > .card-header + .list-group, .keepr-card-filled > .card-header + .list-group, .item-list-card > .card-header + .list-group,
 .card > .list-group + .card-footer,
+.keepr-card > .list-group + .card-footer,
+.keepr-card-filled > .list-group + .card-footer,
 .item-list-card > .list-group + .card-footer {
   border-top: 0;
 }
@@ -4965,7 +4967,7 @@ textarea.form-control-lg {
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
-.card-group > .card, .card-group > .item-list-card {
+.card-group > .card, .card-group > .keepr-card, .card-group > .keepr-card-filled, .card-group > .item-list-card {
   margin-bottom: 0.75rem;
 }
 @media (min-width: 576px) {
@@ -4973,39 +4975,47 @@ textarea.form-control-lg {
     display: flex;
     flex-flow: row wrap;
   }
-  .card-group > .card, .card-group > .item-list-card {
+  .card-group > .card, .card-group > .keepr-card, .card-group > .keepr-card-filled, .card-group > .item-list-card {
     flex: 1 0 0%;
     margin-bottom: 0;
   }
-  .card-group > .card + .card, .card-group > .item-list-card + .card, .card-group > .card + .item-list-card, .card-group > .item-list-card + .item-list-card {
+  .card-group > .card + .card, .card-group > .keepr-card + .card, .card-group > .keepr-card-filled + .card, .card-group > .item-list-card + .card, .card-group > .card + .keepr-card, .card-group > .keepr-card + .keepr-card, .card-group > .keepr-card-filled + .keepr-card, .card-group > .item-list-card + .keepr-card, .card-group > .card + .keepr-card-filled, .card-group > .keepr-card + .keepr-card-filled, .card-group > .keepr-card-filled + .keepr-card-filled, .card-group > .item-list-card + .keepr-card-filled, .card-group > .card + .item-list-card, .card-group > .keepr-card + .item-list-card, .card-group > .keepr-card-filled + .item-list-card, .card-group > .item-list-card + .item-list-card {
     margin-left: 0;
     border-left: 0;
   }
-  .card-group > .card:not(:last-child), .card-group > .item-list-card:not(:last-child) {
+  .card-group > .card:not(:last-child), .card-group > .keepr-card:not(:last-child), .card-group > .keepr-card-filled:not(:last-child), .card-group > .item-list-card:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:not(:last-child) .card-img-top, .card-group > .item-list-card:not(:last-child) .card-img-top,
+  .card-group > .card:not(:last-child) .card-img-top, .card-group > .keepr-card:not(:last-child) .card-img-top, .card-group > .keepr-card-filled:not(:last-child) .card-img-top, .card-group > .item-list-card:not(:last-child) .card-img-top,
 .card-group > .card:not(:last-child) .card-header,
+.card-group > .keepr-card:not(:last-child) .card-header,
+.card-group > .keepr-card-filled:not(:last-child) .card-header,
 .card-group > .item-list-card:not(:last-child) .card-header {
     border-top-right-radius: 0;
   }
-  .card-group > .card:not(:last-child) .card-img-bottom, .card-group > .item-list-card:not(:last-child) .card-img-bottom,
+  .card-group > .card:not(:last-child) .card-img-bottom, .card-group > .keepr-card:not(:last-child) .card-img-bottom, .card-group > .keepr-card-filled:not(:last-child) .card-img-bottom, .card-group > .item-list-card:not(:last-child) .card-img-bottom,
 .card-group > .card:not(:last-child) .card-footer,
+.card-group > .keepr-card:not(:last-child) .card-footer,
+.card-group > .keepr-card-filled:not(:last-child) .card-footer,
 .card-group > .item-list-card:not(:last-child) .card-footer {
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:not(:first-child), .card-group > .item-list-card:not(:first-child) {
+  .card-group > .card:not(:first-child), .card-group > .keepr-card:not(:first-child), .card-group > .keepr-card-filled:not(:first-child), .card-group > .item-list-card:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .card-group > .card:not(:first-child) .card-img-top, .card-group > .item-list-card:not(:first-child) .card-img-top,
+  .card-group > .card:not(:first-child) .card-img-top, .card-group > .keepr-card:not(:first-child) .card-img-top, .card-group > .keepr-card-filled:not(:first-child) .card-img-top, .card-group > .item-list-card:not(:first-child) .card-img-top,
 .card-group > .card:not(:first-child) .card-header,
+.card-group > .keepr-card:not(:first-child) .card-header,
+.card-group > .keepr-card-filled:not(:first-child) .card-header,
 .card-group > .item-list-card:not(:first-child) .card-header {
     border-top-left-radius: 0;
   }
-  .card-group > .card:not(:first-child) .card-img-bottom, .card-group > .item-list-card:not(:first-child) .card-img-bottom,
+  .card-group > .card:not(:first-child) .card-img-bottom, .card-group > .keepr-card:not(:first-child) .card-img-bottom, .card-group > .keepr-card-filled:not(:first-child) .card-img-bottom, .card-group > .item-list-card:not(:first-child) .card-img-bottom,
 .card-group > .card:not(:first-child) .card-footer,
+.card-group > .keepr-card:not(:first-child) .card-footer,
+.card-group > .keepr-card-filled:not(:first-child) .card-footer,
 .card-group > .item-list-card:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
@@ -11824,7 +11834,7 @@ textarea.form-control-lg {
   padding-bottom: 1.5rem;
 }
 
-.montserrat, .text-field label, .login-label, .item-list-card, .add-btn span, .add-btn p, .back-btn, .reg-btn, .login-btn {
+.montserrat, .text-field label, .login-label, .keepr-card, .keepr-card-filled, .item-list-card, .add-btn span, .add-btn p, .back-btn, .reg-btn, .login-btn {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -11896,12 +11906,6 @@ textarea.form-control-lg {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   color: #666666;
 }
-.keepr-card .card-title, .keepr-card .item-list-card .item-name, .item-list-card .keepr-card .item-name {
-  font-family: "Montserrat", sans-serif;
-}
-.keepr-card .card-text, .keepr-card .item-list-card .item-assigned-people, .item-list-card .keepr-card .item-assigned-people, .keepr-card .item-list-card .item-qty, .item-list-card .keepr-card .item-qty, .keepr-card .item-list-card .item-desc, .item-list-card .keepr-card .item-desc {
-  font-family: "Montserrat", sans-serif;
-}
 .keepr-card .card-text-first {
   margin-top: 1.75rem;
 }
@@ -11922,12 +11926,6 @@ textarea.form-control-lg {
   border-width: 0;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   color: #fff;
-}
-.keepr-card-filled .card-title, .keepr-card-filled .item-list-card .item-name, .item-list-card .keepr-card-filled .item-name {
-  font-family: "Montserrat", sans-serif;
-}
-.keepr-card-filled .card-text, .keepr-card-filled .item-list-card .item-assigned-people, .item-list-card .keepr-card-filled .item-assigned-people, .keepr-card-filled .item-list-card .item-qty, .item-list-card .keepr-card-filled .item-qty, .keepr-card-filled .item-list-card .item-desc, .item-list-card .keepr-card-filled .item-desc {
-  font-family: "Montserrat", sans-serif;
 }
 .keepr-card-filled .card-text-first {
   margin-top: 1.75rem;
