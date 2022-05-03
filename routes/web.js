@@ -9,7 +9,7 @@ const sampleData = [
     description: 'This is a traditional 9" Cheesecake, sides completely surrounded by our famous Graham Cracker Crust.',
     qty: '0 slices',
     assignedPeople: ['@bohx_airon','@bohx_faith'],
-    path: `/workspace/${this.productCode}`
+    path: '/workspace/SCHCKE3434'
   },
   {
     productCode: 'CCHCKE0909',
@@ -17,7 +17,7 @@ const sampleData = [
     description: "Make your cheesecake cheesier with Cheesy Cheesecake. Topped with 7 types of cheese which includes mozzarella, cheddar, blue cheese, parmesan, feta cheese, brie and cream cheese.",
     qty: '1 whole',
     assignedPeople: ['@bohx_pierre'],
-    path: `/workspace/${this.productCode}`
+    path: '/workspace/CCHCKE0909'
   },
   {
     productCode: 'JCHCKE7070',
@@ -25,7 +25,7 @@ const sampleData = [
     description: "Cheesecake's design is inspired from the anime 'JoJo's Bizarre Adventure'.",
     qty: '2 whole',
     assignedPeople: ['@bohx_airon','@bohx_pierre'],
-    path: `/workspace/${this.productCode}`
+    path: '/workspace/JCHCKE7070'
   },
   {
     productCode: 'UCHCKE1212',
@@ -33,7 +33,7 @@ const sampleData = [
     description: "Make your cheesecake more ube-licious with a mix of a Filipino delicacy, ube.",
     qty: '2 whole',
     assignedPeople: ['@bohx_airon','@bohx_faith','@bohx_pierre'],
-    path: `/workspace/${this.productCode}`
+    path: '/workspace/UCHCKE1212'
   },
   {
     productCode: 'HCHCKE7878',
@@ -41,7 +41,7 @@ const sampleData = [
     description: "Halo-halo Cheesecake is the offspring of two well-known desserts, the halo-halo and cheesecake.",
     qty: '3 slices',
     assignedPeople: ['@bohx_faith','@bohx_pierre'],
-    path: `/workspace/${this.productCode}`
+    path: '/workspace/HCHCKE7878'
   }
 ];
 // --- END SAMPLE DATA ---
