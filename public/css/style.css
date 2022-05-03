@@ -2511,7 +2511,7 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, .btn-check[disabled] + .add-btn, .btn-check[disabled] + .back-btn, .btn-check[disabled] + .sort-btn, .btn-check[disabled] + .logout-btn, .btn-check[disabled] + .reg-btn, .btn-check[disabled] + .login-btn, .btn-check:disabled + .btn, .btn-check:disabled + .add-btn, .btn-check:disabled + .back-btn, .btn-check:disabled + .sort-btn, .btn-check:disabled + .logout-btn, .btn-check:disabled + .reg-btn, .btn-check:disabled + .login-btn {
+.btn-check[disabled] + .btn, .btn-check[disabled] + .item-list-card, .btn-check[disabled] + .add-btn, .btn-check[disabled] + .back-btn, .btn-check[disabled] + .sort-btn, .btn-check[disabled] + .logout-btn, .btn-check[disabled] + .reg-btn, .btn-check[disabled] + .login-btn, .btn-check:disabled + .btn, .btn-check:disabled + .item-list-card, .btn-check:disabled + .add-btn, .btn-check:disabled + .back-btn, .btn-check:disabled + .sort-btn, .btn-check:disabled + .logout-btn, .btn-check:disabled + .reg-btn, .btn-check:disabled + .login-btn {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
@@ -2671,11 +2671,11 @@ textarea.form-control-lg {
 .input-group > .form-select:focus {
   z-index: 3;
 }
-.input-group .btn, .input-group .add-btn, .input-group .back-btn, .input-group .sort-btn, .input-group .logout-btn, .input-group .reg-btn, .input-group .login-btn {
+.input-group .btn, .input-group .item-list-card, .input-group .add-btn, .input-group .back-btn, .input-group .sort-btn, .input-group .logout-btn, .input-group .reg-btn, .input-group .login-btn {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus, .input-group .add-btn:focus, .input-group .back-btn:focus, .input-group .sort-btn:focus, .input-group .logout-btn:focus, .input-group .reg-btn:focus, .input-group .login-btn:focus {
+.input-group .btn:focus, .input-group .item-list-card:focus, .input-group .add-btn:focus, .input-group .back-btn:focus, .input-group .sort-btn:focus, .input-group .logout-btn:focus, .input-group .reg-btn:focus, .input-group .login-btn:focus {
   z-index: 3;
 }
 
@@ -2698,6 +2698,7 @@ textarea.form-control-lg {
 .input-group-lg > .form-select,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
+.input-group-lg > .item-list-card,
 .input-group-lg > .add-btn,
 .input-group-lg > .back-btn,
 .input-group-lg > .sort-btn,
@@ -2713,6 +2714,7 @@ textarea.form-control-lg {
 .input-group-sm > .form-select,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
+.input-group-sm > .item-list-card,
 .input-group-sm > .add-btn,
 .input-group-sm > .back-btn,
 .input-group-sm > .sort-btn,
@@ -2923,7 +2925,7 @@ textarea.form-control-lg {
   z-index: 3;
 }
 
-.btn, .add-btn, .back-btn, .sort-btn, .logout-btn, .reg-btn, .login-btn {
+.btn, .item-list-card, .add-btn, .back-btn, .sort-btn, .logout-btn, .reg-btn, .login-btn {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -2941,18 +2943,18 @@ textarea.form-control-lg {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn, .add-btn, .back-btn, .sort-btn, .logout-btn, .reg-btn, .login-btn {
+  .btn, .item-list-card, .add-btn, .back-btn, .sort-btn, .logout-btn, .reg-btn, .login-btn {
     transition: none;
   }
 }
-.btn:hover, .add-btn:hover, .back-btn:hover, .sort-btn:hover, .logout-btn:hover, .reg-btn:hover, .login-btn:hover {
+.btn:hover, .item-list-card:hover, .add-btn:hover, .back-btn:hover, .sort-btn:hover, .logout-btn:hover, .reg-btn:hover, .login-btn:hover {
   color: #212529;
 }
-.btn-check:focus + .btn, .btn-check:focus + .add-btn, .btn-check:focus + .back-btn, .btn-check:focus + .sort-btn, .btn-check:focus + .logout-btn, .btn-check:focus + .reg-btn, .btn-check:focus + .login-btn, .btn:focus, .add-btn:focus, .back-btn:focus, .sort-btn:focus, .logout-btn:focus, .reg-btn:focus, .login-btn:focus {
+.btn-check:focus + .btn, .btn-check:focus + .item-list-card, .btn-check:focus + .add-btn, .btn-check:focus + .back-btn, .btn-check:focus + .sort-btn, .btn-check:focus + .logout-btn, .btn-check:focus + .reg-btn, .btn-check:focus + .login-btn, .btn:focus, .item-list-card:focus, .add-btn:focus, .back-btn:focus, .sort-btn:focus, .logout-btn:focus, .reg-btn:focus, .login-btn:focus {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(80, 63, 191, 0.25);
 }
-.btn:disabled, .add-btn:disabled, .back-btn:disabled, .sort-btn:disabled, .logout-btn:disabled, .reg-btn:disabled, .login-btn:disabled, .btn.disabled, .disabled.add-btn, .disabled.back-btn, .disabled.sort-btn, .disabled.logout-btn, .disabled.reg-btn, .disabled.login-btn, fieldset:disabled .btn, fieldset:disabled .add-btn, fieldset:disabled .back-btn, fieldset:disabled .sort-btn, fieldset:disabled .logout-btn, fieldset:disabled .reg-btn, fieldset:disabled .login-btn {
+.btn:disabled, .item-list-card:disabled, .add-btn:disabled, .back-btn:disabled, .sort-btn:disabled, .logout-btn:disabled, .reg-btn:disabled, .login-btn:disabled, .btn.disabled, .disabled.item-list-card, .disabled.add-btn, .disabled.back-btn, .disabled.sort-btn, .disabled.logout-btn, .disabled.reg-btn, .disabled.login-btn, fieldset:disabled .btn, fieldset:disabled .item-list-card, fieldset:disabled .add-btn, fieldset:disabled .back-btn, fieldset:disabled .sort-btn, fieldset:disabled .logout-btn, fieldset:disabled .reg-btn, fieldset:disabled .login-btn {
   pointer-events: none;
   opacity: 0.65;
 }
@@ -3739,13 +3741,13 @@ textarea.form-control-lg {
   color: #6c757d;
 }
 
-.btn-lg, .add-btn, .back-btn, .login-btn, .btn-group-lg > .btn, .btn-group-lg > .add-btn, .btn-group-lg > .back-btn, .btn-group-lg > .sort-btn, .btn-group-lg > .logout-btn, .btn-group-lg > .reg-btn, .btn-group-lg > .login-btn {
+.btn-lg, .add-btn, .back-btn, .login-btn, .btn-group-lg > .btn, .btn-group-lg > .item-list-card, .btn-group-lg > .add-btn, .btn-group-lg > .back-btn, .btn-group-lg > .sort-btn, .btn-group-lg > .logout-btn, .btn-group-lg > .reg-btn, .btn-group-lg > .login-btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
 
-.btn-sm, .reg-btn, .btn-group-sm > .btn, .btn-group-sm > .add-btn, .btn-group-sm > .back-btn, .btn-group-sm > .sort-btn, .btn-group-sm > .logout-btn, .btn-group-sm > .reg-btn, .btn-group-sm > .login-btn {
+.btn-sm, .reg-btn, .btn-group-sm > .btn, .btn-group-sm > .item-list-card, .btn-group-sm > .add-btn, .btn-group-sm > .back-btn, .btn-group-sm > .sort-btn, .btn-group-sm > .logout-btn, .btn-group-sm > .reg-btn, .btn-group-sm > .login-btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -4100,8 +4102,9 @@ textarea.form-control-lg {
   display: inline-flex;
   vertical-align: middle;
 }
-.btn-group > .btn, .btn-group > .add-btn, .btn-group > .back-btn, .btn-group > .sort-btn, .btn-group > .logout-btn, .btn-group > .reg-btn, .btn-group > .login-btn,
+.btn-group > .btn, .btn-group > .item-list-card, .btn-group > .add-btn, .btn-group > .back-btn, .btn-group > .sort-btn, .btn-group > .logout-btn, .btn-group > .reg-btn, .btn-group > .login-btn,
 .btn-group-vertical > .btn,
+.btn-group-vertical > .item-list-card,
 .btn-group-vertical > .add-btn,
 .btn-group-vertical > .back-btn,
 .btn-group-vertical > .sort-btn,
@@ -4111,8 +4114,9 @@ textarea.form-control-lg {
   position: relative;
   flex: 1 1 auto;
 }
-.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .add-btn, .btn-group > .btn-check:checked + .back-btn, .btn-group > .btn-check:checked + .sort-btn, .btn-group > .btn-check:checked + .logout-btn, .btn-group > .btn-check:checked + .reg-btn, .btn-group > .btn-check:checked + .login-btn,
+.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .item-list-card, .btn-group > .btn-check:checked + .add-btn, .btn-group > .btn-check:checked + .back-btn, .btn-group > .btn-check:checked + .sort-btn, .btn-group > .btn-check:checked + .logout-btn, .btn-group > .btn-check:checked + .reg-btn, .btn-group > .btn-check:checked + .login-btn,
 .btn-group > .btn-check:focus + .btn,
+.btn-group > .btn-check:focus + .item-list-card,
 .btn-group > .btn-check:focus + .add-btn,
 .btn-group > .btn-check:focus + .back-btn,
 .btn-group > .btn-check:focus + .sort-btn,
@@ -4120,6 +4124,7 @@ textarea.form-control-lg {
 .btn-group > .btn-check:focus + .reg-btn,
 .btn-group > .btn-check:focus + .login-btn,
 .btn-group > .btn:hover,
+.btn-group > .item-list-card:hover,
 .btn-group > .add-btn:hover,
 .btn-group > .back-btn:hover,
 .btn-group > .sort-btn:hover,
@@ -4127,6 +4132,7 @@ textarea.form-control-lg {
 .btn-group > .reg-btn:hover,
 .btn-group > .login-btn:hover,
 .btn-group > .btn:focus,
+.btn-group > .item-list-card:focus,
 .btn-group > .add-btn:focus,
 .btn-group > .back-btn:focus,
 .btn-group > .sort-btn:focus,
@@ -4134,6 +4140,7 @@ textarea.form-control-lg {
 .btn-group > .reg-btn:focus,
 .btn-group > .login-btn:focus,
 .btn-group > .btn:active,
+.btn-group > .item-list-card:active,
 .btn-group > .add-btn:active,
 .btn-group > .back-btn:active,
 .btn-group > .sort-btn:active,
@@ -4141,6 +4148,7 @@ textarea.form-control-lg {
 .btn-group > .reg-btn:active,
 .btn-group > .login-btn:active,
 .btn-group > .btn.active,
+.btn-group > .active.item-list-card,
 .btn-group > .active.add-btn,
 .btn-group > .active.back-btn,
 .btn-group > .active.sort-btn,
@@ -4148,6 +4156,7 @@ textarea.form-control-lg {
 .btn-group > .active.reg-btn,
 .btn-group > .active.login-btn,
 .btn-group-vertical > .btn-check:checked + .btn,
+.btn-group-vertical > .btn-check:checked + .item-list-card,
 .btn-group-vertical > .btn-check:checked + .add-btn,
 .btn-group-vertical > .btn-check:checked + .back-btn,
 .btn-group-vertical > .btn-check:checked + .sort-btn,
@@ -4155,6 +4164,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn-check:checked + .reg-btn,
 .btn-group-vertical > .btn-check:checked + .login-btn,
 .btn-group-vertical > .btn-check:focus + .btn,
+.btn-group-vertical > .btn-check:focus + .item-list-card,
 .btn-group-vertical > .btn-check:focus + .add-btn,
 .btn-group-vertical > .btn-check:focus + .back-btn,
 .btn-group-vertical > .btn-check:focus + .sort-btn,
@@ -4162,6 +4172,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn-check:focus + .reg-btn,
 .btn-group-vertical > .btn-check:focus + .login-btn,
 .btn-group-vertical > .btn:hover,
+.btn-group-vertical > .item-list-card:hover,
 .btn-group-vertical > .add-btn:hover,
 .btn-group-vertical > .back-btn:hover,
 .btn-group-vertical > .sort-btn:hover,
@@ -4169,6 +4180,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .reg-btn:hover,
 .btn-group-vertical > .login-btn:hover,
 .btn-group-vertical > .btn:focus,
+.btn-group-vertical > .item-list-card:focus,
 .btn-group-vertical > .add-btn:focus,
 .btn-group-vertical > .back-btn:focus,
 .btn-group-vertical > .sort-btn:focus,
@@ -4176,6 +4188,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .reg-btn:focus,
 .btn-group-vertical > .login-btn:focus,
 .btn-group-vertical > .btn:active,
+.btn-group-vertical > .item-list-card:active,
 .btn-group-vertical > .add-btn:active,
 .btn-group-vertical > .back-btn:active,
 .btn-group-vertical > .sort-btn:active,
@@ -4183,6 +4196,7 @@ textarea.form-control-lg {
 .btn-group-vertical > .reg-btn:active,
 .btn-group-vertical > .login-btn:active,
 .btn-group-vertical > .btn.active,
+.btn-group-vertical > .active.item-list-card,
 .btn-group-vertical > .active.add-btn,
 .btn-group-vertical > .active.back-btn,
 .btn-group-vertical > .active.sort-btn,
@@ -4201,12 +4215,13 @@ textarea.form-control-lg {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), .btn-group > .add-btn:not(:first-child), .btn-group > .back-btn:not(:first-child), .btn-group > .sort-btn:not(:first-child), .btn-group > .logout-btn:not(:first-child), .btn-group > .reg-btn:not(:first-child), .btn-group > .login-btn:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > .item-list-card:not(:first-child), .btn-group > .add-btn:not(:first-child), .btn-group > .back-btn:not(:first-child), .btn-group > .sort-btn:not(:first-child), .btn-group > .logout-btn:not(:first-child), .btn-group > .reg-btn:not(:first-child), .btn-group > .login-btn:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .login-btn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .login-btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
+.btn-group > .btn-group:not(:last-child) > .item-list-card,
 .btn-group > .btn-group:not(:last-child) > .add-btn,
 .btn-group > .btn-group:not(:last-child) > .back-btn,
 .btn-group > .btn-group:not(:last-child) > .sort-btn,
@@ -4216,8 +4231,9 @@ textarea.form-control-lg {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.btn-group > .btn:nth-child(n+3), .btn-group > .add-btn:nth-child(n+3), .btn-group > .back-btn:nth-child(n+3), .btn-group > .sort-btn:nth-child(n+3), .btn-group > .logout-btn:nth-child(n+3), .btn-group > .reg-btn:nth-child(n+3), .btn-group > .login-btn:nth-child(n+3),
+.btn-group > .btn:nth-child(n+3), .btn-group > .item-list-card:nth-child(n+3), .btn-group > .add-btn:nth-child(n+3), .btn-group > .back-btn:nth-child(n+3), .btn-group > .sort-btn:nth-child(n+3), .btn-group > .logout-btn:nth-child(n+3), .btn-group > .reg-btn:nth-child(n+3), .btn-group > .login-btn:nth-child(n+3),
 .btn-group > :not(.btn-check) + .btn,
+.btn-group > :not(.btn-check) + .item-list-card,
 .btn-group > :not(.btn-check) + .add-btn,
 .btn-group > :not(.btn-check) + .back-btn,
 .btn-group > :not(.btn-check) + .sort-btn,
@@ -4225,6 +4241,7 @@ textarea.form-control-lg {
 .btn-group > :not(.btn-check) + .reg-btn,
 .btn-group > :not(.btn-check) + .login-btn,
 .btn-group > .btn-group:not(:first-child) > .btn,
+.btn-group > .btn-group:not(:first-child) > .item-list-card,
 .btn-group > .btn-group:not(:first-child) > .add-btn,
 .btn-group > .btn-group:not(:first-child) > .back-btn,
 .btn-group > .btn-group:not(:first-child) > .sort-btn,
@@ -4246,12 +4263,12 @@ textarea.form-control-lg {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .reg-btn + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .add-btn + .dropdown-toggle-split, .btn-group-sm > .back-btn + .dropdown-toggle-split, .btn-group-sm > .sort-btn + .dropdown-toggle-split, .btn-group-sm > .logout-btn + .dropdown-toggle-split, .btn-group-sm > .reg-btn + .dropdown-toggle-split, .btn-group-sm > .login-btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .reg-btn + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .item-list-card + .dropdown-toggle-split, .btn-group-sm > .add-btn + .dropdown-toggle-split, .btn-group-sm > .back-btn + .dropdown-toggle-split, .btn-group-sm > .sort-btn + .dropdown-toggle-split, .btn-group-sm > .logout-btn + .dropdown-toggle-split, .btn-group-sm > .reg-btn + .dropdown-toggle-split, .btn-group-sm > .login-btn + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .add-btn + .dropdown-toggle-split, .back-btn + .dropdown-toggle-split, .login-btn + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .add-btn + .dropdown-toggle-split, .btn-group-lg > .back-btn + .dropdown-toggle-split, .btn-group-lg > .sort-btn + .dropdown-toggle-split, .btn-group-lg > .logout-btn + .dropdown-toggle-split, .btn-group-lg > .reg-btn + .dropdown-toggle-split, .btn-group-lg > .login-btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .add-btn + .dropdown-toggle-split, .back-btn + .dropdown-toggle-split, .login-btn + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .item-list-card + .dropdown-toggle-split, .btn-group-lg > .add-btn + .dropdown-toggle-split, .btn-group-lg > .back-btn + .dropdown-toggle-split, .btn-group-lg > .sort-btn + .dropdown-toggle-split, .btn-group-lg > .logout-btn + .dropdown-toggle-split, .btn-group-lg > .reg-btn + .dropdown-toggle-split, .btn-group-lg > .login-btn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -4261,16 +4278,17 @@ textarea.form-control-lg {
   align-items: flex-start;
   justify-content: center;
 }
-.btn-group-vertical > .btn, .btn-group-vertical > .add-btn, .btn-group-vertical > .back-btn, .btn-group-vertical > .sort-btn, .btn-group-vertical > .logout-btn, .btn-group-vertical > .reg-btn, .btn-group-vertical > .login-btn,
+.btn-group-vertical > .btn, .btn-group-vertical > .item-list-card, .btn-group-vertical > .add-btn, .btn-group-vertical > .back-btn, .btn-group-vertical > .sort-btn, .btn-group-vertical > .logout-btn, .btn-group-vertical > .reg-btn, .btn-group-vertical > .login-btn,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
-.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .add-btn:not(:first-child), .btn-group-vertical > .back-btn:not(:first-child), .btn-group-vertical > .sort-btn:not(:first-child), .btn-group-vertical > .logout-btn:not(:first-child), .btn-group-vertical > .reg-btn:not(:first-child), .btn-group-vertical > .login-btn:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .item-list-card:not(:first-child), .btn-group-vertical > .add-btn:not(:first-child), .btn-group-vertical > .back-btn:not(:first-child), .btn-group-vertical > .sort-btn:not(:first-child), .btn-group-vertical > .logout-btn:not(:first-child), .btn-group-vertical > .reg-btn:not(:first-child), .btn-group-vertical > .login-btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .login-btn:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .login-btn:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
+.btn-group-vertical > .btn-group:not(:last-child) > .item-list-card,
 .btn-group-vertical > .btn-group:not(:last-child) > .add-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .back-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .sort-btn,
@@ -4280,8 +4298,9 @@ textarea.form-control-lg {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .add-btn ~ .btn, .btn-group-vertical > .back-btn ~ .btn, .btn-group-vertical > .sort-btn ~ .btn, .btn-group-vertical > .logout-btn ~ .btn, .btn-group-vertical > .reg-btn ~ .btn, .btn-group-vertical > .login-btn ~ .btn, .btn-group-vertical > .btn ~ .add-btn, .btn-group-vertical > .add-btn ~ .add-btn, .btn-group-vertical > .back-btn ~ .add-btn, .btn-group-vertical > .sort-btn ~ .add-btn, .btn-group-vertical > .logout-btn ~ .add-btn, .btn-group-vertical > .reg-btn ~ .add-btn, .btn-group-vertical > .login-btn ~ .add-btn, .btn-group-vertical > .btn ~ .back-btn, .btn-group-vertical > .add-btn ~ .back-btn, .btn-group-vertical > .back-btn ~ .back-btn, .btn-group-vertical > .sort-btn ~ .back-btn, .btn-group-vertical > .logout-btn ~ .back-btn, .btn-group-vertical > .reg-btn ~ .back-btn, .btn-group-vertical > .login-btn ~ .back-btn, .btn-group-vertical > .btn ~ .sort-btn, .btn-group-vertical > .add-btn ~ .sort-btn, .btn-group-vertical > .back-btn ~ .sort-btn, .btn-group-vertical > .sort-btn ~ .sort-btn, .btn-group-vertical > .logout-btn ~ .sort-btn, .btn-group-vertical > .reg-btn ~ .sort-btn, .btn-group-vertical > .login-btn ~ .sort-btn, .btn-group-vertical > .btn ~ .logout-btn, .btn-group-vertical > .add-btn ~ .logout-btn, .btn-group-vertical > .back-btn ~ .logout-btn, .btn-group-vertical > .sort-btn ~ .logout-btn, .btn-group-vertical > .logout-btn ~ .logout-btn, .btn-group-vertical > .reg-btn ~ .logout-btn, .btn-group-vertical > .login-btn ~ .logout-btn, .btn-group-vertical > .btn ~ .reg-btn, .btn-group-vertical > .add-btn ~ .reg-btn, .btn-group-vertical > .back-btn ~ .reg-btn, .btn-group-vertical > .sort-btn ~ .reg-btn, .btn-group-vertical > .logout-btn ~ .reg-btn, .btn-group-vertical > .reg-btn ~ .reg-btn, .btn-group-vertical > .login-btn ~ .reg-btn, .btn-group-vertical > .btn ~ .login-btn, .btn-group-vertical > .add-btn ~ .login-btn, .btn-group-vertical > .back-btn ~ .login-btn, .btn-group-vertical > .sort-btn ~ .login-btn, .btn-group-vertical > .logout-btn ~ .login-btn, .btn-group-vertical > .reg-btn ~ .login-btn, .btn-group-vertical > .login-btn ~ .login-btn,
+.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .item-list-card ~ .btn, .btn-group-vertical > .add-btn ~ .btn, .btn-group-vertical > .back-btn ~ .btn, .btn-group-vertical > .sort-btn ~ .btn, .btn-group-vertical > .logout-btn ~ .btn, .btn-group-vertical > .reg-btn ~ .btn, .btn-group-vertical > .login-btn ~ .btn, .btn-group-vertical > .btn ~ .item-list-card, .btn-group-vertical > .item-list-card ~ .item-list-card, .btn-group-vertical > .add-btn ~ .item-list-card, .btn-group-vertical > .back-btn ~ .item-list-card, .btn-group-vertical > .sort-btn ~ .item-list-card, .btn-group-vertical > .logout-btn ~ .item-list-card, .btn-group-vertical > .reg-btn ~ .item-list-card, .btn-group-vertical > .login-btn ~ .item-list-card, .btn-group-vertical > .btn ~ .add-btn, .btn-group-vertical > .item-list-card ~ .add-btn, .btn-group-vertical > .add-btn ~ .add-btn, .btn-group-vertical > .back-btn ~ .add-btn, .btn-group-vertical > .sort-btn ~ .add-btn, .btn-group-vertical > .logout-btn ~ .add-btn, .btn-group-vertical > .reg-btn ~ .add-btn, .btn-group-vertical > .login-btn ~ .add-btn, .btn-group-vertical > .btn ~ .back-btn, .btn-group-vertical > .item-list-card ~ .back-btn, .btn-group-vertical > .add-btn ~ .back-btn, .btn-group-vertical > .back-btn ~ .back-btn, .btn-group-vertical > .sort-btn ~ .back-btn, .btn-group-vertical > .logout-btn ~ .back-btn, .btn-group-vertical > .reg-btn ~ .back-btn, .btn-group-vertical > .login-btn ~ .back-btn, .btn-group-vertical > .btn ~ .sort-btn, .btn-group-vertical > .item-list-card ~ .sort-btn, .btn-group-vertical > .add-btn ~ .sort-btn, .btn-group-vertical > .back-btn ~ .sort-btn, .btn-group-vertical > .sort-btn ~ .sort-btn, .btn-group-vertical > .logout-btn ~ .sort-btn, .btn-group-vertical > .reg-btn ~ .sort-btn, .btn-group-vertical > .login-btn ~ .sort-btn, .btn-group-vertical > .btn ~ .logout-btn, .btn-group-vertical > .item-list-card ~ .logout-btn, .btn-group-vertical > .add-btn ~ .logout-btn, .btn-group-vertical > .back-btn ~ .logout-btn, .btn-group-vertical > .sort-btn ~ .logout-btn, .btn-group-vertical > .logout-btn ~ .logout-btn, .btn-group-vertical > .reg-btn ~ .logout-btn, .btn-group-vertical > .login-btn ~ .logout-btn, .btn-group-vertical > .btn ~ .reg-btn, .btn-group-vertical > .item-list-card ~ .reg-btn, .btn-group-vertical > .add-btn ~ .reg-btn, .btn-group-vertical > .back-btn ~ .reg-btn, .btn-group-vertical > .sort-btn ~ .reg-btn, .btn-group-vertical > .logout-btn ~ .reg-btn, .btn-group-vertical > .reg-btn ~ .reg-btn, .btn-group-vertical > .login-btn ~ .reg-btn, .btn-group-vertical > .btn ~ .login-btn, .btn-group-vertical > .item-list-card ~ .login-btn, .btn-group-vertical > .add-btn ~ .login-btn, .btn-group-vertical > .back-btn ~ .login-btn, .btn-group-vertical > .sort-btn ~ .login-btn, .btn-group-vertical > .logout-btn ~ .login-btn, .btn-group-vertical > .reg-btn ~ .login-btn, .btn-group-vertical > .login-btn ~ .login-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .item-list-card,
 .btn-group-vertical > .btn-group:not(:first-child) > .add-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .back-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .sort-btn,
@@ -4868,7 +4887,7 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.card, .item-list-card {
+.card, .keepr-card, .keepr-card-filled, .item-list-card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -4879,26 +4898,28 @@ textarea.form-control-lg {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
-.card > hr, .item-list-card > hr {
+.card > hr, .keepr-card > hr, .keepr-card-filled > hr, .item-list-card > hr {
   margin-right: 0;
   margin-left: 0;
 }
-.card > .list-group, .item-list-card > .list-group {
+.card > .list-group, .keepr-card > .list-group, .keepr-card-filled > .list-group, .item-list-card > .list-group {
   border-top: inherit;
   border-bottom: inherit;
 }
-.card > .list-group:first-child, .item-list-card > .list-group:first-child {
+.card > .list-group:first-child, .keepr-card > .list-group:first-child, .keepr-card-filled > .list-group:first-child, .item-list-card > .list-group:first-child {
   border-top-width: 0;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
-.card > .list-group:last-child, .item-list-card > .list-group:last-child {
+.card > .list-group:last-child, .keepr-card > .list-group:last-child, .keepr-card-filled > .list-group:last-child, .item-list-card > .list-group:last-child {
   border-bottom-width: 0;
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
-.card > .card-header + .list-group, .item-list-card > .card-header + .list-group,
+.card > .card-header + .list-group, .keepr-card > .card-header + .list-group, .keepr-card-filled > .card-header + .list-group, .item-list-card > .card-header + .list-group,
 .card > .list-group + .card-footer,
+.keepr-card > .list-group + .card-footer,
+.keepr-card-filled > .list-group + .card-footer,
 .item-list-card > .list-group + .card-footer {
   border-top: 0;
 }
@@ -4984,7 +5005,7 @@ textarea.form-control-lg {
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
-.card-group > .card, .card-group > .item-list-card {
+.card-group > .card, .card-group > .keepr-card, .card-group > .keepr-card-filled, .card-group > .item-list-card {
   margin-bottom: 0.75rem;
 }
 @media (min-width: 576px) {
@@ -4992,39 +5013,47 @@ textarea.form-control-lg {
     display: flex;
     flex-flow: row wrap;
   }
-  .card-group > .card, .card-group > .item-list-card {
+  .card-group > .card, .card-group > .keepr-card, .card-group > .keepr-card-filled, .card-group > .item-list-card {
     flex: 1 0 0%;
     margin-bottom: 0;
   }
-  .card-group > .card + .card, .card-group > .item-list-card + .card, .card-group > .card + .item-list-card, .card-group > .item-list-card + .item-list-card {
+  .card-group > .card + .card, .card-group > .keepr-card + .card, .card-group > .keepr-card-filled + .card, .card-group > .item-list-card + .card, .card-group > .card + .keepr-card, .card-group > .keepr-card + .keepr-card, .card-group > .keepr-card-filled + .keepr-card, .card-group > .item-list-card + .keepr-card, .card-group > .card + .keepr-card-filled, .card-group > .keepr-card + .keepr-card-filled, .card-group > .keepr-card-filled + .keepr-card-filled, .card-group > .item-list-card + .keepr-card-filled, .card-group > .card + .item-list-card, .card-group > .keepr-card + .item-list-card, .card-group > .keepr-card-filled + .item-list-card, .card-group > .item-list-card + .item-list-card {
     margin-left: 0;
     border-left: 0;
   }
-  .card-group > .card:not(:last-child), .card-group > .item-list-card:not(:last-child) {
+  .card-group > .card:not(:last-child), .card-group > .keepr-card:not(:last-child), .card-group > .keepr-card-filled:not(:last-child), .card-group > .item-list-card:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:not(:last-child) .card-img-top, .card-group > .item-list-card:not(:last-child) .card-img-top,
+  .card-group > .card:not(:last-child) .card-img-top, .card-group > .keepr-card:not(:last-child) .card-img-top, .card-group > .keepr-card-filled:not(:last-child) .card-img-top, .card-group > .item-list-card:not(:last-child) .card-img-top,
 .card-group > .card:not(:last-child) .card-header,
+.card-group > .keepr-card:not(:last-child) .card-header,
+.card-group > .keepr-card-filled:not(:last-child) .card-header,
 .card-group > .item-list-card:not(:last-child) .card-header {
     border-top-right-radius: 0;
   }
-  .card-group > .card:not(:last-child) .card-img-bottom, .card-group > .item-list-card:not(:last-child) .card-img-bottom,
+  .card-group > .card:not(:last-child) .card-img-bottom, .card-group > .keepr-card:not(:last-child) .card-img-bottom, .card-group > .keepr-card-filled:not(:last-child) .card-img-bottom, .card-group > .item-list-card:not(:last-child) .card-img-bottom,
 .card-group > .card:not(:last-child) .card-footer,
+.card-group > .keepr-card:not(:last-child) .card-footer,
+.card-group > .keepr-card-filled:not(:last-child) .card-footer,
 .card-group > .item-list-card:not(:last-child) .card-footer {
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:not(:first-child), .card-group > .item-list-card:not(:first-child) {
+  .card-group > .card:not(:first-child), .card-group > .keepr-card:not(:first-child), .card-group > .keepr-card-filled:not(:first-child), .card-group > .item-list-card:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .card-group > .card:not(:first-child) .card-img-top, .card-group > .item-list-card:not(:first-child) .card-img-top,
+  .card-group > .card:not(:first-child) .card-img-top, .card-group > .keepr-card:not(:first-child) .card-img-top, .card-group > .keepr-card-filled:not(:first-child) .card-img-top, .card-group > .item-list-card:not(:first-child) .card-img-top,
 .card-group > .card:not(:first-child) .card-header,
+.card-group > .keepr-card:not(:first-child) .card-header,
+.card-group > .keepr-card-filled:not(:first-child) .card-header,
 .card-group > .item-list-card:not(:first-child) .card-header {
     border-top-left-radius: 0;
   }
-  .card-group > .card:not(:first-child) .card-img-bottom, .card-group > .item-list-card:not(:first-child) .card-img-bottom,
+  .card-group > .card:not(:first-child) .card-img-bottom, .card-group > .keepr-card:not(:first-child) .card-img-bottom, .card-group > .keepr-card-filled:not(:first-child) .card-img-bottom, .card-group > .item-list-card:not(:first-child) .card-img-bottom,
 .card-group > .card:not(:first-child) .card-footer,
+.card-group > .keepr-card:not(:first-child) .card-footer,
+.card-group > .keepr-card-filled:not(:first-child) .card-footer,
 .card-group > .item-list-card:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
@@ -5265,7 +5294,7 @@ textarea.form-control-lg {
   display: none;
 }
 
-.btn .badge, .add-btn .badge, .back-btn .badge, .sort-btn .badge, .logout-btn .badge, .reg-btn .badge, .login-btn .badge {
+.btn .badge, .item-list-card .badge, .add-btn .badge, .back-btn .badge, .sort-btn .badge, .logout-btn .badge, .reg-btn .badge, .login-btn .badge {
   position: relative;
   top: -1px;
 }
@@ -6842,7 +6871,7 @@ textarea.form-control-lg {
   background-color: currentColor;
   opacity: 0.5;
 }
-.placeholder.btn::before, .placeholder.add-btn::before, .placeholder.back-btn::before, .placeholder.sort-btn::before, .placeholder.logout-btn::before, .placeholder.reg-btn::before, .placeholder.login-btn::before {
+.placeholder.btn::before, .placeholder.item-list-card::before, .placeholder.add-btn::before, .placeholder.back-btn::before, .placeholder.sort-btn::before, .placeholder.logout-btn::before, .placeholder.reg-btn::before, .placeholder.login-btn::before {
   display: inline-block;
   content: "";
 }
@@ -7225,7 +7254,7 @@ textarea.form-control-lg {
   display: table-cell !important;
 }
 
-.d-flex {
+.d-flex, header, .header-nav {
   display: flex !important;
 }
 
@@ -7257,7 +7286,7 @@ textarea.form-control-lg {
   position: static !important;
 }
 
-.position-relative, form .text-field, #login-container {
+.position-relative, .header-logo, form .text-field, #login-container {
   position: relative !important;
 }
 
@@ -7461,7 +7490,7 @@ textarea.form-control-lg {
   width: 75% !important;
 }
 
-.w-100, .text-field input, .text-field input:focus ~ span::before,
+.w-100, header, .text-field input, .text-field input:focus ~ span::before,
 .text-field input:valid ~ span::before, .add-btn {
   width: 100% !important;
 }
@@ -7494,7 +7523,7 @@ textarea.form-control-lg {
   height: 75% !important;
 }
 
-.h-100 {
+.h-100, header {
   height: 100% !important;
 }
 
@@ -7550,7 +7579,7 @@ textarea.form-control-lg {
   flex-shrink: 1 !important;
 }
 
-.flex-wrap {
+.flex-wrap, .header-nav {
   flex-wrap: wrap !important;
 }
 
@@ -7590,7 +7619,7 @@ textarea.form-control-lg {
   justify-content: flex-start !important;
 }
 
-.justify-content-end {
+.justify-content-end, .header-nav {
   justify-content: flex-end !important;
 }
 
@@ -7598,7 +7627,7 @@ textarea.form-control-lg {
   justify-content: center !important;
 }
 
-.justify-content-between {
+.justify-content-between, header {
   justify-content: space-between !important;
 }
 
@@ -7618,7 +7647,7 @@ textarea.form-control-lg {
   align-items: flex-end !important;
 }
 
-.align-items-center {
+.align-items-center, header {
   align-items: center !important;
 }
 
@@ -7710,7 +7739,7 @@ textarea.form-control-lg {
   order: 6 !important;
 }
 
-.m-0 {
+.m-0, .header-logo {
   margin: 0 !important;
 }
 
@@ -7920,7 +7949,7 @@ textarea.form-control-lg {
   margin-left: auto !important;
 }
 
-.p-0 {
+.p-0, .header-logo, .item-list-card {
   padding: 0 !important;
 }
 
@@ -7964,7 +7993,7 @@ textarea.form-control-lg {
   padding-left: 1rem !important;
 }
 
-.px-4 {
+.px-4, header {
   padding-right: 1.5rem !important;
   padding-left: 1.5rem !important;
 }
@@ -7979,7 +8008,7 @@ textarea.form-control-lg {
   padding-bottom: 0 !important;
 }
 
-.py-1 {
+.py-1, header {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }
@@ -8172,7 +8201,7 @@ textarea.form-control-lg {
   line-height: 2 !important;
 }
 
-.text-start, .add-btn {
+.text-start, .item-list-card, .add-btn {
   text-align: left !important;
 }
 
@@ -8184,7 +8213,7 @@ textarea.form-control-lg {
   text-align: center !important;
 }
 
-.text-decoration-none {
+.text-decoration-none, .item-list-card {
   text-decoration: none !important;
 }
 
@@ -11843,7 +11872,7 @@ textarea.form-control-lg {
   padding-bottom: 1.5rem;
 }
 
-.montserrat, .text-field label, .login-label, .item-list-card, .add-btn span, .add-btn p, .back-btn, .reg-btn, .login-btn {
+.montserrat, .workspace-nav, .text-field label, .login-label, .keepr-card, .keepr-card-filled, .item-list-card, .add-btn span, .add-btn p, .back-btn, .reg-btn, .login-btn {
   font-family: "Montserrat", sans-serif;
 }
 
@@ -11924,12 +11953,16 @@ textarea.form-control-lg {
 .ball {
   width: 22px;
   height: 22px;
-  background-color: #285346;
+  background-color: rgba(var(--bs-teal-rgb), 1.5);
   position: absolute;
   top: 2px;
   left: 2px;
   border-radius: 50%;
   transition: transform 0.2s linear;
+}
+
+.logout-btn {
+  border-radius: 0.5rem;
 }
 
 .reg-btn {
@@ -11956,12 +11989,6 @@ textarea.form-control-lg {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   color: #666666;
 }
-.keepr-card .card-title, .keepr-card .item-list-card .item-name, .item-list-card .keepr-card .item-name {
-  font-family: "Montserrat", sans-serif;
-}
-.keepr-card .card-text, .keepr-card .item-list-card .item-assigned-people, .item-list-card .keepr-card .item-assigned-people, .keepr-card .item-list-card .item-qty, .item-list-card .keepr-card .item-qty, .keepr-card .item-list-card .item-desc, .item-list-card .keepr-card .item-desc {
-  font-family: "Montserrat", sans-serif;
-}
 .keepr-card .card-text-first {
   margin-top: 1.75rem;
 }
@@ -11983,12 +12010,6 @@ textarea.form-control-lg {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   color: #fff;
 }
-.keepr-card-filled .card-title, .keepr-card-filled .item-list-card .item-name, .item-list-card .keepr-card-filled .item-name {
-  font-family: "Montserrat", sans-serif;
-}
-.keepr-card-filled .card-text, .keepr-card-filled .item-list-card .item-assigned-people, .item-list-card .keepr-card-filled .item-assigned-people, .keepr-card-filled .item-list-card .item-qty, .item-list-card .keepr-card-filled .item-qty, .keepr-card-filled .item-list-card .item-desc, .item-list-card .keepr-card-filled .item-desc {
-  font-family: "Montserrat", sans-serif;
-}
 .keepr-card-filled .card-text-first {
   margin-top: 1.75rem;
 }
@@ -12009,6 +12030,7 @@ textarea.form-control-lg {
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
   color: #666666;
+  transition: box-shadow 150ms ease-in-out;
 }
 .item-list-card .item-desc {
   font-size: 0.85rem;
@@ -12032,6 +12054,13 @@ textarea.form-control-lg {
   width: 85%;
   height: 4px;
   opacity: 1;
+}
+.item-list-card:hover {
+  color: #666666;
+  box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+.item-list-card:focus {
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .collaborator-card {
@@ -12206,7 +12235,6 @@ form .text-field {
 }
 
 .workspace-nav {
-  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
 }
 .workspace-nav:hover {
@@ -12238,15 +12266,16 @@ form .text-field {
 }
 
 header {
-  position: absolute;
+  z-index: 10;
+  /* position:absolute;
   top: 10;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 100 px;
-  z-index: 10;
+  padding: 15px 100px;
+  z-index: 10; */
 }
 
 /*.header{
@@ -12256,15 +12285,9 @@ header {
     //padding:30px 10%;
 }*/
 .header-logo {
-  position: relative;
+  width: 80%;
   cursor: pointer;
-}
-
-.header-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 10px 0;
+  object-fit: cover;
 }
 
 .header-nav li {
@@ -12278,8 +12301,8 @@ header {
 
 .search {
   position: relative;
-  width: 400px;
-  height: 40px;
+  width: 40%;
+  height: 60%;
 }
 
 .search input {
@@ -12292,16 +12315,16 @@ header {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #fff;
-  background-color: transparent;
+  color: #666666;
+  background-color: #fff;
   outline: none;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
+  border: 1px solid #666666;
+  border-radius: 0.5rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .search input::placeholder {
-  color: #fff;
+  color: #C4C4C4;
 }
 
 /*@media(max-width: 991px)
@@ -12316,8 +12339,8 @@ header {
   top: 50%;
   transform: translateY(-50%);
   left: 10px;
-  color: #fff;
-  border-right: 1px solid #fff;
+  color: #666666;
+  border-right: 1px solid #666666;
   padding-right: 10px;
 }
 

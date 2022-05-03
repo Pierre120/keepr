@@ -144,6 +144,7 @@
 .logout-btn{
   @extend .btn;
   @extend .btn-teal;
+  border-radius: 0.5rem;
 }
 
 .reg-btn {
