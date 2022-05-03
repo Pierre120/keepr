@@ -112,6 +112,15 @@ let initRoutes = (app) => {
     });
   });
 
+  router.get('/workspace/HCHCKE7878', (req, res) => {
+    return res.render('item', {
+      layout: './layouts/item-page',
+      backLink: '/workspace/inventory',
+      title: sampleData[4].itemName,
+      sampleItem: sampleData[4]
+    });
+  });
+
   // --- END ITEMS PAGE ---
 
   router.get('/accounts/user', (req, res) => {
