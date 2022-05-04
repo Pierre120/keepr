@@ -12148,8 +12148,7 @@ textarea.form-control-lg {
 }
 
 #login-container {
-  width: 20vw;
-  height: 55vh;
+  width: 40%;
   margin: auto;
   background: #FEF9F9;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
