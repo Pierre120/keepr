@@ -1,71 +1,97 @@
+<%
+  const history = [
+    {
+      item: 'Super Cheesecake',
+      qty: '0',
+      date: 'April 30, 2022',
+      user: '@bohx_airon'
+    },
+    {
+      item: 'Super Cheesecake',
+      qty: '5',
+      date: 'April 29, 2022',
+      user: '@bohx_faith'
+    },
+    {
+      item: 'Cheesey Cheesecake',
+      qty: '1',
+      date: 'April 28, 2022',
+      user: '@bohx_pierre'
+    },
+    {
+      item: 'Cheesey Cheesecake',
+      qty: '4',
+      date: 'April 25, 2022',
+      user: '@giorgo_giovanna',
+    },
+    {
+      item: 'Jojo Cheesecake',  
+      qty: '2',
+      date: 'April 24, 2022',
+      user: '@JuanDelaCruz_96',
+    }
+  ];
+%>
+
+
 <div class="main-content container-lg my-3 fade-in-up">
-<div class="outer-layer row">
-    <div class="hist-header">
-        <h3 class="mt-3 border-bottom border-3 oswald text-gray display-4 hist-margin-left"> Quantity Updates History <span class="hist-buttons"><%-include('partials/deleteItemBtn.ejs'); %></span></h3>
-        <hr class="hist-black-line text-black">
+<div class="outer-layer row px-4 py-4">
+
+    <div class="row p-0 w-100">
+        <div class="col-10 ps-4">
+            <h3 class="mt-3 border-bottom border-3 oswald text-gray display-4 mx-0"> Quantity Updates History <span class="hist-buttons"><%-include('partials/deleteItemBtn.ejs'); %></span></h3>
+            <hr class="hist-black-line text-black">
+        </div>
+        <!--<a class="hist-sort"><%-include('partials/sort_btn.ejs');%></a> -->
+        <div class="col">
+            <div class="row p-0 m-0 h-100">
+                <div class="col p-0 align-self-end text-end">
+                    <%- include('./partials/sort_btn.ejs'); %>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--<a class="hist-sort"><%-include('partials/sort_btn.ejs');%></a> -->
-    <div class="col-2 hist-sort">
-        <%- include('./partials/sort_btn.ejs'); %>
-      </div>
-    <div class="table-box">
+
+    <!-- History table -->
+    <div class="table-box w-100">
+        <!-- Table header -->
         <div class="table-row">
             <div class="table-cell cell-header">
-                <h3 class="card-title"><strong>Item</strong></h3>
+                <h3 class="card-title text-pink"><strong>Item</strong></h3>
             </div>
             <div class="table-cell cell-header">
-                <h3 class="card-title"><strong>Qty</strong></h3>
+                <h3 class="card-title text-pink"><strong>Qty</strong></h3>
             </div>
             <div class="table-cell cell-header"> 
-                <h3 class="card-title"><strong>Date</strong></h3>
+                <h3 class="card-title text-pink"><strong>Date</strong></h3>
             </div>
             <div class="table-cell cell-header"> 
-                <h3 class="card-title"><strong>Editor</strong></h3>
+                <h3 class="card-title text-pink"><strong>Editor</strong></h3>
             </div>
         </div>
+        <!-- END Table header -->
+
+        <!-- Table data -->
+        <% for(let record of history) { %>
         <div class="table-row row-contents">
             <div class="table-cell">
-                <p><strong>Blueberry Cheesecake</strong></p>
+                <p><strong><%-record.item%></strong></p>
             </div>
             <div class="table-cell">
-                <p><strong>40</strong></p>
+                <p><strong><%- record.qty %></strong></p>
             </div>
             <div class="table-cell"> 
-                <p><strong>05/03/2022</strong></p>
+                <p><strong><%- record.date %></strong></p>
             </div>
             <div class="table-cell last-cell"> 
-                <p><strong>@bohx_Faith</strong></p>
+                <p><strong><%-record.user%></strong></p>
             </div>
         </div>
-        <div class="table-row row-contents">
-            <div class="table-cell">
-                <p><strong>Lemon Cheesecake</strong></p>
-            </div>
-            <div class="table-cell">
-                <p><strong>100</strong></p>
-            </div>
-            <div class="table-cell"> 
-                <p><strong>05/03/2022</strong></p>
-            </div>
-            <div class="table-cell last-cell"> 
-                <p><strong>@bohx_Airon</strong></p>
-            </div>
-        </div>
-        <div class="table-row row-contents">
-            <div class="table-cell">
-                <p><strong>Putakte Cheesecake</strong></p>
-            </div>
-            <div class="table-cell">
-                <p><strong>70</strong></p>
-            </div>
-            <div class="table-cell"> 
-                <p><strong>05/01/2022</strong></p>
-            </div>
-            <div class="table-cell last-cell"> 
-                <p><strong>@bohx_Pierre</strong></p>
-            </div>
-        </div>
+        <% }                            %>
+        <!--END of Table data -->
     </div>
+    <!-- END History table -->
+
 </div>
 
 </div> 
