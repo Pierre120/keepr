@@ -185,8 +185,8 @@ let initRoutes = (app) => {
     return res.render('others-account', { 
       layout: './layouts/account-page',
       backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[1].username,
-      displayName: sampleOtherUsers[1].displayName
+      username: sampleOtherUsers[2].username,
+      displayName: sampleOtherUsers[2].displayName
     });
   });
 
