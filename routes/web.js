@@ -155,7 +155,12 @@ let initRoutes = (app) => {
 
   // --- ACCOUNTS PAGE ---
   router.get('/accounts/personal', (req, res) => {
-    return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
+    return res.render('account', {
+      layout: './layouts/account-page',
+      backLink: '/workspace/dashboard',
+      username: 'JuanDelaCruz_96',
+      displayName: 'St4rL0rd96'
+    });
   });
 
   router.get('/accounts/bohxfaith', (req, res) => {
