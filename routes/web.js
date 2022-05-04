@@ -154,7 +154,7 @@ let initRoutes = (app) => {
   // --- END ITEMS PAGE ---
 
   // --- ACCOUNTS PAGE ---
-  router.get('/accounts/user', (req, res) => {
+  router.get('/accounts/personal', (req, res) => {
     return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
   });
 
