@@ -158,6 +158,15 @@ let initRoutes = (app) => {
     return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
   });
 
+  router.get('/accounts/bohxfaith', (req, res) => {
+    return res.render('others-account', { 
+      layout: './layouts/account-page',
+      backLink: '/workspace/collaborators',
+      username: sampleOtherUsers[0].username,
+      displayName: sampleOtherUsers[0].displayName
+    });
+  });
+
   router.get('/accounts/jojo', (req, res) => {
     return res.render('others-account', { 
       layout: './layouts/account-page',
