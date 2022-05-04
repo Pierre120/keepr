@@ -153,6 +153,7 @@ let initRoutes = (app) => {
 
   // --- END ITEMS PAGE ---
 
+  // --- ACCOUNTS PAGE ---
   router.get('/accounts/user', (req, res) => {
     return res.render('account', { layout: './layouts/account-page', backLink: '/workspace/dashboard' });
   });
@@ -161,10 +162,12 @@ let initRoutes = (app) => {
     return res.render('others-account', { 
       layout: './layouts/account-page',
       backLink: '/workspace/collaborators',
-      username: 'Giorgo Giovanna',
-      displayName: 'J0J0' 
+      username: sampleOtherUsers[3].username,
+      displayName: sampleOtherUsers[3].displayName
     });
   });
+
+  // --- END ACCOUNTS PAGE ---
 
   router.get('/search-results/query', (req, res) => {
     return res.render('search-results', {
