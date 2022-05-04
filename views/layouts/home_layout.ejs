@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%- title %></title>
+  <title>Home</title>
 
   <link rel="stylesheet" href="../css/style.css">
 
@@ -14,6 +14,13 @@
 <body>
   <%- include('../partials/header.ejs') %>
 
+  <!-- 
+    Use this if you plan to place the back button outside this div.
+    Making the back button's position absolute to the body.
+    This also makes it easier since the div is already in the middle.
+    You may opt to change this if you want. Just make sure that you add
+    the `.main-content` as the last class of your div container.
+  -->
   <div class="container-xl main-content">
     <%- body %>
   </div>

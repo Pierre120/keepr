@@ -2,18 +2,12 @@
 @use '../components/typography' as *;
 
 .keepr-card {
+  @extend .card;
+  @extend .montserrat;
   border-radius: $border-radius-lg;
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
   color: $gray;
-
-  .card-title {
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .card-text {
-    font-family: 'Montserrat', sans-serif;
-  }
 
   .card-text-first {
     margin-top: 1.75rem;
@@ -34,18 +28,12 @@
 
 
 .keepr-card-filled {
+  @extend .card;
+  @extend .montserrat;
   border-radius: $border-radius-lg;
   border-width: 0;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
   color: $white;
-
-  .card-title {
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  .card-text {
-    font-family: 'Montserrat', sans-serif;
-  }
 
   .card-text-first {
     margin-top: 1.75rem;
@@ -66,12 +54,17 @@
 
 
 .item-list-card {
+  @extend .btn;
+  @extend .text-start;
+  @extend .p-0;
   @extend .card;
   @extend .montserrat;
+  @extend .text-decoration-none;
   border-radius: $border-radius-lg;
   border-width: 1px;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
   color: $gray;
+  transition: box-shadow 150ms ease-in-out;
 
   .item-name {
     @extend .card-title;
@@ -117,5 +110,65 @@
     opacity: 1;
   }
 
+  &:hover {
+    color: $gray;
+    box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.25);
+  }
+
+  &:focus {
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  }
 }
 
+.collaborator-card {
+  border-radius: $border-radius-lg;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  color: $gray;
+
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .card-text-first {
+    margin-top: 1.75rem;
+  }
+
+  hr {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    opacity: 1;
+  }
+}
+
+.home-card {
+  @extend .btn;
+  @extend .text-start;
+  @extend .p-0;
+  @extend .keepr-card-filled;
+  @extend .text-decoration-none;
+  border-radius: $border-radius-lg;
+  border-width: 1px;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  transition: box-shadow 150ms ease-in-out;
+  color: $white;
+
+  &:hover {
+    color: $white;
+    box-shadow: 0 0.2rem 1.5rem rgba(0,0,0,0.25);
+  }
+
+  &:focus {
+    box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+  }
+}

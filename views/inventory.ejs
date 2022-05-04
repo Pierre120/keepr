@@ -1,25 +1,6 @@
 <%  const sampleList = new Object();
     sampleList.workspaceColor = 'pink';
-    sampleList.items = [                                                                                                                
-      {                                                                                                                     
-        itemName: 'Super Cheesecake',                                                                                       
-        description: "Super yummy-licious extravagant all-in-one cheese that will make you feel like you can save the day.",
-        qty: '2 slices',                                                                                                    
-        assignedPeople: ['@bohx_airon','@bohx_faith']                                                                       
-      },                                                                                                                    
-      {                                                                                                                     
-        itemName: 'Putakte Cheesecake',                                                                                     
-        description: "Sa sobrang sarap mapapasigaw ka na lng ng \"Putakte ka ng ina mo!\".",                                
-        qty: '3 whole',                                                                                                     
-        assignedPeople: ['@bohx_airon','@bohx_faith','@bohx_pierre']                                                        
-      },                                                                                                                    
-      {                                                                                                                     
-        itemName: 'Cheesey Cheesecake',                                                                                     
-        description: "Basta cheesecake ito na may additional cheese drizzle sa taas. May mala-lava cake feeling din ito.",  
-        qty: '6 whole',                                                                                                     
-        assignedPeople: ['@bohx_pierre']                                                                                    
-      }
-    ];
+    sampleList.items = sampleItems;
 %>
 
 <div class="container-lg my-3">
@@ -38,7 +19,7 @@
       <!-- Item list -->
       <div class="d-grid gap-3 fade-in-up">
         <% for(let item of sampleList.items) {                                       %>
-        <div class="item-list-card border-<%= sampleList.workspaceColor %>">
+        <a class="item-list-card border-<%= sampleList.workspaceColor %>" href="<%= item.path %>">
           <div class="card-body">
             <h4 class="item-name"><%- item.itemName %></h4>
             <hr class="text-<%= sampleList.workspaceColor %>">
@@ -53,13 +34,13 @@
                 <% for(let indiv = 0; indiv < item.assignedPeople.length; indiv++) { %>
                     <%- item.assignedPeople[indiv] %>
                 <%   if(indiv < item.assignedPeople.length - 1) {                    %>
-                       ,
+                      ,
                 <%   }                                                               %>
                 <% }                                                                 %>
               </span>
             </p>
           </div>
-        </div>
+        </a>
         <% }                                                                         %>
       </div>
 

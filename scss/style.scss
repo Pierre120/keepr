@@ -15,4 +15,8 @@
 @use 'sections/register';
 @use 'sections/sidenav';
 @use 'sections/workspace';
+@use 'sections/header';
 @use 'sections/account';
+@use 'sections/home';
+@use 'sections/collaborators';
+@use 'sections/history';
