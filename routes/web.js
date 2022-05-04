@@ -44,6 +44,29 @@ const sampleData = [
     path: '/workspace/HCHCKE7878'
   }
 ];
+
+const sampleOtherUsers = [
+  {
+    username: 'bohx_faith',
+    displayName: 'FaithGanda'
+  },
+  {
+    username: 'bohx_airon',
+    displayName: 'AironPogi'
+  },
+  {
+    username: 'bohx_pierre',
+    displayName: 'P13rr3'
+  },
+  {
+    username: 'Giorgio_Giovanna',
+    displayName: 'JoJo'
+  },
+  {
+    username: 'mamma_mia',
+    displayName: 'DancingQueen'
+  }
+];
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
