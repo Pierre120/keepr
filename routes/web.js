@@ -194,6 +194,15 @@ let initRoutes = (app) => {
     });
   });
 
+  router.get('/accounts/mammamia', (req, res) => {
+    return res.render('others-account', { 
+      layout: './layouts/account-page',
+      backLink: '/workspace/collaborators',
+      username: sampleOtherUsers[4].username,
+      displayName: sampleOtherUsers[4].displayName
+    });
+  });
+
   // --- END ACCOUNTS PAGE ---
 
   router.get('/search-results/query', (req, res) => {
