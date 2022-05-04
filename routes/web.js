@@ -176,6 +176,15 @@ let initRoutes = (app) => {
     });
   });
 
+  router.get('/accounts/bohxpierre', (req, res) => {
+    return res.render('others-account', { 
+      layout: './layouts/account-page',
+      backLink: '/workspace/collaborators',
+      username: sampleOtherUsers[1].username,
+      displayName: sampleOtherUsers[1].displayName
+    });
+  });
+
   router.get('/accounts/jojo', (req, res) => {
     return res.render('others-account', { 
       layout: './layouts/account-page',
