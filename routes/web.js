@@ -72,7 +72,7 @@ const sampleOtherUsers = [
 let router = express.Router();
 
 let initRoutes = (app) => {
-  router.get('/index', (req, res) => {
+  router.get('/', (req, res) => {
     return res.render('index');
   }); // Landing page
 
