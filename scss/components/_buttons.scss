@@ -110,7 +110,7 @@
 .label{
   width: 50px;
   height: 26px;
-  background-color: #F277A4;
+  background-color: $teal;
   display: flex;
   border-radius: 50px;
   align-items: center;
@@ -133,7 +133,7 @@
 .ball{
   width:22px;
   height: 22px;
-  background-color: rgba(var(--bs-teal-rgb), 5);
+  background-color: $pink;
   position: absolute;
   top: 2px;
   left: 2px;

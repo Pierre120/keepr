@@ -11956,7 +11956,7 @@ textarea.form-control-lg {
 .label {
   width: 50px;
   height: 26px;
-  background-color: #F277A4;
+  background-color: #6CD9B1;
   display: flex;
   border-radius: 50px;
   align-items: center;
@@ -11977,7 +11977,7 @@ textarea.form-control-lg {
 .ball {
   width: 22px;
   height: 22px;
-  background-color: rgba(var(--bs-teal-rgb), 5);
+  background-color: #F277A4;
   position: absolute;
   top: 2px;
   left: 2px;
@@ -12335,7 +12335,7 @@ header {
 }
 
 .prof-pic {
-  color: #F277A4;
+  color: #6CD9B1;
 }
 
 .search {
