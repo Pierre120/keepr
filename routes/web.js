@@ -69,11 +69,26 @@ const sampleOtherUsers = [
 ];
 
 const sampleWorkspaces = {
-  default: 'Default Workspace',
-  shoppee: 'Shoppee',
-  lozoda: 'Lozoda',
-  lolamove: 'Lolamove',
-  tsubibo: 'Tsubibo'
+  default: {
+    name: 'Default Workspace',
+    path: 'default'
+  },
+  shoppee: {
+    name: 'Shoppee',
+    path: 'shoppee'
+  },
+  lozoda: {
+    name: 'Lozoda',
+    path: 'lozoda'
+  },
+  lolamove: {
+    name: 'Lolamove',
+    path: 'lolamove'
+  },
+  tsubibo: {
+    name: 'Tsubibo',
+    path: 'tsubibo'
+  }
 }
 // --- END SAMPLE DATA ---
 
