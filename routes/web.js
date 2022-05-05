@@ -157,43 +157,6 @@ let initRoutes = (app) => {
       sampleItem: itemPaths[req.params.itemCode]
     });
   });
-  /*
-  router.get('/workspace/CCHCKE0909', (req, res) => {
-    return res.render('item', {
-      layout: './layouts/item-page',
-      backLink: '/workspace/inventory',
-      title: sampleData[1].itemName,
-      sampleItem: sampleData[1]
-    });
-  });
-
-  router.get('/workspace/JCHCKE7070', (req, res) => {
-    return res.render('item', {
-      layout: './layouts/item-page',
-      backLink: '/workspace/inventory',
-      title: sampleData[2].itemName,
-      sampleItem: sampleData[2]
-    });
-  });
-
-  router.get('/workspace/UCHCKE1212', (req, res) => {
-    return res.render('item', {
-      layout: './layouts/item-page',
-      backLink: '/workspace/inventory',
-      title: sampleData[3].itemName,
-      sampleItem: sampleData[3]
-    });
-  });
-
-  router.get('/workspace/HCHCKE7878', (req, res) => {
-    return res.render('item', {
-      layout: './layouts/item-page',
-      backLink: '/workspace/inventory',
-      title: sampleData[4].itemName,
-      sampleItem: sampleData[4]
-    });
-  });*/
-
   // --- END ITEMS PAGE ---
 
   // --- ACCOUNTS PAGE ---
