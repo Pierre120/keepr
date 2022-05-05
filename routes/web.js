@@ -92,8 +92,14 @@ let initRoutes = (app) => {
       return res.render('home', {layout: './layouts/home_layout'})
   }); // App/Home page
 
-  router.get('/workspace/dashboard', (req, res) => {
-    return res.render('dashboard', { active: 0, layout: './layouts/workspace' })
+  router.get('/:workspace/dashboard', (req, res) => {
+    console.log(req.params.workspace);
+    console.log(typeof req.params.workspace);
+    return res.render('dashboard', {
+      active: 0,
+      layout: './layouts/workspace',
+      workpsace: req.params.workspace
+    })
   }); // dashboard
 
   router.get('/workspace/inventory', (req, res) => {
