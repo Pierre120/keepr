@@ -117,8 +117,12 @@ let initRoutes = (app) => {
     })
   }); // collaborators
 
-  router.get('/workspace/history', (req, res) => {
-    return res.render('history', { active: 3, layout: './layouts/workspace' })
+  router.get('/:workspace/history', (req, res) => {
+    return res.render('history', {
+      active: 3,
+      layout: './layouts/workspace',
+      workspace: sampleWorkspaces[req.params.workspace]
+    })
   }); // history
 
 
