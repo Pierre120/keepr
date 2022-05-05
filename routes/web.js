@@ -67,6 +67,14 @@ const sampleOtherUsers = [
     displayName: 'DancingQueen'
   }
 ];
+
+const sampleWorkspaces = {
+  default: 'Default Workspace',
+  shoppee: 'Shoppee',
+  lozoda: 'Lozoda',
+  lolamove: 'Lolamove',
+  tsubibo: 'Tsubibo'
+}
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
