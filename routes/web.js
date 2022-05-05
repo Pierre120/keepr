@@ -149,15 +149,15 @@ let initRoutes = (app) => {
 
 
   // --- ITEMS PAGE ---
-  router.get('/workspace/SCHCKE3434', (req, res) => {
+  router.get('/:workspace/:itemCode', (req, res) => {
     return res.render('item', {
       layout: './layouts/item-page',
       backLink: '/workspace/inventory',
-      title: sampleData[0].itemName,
-      sampleItem: sampleData[0]
+      title: itemPaths[req.params.itemCode].itemName,
+      sampleItem: itemPaths[req.params.itemCode]
     });
   });
-
+  /*
   router.get('/workspace/CCHCKE0909', (req, res) => {
     return res.render('item', {
       layout: './layouts/item-page',
@@ -192,7 +192,7 @@ let initRoutes = (app) => {
       title: sampleData[4].itemName,
       sampleItem: sampleData[4]
     });
-  });
+  });*/
 
   // --- END ITEMS PAGE ---
 
