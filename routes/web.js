@@ -123,6 +123,7 @@ let initRoutes = (app) => {
       return res.render('home', {layout: './layouts/home_layout'})
   }); // App/Home page
 
+  // --- ACCOUNTS PAGE ---
   router.get('/accounts/personal', (req, res) => {
     return res.render('account', {
       layout: './layouts/account-page',
@@ -140,14 +141,18 @@ let initRoutes = (app) => {
       displayName: userPaths[req.params.user].displayName
     });
   });
+  // --- END ACCOUNTS PAGE ---
 
+  // --- SEARCH RESULT PAGE
   router.get('/search-results/query', (req, res) => {
     return res.render('search-results', {
       layout: './layouts/results-page',
       sampleItems: sampleData
     });
   }); // Search results page
+  // --- END SEARCH RESULT PAGE
 
+  // --- WORKSPACE PAGES ---
   router.get('/:workspace/dashboard', (req, res) => {
     return res.render('dashboard', {
       active: 0,
@@ -184,6 +189,7 @@ let initRoutes = (app) => {
       workspacePath: sampleWorkspaces[req.params.workspace].path
     })
   }); // history
+  // --- WORKSPACE PAGES ---
 
 
   // --- ITEMS PAGE ---
