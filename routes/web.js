@@ -109,7 +109,7 @@ let initRoutes = (app) => {
     });
   }); // inventory
 
-  router.get('/workspace/collaborators', (req, res) => {
+  router.get('/:workspace/collaborators', (req, res) => {
     return res.render('collaborators', {
       active: 2,
       layout: './layouts/workspace',
