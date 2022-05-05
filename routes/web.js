@@ -93,12 +93,10 @@ let initRoutes = (app) => {
   }); // App/Home page
 
   router.get('/:workspace/dashboard', (req, res) => {
-    console.log(req.params.workspace);
-    console.log(typeof req.params.workspace);
     return res.render('dashboard', {
       active: 0,
       layout: './layouts/workspace',
-      workpsace: req.params.workspace
+      workspace: sampleWorkspaces[req.params.workspace]
     })
   }); // dashboard
 
