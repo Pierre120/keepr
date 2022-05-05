@@ -110,7 +110,11 @@ let initRoutes = (app) => {
   }); // inventory
 
   router.get('/workspace/collaborators', (req, res) => {
-    return res.render('collaborators', { active: 2, layout: './layouts/workspace' })
+    return res.render('collaborators', {
+      active: 2,
+      layout: './layouts/workspace',
+      workspace: sampleWorkspaces[req.params.workspace]
+    })
   }); // collaborators
 
   router.get('/workspace/history', (req, res) => {
