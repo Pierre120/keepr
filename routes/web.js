@@ -40,6 +40,14 @@ const sampleData = [
   }
 ];
 
+const itemPaths = {
+  SCHCKE3434: sampleData[0],
+  CCHCKE0909: sampleData[1],
+  JCHCKE7070: sampleData[2],
+  UCHCKE1212: sampleData[3],
+  HCHCKE7878: sampleData[4]
+}
+
 const sampleOtherUsers = [
   {
     username: 'bohx_faith',
