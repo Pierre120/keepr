@@ -110,6 +110,13 @@ let initRoutes = (app) => {
       return res.render('home', {layout: './layouts/home_layout'})
   }); // App/Home page
 
+  router.get('/search-results/query', (req, res) => {
+    return res.render('search-results', {
+      layout: './layouts/results-page',
+      sampleItems: sampleData
+    });
+  }); // Search results page
+
   router.get('/:workspace/dashboard', (req, res) => {
     return res.render('dashboard', {
       active: 0,
@@ -215,13 +222,6 @@ let initRoutes = (app) => {
   });
 
   // --- END ACCOUNTS PAGE ---
-
-  router.get('/search-results/query', (req, res) => {
-    return res.render('search-results', {
-      layout: './layouts/results-page',
-      sampleItems: sampleData
-    });
-  });
 
   return app.use('/', router); // Set the router
 };
