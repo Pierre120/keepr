@@ -19,7 +19,7 @@
       <!-- Item list -->
       <div class="d-grid gap-3 fade-in-up">
         <% for(let item of sampleList.items) {                                       %>
-        <a class="item-list-card border-<%= sampleList.workspaceColor %>" href="<%= item.path %>">
+        <a class="item-list-card border-<%= sampleList.workspaceColor %>" href="/<%= workspacePath %>/<%= item.productCode %>">
           <div class="card-body">
             <h4 class="item-name"><%- item.itemName %></h4>
             <hr class="text-<%= sampleList.workspaceColor %>">
