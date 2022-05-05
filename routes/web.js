@@ -100,10 +100,11 @@ let initRoutes = (app) => {
     })
   }); // dashboard
 
-  router.get('/workspace/inventory', (req, res) => {
+  router.get('/:workspace/inventory', (req, res) => {
     return res.render('inventory', { 
       active: 1,
       layout: './layouts/workspace',
+      workspace: sampleWorkspaces[req.params.workspace],
       sampleItems: sampleData
     });
   }); // inventory
