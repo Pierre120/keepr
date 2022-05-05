@@ -130,7 +130,8 @@ let initRoutes = (app) => {
     return res.render('collaborators', {
       active: 2,
       layout: './layouts/workspace',
-      workspace: sampleWorkspaces[req.params.workspace]
+      workspace: sampleWorkspaces[req.params.workspace],
+      workspacePath: sampleWorkspaces[req.params.workspace].path
     })
   }); // collaborators
 
