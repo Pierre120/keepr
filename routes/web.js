@@ -68,7 +68,7 @@ const sampleOtherUsers = [
   }
 ];
 
-const workspacePaths = {
+const sampleWorkspaces = {
   default: 'Default Workspace',
   shoppee: 'Shoppee',
   lozoda: 'Lozoda',
@@ -96,7 +96,7 @@ let initRoutes = (app) => {
     return res.render('dashboard', {
       active: 0,
       layout: './layouts/workspace',
-      workspace: workspacePaths[req.params.workspace]
+      workspace: sampleWorkspaces[req.params.workspace]
     })
   }); // dashboard
 
@@ -104,7 +104,7 @@ let initRoutes = (app) => {
     return res.render('inventory', { 
       active: 1,
       layout: './layouts/workspace',
-      workspace: workspacePaths[req.params.workspace],
+      workspace: sampleWorkspaces[req.params.workspace],
       sampleItems: sampleData
     });
   }); // inventory
@@ -113,7 +113,7 @@ let initRoutes = (app) => {
     return res.render('collaborators', {
       active: 2,
       layout: './layouts/workspace',
-      workspace: workspacePaths[req.params.workspace]
+      workspace: sampleWorkspaces[req.params.workspace]
     })
   }); // collaborators
 
@@ -121,7 +121,7 @@ let initRoutes = (app) => {
     return res.render('history', {
       active: 3,
       layout: './layouts/workspace',
-      workspace: workspacePaths[req.params.workspace]
+      workspace: sampleWorkspaces[req.params.workspace]
     })
   }); // history
 
