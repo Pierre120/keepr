@@ -111,7 +111,8 @@ let initRoutes = (app) => {
     return res.render('dashboard', {
       active: 0,
       layout: './layouts/workspace',
-      workspace: sampleWorkspaces[req.params.workspace]
+      workspace: sampleWorkspaces[req.params.workspace].name,
+      workspacePath: sampleWorkspaces[req.params.workspace].path
     })
   }); // dashboard
 
