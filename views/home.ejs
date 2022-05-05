@@ -2,23 +2,28 @@
   const workspaces = [
     {
       name: 'Default Workspace',
-      themeColor: 'pink'
+      themeColor: 'pink',
+      pathName: 'default'
     },
     {
       name: 'Shoppee',
-      themeColor:'lightpurple'
+      themeColor: 'lightpurple',
+      pathName: 'shoppee'
     },
     {
       name: 'Lozoda',
-      themeColor:'darkpurple'
+      themeColor: 'darkpurple',
+      pathName: 'lozoda'
     },
     {
       name: 'Lolamove',
-      themeColor: 'teal'
+      themeColor: 'teal',
+      pathName: 'lolamove'
     },
     {
       name: 'Tsubibo',
-      themeColor: 'pink'
+      themeColor: 'pink',
+      pathName: 'tsubibo'
     }
   ];
 %>
@@ -39,14 +44,14 @@
     <!-- END Add Workspace Button -->
 
     <!-- Workspace Cards -->
-    <% for(let i=0; i < workspaces.length; i++) { %>
+    <% for(let ws of workspaces) { %>
     <div class="col">
-      <a class="home-card h-200 bg-<%= workspaces[i].themeColor %>" href="/workspace/dashboard">
+      <a class="home-card h-200 bg-<%= ws.themeColor %>" href="/<%= ws.pathName %>/dashboard">
         <div class="card-body">
         </div>
-        <div class="card-footer border-top-0 bg-<%= workspaces[i].themeColor %>">
+        <div class="card-footer border-top-0 bg-<%= ws.themeColor %>">
           <hr>
-          <h6 class="card-title title-1 montserrat"><%-workspaces[i].name%></h6>
+          <h6 class="card-title title-1 montserrat"><%- ws.name %></h6>
         </div>
       </a>
     </div>

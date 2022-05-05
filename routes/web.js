@@ -67,6 +67,29 @@ const sampleOtherUsers = [
     displayName: 'DancingQueen'
   }
 ];
+
+const sampleWorkspaces = {
+  default: {
+    name: 'Default Workspace',
+    path: 'default'
+  },
+  shoppee: {
+    name: 'Shoppee',
+    path: 'shoppee'
+  },
+  lozoda: {
+    name: 'Lozoda',
+    path: 'lozoda'
+  },
+  lolamove: {
+    name: 'Lolamove',
+    path: 'lolamove'
+  },
+  tsubibo: {
+    name: 'Tsubibo',
+    path: 'tsubibo'
+  }
+}
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
@@ -84,24 +107,41 @@ let initRoutes = (app) => {
       return res.render('home', {layout: './layouts/home_layout'})
   }); // App/Home page
 
-  router.get('/workspace/dashboard', (req, res) => {
-    return res.render('dashboard', { active: 0, layout: './layouts/workspace' })
+  router.get('/:workspace/dashboard', (req, res) => {
+    return res.render('dashboard', {
+      active: 0,
+      layout: './layouts/workspace',
+      workspace: sampleWorkspaces[req.params.workspace].name,
+      workspacePath: sampleWorkspaces[req.params.workspace].path
+    })
   }); // dashboard
 
-  router.get('/workspace/inventory', (req, res) => {
+  router.get('/:workspace/inventory', (req, res) => {
     return res.render('inventory', { 
       active: 1,
       layout: './layouts/workspace',
+      workspace: sampleWorkspaces[req.params.workspace].name,
+      workspacePath: sampleWorkspaces[req.params.workspace].path,
       sampleItems: sampleData
     });
   }); // inventory
 
-  router.get('/workspace/collaborators', (req, res) => {
-    return res.render('collaborators', { active: 2, layout: './layouts/workspace' })
+  router.get('/:workspace/collaborators', (req, res) => {
+    return res.render('collaborators', {
+      active: 2,
+      layout: './layouts/workspace',
+      workspace: sampleWorkspaces[req.params.workspace].name,
+      workspacePath: sampleWorkspaces[req.params.workspace].path
+    })
   }); // collaborators
 
-  router.get('/workspace/history', (req, res) => {
-    return res.render('history', { active: 3, layout: './layouts/workspace' })
+  router.get('/:workspace/history', (req, res) => {
+    return res.render('history', {
+      active: 3,
+      layout: './layouts/workspace',
+      workspace: sampleWorkspaces[req.params.workspace].name,
+      workspacePath: sampleWorkspaces[req.params.workspace].path
+    })
   }); // history
 
 
