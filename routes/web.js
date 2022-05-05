@@ -51,25 +51,38 @@ const itemPaths = {
 const sampleOtherUsers = [
   {
     username: 'bohx_faith',
-    displayName: 'FaithGanda'
+    displayName: 'FaithGanda',
+    path: 'bohxfaith'
   },
   {
     username: 'bohx_airon',
-    displayName: 'AironPogi'
+    displayName: 'AironPogi',
+    path: 'bohxairon'
   },
   {
     username: 'bohx_pierre',
-    displayName: 'P13rr3'
+    displayName: 'P13rr3',
+    path: 'bohxpierre'
   },
   {
     username: 'Giorgio_Giovanna',
-    displayName: 'JoJo'
+    displayName: 'JoJo',
+    path: 'jojo'
   },
   {
     username: 'mamma_mia',
-    displayName: 'DancingQueen'
+    displayName: 'DancingQueen',
+    path: 'mammamia'
   }
 ];
+
+const userPaths = {
+  bohxfaith: sampleOtherUsers[0],
+  bohxairon: sampleOtherUsers[1],
+  bohxpierre: sampleOtherUsers[2],
+  jojo: sampleOtherUsers[3],
+  mammamia: sampleOtherUsers[4]
+}
 
 const sampleWorkspaces = {
   default: {
@@ -110,13 +123,36 @@ let initRoutes = (app) => {
       return res.render('home', {layout: './layouts/home_layout'})
   }); // App/Home page
 
+  // --- ACCOUNTS PAGE ---
+  router.get('/accounts/personal', (req, res) => {
+    return res.render('account', {
+      layout: './layouts/account-page',
+      backLink: '/workspace/dashboard',
+      username: 'JuanDelaCruz_96',
+      displayName: 'St4rL0rd96'
+    });
+  });
+
+  router.get('/accounts/:user', (req, res) => {
+    return res.render('others-account', { 
+      layout: './layouts/account-page',
+      backLink: '/workspace/collaborators',
+      username: userPaths[req.params.user].username,
+      displayName: userPaths[req.params.user].displayName
+    });
+  });
+  // --- END ACCOUNTS PAGE ---
+
+  // --- SEARCH RESULT PAGE
   router.get('/search-results/query', (req, res) => {
     return res.render('search-results', {
       layout: './layouts/results-page',
       sampleItems: sampleData
     });
   }); // Search results page
+  // --- END SEARCH RESULT PAGE
 
+  // --- WORKSPACE PAGES ---
   router.get('/:workspace/dashboard', (req, res) => {
     return res.render('dashboard', {
       active: 0,
@@ -153,6 +189,7 @@ let initRoutes = (app) => {
       workspacePath: sampleWorkspaces[req.params.workspace].path
     })
   }); // history
+  // --- WORKSPACE PAGES ---
 
 
   // --- ITEMS PAGE ---
@@ -165,63 +202,6 @@ let initRoutes = (app) => {
     });
   });
   // --- END ITEMS PAGE ---
-
-  // --- ACCOUNTS PAGE ---
-  router.get('/accounts/personal', (req, res) => {
-    return res.render('account', {
-      layout: './layouts/account-page',
-      backLink: '/workspace/dashboard',
-      username: 'JuanDelaCruz_96',
-      displayName: 'St4rL0rd96'
-    });
-  });
-
-  router.get('/accounts/bohxfaith', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[0].username,
-      displayName: sampleOtherUsers[0].displayName
-    });
-  });
-
-  router.get('/accounts/bohxairon', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[1].username,
-      displayName: sampleOtherUsers[1].displayName
-    });
-  });
-
-  router.get('/accounts/bohxpierre', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[2].username,
-      displayName: sampleOtherUsers[2].displayName
-    });
-  });
-
-  router.get('/accounts/jojo', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[3].username,
-      displayName: sampleOtherUsers[3].displayName
-    });
-  });
-
-  router.get('/accounts/mammamia', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[4].username,
-      displayName: sampleOtherUsers[4].displayName
-    });
-  });
-
-  // --- END ACCOUNTS PAGE ---
 
   return app.use('/', router); // Set the router
 };
