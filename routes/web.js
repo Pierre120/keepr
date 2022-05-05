@@ -197,55 +197,6 @@ let initRoutes = (app) => {
   });
   // --- END ITEMS PAGE ---
 
-  // --- ACCOUNTS PAGE ---
-
-  /* router.get('/accounts/bohxfaith', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[0].username,
-      displayName: sampleOtherUsers[0].displayName
-    });
-  });
-
-  router.get('/accounts/bohxairon', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[1].username,
-      displayName: sampleOtherUsers[1].displayName
-    });
-  });
-
-  router.get('/accounts/bohxpierre', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[2].username,
-      displayName: sampleOtherUsers[2].displayName
-    });
-  });
-
-  router.get('/accounts/jojo', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[3].username,
-      displayName: sampleOtherUsers[3].displayName
-    });
-  });
-
-  router.get('/accounts/mammamia', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: sampleOtherUsers[4].username,
-      displayName: sampleOtherUsers[4].displayName
-    });
-  }); */
-
-  // --- END ACCOUNTS PAGE ---
-
   return app.use('/', router); // Set the router
 };
 
