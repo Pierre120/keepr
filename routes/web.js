@@ -123,6 +123,24 @@ let initRoutes = (app) => {
       return res.render('home', {layout: './layouts/home_layout'})
   }); // App/Home page
 
+  router.get('/accounts/personal', (req, res) => {
+    return res.render('account', {
+      layout: './layouts/account-page',
+      backLink: '/workspace/dashboard',
+      username: 'JuanDelaCruz_96',
+      displayName: 'St4rL0rd96'
+    });
+  });
+
+  router.get('/accounts/:user', (req, res) => {
+    return res.render('others-account', { 
+      layout: './layouts/account-page',
+      backLink: '/workspace/collaborators',
+      username: userPaths[req.params.user].username,
+      displayName: userPaths[req.params.user].displayName
+    });
+  });
+
   router.get('/search-results/query', (req, res) => {
     return res.render('search-results', {
       layout: './layouts/results-page',
@@ -180,16 +198,8 @@ let initRoutes = (app) => {
   // --- END ITEMS PAGE ---
 
   // --- ACCOUNTS PAGE ---
-  router.get('/accounts/personal', (req, res) => {
-    return res.render('account', {
-      layout: './layouts/account-page',
-      backLink: '/workspace/dashboard',
-      username: 'JuanDelaCruz_96',
-      displayName: 'St4rL0rd96'
-    });
-  });
 
-  router.get('/accounts/bohxfaith', (req, res) => {
+  /* router.get('/accounts/bohxfaith', (req, res) => {
     return res.render('others-account', { 
       layout: './layouts/account-page',
       backLink: '/workspace/collaborators',
@@ -232,7 +242,7 @@ let initRoutes = (app) => {
       username: sampleOtherUsers[4].username,
       displayName: sampleOtherUsers[4].displayName
     });
-  });
+  }); */
 
   // --- END ACCOUNTS PAGE ---
 
