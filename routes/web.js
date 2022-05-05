@@ -120,7 +120,8 @@ let initRoutes = (app) => {
     return res.render('inventory', { 
       active: 1,
       layout: './layouts/workspace',
-      workspace: sampleWorkspaces[req.params.workspace],
+      workspace: sampleWorkspaces[req.params.workspace].name,
+      workspacePath: sampleWorkspaces[req.params.workspace].path,
       sampleItems: sampleData
     });
   }); // inventory
