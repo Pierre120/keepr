@@ -51,23 +51,28 @@ const itemPaths = {
 const sampleOtherUsers = [
   {
     username: 'bohx_faith',
-    displayName: 'FaithGanda'
+    displayName: 'FaithGanda',
+    path: 'bohxfaith'
   },
   {
     username: 'bohx_airon',
-    displayName: 'AironPogi'
+    displayName: 'AironPogi',
+    path: 'bohxairon'
   },
   {
     username: 'bohx_pierre',
-    displayName: 'P13rr3'
+    displayName: 'P13rr3',
+    path: 'bohxpierre'
   },
   {
     username: 'Giorgio_Giovanna',
-    displayName: 'JoJo'
+    displayName: 'JoJo',
+    path: 'jojo'
   },
   {
     username: 'mamma_mia',
-    displayName: 'DancingQueen'
+    displayName: 'DancingQueen',
+    path: 'mammamia'
   }
 ];
 
