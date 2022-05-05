@@ -71,6 +71,14 @@ const sampleOtherUsers = [
   }
 ];
 
+const userPaths = {
+  bohxfaith: sampleOtherUsers[0],
+  bohxairon: sampleOtherUsers[1],
+  bohxpierre: sampleOtherUsers[2],
+  jojo: sampleOtherUsers[3],
+  mammamia: sampleOtherUsers[4]
+}
+
 const sampleWorkspaces = {
   default: {
     name: 'Default Workspace',
