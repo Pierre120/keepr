@@ -139,7 +139,8 @@ let initRoutes = (app) => {
     return res.render('history', {
       active: 3,
       layout: './layouts/workspace',
-      workspace: sampleWorkspaces[req.params.workspace]
+      workspace: sampleWorkspaces[req.params.workspace],
+      workspacePath: sampleWorkspaces[req.params.workspace].path
     })
   }); // history
 
