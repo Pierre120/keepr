@@ -9,3 +9,10 @@ const enableDarkMode = () => {
   // Update darkMode status in the LocalStorage to `enabled`
   localStorage.setItem('darkMode', 'enabled');
 };
+
+const disableDarkMode = () => {
+  // Remove .dark-mode from body
+  document.body.classList.remove('dark-mode');
+  // Update darkMode status in the LocalStorage to `null`
+  localStorage.setItem('darkMode', null);
+};
