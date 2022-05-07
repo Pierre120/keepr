@@ -18,11 +18,18 @@ const disableDarkMode = () => {
 };
 
 
+// Check if darkMode is `enabled`
+if(darkMode === 'enabled') {
+  // Enable dark mode soon as the page loads
+  enableDarkMode();
+}
+
+
 darkModeToggle.addEventListener('click', () => {
   // Get the darkMode to see its current status
   darkMode = localStorage.getItem('darkMode');
 
-  // Check if darkMode is `enabled`
+  // Check if darkMode is not `enabled`
   if(darkMode !== 'enabled') {
     enableDarkMode();
     // For checking purposes
