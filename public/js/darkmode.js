@@ -16,3 +16,22 @@ const disableDarkMode = () => {
   // Update darkMode status in the LocalStorage to `null`
   localStorage.setItem('darkMode', null);
 };
+
+
+darkModeToggle.addEventListener('click', () => {
+  // Get the darkMode to see its current status
+  darkMode = localStorage.getItem('darkMode');
+
+  // Check if darkMode is `enabled`
+  if(darkMode !== 'enabled') {
+    enableDarkMode();
+    // For checking purposes
+    console.log('Dark mode is enabled');
+    console.log(`darkMode:  ${darkMode}`);
+  } else {
+    disableDarkMode();
+    // For checking purposes
+    console.log('Dark mode is disabled');
+    console.log(`darkMode:  ${darkMode}`);
+  }
+});
