@@ -12121,6 +12121,11 @@ textarea.form-control-lg {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.dark-mode {
+  background-color: #212121;
+  color: #E0E0E0;
+}
+
 .fade-in-up, #bg-container {
   animation: fadeInUp 500ms 500ms ease both;
 }
