@@ -7,6 +7,17 @@ $dm-heading: #E0E0E0;
 .dark-mode {
   background-color: $dm-black;
 
+  .search input {
+    color: $white;
+    background-color: $dm-black;
+    border-color: $white;
+  }
+
+  .search-logo {
+    color: $white;
+    border-color: $white;
+  }
+
   #page-heading {
     color: $dm-heading;
     border-color: $dm-heading;

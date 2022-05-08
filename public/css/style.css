@@ -12124,6 +12124,15 @@ textarea.form-control-lg {
 .dark-mode {
   background-color: #212121;
 }
+.dark-mode .search input {
+  color: #fff;
+  background-color: #212121;
+  border-color: #fff;
+}
+.dark-mode .search-logo {
+  color: #fff;
+  border-color: #fff;
+}
 .dark-mode #page-heading {
   color: #E0E0E0;
   border-color: #E0E0E0;
@@ -12131,7 +12140,6 @@ textarea.form-control-lg {
 
 #page-heading {
   color: #666666;
-  border-color: #666666;
 }
 
 .fade-in-up, #bg-container {
