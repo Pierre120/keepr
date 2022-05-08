@@ -6,4 +6,13 @@ $dm-heading: #E0E0E0;
 
 .dark-mode {
   background-color: $dm-black;
+
+  #page-heading {
+    color: $dm-heading;
+    border-color: $dm-heading;
+  }
+}
+
+#page-heading {
+  color: $gray;
 }

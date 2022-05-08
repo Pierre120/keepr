@@ -12123,7 +12123,15 @@ textarea.form-control-lg {
 
 .dark-mode {
   background-color: #212121;
+}
+.dark-mode #page-heading {
   color: #E0E0E0;
+  border-color: #E0E0E0;
+}
+
+#page-heading {
+  color: #666666;
+  border-color: #666666;
 }
 
 .fade-in-up, #bg-container {
