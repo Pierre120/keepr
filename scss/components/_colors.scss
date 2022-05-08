@@ -5,7 +5,8 @@ $dm-gray: #616161;
 $dm-heading: #E0E0E0;
 
 .dark-mode {
+  --bs-body-color-rgb: 255, 255, 255;
+  --bs-body-bg-rgb: 33, 33, 33;
   --bs-body-color: $white;
   --bs-body-bg: $dm-black;
-
 }
