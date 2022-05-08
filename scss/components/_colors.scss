@@ -5,5 +5,7 @@ $dm-gray: #616161;
 $dm-heading: #E0E0E0;
 
 .dark-mode {
-  // Add CSS variables and their designated colors in dark-mode
+  --bs-body-color: $white;
+  --bs-body-bg: $dm-black;
+
 }
