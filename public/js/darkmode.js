@@ -9,6 +9,11 @@ function isDarkTheme() {
     document.body.classList.add('dark-mode');
     // Update darkMode status in the LocalStorage to `enabled`
     localStorage.setItem('darkMode', 'enabled');
+
+    // Modify transform property to the ball of the toggle
+    // to move to the right
+    const ball = document.getElementsByClassName('ball');
+    ball[0].style.transform = 'translateX(24px)';
   };
   
   const disableDarkMode = () => {
@@ -16,6 +21,11 @@ function isDarkTheme() {
     document.body.classList.remove('dark-mode');
     // Update darkMode status in the LocalStorage to `null`
     localStorage.setItem('darkMode', null);
+
+    // Modify transform property to the ball of the toggle
+    // to stay on its current position
+    const ball = document.getElementsByClassName('ball');
+    ball[0].style.transform = 'none';
   };
   
   
@@ -23,9 +33,6 @@ function isDarkTheme() {
   if(darkMode === 'enabled') {
     // Enable dark mode soon as the page loads
     enableDarkMode();
-    const ball = document.getElementsByClassName('ball');
-    ball[0].style.left = 'none';
-    ball[0].style.right = '2px';
   }
   
   
