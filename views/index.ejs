@@ -139,17 +139,17 @@
       <!--end of blobs-->
 
         <div id="login-container">
-          <form name="login form" class="d-grid grid-3 my-3" style="margin-left: 7%; margin-right: 7%;">
+          <form name="login-form" class="d-grid grid-3 my-3" style="margin-left: 7%; margin-right: 7%;">
             <h1 class="oswald text-center text-gray p-4">LOGIN</h1>
 
             <div class="mb-4">
               <label for="username" class="login-label">Username</label>
-              <input type="text" class="login-input">
+              <input type="text" class="login-input" id="login-username" onclick="resetInputBorder('login-username')" required>
             </div>
 
             <div class="mb-5">
               <label for="password" class="login-label">Password</label>
-              <input type="password" class="login-input">
+              <input type="password" class="login-input" id="login-password" onclick="resetInputBorder('login-password')" required>
             </div>
 
             <div class="mb-4 text-center"> 
@@ -163,4 +163,39 @@
     </div>
   </div>
 </div>
+
+<script>
+  function redirectToWorkspace() {
+    window.location.assign('http://localhost:5000/app');
+  }
+
+  function checkEmptyInputs(userObj) {
+    let emptyInput = false
+    for(let invalidFields of userObj) {
+        if(invalidFields.value === '' && invalidFields.id !== 'login-button') {
+            invalidFields.style["border-color"] = "pink";
+            invalidFields.style["box-shadow"] = "0 0 0 0.1rem pink";
+            emptyInput = true;
+        }
+    }
+    return emptyInput;
+  }
+
+  function resetInputBorder(id) {
+    let field = document.forms["login-form"][id];
+    field.style["border"] = "1px solid #C4C4C4";
+    field.style["border-color"] = "#C4C4C4";
+    field.style["box-shadow"] = "0 0 0 0";
+  }
+
+  function validateLoginForm() {
+    let user = document.forms["login-form"];
+
+    let emptyFieldExists = checkEmptyInputs(user);
+
+    if(!emptyFieldExists) {
+        redirectToWorkspace();
+    }
+  }
+</script>
 
