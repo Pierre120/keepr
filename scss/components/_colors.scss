@@ -22,6 +22,15 @@ $dm-heading: #E0E0E0;
     color: $dm-heading;
     border-color: $dm-heading;
   }
+
+  #workspace-name {
+    background-color: $dm-gray;
+  
+    p {
+      @extend .text-white;
+    }
+  }
+  
 }
 
 #page-heading {

@@ -8321,7 +8321,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-white, .edit-acct-btn:hover .bi, .deleteItem-btn:hover .bi, .edit-item-btn:hover .bi, .reg-btn, .login-btn {
+.text-white, .dark-mode #workspace-name p, .edit-acct-btn:hover .bi, .deleteItem-btn:hover .bi, .edit-item-btn:hover .bi, .reg-btn, .login-btn {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
@@ -12138,7 +12138,9 @@ textarea.form-control-lg {
   color: #E0E0E0;
   border-color: #E0E0E0;
 }
-
+.dark-mode #workspace-name {
+  background-color: #616161;
+}
 #page-heading {
   color: #666666;
 }
