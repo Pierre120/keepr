@@ -12145,6 +12145,10 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #616161;
 }
+.dark-mode .keepr-card {
+  color: #fff;
+  background-color: #616161;
+}
 
 #page-heading {
   color: #666666;
