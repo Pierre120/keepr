@@ -8412,7 +8412,7 @@ textarea.form-control-lg {
   background-color: rgba(var(--bs-black-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-white, #workspace-name {
+.bg-white {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-white-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -12281,6 +12281,7 @@ form .text-field {
 }
 
 #workspace-name {
+  background-color: #fff;
   height: 30vh;
 }
 #nav-section {

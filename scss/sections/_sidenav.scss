@@ -19,7 +19,7 @@
   @extend .border-2;
   @extend .border-top-0;
   @extend .border-lightpurple;
-  @extend .bg-white;
+  background-color: $white;
   height: 30vh;
 
   p {
