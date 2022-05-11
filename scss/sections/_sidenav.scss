@@ -10,6 +10,16 @@
 }
 
 #workspace-name {
+  @extend .d-flex;
+  @extend .mx-0;
+  @extend .p-4;
+  @extend .justify-content-center;
+  @extend .align-items-center;
+  @extend .border;
+  @extend .border-2;
+  @extend .border-top-0;
+  @extend .border-lightpurple;
+  @extend .bg-white;
   height: 30vh;
 }
 
