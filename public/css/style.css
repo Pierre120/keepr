@@ -7763,7 +7763,7 @@ textarea.form-control-lg {
   order: 6 !important;
 }
 
-.m-0, .header-logo {
+.m-0, .header-logo, #workspace-name p {
   margin: 0 !important;
 }
 
@@ -8157,7 +8157,7 @@ textarea.form-control-lg {
   font-family: var(--bs-font-monospace) !important;
 }
 
-.fs-1 {
+.fs-1, #workspace-name p {
   font-size: calc(1.375rem + 1.5vw) !important;
 }
 
@@ -8233,7 +8233,7 @@ textarea.form-control-lg {
   text-align: right !important;
 }
 
-.text-center, .center, .center h1, .back-btn, .reg-btn, .login-btn {
+.text-center, #workspace-name p, .center, .center h1, .back-btn, .reg-btn, .login-btn {
   text-align: center !important;
 }
 
@@ -8261,7 +8261,7 @@ textarea.form-control-lg {
   text-transform: capitalize !important;
 }
 
-.text-wrap {
+.text-wrap, #workspace-name p {
   white-space: normal !important;
 }
 
@@ -11783,7 +11783,7 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 1200px) {
-  .fs-1 {
+  .fs-1, #workspace-name p {
     font-size: 2.5rem !important;
   }
 
@@ -11856,7 +11856,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-teal-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-pink {
+.text-pink, #workspace-name p {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
 }
@@ -11900,7 +11900,7 @@ textarea.form-control-lg {
   font-family: "Montserrat", sans-serif;
 }
 
-.oswald, .center h1, .item-list-card .item-name {
+.oswald, #workspace-name p, .center h1, .item-list-card .item-name {
   font-family: "Oswald", sans-serif;
 }
 
@@ -12281,7 +12281,6 @@ form .text-field {
 #workspace-name {
   height: 30vh;
 }
-
 #nav-section {
   height: 62vh;
 }

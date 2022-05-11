@@ -21,6 +21,15 @@
   @extend .border-lightpurple;
   @extend .bg-white;
   height: 30vh;
+
+  p {
+    @extend .fs-1;
+    @extend .oswald;
+    @extend .text-pink;
+    @extend .text-center;
+    @extend .text-wrap;
+    @extend .m-0;
+  }
 }
 
 #nav-section {
