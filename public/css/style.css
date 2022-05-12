@@ -532,13 +532,13 @@ progress {
   }
 }
 
-.display-4 {
+.display-4, #history-table-header {
   font-size: calc(1.475rem + 2.7vw);
   font-weight: 300;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
-  .display-4 {
+  .display-4, #history-table-header {
     font-size: 3.5rem;
   }
 }
@@ -7791,7 +7791,7 @@ textarea.form-control-lg {
   margin: auto !important;
 }
 
-.mx-0, #workspace-name {
+.mx-0, #history-table-header, #workspace-name {
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
@@ -7873,7 +7873,7 @@ textarea.form-control-lg {
   margin-top: 0.5rem !important;
 }
 
-.mt-3 {
+.mt-3, #history-table-header {
   margin-top: 1rem !important;
 }
 
@@ -11900,7 +11900,7 @@ textarea.form-control-lg {
   font-family: "Montserrat", sans-serif;
 }
 
-.oswald, #workspace-name p, .center h1, .item-list-card .item-name {
+.oswald, #history-table-header, #workspace-name p, .center h1, .item-list-card .item-name {
   font-family: "Oswald", sans-serif;
 }
 
@@ -12687,8 +12687,8 @@ frame .uploadPic {
   margin: 0 auto;
 }
 
-/*.history-delete, .history-sort{
-    background-color: #fff;
-}*/
+#history-table-header {
+  color: #666666;
+}
 
 /*# sourceMappingURL=style.css.map */
