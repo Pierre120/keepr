@@ -87,7 +87,7 @@
 
 .deleteItem-btn:hover {
   .bi {
-    @extend .text-white;
+    color: $white;
   }
 }
 
