@@ -12227,6 +12227,10 @@ textarea.form-control-lg {
 .dark-mode .delete-item-btn:hover .bi {
   color: #dc3545;
 }
+.dark-mode .table-row {
+  background-color: #616161;
+  color: #fff;
+}
 
 #page-heading {
   color: #666666;

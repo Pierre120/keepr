@@ -115,6 +115,11 @@ $dm-heading: #E0E0E0;
       }
     }
   }
+
+  .table-row {
+    background-color: $dm-gray;
+    color: $white;
+  }
 }
 
 #page-heading {
