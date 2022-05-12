@@ -85,6 +85,17 @@
   }
 }
 
+.delete-acct-btn {
+  @extend .btn;
+  @extend .btn-outline-danger;
+  @extend .btn-lg;
+  @extend .d-grid;
+  @extend .gap-2;
+  @extend .col-4;
+  @extend .mx-auto;
+  @extend .shadow;
+}
+
 .delete-item-btn {
   @extend .btn;
   @extend .btn-outline-danger;
