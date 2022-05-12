@@ -50,6 +50,22 @@ $dm-heading: #E0E0E0;
     @extend .btn-pink;
     color: $white;
   }
+
+  #back-to-top-btn {
+    background-color: $pink;
+
+    svg {
+      color: $white;
+    }
+  
+    &:hover {
+      background-color: $white;
+  
+      svg {
+        color: $pink;
+      }
+    }
+  }
 }
 
 #page-heading {

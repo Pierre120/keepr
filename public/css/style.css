@@ -12156,6 +12156,18 @@ textarea.form-control-lg {
 .dark-mode .sort-btn {
   color: #fff;
 }
+.dark-mode #back-to-top-btn {
+  background-color: #F277A4;
+}
+.dark-mode #back-to-top-btn svg {
+  color: #fff;
+}
+.dark-mode #back-to-top-btn:hover {
+  background-color: #fff;
+}
+.dark-mode #back-to-top-btn:hover svg {
+  color: #F277A4;
+}
 
 #page-heading {
   color: #666666;
