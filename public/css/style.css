@@ -11840,7 +11840,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.text-darkpurple, .text-field label, .text-field input:focus ~ label,
+.text-darkpurple, .text-field input:focus ~ label,
 .text-field input:valid ~ label, .login-label, .login-input {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-darkpurple-rgb), var(--bs-text-opacity)) !important;
@@ -12237,6 +12237,7 @@ form .text-field {
 .text-field label {
   top: 50%;
   left: 5px;
+  color: #503FBF;
   transform: translateY(-50%);
   pointer-events: none;
   transition: 0.5s;
