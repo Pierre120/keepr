@@ -10,11 +10,12 @@ $light-purple: #7162D9;
 $teal: #6CD9B1;
 $pink: #F277A4;
 $gray: #666666;
+$border-gray: #C4C4C4;
 
-$white-btn-border-color: #C4C4C4;
+$white-btn-border-color: $border-gray;
 
-$add-btn-color: #666666;
-$add-btn-bg-color: #C4C4C4;
+$add-btn-color: $gray;
+$add-btn-bg-color: $border-gray;
 
 // Include any default variable overrides here (though functions won't be available)
 

@@ -1,1 +1,8 @@
-<a class="back-btn" onclick="window.history.go(-1)" role="button"><span class="fw-bolder"><</span> Go back</a>
+<a class="back-btn" onclick="goBack()" role="button"><span class="fw-bolder"><</span> Go back</a>
+
+<script>
+  function goBack() {
+    // window.history.go(-1);
+    window.location.assign(document.referrer);
+  }
+</script>

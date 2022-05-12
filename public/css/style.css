@@ -532,13 +532,13 @@ progress {
   }
 }
 
-.display-4 {
+.display-4, #history-table-header {
   font-size: calc(1.475rem + 2.7vw);
   font-weight: 300;
   line-height: 1.2;
 }
 @media (min-width: 1200px) {
-  .display-4 {
+  .display-4, #history-table-header {
     font-size: 3.5rem;
   }
 }
@@ -749,7 +749,7 @@ progress {
   width: 25%;
 }
 
-.col-4 {
+.col-4, .delete-acct-btn {
   flex: 0 0 auto;
   width: 33.33333333%;
 }
@@ -2511,7 +2511,7 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, .btn-check[disabled] + .item-list-card, .btn-check[disabled] + .home-card, .btn-check[disabled] + .add-btn, .btn-check[disabled] + .back-btn, .btn-check[disabled] + .sort-btn, .btn-check[disabled] + .logout-btn, .btn-check[disabled] + .reg-btn, .btn-check[disabled] + .login-btn, .btn-check:disabled + .btn, .btn-check:disabled + .item-list-card, .btn-check:disabled + .home-card, .btn-check:disabled + .add-btn, .btn-check:disabled + .back-btn, .btn-check:disabled + .sort-btn, .btn-check:disabled + .logout-btn, .btn-check:disabled + .reg-btn, .btn-check:disabled + .login-btn {
+.btn-check[disabled] + .btn, .btn-check[disabled] + .item-list-card, .btn-check[disabled] + .home-card, .btn-check[disabled] + .add-btn, .btn-check[disabled] + .back-btn, .btn-check[disabled] + .sort-btn, .btn-check[disabled] + .delete-acct-btn, .btn-check[disabled] + .delete-item-btn, .btn-check[disabled] + .logout-btn, .btn-check[disabled] + .reg-btn, .btn-check[disabled] + .login-btn, .btn-check:disabled + .btn, .btn-check:disabled + .item-list-card, .btn-check:disabled + .home-card, .btn-check:disabled + .add-btn, .btn-check:disabled + .back-btn, .btn-check:disabled + .sort-btn, .btn-check:disabled + .delete-acct-btn, .btn-check:disabled + .delete-item-btn, .btn-check:disabled + .logout-btn, .btn-check:disabled + .reg-btn, .btn-check:disabled + .login-btn {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
@@ -2671,11 +2671,11 @@ textarea.form-control-lg {
 .input-group > .form-select:focus {
   z-index: 3;
 }
-.input-group .btn, .input-group .item-list-card, .input-group .home-card, .input-group .add-btn, .input-group .back-btn, .input-group .sort-btn, .input-group .logout-btn, .input-group .reg-btn, .input-group .login-btn {
+.input-group .btn, .input-group .item-list-card, .input-group .home-card, .input-group .add-btn, .input-group .back-btn, .input-group .sort-btn, .input-group .delete-acct-btn, .input-group .delete-item-btn, .input-group .logout-btn, .input-group .reg-btn, .input-group .login-btn {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus, .input-group .item-list-card:focus, .input-group .home-card:focus, .input-group .add-btn:focus, .input-group .back-btn:focus, .input-group .sort-btn:focus, .input-group .logout-btn:focus, .input-group .reg-btn:focus, .input-group .login-btn:focus {
+.input-group .btn:focus, .input-group .item-list-card:focus, .input-group .home-card:focus, .input-group .add-btn:focus, .input-group .back-btn:focus, .input-group .sort-btn:focus, .input-group .delete-acct-btn:focus, .input-group .delete-item-btn:focus, .input-group .logout-btn:focus, .input-group .reg-btn:focus, .input-group .login-btn:focus {
   z-index: 3;
 }
 
@@ -2703,6 +2703,8 @@ textarea.form-control-lg {
 .input-group-lg > .add-btn,
 .input-group-lg > .back-btn,
 .input-group-lg > .sort-btn,
+.input-group-lg > .delete-acct-btn,
+.input-group-lg > .delete-item-btn,
 .input-group-lg > .logout-btn,
 .input-group-lg > .reg-btn,
 .input-group-lg > .login-btn {
@@ -2720,6 +2722,8 @@ textarea.form-control-lg {
 .input-group-sm > .add-btn,
 .input-group-sm > .back-btn,
 .input-group-sm > .sort-btn,
+.input-group-sm > .delete-acct-btn,
+.input-group-sm > .delete-item-btn,
 .input-group-sm > .logout-btn,
 .input-group-sm > .reg-btn,
 .input-group-sm > .login-btn {
@@ -2927,7 +2931,7 @@ textarea.form-control-lg {
   z-index: 3;
 }
 
-.btn, .item-list-card, .home-card, .add-btn, .back-btn, .sort-btn, .logout-btn, .reg-btn, .login-btn {
+.btn, .item-list-card, .home-card, .add-btn, .back-btn, .sort-btn, .delete-acct-btn, .delete-item-btn, .logout-btn, .reg-btn, .login-btn {
   display: inline-block;
   font-weight: 400;
   line-height: 1.5;
@@ -2945,18 +2949,18 @@ textarea.form-control-lg {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn, .item-list-card, .home-card, .add-btn, .back-btn, .sort-btn, .logout-btn, .reg-btn, .login-btn {
+  .btn, .item-list-card, .home-card, .add-btn, .back-btn, .sort-btn, .delete-acct-btn, .delete-item-btn, .logout-btn, .reg-btn, .login-btn {
     transition: none;
   }
 }
-.btn:hover, .item-list-card:hover, .home-card:hover, .add-btn:hover, .back-btn:hover, .sort-btn:hover, .logout-btn:hover, .reg-btn:hover, .login-btn:hover {
+.btn:hover, .item-list-card:hover, .home-card:hover, .add-btn:hover, .back-btn:hover, .sort-btn:hover, .delete-acct-btn:hover, .delete-item-btn:hover, .logout-btn:hover, .reg-btn:hover, .login-btn:hover {
   color: #212529;
 }
-.btn-check:focus + .btn, .btn-check:focus + .item-list-card, .btn-check:focus + .home-card, .btn-check:focus + .add-btn, .btn-check:focus + .back-btn, .btn-check:focus + .sort-btn, .btn-check:focus + .logout-btn, .btn-check:focus + .reg-btn, .btn-check:focus + .login-btn, .btn:focus, .item-list-card:focus, .home-card:focus, .add-btn:focus, .back-btn:focus, .sort-btn:focus, .logout-btn:focus, .reg-btn:focus, .login-btn:focus {
+.btn-check:focus + .btn, .btn-check:focus + .item-list-card, .btn-check:focus + .home-card, .btn-check:focus + .add-btn, .btn-check:focus + .back-btn, .btn-check:focus + .sort-btn, .btn-check:focus + .delete-acct-btn, .btn-check:focus + .delete-item-btn, .btn-check:focus + .logout-btn, .btn-check:focus + .reg-btn, .btn-check:focus + .login-btn, .btn:focus, .item-list-card:focus, .home-card:focus, .add-btn:focus, .back-btn:focus, .sort-btn:focus, .delete-acct-btn:focus, .delete-item-btn:focus, .logout-btn:focus, .reg-btn:focus, .login-btn:focus {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(80, 63, 191, 0.25);
 }
-.btn:disabled, .item-list-card:disabled, .home-card:disabled, .add-btn:disabled, .back-btn:disabled, .sort-btn:disabled, .logout-btn:disabled, .reg-btn:disabled, .login-btn:disabled, .btn.disabled, .disabled.item-list-card, .disabled.home-card, .disabled.add-btn, .disabled.back-btn, .disabled.sort-btn, .disabled.logout-btn, .disabled.reg-btn, .disabled.login-btn, fieldset:disabled .btn, fieldset:disabled .item-list-card, fieldset:disabled .home-card, fieldset:disabled .add-btn, fieldset:disabled .back-btn, fieldset:disabled .sort-btn, fieldset:disabled .logout-btn, fieldset:disabled .reg-btn, fieldset:disabled .login-btn {
+.btn:disabled, .item-list-card:disabled, .home-card:disabled, .add-btn:disabled, .back-btn:disabled, .sort-btn:disabled, .delete-acct-btn:disabled, .delete-item-btn:disabled, .logout-btn:disabled, .reg-btn:disabled, .login-btn:disabled, .btn.disabled, .disabled.item-list-card, .disabled.home-card, .disabled.add-btn, .disabled.back-btn, .disabled.sort-btn, .disabled.delete-acct-btn, .disabled.delete-item-btn, .disabled.logout-btn, .disabled.reg-btn, .disabled.login-btn, fieldset:disabled .btn, fieldset:disabled .item-list-card, fieldset:disabled .home-card, fieldset:disabled .add-btn, fieldset:disabled .back-btn, fieldset:disabled .sort-btn, fieldset:disabled .delete-acct-btn, fieldset:disabled .delete-item-btn, fieldset:disabled .logout-btn, fieldset:disabled .reg-btn, fieldset:disabled .login-btn {
   pointer-events: none;
   opacity: 0.65;
 }
@@ -3111,31 +3115,31 @@ textarea.form-control-lg {
   border-color: #ffc107;
 }
 
-.btn-danger {
+.btn-danger, .dark-mode .delete-item-btn, .dark-mode .delete-acct-btn {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
 }
-.btn-danger:hover {
+.btn-danger:hover, .dark-mode .delete-item-btn:hover, .dark-mode .delete-acct-btn:hover {
   color: #fff;
   background-color: #bb2d3b;
   border-color: #b02a37;
 }
-.btn-check:focus + .btn-danger, .btn-danger:focus {
+.btn-check:focus + .btn-danger, .dark-mode .btn-check:focus + .delete-item-btn, .dark-mode .btn-check:focus + .delete-acct-btn, .btn-danger:focus, .dark-mode .delete-item-btn:focus, .dark-mode .delete-acct-btn:focus {
   color: #fff;
   background-color: #bb2d3b;
   border-color: #b02a37;
   box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
 }
-.btn-check:checked + .btn-danger, .btn-check:active + .btn-danger, .btn-danger:active, .btn-danger.active, .show > .btn-danger.dropdown-toggle {
+.btn-check:checked + .btn-danger, .dark-mode .btn-check:checked + .delete-item-btn, .dark-mode .btn-check:checked + .delete-acct-btn, .btn-check:active + .btn-danger, .dark-mode .btn-check:active + .delete-item-btn, .dark-mode .btn-check:active + .delete-acct-btn, .btn-danger:active, .dark-mode .delete-item-btn:active, .dark-mode .delete-acct-btn:active, .btn-danger.active, .dark-mode .active.delete-item-btn, .dark-mode .active.delete-acct-btn, .show > .btn-danger.dropdown-toggle, .dark-mode .show > .dropdown-toggle.delete-item-btn, .dark-mode .show > .dropdown-toggle.delete-acct-btn {
   color: #fff;
   background-color: #b02a37;
   border-color: #a52834;
 }
-.btn-check:checked + .btn-danger:focus, .btn-check:active + .btn-danger:focus, .btn-danger:active:focus, .btn-danger.active:focus, .show > .btn-danger.dropdown-toggle:focus {
+.btn-check:checked + .btn-danger:focus, .dark-mode .btn-check:checked + .delete-item-btn:focus, .dark-mode .btn-check:checked + .delete-acct-btn:focus, .btn-check:active + .btn-danger:focus, .dark-mode .btn-check:active + .delete-item-btn:focus, .dark-mode .btn-check:active + .delete-acct-btn:focus, .btn-danger:active:focus, .dark-mode .delete-item-btn:active:focus, .dark-mode .delete-acct-btn:active:focus, .btn-danger.active:focus, .dark-mode .active.delete-item-btn:focus, .dark-mode .active.delete-acct-btn:focus, .show > .btn-danger.dropdown-toggle:focus, .dark-mode .show > .dropdown-toggle.delete-item-btn:focus, .dark-mode .show > .dropdown-toggle.delete-acct-btn:focus {
   box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
 }
-.btn-danger:disabled, .btn-danger.disabled {
+.btn-danger:disabled, .dark-mode .delete-item-btn:disabled, .dark-mode .delete-acct-btn:disabled, .btn-danger.disabled, .dark-mode .disabled.delete-item-btn, .dark-mode .disabled.delete-acct-btn {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
@@ -3291,31 +3295,31 @@ textarea.form-control-lg {
   border-color: #6CD9B1;
 }
 
-.btn-pink {
+.btn-pink, .dark-mode .sort-btn {
   color: #000;
   background-color: #F277A4;
   border-color: #F277A4;
 }
-.btn-pink:hover {
+.btn-pink:hover, .dark-mode .sort-btn:hover {
   color: #000;
   background-color: #f48bb2;
   border-color: #f385ad;
 }
-.btn-check:focus + .btn-pink, .btn-pink:focus {
+.btn-check:focus + .btn-pink, .dark-mode .btn-check:focus + .sort-btn, .btn-pink:focus, .dark-mode .sort-btn:focus {
   color: #000;
   background-color: #f48bb2;
   border-color: #f385ad;
   box-shadow: 0 0 0 0.25rem rgba(206, 101, 139, 0.5);
 }
-.btn-check:checked + .btn-pink, .btn-check:active + .btn-pink, .btn-pink:active, .btn-pink.active, .show > .btn-pink.dropdown-toggle {
+.btn-check:checked + .btn-pink, .dark-mode .btn-check:checked + .sort-btn, .btn-check:active + .btn-pink, .dark-mode .btn-check:active + .sort-btn, .btn-pink:active, .dark-mode .sort-btn:active, .btn-pink.active, .dark-mode .active.sort-btn, .show > .btn-pink.dropdown-toggle, .dark-mode .show > .dropdown-toggle.sort-btn {
   color: #000;
   background-color: #f592b6;
   border-color: #f385ad;
 }
-.btn-check:checked + .btn-pink:focus, .btn-check:active + .btn-pink:focus, .btn-pink:active:focus, .btn-pink.active:focus, .show > .btn-pink.dropdown-toggle:focus {
+.btn-check:checked + .btn-pink:focus, .dark-mode .btn-check:checked + .sort-btn:focus, .btn-check:active + .btn-pink:focus, .dark-mode .btn-check:active + .sort-btn:focus, .btn-pink:active:focus, .dark-mode .sort-btn:active:focus, .btn-pink.active:focus, .dark-mode .active.sort-btn:focus, .show > .btn-pink.dropdown-toggle:focus, .dark-mode .show > .dropdown-toggle.sort-btn:focus {
   box-shadow: 0 0 0 0.25rem rgba(206, 101, 139, 0.5);
 }
-.btn-pink:disabled, .btn-pink.disabled {
+.btn-pink:disabled, .dark-mode .sort-btn:disabled, .btn-pink.disabled, .dark-mode .disabled.sort-btn {
   color: #000;
   background-color: #F277A4;
   border-color: #F277A4;
@@ -3506,27 +3510,27 @@ textarea.form-control-lg {
   background-color: transparent;
 }
 
-.btn-outline-danger {
+.btn-outline-danger, .delete-acct-btn, .delete-item-btn {
   color: #dc3545;
   border-color: #dc3545;
 }
-.btn-outline-danger:hover {
+.btn-outline-danger:hover, .delete-acct-btn:hover, .delete-item-btn:hover {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
 }
-.btn-check:focus + .btn-outline-danger, .btn-outline-danger:focus {
+.btn-check:focus + .btn-outline-danger, .btn-check:focus + .delete-acct-btn, .btn-check:focus + .delete-item-btn, .btn-outline-danger:focus, .delete-acct-btn:focus, .delete-item-btn:focus {
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.5);
 }
-.btn-check:checked + .btn-outline-danger, .btn-check:active + .btn-outline-danger, .btn-outline-danger:active, .btn-outline-danger.active, .btn-outline-danger.dropdown-toggle.show {
+.btn-check:checked + .btn-outline-danger, .btn-check:checked + .delete-acct-btn, .btn-check:checked + .delete-item-btn, .btn-check:active + .btn-outline-danger, .btn-check:active + .delete-acct-btn, .btn-check:active + .delete-item-btn, .btn-outline-danger:active, .delete-acct-btn:active, .delete-item-btn:active, .btn-outline-danger.active, .active.delete-acct-btn, .active.delete-item-btn, .btn-outline-danger.dropdown-toggle.show, .dropdown-toggle.show.delete-acct-btn, .dropdown-toggle.show.delete-item-btn {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
 }
-.btn-check:checked + .btn-outline-danger:focus, .btn-check:active + .btn-outline-danger:focus, .btn-outline-danger:active:focus, .btn-outline-danger.active:focus, .btn-outline-danger.dropdown-toggle.show:focus {
+.btn-check:checked + .btn-outline-danger:focus, .btn-check:checked + .delete-acct-btn:focus, .btn-check:checked + .delete-item-btn:focus, .btn-check:active + .btn-outline-danger:focus, .btn-check:active + .delete-acct-btn:focus, .btn-check:active + .delete-item-btn:focus, .btn-outline-danger:active:focus, .delete-acct-btn:active:focus, .delete-item-btn:active:focus, .btn-outline-danger.active:focus, .active.delete-acct-btn:focus, .active.delete-item-btn:focus, .btn-outline-danger.dropdown-toggle.show:focus, .dropdown-toggle.show.delete-acct-btn:focus, .dropdown-toggle.show.delete-item-btn:focus {
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.5);
 }
-.btn-outline-danger:disabled, .btn-outline-danger.disabled {
+.btn-outline-danger:disabled, .delete-acct-btn:disabled, .delete-item-btn:disabled, .btn-outline-danger.disabled, .disabled.delete-acct-btn, .disabled.delete-item-btn {
   color: #dc3545;
   background-color: transparent;
 }
@@ -3743,13 +3747,13 @@ textarea.form-control-lg {
   color: #6c757d;
 }
 
-.btn-lg, .add-btn, .back-btn, .login-btn, .btn-group-lg > .btn, .btn-group-lg > .item-list-card, .btn-group-lg > .home-card, .btn-group-lg > .add-btn, .btn-group-lg > .back-btn, .btn-group-lg > .sort-btn, .btn-group-lg > .logout-btn, .btn-group-lg > .reg-btn, .btn-group-lg > .login-btn {
+.btn-lg, .add-btn, .back-btn, .delete-acct-btn, .login-btn, .btn-group-lg > .btn, .btn-group-lg > .item-list-card, .btn-group-lg > .home-card, .btn-group-lg > .add-btn, .btn-group-lg > .back-btn, .btn-group-lg > .sort-btn, .btn-group-lg > .delete-acct-btn, .btn-group-lg > .delete-item-btn, .btn-group-lg > .logout-btn, .btn-group-lg > .reg-btn, .btn-group-lg > .login-btn {
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
   border-radius: 0.3rem;
 }
 
-.btn-sm, .reg-btn, .btn-group-sm > .btn, .btn-group-sm > .item-list-card, .btn-group-sm > .home-card, .btn-group-sm > .add-btn, .btn-group-sm > .back-btn, .btn-group-sm > .sort-btn, .btn-group-sm > .logout-btn, .btn-group-sm > .reg-btn, .btn-group-sm > .login-btn {
+.btn-sm, .reg-btn, .btn-group-sm > .btn, .btn-group-sm > .item-list-card, .btn-group-sm > .home-card, .btn-group-sm > .add-btn, .btn-group-sm > .back-btn, .btn-group-sm > .sort-btn, .btn-group-sm > .delete-acct-btn, .btn-group-sm > .delete-item-btn, .btn-group-sm > .logout-btn, .btn-group-sm > .reg-btn, .btn-group-sm > .login-btn {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   border-radius: 0.2rem;
@@ -4104,26 +4108,30 @@ textarea.form-control-lg {
   display: inline-flex;
   vertical-align: middle;
 }
-.btn-group > .btn, .btn-group > .item-list-card, .btn-group > .home-card, .btn-group > .add-btn, .btn-group > .back-btn, .btn-group > .sort-btn, .btn-group > .logout-btn, .btn-group > .reg-btn, .btn-group > .login-btn,
+.btn-group > .btn, .btn-group > .item-list-card, .btn-group > .home-card, .btn-group > .add-btn, .btn-group > .back-btn, .btn-group > .sort-btn, .btn-group > .delete-acct-btn, .btn-group > .delete-item-btn, .btn-group > .logout-btn, .btn-group > .reg-btn, .btn-group > .login-btn,
 .btn-group-vertical > .btn,
 .btn-group-vertical > .item-list-card,
 .btn-group-vertical > .home-card,
 .btn-group-vertical > .add-btn,
 .btn-group-vertical > .back-btn,
 .btn-group-vertical > .sort-btn,
+.btn-group-vertical > .delete-acct-btn,
+.btn-group-vertical > .delete-item-btn,
 .btn-group-vertical > .logout-btn,
 .btn-group-vertical > .reg-btn,
 .btn-group-vertical > .login-btn {
   position: relative;
   flex: 1 1 auto;
 }
-.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .item-list-card, .btn-group > .btn-check:checked + .home-card, .btn-group > .btn-check:checked + .add-btn, .btn-group > .btn-check:checked + .back-btn, .btn-group > .btn-check:checked + .sort-btn, .btn-group > .btn-check:checked + .logout-btn, .btn-group > .btn-check:checked + .reg-btn, .btn-group > .btn-check:checked + .login-btn,
+.btn-group > .btn-check:checked + .btn, .btn-group > .btn-check:checked + .item-list-card, .btn-group > .btn-check:checked + .home-card, .btn-group > .btn-check:checked + .add-btn, .btn-group > .btn-check:checked + .back-btn, .btn-group > .btn-check:checked + .sort-btn, .btn-group > .btn-check:checked + .delete-acct-btn, .btn-group > .btn-check:checked + .delete-item-btn, .btn-group > .btn-check:checked + .logout-btn, .btn-group > .btn-check:checked + .reg-btn, .btn-group > .btn-check:checked + .login-btn,
 .btn-group > .btn-check:focus + .btn,
 .btn-group > .btn-check:focus + .item-list-card,
 .btn-group > .btn-check:focus + .home-card,
 .btn-group > .btn-check:focus + .add-btn,
 .btn-group > .btn-check:focus + .back-btn,
 .btn-group > .btn-check:focus + .sort-btn,
+.btn-group > .btn-check:focus + .delete-acct-btn,
+.btn-group > .btn-check:focus + .delete-item-btn,
 .btn-group > .btn-check:focus + .logout-btn,
 .btn-group > .btn-check:focus + .reg-btn,
 .btn-group > .btn-check:focus + .login-btn,
@@ -4133,6 +4141,8 @@ textarea.form-control-lg {
 .btn-group > .add-btn:hover,
 .btn-group > .back-btn:hover,
 .btn-group > .sort-btn:hover,
+.btn-group > .delete-acct-btn:hover,
+.btn-group > .delete-item-btn:hover,
 .btn-group > .logout-btn:hover,
 .btn-group > .reg-btn:hover,
 .btn-group > .login-btn:hover,
@@ -4142,6 +4152,8 @@ textarea.form-control-lg {
 .btn-group > .add-btn:focus,
 .btn-group > .back-btn:focus,
 .btn-group > .sort-btn:focus,
+.btn-group > .delete-acct-btn:focus,
+.btn-group > .delete-item-btn:focus,
 .btn-group > .logout-btn:focus,
 .btn-group > .reg-btn:focus,
 .btn-group > .login-btn:focus,
@@ -4151,6 +4163,8 @@ textarea.form-control-lg {
 .btn-group > .add-btn:active,
 .btn-group > .back-btn:active,
 .btn-group > .sort-btn:active,
+.btn-group > .delete-acct-btn:active,
+.btn-group > .delete-item-btn:active,
 .btn-group > .logout-btn:active,
 .btn-group > .reg-btn:active,
 .btn-group > .login-btn:active,
@@ -4160,6 +4174,8 @@ textarea.form-control-lg {
 .btn-group > .active.add-btn,
 .btn-group > .active.back-btn,
 .btn-group > .active.sort-btn,
+.btn-group > .active.delete-acct-btn,
+.btn-group > .active.delete-item-btn,
 .btn-group > .active.logout-btn,
 .btn-group > .active.reg-btn,
 .btn-group > .active.login-btn,
@@ -4169,6 +4185,8 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn-check:checked + .add-btn,
 .btn-group-vertical > .btn-check:checked + .back-btn,
 .btn-group-vertical > .btn-check:checked + .sort-btn,
+.btn-group-vertical > .btn-check:checked + .delete-acct-btn,
+.btn-group-vertical > .btn-check:checked + .delete-item-btn,
 .btn-group-vertical > .btn-check:checked + .logout-btn,
 .btn-group-vertical > .btn-check:checked + .reg-btn,
 .btn-group-vertical > .btn-check:checked + .login-btn,
@@ -4178,6 +4196,8 @@ textarea.form-control-lg {
 .btn-group-vertical > .btn-check:focus + .add-btn,
 .btn-group-vertical > .btn-check:focus + .back-btn,
 .btn-group-vertical > .btn-check:focus + .sort-btn,
+.btn-group-vertical > .btn-check:focus + .delete-acct-btn,
+.btn-group-vertical > .btn-check:focus + .delete-item-btn,
 .btn-group-vertical > .btn-check:focus + .logout-btn,
 .btn-group-vertical > .btn-check:focus + .reg-btn,
 .btn-group-vertical > .btn-check:focus + .login-btn,
@@ -4187,6 +4207,8 @@ textarea.form-control-lg {
 .btn-group-vertical > .add-btn:hover,
 .btn-group-vertical > .back-btn:hover,
 .btn-group-vertical > .sort-btn:hover,
+.btn-group-vertical > .delete-acct-btn:hover,
+.btn-group-vertical > .delete-item-btn:hover,
 .btn-group-vertical > .logout-btn:hover,
 .btn-group-vertical > .reg-btn:hover,
 .btn-group-vertical > .login-btn:hover,
@@ -4196,6 +4218,8 @@ textarea.form-control-lg {
 .btn-group-vertical > .add-btn:focus,
 .btn-group-vertical > .back-btn:focus,
 .btn-group-vertical > .sort-btn:focus,
+.btn-group-vertical > .delete-acct-btn:focus,
+.btn-group-vertical > .delete-item-btn:focus,
 .btn-group-vertical > .logout-btn:focus,
 .btn-group-vertical > .reg-btn:focus,
 .btn-group-vertical > .login-btn:focus,
@@ -4205,6 +4229,8 @@ textarea.form-control-lg {
 .btn-group-vertical > .add-btn:active,
 .btn-group-vertical > .back-btn:active,
 .btn-group-vertical > .sort-btn:active,
+.btn-group-vertical > .delete-acct-btn:active,
+.btn-group-vertical > .delete-item-btn:active,
 .btn-group-vertical > .logout-btn:active,
 .btn-group-vertical > .reg-btn:active,
 .btn-group-vertical > .login-btn:active,
@@ -4214,6 +4240,8 @@ textarea.form-control-lg {
 .btn-group-vertical > .active.add-btn,
 .btn-group-vertical > .active.back-btn,
 .btn-group-vertical > .active.sort-btn,
+.btn-group-vertical > .active.delete-acct-btn,
+.btn-group-vertical > .active.delete-item-btn,
 .btn-group-vertical > .active.logout-btn,
 .btn-group-vertical > .active.reg-btn,
 .btn-group-vertical > .active.login-btn {
@@ -4229,30 +4257,34 @@ textarea.form-control-lg {
   width: auto;
 }
 
-.btn-group > .btn:not(:first-child), .btn-group > .item-list-card:not(:first-child), .btn-group > .home-card:not(:first-child), .btn-group > .add-btn:not(:first-child), .btn-group > .back-btn:not(:first-child), .btn-group > .sort-btn:not(:first-child), .btn-group > .logout-btn:not(:first-child), .btn-group > .reg-btn:not(:first-child), .btn-group > .login-btn:not(:first-child),
+.btn-group > .btn:not(:first-child), .btn-group > .item-list-card:not(:first-child), .btn-group > .home-card:not(:first-child), .btn-group > .add-btn:not(:first-child), .btn-group > .back-btn:not(:first-child), .btn-group > .sort-btn:not(:first-child), .btn-group > .delete-acct-btn:not(:first-child), .btn-group > .delete-item-btn:not(:first-child), .btn-group > .logout-btn:not(:first-child), .btn-group > .reg-btn:not(:first-child), .btn-group > .login-btn:not(:first-child),
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group > .home-card:not(:last-child):not(.dropdown-toggle), .btn-group > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .login-btn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), .btn-group > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group > .home-card:not(:last-child):not(.dropdown-toggle), .btn-group > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .delete-acct-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .delete-item-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group > .login-btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn-group:not(:last-child) > .btn,
 .btn-group > .btn-group:not(:last-child) > .item-list-card,
 .btn-group > .btn-group:not(:last-child) > .home-card,
 .btn-group > .btn-group:not(:last-child) > .add-btn,
 .btn-group > .btn-group:not(:last-child) > .back-btn,
 .btn-group > .btn-group:not(:last-child) > .sort-btn,
+.btn-group > .btn-group:not(:last-child) > .delete-acct-btn,
+.btn-group > .btn-group:not(:last-child) > .delete-item-btn,
 .btn-group > .btn-group:not(:last-child) > .logout-btn,
 .btn-group > .btn-group:not(:last-child) > .reg-btn,
 .btn-group > .btn-group:not(:last-child) > .login-btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.btn-group > .btn:nth-child(n+3), .btn-group > .item-list-card:nth-child(n+3), .btn-group > .home-card:nth-child(n+3), .btn-group > .add-btn:nth-child(n+3), .btn-group > .back-btn:nth-child(n+3), .btn-group > .sort-btn:nth-child(n+3), .btn-group > .logout-btn:nth-child(n+3), .btn-group > .reg-btn:nth-child(n+3), .btn-group > .login-btn:nth-child(n+3),
+.btn-group > .btn:nth-child(n+3), .btn-group > .item-list-card:nth-child(n+3), .btn-group > .home-card:nth-child(n+3), .btn-group > .add-btn:nth-child(n+3), .btn-group > .back-btn:nth-child(n+3), .btn-group > .sort-btn:nth-child(n+3), .btn-group > .delete-acct-btn:nth-child(n+3), .btn-group > .delete-item-btn:nth-child(n+3), .btn-group > .logout-btn:nth-child(n+3), .btn-group > .reg-btn:nth-child(n+3), .btn-group > .login-btn:nth-child(n+3),
 .btn-group > :not(.btn-check) + .btn,
 .btn-group > :not(.btn-check) + .item-list-card,
 .btn-group > :not(.btn-check) + .home-card,
 .btn-group > :not(.btn-check) + .add-btn,
 .btn-group > :not(.btn-check) + .back-btn,
 .btn-group > :not(.btn-check) + .sort-btn,
+.btn-group > :not(.btn-check) + .delete-acct-btn,
+.btn-group > :not(.btn-check) + .delete-item-btn,
 .btn-group > :not(.btn-check) + .logout-btn,
 .btn-group > :not(.btn-check) + .reg-btn,
 .btn-group > :not(.btn-check) + .login-btn,
@@ -4262,6 +4294,8 @@ textarea.form-control-lg {
 .btn-group > .btn-group:not(:first-child) > .add-btn,
 .btn-group > .btn-group:not(:first-child) > .back-btn,
 .btn-group > .btn-group:not(:first-child) > .sort-btn,
+.btn-group > .btn-group:not(:first-child) > .delete-acct-btn,
+.btn-group > .btn-group:not(:first-child) > .delete-item-btn,
 .btn-group > .btn-group:not(:first-child) > .logout-btn,
 .btn-group > .btn-group:not(:first-child) > .reg-btn,
 .btn-group > .btn-group:not(:first-child) > .login-btn {
@@ -4280,12 +4314,12 @@ textarea.form-control-lg {
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .reg-btn + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .item-list-card + .dropdown-toggle-split, .btn-group-sm > .home-card + .dropdown-toggle-split, .btn-group-sm > .add-btn + .dropdown-toggle-split, .btn-group-sm > .back-btn + .dropdown-toggle-split, .btn-group-sm > .sort-btn + .dropdown-toggle-split, .btn-group-sm > .logout-btn + .dropdown-toggle-split, .btn-group-sm > .reg-btn + .dropdown-toggle-split, .btn-group-sm > .login-btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .reg-btn + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, .btn-group-sm > .item-list-card + .dropdown-toggle-split, .btn-group-sm > .home-card + .dropdown-toggle-split, .btn-group-sm > .add-btn + .dropdown-toggle-split, .btn-group-sm > .back-btn + .dropdown-toggle-split, .btn-group-sm > .sort-btn + .dropdown-toggle-split, .btn-group-sm > .delete-acct-btn + .dropdown-toggle-split, .btn-group-sm > .delete-item-btn + .dropdown-toggle-split, .btn-group-sm > .logout-btn + .dropdown-toggle-split, .btn-group-sm > .reg-btn + .dropdown-toggle-split, .btn-group-sm > .login-btn + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .add-btn + .dropdown-toggle-split, .back-btn + .dropdown-toggle-split, .login-btn + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .item-list-card + .dropdown-toggle-split, .btn-group-lg > .home-card + .dropdown-toggle-split, .btn-group-lg > .add-btn + .dropdown-toggle-split, .btn-group-lg > .back-btn + .dropdown-toggle-split, .btn-group-lg > .sort-btn + .dropdown-toggle-split, .btn-group-lg > .logout-btn + .dropdown-toggle-split, .btn-group-lg > .reg-btn + .dropdown-toggle-split, .btn-group-lg > .login-btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .add-btn + .dropdown-toggle-split, .back-btn + .dropdown-toggle-split, .delete-acct-btn + .dropdown-toggle-split, .login-btn + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, .btn-group-lg > .item-list-card + .dropdown-toggle-split, .btn-group-lg > .home-card + .dropdown-toggle-split, .btn-group-lg > .add-btn + .dropdown-toggle-split, .btn-group-lg > .back-btn + .dropdown-toggle-split, .btn-group-lg > .sort-btn + .dropdown-toggle-split, .btn-group-lg > .delete-acct-btn + .dropdown-toggle-split, .btn-group-lg > .delete-item-btn + .dropdown-toggle-split, .btn-group-lg > .logout-btn + .dropdown-toggle-split, .btn-group-lg > .reg-btn + .dropdown-toggle-split, .btn-group-lg > .login-btn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -4295,34 +4329,38 @@ textarea.form-control-lg {
   align-items: flex-start;
   justify-content: center;
 }
-.btn-group-vertical > .btn, .btn-group-vertical > .item-list-card, .btn-group-vertical > .home-card, .btn-group-vertical > .add-btn, .btn-group-vertical > .back-btn, .btn-group-vertical > .sort-btn, .btn-group-vertical > .logout-btn, .btn-group-vertical > .reg-btn, .btn-group-vertical > .login-btn,
+.btn-group-vertical > .btn, .btn-group-vertical > .item-list-card, .btn-group-vertical > .home-card, .btn-group-vertical > .add-btn, .btn-group-vertical > .back-btn, .btn-group-vertical > .sort-btn, .btn-group-vertical > .delete-acct-btn, .btn-group-vertical > .delete-item-btn, .btn-group-vertical > .logout-btn, .btn-group-vertical > .reg-btn, .btn-group-vertical > .login-btn,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
-.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .item-list-card:not(:first-child), .btn-group-vertical > .home-card:not(:first-child), .btn-group-vertical > .add-btn:not(:first-child), .btn-group-vertical > .back-btn:not(:first-child), .btn-group-vertical > .sort-btn:not(:first-child), .btn-group-vertical > .logout-btn:not(:first-child), .btn-group-vertical > .reg-btn:not(:first-child), .btn-group-vertical > .login-btn:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), .btn-group-vertical > .item-list-card:not(:first-child), .btn-group-vertical > .home-card:not(:first-child), .btn-group-vertical > .add-btn:not(:first-child), .btn-group-vertical > .back-btn:not(:first-child), .btn-group-vertical > .sort-btn:not(:first-child), .btn-group-vertical > .delete-acct-btn:not(:first-child), .btn-group-vertical > .delete-item-btn:not(:first-child), .btn-group-vertical > .logout-btn:not(:first-child), .btn-group-vertical > .reg-btn:not(:first-child), .btn-group-vertical > .login-btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .home-card:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .login-btn:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .item-list-card:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .home-card:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .add-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .back-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .sort-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .delete-acct-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .delete-item-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .logout-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .reg-btn:not(:last-child):not(.dropdown-toggle), .btn-group-vertical > .login-btn:not(:last-child):not(.dropdown-toggle),
 .btn-group-vertical > .btn-group:not(:last-child) > .btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .item-list-card,
 .btn-group-vertical > .btn-group:not(:last-child) > .home-card,
 .btn-group-vertical > .btn-group:not(:last-child) > .add-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .back-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .sort-btn,
+.btn-group-vertical > .btn-group:not(:last-child) > .delete-acct-btn,
+.btn-group-vertical > .btn-group:not(:last-child) > .delete-item-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .logout-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .reg-btn,
 .btn-group-vertical > .btn-group:not(:last-child) > .login-btn {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .item-list-card ~ .btn, .btn-group-vertical > .home-card ~ .btn, .btn-group-vertical > .add-btn ~ .btn, .btn-group-vertical > .back-btn ~ .btn, .btn-group-vertical > .sort-btn ~ .btn, .btn-group-vertical > .logout-btn ~ .btn, .btn-group-vertical > .reg-btn ~ .btn, .btn-group-vertical > .login-btn ~ .btn, .btn-group-vertical > .btn ~ .item-list-card, .btn-group-vertical > .item-list-card ~ .item-list-card, .btn-group-vertical > .home-card ~ .item-list-card, .btn-group-vertical > .add-btn ~ .item-list-card, .btn-group-vertical > .back-btn ~ .item-list-card, .btn-group-vertical > .sort-btn ~ .item-list-card, .btn-group-vertical > .logout-btn ~ .item-list-card, .btn-group-vertical > .reg-btn ~ .item-list-card, .btn-group-vertical > .login-btn ~ .item-list-card, .btn-group-vertical > .btn ~ .home-card, .btn-group-vertical > .item-list-card ~ .home-card, .btn-group-vertical > .home-card ~ .home-card, .btn-group-vertical > .add-btn ~ .home-card, .btn-group-vertical > .back-btn ~ .home-card, .btn-group-vertical > .sort-btn ~ .home-card, .btn-group-vertical > .logout-btn ~ .home-card, .btn-group-vertical > .reg-btn ~ .home-card, .btn-group-vertical > .login-btn ~ .home-card, .btn-group-vertical > .btn ~ .add-btn, .btn-group-vertical > .item-list-card ~ .add-btn, .btn-group-vertical > .home-card ~ .add-btn, .btn-group-vertical > .add-btn ~ .add-btn, .btn-group-vertical > .back-btn ~ .add-btn, .btn-group-vertical > .sort-btn ~ .add-btn, .btn-group-vertical > .logout-btn ~ .add-btn, .btn-group-vertical > .reg-btn ~ .add-btn, .btn-group-vertical > .login-btn ~ .add-btn, .btn-group-vertical > .btn ~ .back-btn, .btn-group-vertical > .item-list-card ~ .back-btn, .btn-group-vertical > .home-card ~ .back-btn, .btn-group-vertical > .add-btn ~ .back-btn, .btn-group-vertical > .back-btn ~ .back-btn, .btn-group-vertical > .sort-btn ~ .back-btn, .btn-group-vertical > .logout-btn ~ .back-btn, .btn-group-vertical > .reg-btn ~ .back-btn, .btn-group-vertical > .login-btn ~ .back-btn, .btn-group-vertical > .btn ~ .sort-btn, .btn-group-vertical > .item-list-card ~ .sort-btn, .btn-group-vertical > .home-card ~ .sort-btn, .btn-group-vertical > .add-btn ~ .sort-btn, .btn-group-vertical > .back-btn ~ .sort-btn, .btn-group-vertical > .sort-btn ~ .sort-btn, .btn-group-vertical > .logout-btn ~ .sort-btn, .btn-group-vertical > .reg-btn ~ .sort-btn, .btn-group-vertical > .login-btn ~ .sort-btn, .btn-group-vertical > .btn ~ .logout-btn, .btn-group-vertical > .item-list-card ~ .logout-btn, .btn-group-vertical > .home-card ~ .logout-btn, .btn-group-vertical > .add-btn ~ .logout-btn, .btn-group-vertical > .back-btn ~ .logout-btn, .btn-group-vertical > .sort-btn ~ .logout-btn, .btn-group-vertical > .logout-btn ~ .logout-btn, .btn-group-vertical > .reg-btn ~ .logout-btn, .btn-group-vertical > .login-btn ~ .logout-btn, .btn-group-vertical > .btn ~ .reg-btn, .btn-group-vertical > .item-list-card ~ .reg-btn, .btn-group-vertical > .home-card ~ .reg-btn, .btn-group-vertical > .add-btn ~ .reg-btn, .btn-group-vertical > .back-btn ~ .reg-btn, .btn-group-vertical > .sort-btn ~ .reg-btn, .btn-group-vertical > .logout-btn ~ .reg-btn, .btn-group-vertical > .reg-btn ~ .reg-btn, .btn-group-vertical > .login-btn ~ .reg-btn, .btn-group-vertical > .btn ~ .login-btn, .btn-group-vertical > .item-list-card ~ .login-btn, .btn-group-vertical > .home-card ~ .login-btn, .btn-group-vertical > .add-btn ~ .login-btn, .btn-group-vertical > .back-btn ~ .login-btn, .btn-group-vertical > .sort-btn ~ .login-btn, .btn-group-vertical > .logout-btn ~ .login-btn, .btn-group-vertical > .reg-btn ~ .login-btn, .btn-group-vertical > .login-btn ~ .login-btn,
+.btn-group-vertical > .btn ~ .btn, .btn-group-vertical > .item-list-card ~ .btn, .btn-group-vertical > .home-card ~ .btn, .btn-group-vertical > .add-btn ~ .btn, .btn-group-vertical > .back-btn ~ .btn, .btn-group-vertical > .sort-btn ~ .btn, .btn-group-vertical > .delete-acct-btn ~ .btn, .btn-group-vertical > .delete-item-btn ~ .btn, .btn-group-vertical > .logout-btn ~ .btn, .btn-group-vertical > .reg-btn ~ .btn, .btn-group-vertical > .login-btn ~ .btn, .btn-group-vertical > .btn ~ .item-list-card, .btn-group-vertical > .item-list-card ~ .item-list-card, .btn-group-vertical > .home-card ~ .item-list-card, .btn-group-vertical > .add-btn ~ .item-list-card, .btn-group-vertical > .back-btn ~ .item-list-card, .btn-group-vertical > .sort-btn ~ .item-list-card, .btn-group-vertical > .delete-acct-btn ~ .item-list-card, .btn-group-vertical > .delete-item-btn ~ .item-list-card, .btn-group-vertical > .logout-btn ~ .item-list-card, .btn-group-vertical > .reg-btn ~ .item-list-card, .btn-group-vertical > .login-btn ~ .item-list-card, .btn-group-vertical > .btn ~ .home-card, .btn-group-vertical > .item-list-card ~ .home-card, .btn-group-vertical > .home-card ~ .home-card, .btn-group-vertical > .add-btn ~ .home-card, .btn-group-vertical > .back-btn ~ .home-card, .btn-group-vertical > .sort-btn ~ .home-card, .btn-group-vertical > .delete-acct-btn ~ .home-card, .btn-group-vertical > .delete-item-btn ~ .home-card, .btn-group-vertical > .logout-btn ~ .home-card, .btn-group-vertical > .reg-btn ~ .home-card, .btn-group-vertical > .login-btn ~ .home-card, .btn-group-vertical > .btn ~ .add-btn, .btn-group-vertical > .item-list-card ~ .add-btn, .btn-group-vertical > .home-card ~ .add-btn, .btn-group-vertical > .add-btn ~ .add-btn, .btn-group-vertical > .back-btn ~ .add-btn, .btn-group-vertical > .sort-btn ~ .add-btn, .btn-group-vertical > .delete-acct-btn ~ .add-btn, .btn-group-vertical > .delete-item-btn ~ .add-btn, .btn-group-vertical > .logout-btn ~ .add-btn, .btn-group-vertical > .reg-btn ~ .add-btn, .btn-group-vertical > .login-btn ~ .add-btn, .btn-group-vertical > .btn ~ .back-btn, .btn-group-vertical > .item-list-card ~ .back-btn, .btn-group-vertical > .home-card ~ .back-btn, .btn-group-vertical > .add-btn ~ .back-btn, .btn-group-vertical > .back-btn ~ .back-btn, .btn-group-vertical > .sort-btn ~ .back-btn, .btn-group-vertical > .delete-acct-btn ~ .back-btn, .btn-group-vertical > .delete-item-btn ~ .back-btn, .btn-group-vertical > .logout-btn ~ .back-btn, .btn-group-vertical > .reg-btn ~ .back-btn, .btn-group-vertical > .login-btn ~ .back-btn, .btn-group-vertical > .btn ~ .sort-btn, .btn-group-vertical > .item-list-card ~ .sort-btn, .btn-group-vertical > .home-card ~ .sort-btn, .btn-group-vertical > .add-btn ~ .sort-btn, .btn-group-vertical > .back-btn ~ .sort-btn, .btn-group-vertical > .sort-btn ~ .sort-btn, .btn-group-vertical > .delete-acct-btn ~ .sort-btn, .btn-group-vertical > .delete-item-btn ~ .sort-btn, .btn-group-vertical > .logout-btn ~ .sort-btn, .btn-group-vertical > .reg-btn ~ .sort-btn, .btn-group-vertical > .login-btn ~ .sort-btn, .btn-group-vertical > .btn ~ .delete-acct-btn, .btn-group-vertical > .item-list-card ~ .delete-acct-btn, .btn-group-vertical > .home-card ~ .delete-acct-btn, .btn-group-vertical > .add-btn ~ .delete-acct-btn, .btn-group-vertical > .back-btn ~ .delete-acct-btn, .btn-group-vertical > .sort-btn ~ .delete-acct-btn, .btn-group-vertical > .delete-acct-btn ~ .delete-acct-btn, .btn-group-vertical > .delete-item-btn ~ .delete-acct-btn, .btn-group-vertical > .logout-btn ~ .delete-acct-btn, .btn-group-vertical > .reg-btn ~ .delete-acct-btn, .btn-group-vertical > .login-btn ~ .delete-acct-btn, .btn-group-vertical > .btn ~ .delete-item-btn, .btn-group-vertical > .item-list-card ~ .delete-item-btn, .btn-group-vertical > .home-card ~ .delete-item-btn, .btn-group-vertical > .add-btn ~ .delete-item-btn, .btn-group-vertical > .back-btn ~ .delete-item-btn, .btn-group-vertical > .sort-btn ~ .delete-item-btn, .btn-group-vertical > .delete-acct-btn ~ .delete-item-btn, .btn-group-vertical > .delete-item-btn ~ .delete-item-btn, .btn-group-vertical > .logout-btn ~ .delete-item-btn, .btn-group-vertical > .reg-btn ~ .delete-item-btn, .btn-group-vertical > .login-btn ~ .delete-item-btn, .btn-group-vertical > .btn ~ .logout-btn, .btn-group-vertical > .item-list-card ~ .logout-btn, .btn-group-vertical > .home-card ~ .logout-btn, .btn-group-vertical > .add-btn ~ .logout-btn, .btn-group-vertical > .back-btn ~ .logout-btn, .btn-group-vertical > .sort-btn ~ .logout-btn, .btn-group-vertical > .delete-acct-btn ~ .logout-btn, .btn-group-vertical > .delete-item-btn ~ .logout-btn, .btn-group-vertical > .logout-btn ~ .logout-btn, .btn-group-vertical > .reg-btn ~ .logout-btn, .btn-group-vertical > .login-btn ~ .logout-btn, .btn-group-vertical > .btn ~ .reg-btn, .btn-group-vertical > .item-list-card ~ .reg-btn, .btn-group-vertical > .home-card ~ .reg-btn, .btn-group-vertical > .add-btn ~ .reg-btn, .btn-group-vertical > .back-btn ~ .reg-btn, .btn-group-vertical > .sort-btn ~ .reg-btn, .btn-group-vertical > .delete-acct-btn ~ .reg-btn, .btn-group-vertical > .delete-item-btn ~ .reg-btn, .btn-group-vertical > .logout-btn ~ .reg-btn, .btn-group-vertical > .reg-btn ~ .reg-btn, .btn-group-vertical > .login-btn ~ .reg-btn, .btn-group-vertical > .btn ~ .login-btn, .btn-group-vertical > .item-list-card ~ .login-btn, .btn-group-vertical > .home-card ~ .login-btn, .btn-group-vertical > .add-btn ~ .login-btn, .btn-group-vertical > .back-btn ~ .login-btn, .btn-group-vertical > .sort-btn ~ .login-btn, .btn-group-vertical > .delete-acct-btn ~ .login-btn, .btn-group-vertical > .delete-item-btn ~ .login-btn, .btn-group-vertical > .logout-btn ~ .login-btn, .btn-group-vertical > .reg-btn ~ .login-btn, .btn-group-vertical > .login-btn ~ .login-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .item-list-card,
 .btn-group-vertical > .btn-group:not(:first-child) > .home-card,
 .btn-group-vertical > .btn-group:not(:first-child) > .add-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .back-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .sort-btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .delete-acct-btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .delete-item-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .logout-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .reg-btn,
 .btn-group-vertical > .btn-group:not(:first-child) > .login-btn {
@@ -5318,7 +5356,7 @@ textarea.form-control-lg {
   display: none;
 }
 
-.btn .badge, .item-list-card .badge, .home-card .badge, .add-btn .badge, .back-btn .badge, .sort-btn .badge, .logout-btn .badge, .reg-btn .badge, .login-btn .badge {
+.btn .badge, .item-list-card .badge, .home-card .badge, .add-btn .badge, .back-btn .badge, .sort-btn .badge, .delete-acct-btn .badge, .delete-item-btn .badge, .logout-btn .badge, .reg-btn .badge, .login-btn .badge {
   position: relative;
   top: -1px;
 }
@@ -6895,7 +6933,7 @@ textarea.form-control-lg {
   background-color: currentColor;
   opacity: 0.5;
 }
-.placeholder.btn::before, .placeholder.item-list-card::before, .placeholder.home-card::before, .placeholder.add-btn::before, .placeholder.back-btn::before, .placeholder.sort-btn::before, .placeholder.logout-btn::before, .placeholder.reg-btn::before, .placeholder.login-btn::before {
+.placeholder.btn::before, .placeholder.item-list-card::before, .placeholder.home-card::before, .placeholder.add-btn::before, .placeholder.back-btn::before, .placeholder.sort-btn::before, .placeholder.delete-acct-btn::before, .placeholder.delete-item-btn::before, .placeholder.logout-btn::before, .placeholder.reg-btn::before, .placeholder.login-btn::before {
   display: inline-block;
   content: "";
 }
@@ -7262,7 +7300,7 @@ textarea.form-control-lg {
   display: block !important;
 }
 
-.d-grid {
+.d-grid, .delete-acct-btn {
   display: grid !important;
 }
 
@@ -7278,7 +7316,7 @@ textarea.form-control-lg {
   display: table-cell !important;
 }
 
-.d-flex, header, .header-nav {
+.d-flex, header, .header-nav, #workspace-name {
   display: flex !important;
 }
 
@@ -7290,7 +7328,7 @@ textarea.form-control-lg {
   display: none !important;
 }
 
-.shadow, .back-btn, .edit-acct-btn, .edit-item-btn, .delete-item-btn, .edit-acct-btn:hover {
+.shadow, .back-btn, .edit-acct-btn, .edit-item-btn, .delete-item-btn, .edit-acct-btn:hover, .delete-acct-btn {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
@@ -7386,7 +7424,7 @@ textarea.form-control-lg {
   transform: translateY(-50%) !important;
 }
 
-.border, .back-btn {
+.border, #workspace-name, .back-btn {
   border: 1px solid #dee2e6 !important;
 }
 
@@ -7398,7 +7436,7 @@ textarea.form-control-lg {
   border-top: 1px solid #dee2e6 !important;
 }
 
-.border-top-0 {
+.border-top-0, #workspace-name {
   border-top: 0 !important;
 }
 
@@ -7462,7 +7500,7 @@ textarea.form-control-lg {
   border-color: #503FBF !important;
 }
 
-.border-lightpurple {
+.border-lightpurple, #workspace-name {
   border-color: #7162D9 !important;
 }
 
@@ -7486,7 +7524,7 @@ textarea.form-control-lg {
   border-width: 1px !important;
 }
 
-.border-2 {
+.border-2, #workspace-name {
   border-width: 2px !important;
 }
 
@@ -7623,7 +7661,7 @@ textarea.form-control-lg {
   gap: 0.25rem !important;
 }
 
-.gap-2 {
+.gap-2, .delete-acct-btn {
   gap: 0.5rem !important;
 }
 
@@ -7647,7 +7685,7 @@ textarea.form-control-lg {
   justify-content: flex-end !important;
 }
 
-.justify-content-center {
+.justify-content-center, #workspace-name {
   justify-content: center !important;
 }
 
@@ -7671,7 +7709,7 @@ textarea.form-control-lg {
   align-items: flex-end !important;
 }
 
-.align-items-center, header {
+.align-items-center, header, #workspace-name {
   align-items: center !important;
 }
 
@@ -7763,7 +7801,7 @@ textarea.form-control-lg {
   order: 6 !important;
 }
 
-.m-0, .header-logo {
+.m-0, .header-logo, #workspace-name p {
   margin: 0 !important;
 }
 
@@ -7791,7 +7829,7 @@ textarea.form-control-lg {
   margin: auto !important;
 }
 
-.mx-0 {
+.mx-0, #history-table-header, #workspace-name {
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
@@ -7821,7 +7859,7 @@ textarea.form-control-lg {
   margin-left: 3rem !important;
 }
 
-.mx-auto {
+.mx-auto, .delete-acct-btn {
   margin-right: auto !important;
   margin-left: auto !important;
 }
@@ -7873,7 +7911,7 @@ textarea.form-control-lg {
   margin-top: 0.5rem !important;
 }
 
-.mt-3 {
+.mt-3, #history-table-header {
   margin-top: 1rem !important;
 }
 
@@ -7989,7 +8027,7 @@ textarea.form-control-lg {
   padding: 1rem !important;
 }
 
-.p-4 {
+.p-4, #workspace-name {
   padding: 1.5rem !important;
 }
 
@@ -8157,7 +8195,7 @@ textarea.form-control-lg {
   font-family: var(--bs-font-monospace) !important;
 }
 
-.fs-1 {
+.fs-1, #workspace-name p {
   font-size: calc(1.375rem + 1.5vw) !important;
 }
 
@@ -8233,7 +8271,7 @@ textarea.form-control-lg {
   text-align: right !important;
 }
 
-.text-center, .center, .center h1, .back-btn, .reg-btn, .login-btn {
+.text-center, #workspace-name p, .center, .center h1, .back-btn, .reg-btn, .login-btn {
   text-align: center !important;
 }
 
@@ -8261,7 +8299,7 @@ textarea.form-control-lg {
   text-transform: capitalize !important;
 }
 
-.text-wrap {
+.text-wrap, #workspace-name p {
   white-space: normal !important;
 }
 
@@ -8321,7 +8359,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-white, .edit-acct-btn:hover .bi, .deleteItem-btn:hover .bi, .edit-item-btn:hover .bi, .reg-btn, .login-btn {
+.text-white, .dark-mode #workspace-name p, .edit-acct-btn:hover .bi, .edit-item-btn:hover .bi, .reg-btn, .login-btn {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
@@ -8491,7 +8529,7 @@ textarea.form-control-lg {
   border-radius: 0.3rem !important;
 }
 
-.rounded-circle {
+.rounded-circle, .delete-item-btn {
   border-radius: 50% !important;
 }
 
@@ -11783,7 +11821,7 @@ textarea.form-control-lg {
   }
 }
 @media (min-width: 1200px) {
-  .fs-1 {
+  .fs-1, #workspace-name p {
     font-size: 2.5rem !important;
   }
 
@@ -11856,7 +11894,7 @@ textarea.form-control-lg {
   color: rgba(var(--bs-teal-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-pink {
+.text-pink, #workspace-name p {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
 }
@@ -11900,7 +11938,7 @@ textarea.form-control-lg {
   font-family: "Montserrat", sans-serif;
 }
 
-.oswald, .center h1, .item-list-card .item-name {
+.oswald, #history-table-header, #workspace-name p, .center h1, .item-list-card .item-name {
   font-family: "Oswald", sans-serif;
 }
 
@@ -11944,13 +11982,13 @@ textarea.form-control-lg {
   color: #fff;
 }
 
+.delete-item-btn:hover .bi {
+  color: #fff;
+}
+
 .checkbox {
   opacity: 0;
   position: absolute;
-}
-
-.checkbox:checked + .label .ball {
-  transform: translateX(24px);
 }
 
 .label {
@@ -11964,16 +12002,13 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding: 5px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .moon, .sun {
   color: #fff;
 }
 
-/*.sun{
- // color: #f39c12;
-
-}*/
 .ball {
   width: 22px;
   height: 22px;
@@ -12129,6 +12164,110 @@ textarea.form-control-lg {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.desc-card {
+  border-color: #666666;
+}
+.desc-card hr {
+  color: #666666;
+}
+
+.dark-mode {
+  background-color: #212121;
+}
+.dark-mode .search input {
+  color: #fff;
+  background-color: #212121;
+  border-color: #fff;
+}
+.dark-mode .search-logo {
+  color: #fff;
+  border-color: #fff;
+}
+.dark-mode #page-heading {
+  color: #E0E0E0;
+  border-color: #E0E0E0;
+}
+.dark-mode #workspace-name {
+  background-color: #616161;
+}
+.dark-mode #back-workspace {
+  color: #fff;
+  background-color: #616161;
+}
+.dark-mode .keepr-card {
+  color: #fff;
+  background-color: #616161;
+}
+.dark-mode .item-list-card {
+  color: #fff;
+  background-color: #616161;
+}
+.dark-mode .sort-btn {
+  color: #fff;
+}
+.dark-mode .sort-btn:hover {
+  background-color: #fff;
+  color: #F277A4;
+}
+.dark-mode .sort-btn:focus {
+  color: #fff;
+}
+.dark-mode #back-to-top-btn {
+  background-color: #F277A4;
+  border-color: #C4C4C4;
+}
+.dark-mode #back-to-top-btn svg {
+  color: #fff;
+}
+.dark-mode #back-to-top-btn:hover {
+  background-color: #fff;
+}
+.dark-mode #back-to-top-btn:hover svg {
+  color: #F277A4;
+}
+.dark-mode .collaborator-card {
+  background-color: #616161;
+  color: #fff;
+}
+.dark-mode .collab-user {
+  color: #fff;
+}
+.dark-mode .collab-user:hover {
+  color: #C4C4C4;
+}
+.dark-mode .outer-layer {
+  background-color: #424242;
+}
+.dark-mode #history-table-header {
+  color: #fff;
+}
+.dark-mode .hist-black-line {
+  color: #616161;
+}
+.dark-mode .delete-item-btn {
+  color: #fff;
+}
+.dark-mode .delete-item-btn:hover {
+  background-color: #fff;
+}
+.dark-mode .delete-item-btn:hover .bi {
+  color: #dc3545;
+}
+.dark-mode .table-row {
+  background-color: #616161;
+  color: #fff;
+}
+.dark-mode .desc-card {
+  border-color: #C4C4C4;
+}
+.dark-mode .desc-card hr {
+  color: #C4C4C4;
+}
+
+#page-heading {
+  color: #666666;
+}
+
 .fade-in-up, #bg-container {
   animation: fadeInUp 500ms 500ms ease both;
 }
@@ -12266,9 +12405,9 @@ form .text-field {
 }
 
 #workspace-name {
+  background-color: #fff;
   height: 30vh;
 }
-
 #nav-section {
   height: 62vh;
 }
@@ -12597,6 +12736,7 @@ frame .uploadPic {
   width: 100%;
   height: 40px;
   opacity: 1;
+  color: #000;
 }
 
 .hist-buttons {
@@ -12619,8 +12759,8 @@ frame .uploadPic {
   margin: 0 auto;
 }
 
-/*.history-delete, .history-sort{
-    background-color: #fff;
-}*/
+#history-table-header {
+  color: #666666;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,139 @@
+@use '../custom' as *;
+
+$dm-black: #212121;
+$dm-darkgray: #424242;
+$dm-gray: #616161;
+$dm-heading: #E0E0E0;
+
+.dark-mode {
+  background-color: $dm-black;
+
+  .search input {
+    color: $white;
+    background-color: $dm-black;
+    border-color: $white;
+  }
+
+  .search-logo {
+    color: $white;
+    border-color: $white;
+  }
+
+  #page-heading {
+    color: $dm-heading;
+    border-color: $dm-heading;
+  }
+
+  #workspace-name {
+    background-color: $dm-gray;
+  
+    p {
+      @extend .text-white;
+    }
+  }
+  
+  #back-workspace {
+    color: $white;
+    background-color: $dm-gray;
+  }
+
+  .keepr-card {
+    color: $white;
+    background-color: $dm-gray;
+  }
+
+  .item-list-card {
+    color: $white;
+    background-color: $dm-gray;
+  }
+
+  .sort-btn {
+    @extend .btn-pink;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $pink;
+    }
+
+    &:focus {
+      color: $white;
+    }
+  }
+
+  #back-to-top-btn {
+    background-color: $pink;
+    border-color: $border-gray;
+
+    svg {
+      color: $white;
+    }
+  
+    &:hover {
+      background-color: $white;
+  
+      svg {
+        color: $pink;
+      }
+    }
+  }
+
+  .collaborator-card {
+    background-color: $dm-gray;
+    color: $white;
+  }
+
+  .collab-user {
+    color: $white;
+
+    &:hover {
+      color: $border-gray;
+    }
+  }
+
+  .outer-layer {
+    background-color: $dm-darkgray;
+  }
+
+  #history-table-header {
+    color: $white;
+  }
+
+  .hist-black-line {
+    color: $dm-gray;
+  }
+
+  .delete-item-btn {
+    @extend .btn-danger;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+
+      .bi {
+        color: $red;
+      }
+    }
+  }
+
+  .table-row {
+    background-color: $dm-gray;
+    color: $white;
+  }
+
+  .delete-acct-btn {
+    @extend .btn-danger;
+  }
+
+  .desc-card {
+    border-color: $border-gray;
+  
+    hr {
+      color: $border-gray;
+    }
+  }
+}
+
+#page-heading {
+  color: $gray;
+}
