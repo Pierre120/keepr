@@ -81,6 +81,14 @@ $dm-heading: #E0E0E0;
     background-color: $dm-gray;
     color: $white;
   }
+
+  .collab-user {
+    color: $white;
+
+  &:hover {
+    color: $border-gray;
+  }
+  }
 }
 
 #page-heading {

@@ -12180,6 +12180,12 @@ textarea.form-control-lg {
   background-color: #616161;
   color: #fff;
 }
+.dark-mode .collab-user {
+  color: #fff;
+}
+.dark-mode .collab-user:hover {
+  color: #C4C4C4;
+}
 
 #page-heading {
   color: #666666;
