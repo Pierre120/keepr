@@ -102,6 +102,19 @@ $dm-heading: #E0E0E0;
   .hist-black-line {
     color: $dm-gray;
   }
+
+  .delete-item-btn {
+    @extend .btn-danger;
+    color: $white;
+
+    &:hover {
+      background-color: $white;
+
+      .bi {
+        color: $red;
+      }
+    }
+  }
 }
 
 #page-heading {
