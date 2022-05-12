@@ -12665,6 +12665,7 @@ frame .uploadPic {
   width: 100%;
   height: 40px;
   opacity: 1;
+  color: #000;
 }
 
 .hist-buttons {
