@@ -85,9 +85,15 @@
   }
 }
 
-.delete-item-btn:hover {
-  .bi {
-    color: $white;
+.delete-item-btn {
+  @extend .btn;
+  @extend .btn-outline-danger;
+  @extend .rounded-circle;
+
+  &:hover {
+    .bi {
+      color: $white;
+    }
   }
 }
 
