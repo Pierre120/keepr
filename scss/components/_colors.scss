@@ -124,6 +124,14 @@ $dm-heading: #E0E0E0;
   .delete-acct-btn {
     @extend .btn-danger;
   }
+
+  .desc-card {
+    border-color: $border-gray;
+  
+    hr {
+      color: $border-gray;
+    }
+  }
 }
 
 #page-heading {

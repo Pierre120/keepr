@@ -12257,6 +12257,13 @@ textarea.form-control-lg {
   background-color: #616161;
   color: #fff;
 }
+.dark-mode .desc-card {
+  border-color: #C4C4C4;
+}
+.dark-mode .desc-card hr {
+  color: #C4C4C4;
+}
+
 #page-heading {
   color: #666666;
 }
