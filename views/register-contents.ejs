@@ -1,22 +1,70 @@
 <div class="center">
     <img src="img/register_logo.png" class="pb-2"/>
     <h1>REGISTER</h1>
-    <form name="form">
+    <form name="reg-form">
         <div class="text-field">
-            <input type="text" required>
+            <input type="text" id="reg-name" onclick="resetInputBorder('reg-name')" required>
             <span></span>
             <label>Name</label>
         </div>
         <div class="text-field">
-            <input type="text" required>
+            <input type="text" id="reg-display-name" onclick="resetInputBorder('reg-display-name')" required>
             <span></span>
             <label>Display Name</label>
         </div>
         <div class="text-field">
-            <input type="password" required>
+            <input type="password" id="reg-password" onclick="resetInputBorder('reg-password')" required>
             <span></span>
             <label>Password</label>
         </div>
         <%- include('partials/registerBtn.ejs') %>
     </form>
 </div>
+
+<script>
+    function redirectToWorkspace() {
+        window.location.assign('http://localhost:5000/app');
+    }
+
+    function checkEmptyInputs(userObj) {
+        let emptyInput = false
+        for(let invalidFields of userObj) {
+            if(invalidFields.value === '') {
+                if(invalidFields.id === 'reg-name'){
+                    document.getElementsByTagName("label")[0].style.color = "pink";
+                    invalidFields.style["border-bottom"] = "1px solid pink";
+                    emptyInput = true;
+                }
+                else if(invalidFields.id === 'reg-display-name'){
+                    document.getElementsByTagName("label")[1].style.color = "pink";
+                    invalidFields.style["border-bottom"] = "1px solid pink";
+                    emptyInput = true;
+                }
+                else if(invalidFields.id === 'reg-password'){
+                    document.getElementsByTagName("label")[2].style.color = "pink";
+                    invalidFields.style["border-bottom"] = "1px solid pink";
+                    emptyInput = true;
+                }
+            }
+        }
+        return emptyInput;
+    }
+
+    function resetInputBorder(id) {
+        let field = document.forms["reg-form"][id];
+        document.getElementsByTagName("label")[0].style.color = "dark-purple";
+        document.getElementsByTagName("label")[1].style.color = "dark-purple";
+        document.getElementsByTagName("label")[2].style.color = "dark-purple";
+        field.style["border-bottom"] = "1px solid #C4C4C4";
+    }
+
+    function validateRegForm() {
+        let user = document.forms["reg-form"];
+
+        let emptyFieldExists = checkEmptyInputs(user);
+
+        if(!emptyFieldExists) {
+            redirectToWorkspace();
+        }
+    }
+</script>
