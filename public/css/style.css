@@ -12164,6 +12164,13 @@ textarea.form-control-lg {
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
 }
 
+.desc-card {
+  border-color: #666666;
+}
+.desc-card hr {
+  color: #666666;
+}
+
 .dark-mode {
   background-color: #212121;
 }
