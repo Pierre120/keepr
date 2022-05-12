@@ -12156,6 +12156,13 @@ textarea.form-control-lg {
 .dark-mode .sort-btn {
   color: #fff;
 }
+.dark-mode .sort-btn:hover {
+  background-color: #fff;
+  color: #F277A4;
+}
+.dark-mode .sort-btn:focus {
+  color: #fff;
+}
 .dark-mode #back-to-top-btn {
   background-color: #F277A4;
 }

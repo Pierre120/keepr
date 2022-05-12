@@ -49,6 +49,15 @@ $dm-heading: #E0E0E0;
   .sort-btn {
     @extend .btn-pink;
     color: $white;
+
+    &:hover {
+      background-color: $white;
+      color: $pink;
+    }
+
+    &:focus {
+      color: $white;
+    }
   }
 
   #back-to-top-btn {
