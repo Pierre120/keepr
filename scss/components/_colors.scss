@@ -120,6 +120,10 @@ $dm-heading: #E0E0E0;
     background-color: $dm-gray;
     color: $white;
   }
+
+  .delete-acct-btn {
+    @extend .btn-danger;
+  }
 }
 
 #page-heading {

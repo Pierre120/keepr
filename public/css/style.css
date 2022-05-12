@@ -3115,31 +3115,31 @@ textarea.form-control-lg {
   border-color: #ffc107;
 }
 
-.btn-danger, .dark-mode .delete-item-btn {
+.btn-danger, .dark-mode .delete-item-btn, .dark-mode .delete-acct-btn {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
 }
-.btn-danger:hover, .dark-mode .delete-item-btn:hover {
+.btn-danger:hover, .dark-mode .delete-item-btn:hover, .dark-mode .delete-acct-btn:hover {
   color: #fff;
   background-color: #bb2d3b;
   border-color: #b02a37;
 }
-.btn-check:focus + .btn-danger, .dark-mode .btn-check:focus + .delete-item-btn, .btn-danger:focus, .dark-mode .delete-item-btn:focus {
+.btn-check:focus + .btn-danger, .dark-mode .btn-check:focus + .delete-item-btn, .dark-mode .btn-check:focus + .delete-acct-btn, .btn-danger:focus, .dark-mode .delete-item-btn:focus, .dark-mode .delete-acct-btn:focus {
   color: #fff;
   background-color: #bb2d3b;
   border-color: #b02a37;
   box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
 }
-.btn-check:checked + .btn-danger, .dark-mode .btn-check:checked + .delete-item-btn, .btn-check:active + .btn-danger, .dark-mode .btn-check:active + .delete-item-btn, .btn-danger:active, .dark-mode .delete-item-btn:active, .btn-danger.active, .dark-mode .active.delete-item-btn, .show > .btn-danger.dropdown-toggle, .dark-mode .show > .dropdown-toggle.delete-item-btn {
+.btn-check:checked + .btn-danger, .dark-mode .btn-check:checked + .delete-item-btn, .dark-mode .btn-check:checked + .delete-acct-btn, .btn-check:active + .btn-danger, .dark-mode .btn-check:active + .delete-item-btn, .dark-mode .btn-check:active + .delete-acct-btn, .btn-danger:active, .dark-mode .delete-item-btn:active, .dark-mode .delete-acct-btn:active, .btn-danger.active, .dark-mode .active.delete-item-btn, .dark-mode .active.delete-acct-btn, .show > .btn-danger.dropdown-toggle, .dark-mode .show > .dropdown-toggle.delete-item-btn, .dark-mode .show > .dropdown-toggle.delete-acct-btn {
   color: #fff;
   background-color: #b02a37;
   border-color: #a52834;
 }
-.btn-check:checked + .btn-danger:focus, .dark-mode .btn-check:checked + .delete-item-btn:focus, .btn-check:active + .btn-danger:focus, .dark-mode .btn-check:active + .delete-item-btn:focus, .btn-danger:active:focus, .dark-mode .delete-item-btn:active:focus, .btn-danger.active:focus, .dark-mode .active.delete-item-btn:focus, .show > .btn-danger.dropdown-toggle:focus, .dark-mode .show > .dropdown-toggle.delete-item-btn:focus {
+.btn-check:checked + .btn-danger:focus, .dark-mode .btn-check:checked + .delete-item-btn:focus, .dark-mode .btn-check:checked + .delete-acct-btn:focus, .btn-check:active + .btn-danger:focus, .dark-mode .btn-check:active + .delete-item-btn:focus, .dark-mode .btn-check:active + .delete-acct-btn:focus, .btn-danger:active:focus, .dark-mode .delete-item-btn:active:focus, .dark-mode .delete-acct-btn:active:focus, .btn-danger.active:focus, .dark-mode .active.delete-item-btn:focus, .dark-mode .active.delete-acct-btn:focus, .show > .btn-danger.dropdown-toggle:focus, .dark-mode .show > .dropdown-toggle.delete-item-btn:focus, .dark-mode .show > .dropdown-toggle.delete-acct-btn:focus {
   box-shadow: 0 0 0 0.25rem rgba(225, 83, 97, 0.5);
 }
-.btn-danger:disabled, .dark-mode .delete-item-btn:disabled, .btn-danger.disabled, .dark-mode .disabled.delete-item-btn {
+.btn-danger:disabled, .dark-mode .delete-item-btn:disabled, .dark-mode .delete-acct-btn:disabled, .btn-danger.disabled, .dark-mode .disabled.delete-item-btn, .dark-mode .disabled.delete-acct-btn {
   color: #fff;
   background-color: #dc3545;
   border-color: #dc3545;
@@ -12250,7 +12250,6 @@ textarea.form-control-lg {
   background-color: #616161;
   color: #fff;
 }
-
 #page-heading {
   color: #666666;
 }
