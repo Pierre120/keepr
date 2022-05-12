@@ -86,9 +86,13 @@ $dm-heading: #E0E0E0;
   .collab-user {
     color: $white;
 
-  &:hover {
-    color: $border-gray;
+    &:hover {
+      color: $border-gray;
+    }
   }
+
+  .outer-layer {
+    background-color: $dm-darkgray;
   }
 }
 
