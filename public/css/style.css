@@ -12149,6 +12149,10 @@ textarea.form-control-lg {
   color: #fff;
   background-color: #616161;
 }
+.dark-mode .item-list-card {
+  color: #fff;
+  background-color: #616161;
+}
 
 #page-heading {
   color: #666666;
