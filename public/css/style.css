@@ -12192,6 +12192,9 @@ textarea.form-control-lg {
 .dark-mode #history-table-header {
   color: #fff;
 }
+.dark-mode .hist-black-line {
+  color: #616161;
+}
 
 #page-heading {
   color: #666666;
