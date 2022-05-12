@@ -3291,31 +3291,31 @@ textarea.form-control-lg {
   border-color: #6CD9B1;
 }
 
-.btn-pink {
+.btn-pink, .dark-mode .sort-btn {
   color: #000;
   background-color: #F277A4;
   border-color: #F277A4;
 }
-.btn-pink:hover {
+.btn-pink:hover, .dark-mode .sort-btn:hover {
   color: #000;
   background-color: #f48bb2;
   border-color: #f385ad;
 }
-.btn-check:focus + .btn-pink, .btn-pink:focus {
+.btn-check:focus + .btn-pink, .dark-mode .btn-check:focus + .sort-btn, .btn-pink:focus, .dark-mode .sort-btn:focus {
   color: #000;
   background-color: #f48bb2;
   border-color: #f385ad;
   box-shadow: 0 0 0 0.25rem rgba(206, 101, 139, 0.5);
 }
-.btn-check:checked + .btn-pink, .btn-check:active + .btn-pink, .btn-pink:active, .btn-pink.active, .show > .btn-pink.dropdown-toggle {
+.btn-check:checked + .btn-pink, .dark-mode .btn-check:checked + .sort-btn, .btn-check:active + .btn-pink, .dark-mode .btn-check:active + .sort-btn, .btn-pink:active, .dark-mode .sort-btn:active, .btn-pink.active, .dark-mode .active.sort-btn, .show > .btn-pink.dropdown-toggle, .dark-mode .show > .dropdown-toggle.sort-btn {
   color: #000;
   background-color: #f592b6;
   border-color: #f385ad;
 }
-.btn-check:checked + .btn-pink:focus, .btn-check:active + .btn-pink:focus, .btn-pink:active:focus, .btn-pink.active:focus, .show > .btn-pink.dropdown-toggle:focus {
+.btn-check:checked + .btn-pink:focus, .dark-mode .btn-check:checked + .sort-btn:focus, .btn-check:active + .btn-pink:focus, .dark-mode .btn-check:active + .sort-btn:focus, .btn-pink:active:focus, .dark-mode .sort-btn:active:focus, .btn-pink.active:focus, .dark-mode .active.sort-btn:focus, .show > .btn-pink.dropdown-toggle:focus, .dark-mode .show > .dropdown-toggle.sort-btn:focus {
   box-shadow: 0 0 0 0.25rem rgba(206, 101, 139, 0.5);
 }
-.btn-pink:disabled, .btn-pink.disabled {
+.btn-pink:disabled, .dark-mode .sort-btn:disabled, .btn-pink.disabled, .dark-mode .disabled.sort-btn {
   color: #000;
   background-color: #F277A4;
   border-color: #F277A4;
@@ -12152,6 +12152,9 @@ textarea.form-control-lg {
 .dark-mode .item-list-card {
   color: #fff;
   background-color: #616161;
+}
+.dark-mode .sort-btn {
+  color: #fff;
 }
 
 #page-heading {
