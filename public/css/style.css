@@ -12176,6 +12176,10 @@ textarea.form-control-lg {
 .dark-mode #back-to-top-btn:hover svg {
   color: #F277A4;
 }
+.dark-mode .collaborator-card {
+  background-color: #616161;
+  color: #fff;
+}
 
 #page-heading {
   color: #666666;
