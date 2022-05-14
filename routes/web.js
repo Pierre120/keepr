@@ -112,25 +112,29 @@ const editItemModalObjects = [
     id: 'editItemPCode',
     title: 'Edit Item Product Code',
     type: 'text-input',
-    inputId: 'updateItemPCode'
+    inputId: 'updateItemPCode',
+    label: 'Item Product Code'
   },
   {
     id: 'editItemQtyUnit',
     title: 'Edit Item Qty/Unit',
     type: 'text-input',
-    inputId: 'updateItemQtyUnit'
+    inputId: 'updateItemQtyUnit',
+    label: 'Item Qty/Unit'
   },
   {
     id: 'editItemDesc',
     title: 'Edit Item Description',
     type: 'textarea',
-    inputId: 'updateItemDesc'
+    inputId: 'updateItemDesc',
+    label: 'Item Description'
   },
   {
     id: 'editItemAssigments',
     title: 'Edit Item Collaborators',
     type: '',
-    inputId: 'updateItemAssigments'
+    inputId: 'updateItemAssigments',
+    label: 'Assign a Collaborator'
   }
 ];
 // --- END SAMPLE DATA ---
