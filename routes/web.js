@@ -82,7 +82,7 @@ const userPaths = {
   bohxpierre: sampleOtherUsers[2],
   jojo: sampleOtherUsers[3],
   mammamia: sampleOtherUsers[4]
-}
+};
 
 const sampleWorkspaces = {
   default: {
@@ -105,7 +105,14 @@ const sampleWorkspaces = {
     name: 'Tsubibo',
     path: 'tsubibo'
   }
-}
+};
+
+const editItemModalIDs = [
+  '#editItemPCode',
+  '#editItemQtyUnit',
+  '#editItemDesc',
+  '#editItemAssigments'
+];
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
