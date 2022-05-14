@@ -109,16 +109,28 @@ const sampleWorkspaces = {
 
 const editItemModalObjects = [
   {
-    id: 'editItemPCode'
+    id: 'editItemPCode',
+    title: 'Edit Item Product Code',
+    type: 'text-input',
+    inputId: 'updateItemPCode'
   },
   {
-    id: 'editItemQtyUnit'
+    id: 'editItemQtyUnit',
+    title: 'Edit Item Qty/Unit',
+    type: 'text-input',
+    inputId: 'updateItemQtyUnit'
   },
   {
-    id: 'editItemDesc'
+    id: 'editItemDesc',
+    title: 'Edit Item Description',
+    type: 'textarea',
+    inputId: 'updateItemDesc'
   },
   {
-    id: 'editItemAssigments'
+    id: 'editItemAssigments',
+    title: 'Edit Item Collaborators',
+    type: '',
+    inputId: 'updateItemAssigments'
   }
 ];
 // --- END SAMPLE DATA ---
