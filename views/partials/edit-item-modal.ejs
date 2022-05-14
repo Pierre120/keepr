@@ -12,16 +12,10 @@
           <div class="mb-3 form-floating">
             <% if(editModal.type === 'textarea') { %>
               <textarea class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>"></textarea>
-              <label for="<%= editModal.inputId %>" class="col-form-label">
-                <%- editModal.label %>
-              </label>
             <% } else if(editModal.type === 'text-input') { %>
               <input type="text" class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>">
-              <label for="<%= editModal.inputId %>" class="col-form-label">
-                <%- editModal.label %>
-              </label>
             <% } else { %>
-              <select class="form-select" aria-label="Assign Collaborator to Item">
+              <select class="form-select" id="<%= editModal.inputId %>" aria-label="Assign Collaborator to Item">
                 <option selected><%- editModal.label %></option>
                 <% if(sampleItem.assignedPeople.length > 0) { %>
                 <% for(let collab of sampleItem.assignedPeople) { %>
@@ -30,6 +24,9 @@
                 <% } %>
               </select>
             <% } %>
+            <label for="<%= editModal.inputId %>" class="col-form-label">
+              <%- editModal.label %>
+            </label>
           </div>
         </form>
       </div>
