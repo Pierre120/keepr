@@ -1,18 +1,19 @@
-<div class="modal fade" id="<%= editItemModals[index].id %>" tabindex="-1" 
+<% for(let editModal of editItemModals) { %>
+<div class="modal fade" id="<%= editModal.id %>" tabindex="-1" 
       aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalLabel"><%- editItemModals[index].title %></h5>
+        <h5 class="modal-title" id="modalLabel"><%- editModal.title %></h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form>
           <div class="mb-3 form-floating">
-            <% if(editItemModals[index].type === 'textarea') { %>
-              <textarea class="form-control" id="<%= editItemModals[index].inputId %>"></textarea>
-            <% } else if(editItemModals[index].type === 'text-input') { %>
-              <input type="text" class="form-control" id="<%= editItemModals[index].inputId %>">
+            <% if(editModal.type === 'textarea') { %>
+              <textarea class="form-control" id="<%= editModal.inputId %>"></textarea>
+            <% } else if(editModal.type === 'text-input') { %>
+              <input type="text" class="form-control" id="<%= editModal.inputId %>">
             <% } else { %>
               <select class="form-select" aria-label="Assign Collaborator to Item">
                 <option selected>Assign a Collaborator</option>
@@ -23,8 +24,8 @@
                 <% } %>
               </select>
             <% } %>
-            <label for="<%= editItemModals[index].inputId %>" class="col-form-label">
-              <%- editItemModals[index].label %>:
+            <label for="<%= editModal.inputId %>" class="col-form-label">
+              <%- editModal.label %>:
             </label>
           </div>
         </form>
@@ -36,3 +37,4 @@
     </div>
   </div>
 </div>
+<% } %>
