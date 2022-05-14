@@ -109,6 +109,13 @@ const sampleWorkspaces = {
 
 const editItemModalObjects = [
   {
+    id: 'editItemName',
+    title: 'Edit Item Name',
+    type: 'text-input',
+    inputId: 'updateItemName',
+    label: 'Item Name'
+  },
+  {
     id: 'editItemPCode',
     title: 'Edit Item Product Code',
     type: 'text-input',
