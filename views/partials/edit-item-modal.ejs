@@ -11,12 +11,12 @@
         <form>
           <div class="mb-3 form-floating">
             <% if(editModal.type === 'textarea') { %>
-              <textarea class="form-control" id="<%= editModal.inputId %>"></textarea>
+              <textarea class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>"></textarea>
               <label for="<%= editModal.inputId %>" class="col-form-label">
                 <%- editModal.label %>
               </label>
             <% } else if(editModal.type === 'text-input') { %>
-              <input type="text" class="form-control" id="<%= editModal.inputId %>">
+              <input type="text" class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>">
               <label for="<%= editModal.inputId %>" class="col-form-label">
                 <%- editModal.label %>
               </label>
