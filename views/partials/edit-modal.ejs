@@ -16,8 +16,10 @@
             <% } else { %>
               <select class="form-select" aria-label="Assign Collaborator to Item">
                 <option selected>Assign a Collaborator</option>
-                <% for(let collab of ditItemModals[index].collaborators) { %>
+                <% if(item.assignedPeople.length > 0) { %>
+                <% for(let collab of item.assignedPeople) { %>
                   <option value="<%= collab %>"><%- collab %></option>
+                <% } %>
                 <% } %>
               </select>
             <% } %>
