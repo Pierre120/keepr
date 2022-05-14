@@ -107,7 +107,7 @@ const sampleWorkspaces = {
   }
 };
 
-const editItemModalIDs = [
+const editItemModalObjects = [
   {
     id: 'editItemPCode'
   },
@@ -214,7 +214,7 @@ let initRoutes = (app) => {
       backLink: '/workspace/inventory',
       title: itemPaths[req.params.itemCode].itemName,
       sampleItem: itemPaths[req.params.itemCode],
-      editItemModals: editItemModalIDs,
+      editItemModals: editItemModalObjects,
       index: 0
     });
   });
