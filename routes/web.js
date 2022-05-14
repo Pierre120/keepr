@@ -82,7 +82,7 @@ const userPaths = {
   bohxpierre: sampleOtherUsers[2],
   jojo: sampleOtherUsers[3],
   mammamia: sampleOtherUsers[4]
-}
+};
 
 const sampleWorkspaces = {
   default: {
@@ -105,7 +105,45 @@ const sampleWorkspaces = {
     name: 'Tsubibo',
     path: 'tsubibo'
   }
-}
+};
+
+const editItemModalObjects = [
+  {
+    id: 'editItemName',
+    title: 'Edit Item Name',
+    type: 'text-input',
+    inputId: 'updateItemName',
+    label: 'Item Name'
+  },
+  {
+    id: 'editItemPCode',
+    title: 'Edit Item Product Code',
+    type: 'text-input',
+    inputId: 'updateItemPCode',
+    label: 'Item Product Code'
+  },
+  {
+    id: 'editItemQtyUnit',
+    title: 'Edit Item Qty/Unit',
+    type: 'text-input',
+    inputId: 'updateItemQtyUnit',
+    label: 'Item Qty/Unit'
+  },
+  {
+    id: 'editItemDesc',
+    title: 'Edit Item Description',
+    type: 'textarea',
+    inputId: 'updateItemDesc',
+    label: 'Item Description'
+  },
+  {
+    id: 'editItemAssigments',
+    title: 'Edit Item Collaborators',
+    type: '',
+    inputId: 'updateItemAssigments',
+    label: 'Assign a Collaborator'
+  }
+];
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
@@ -198,7 +236,9 @@ let initRoutes = (app) => {
       layout: './layouts/item-page',
       backLink: '/workspace/inventory',
       title: itemPaths[req.params.itemCode].itemName,
-      sampleItem: itemPaths[req.params.itemCode]
+      sampleItem: itemPaths[req.params.itemCode],
+      editItemModals: editItemModalObjects,
+      index: 0
     });
   });
   // --- END ITEMS PAGE ---

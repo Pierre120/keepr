@@ -7,10 +7,16 @@
     <%- include('partials/backBtn.ejs') %>
   </div>
   <div class = "col-8 align-items-center">
-    <h1 class="mt-3 p-1 border-bottom border-3 oswald display-4" id="page-heading">
-      <%- item.itemName %>
-      <%- include('partials/deleteItemBtn.ejs') %>
+    <h1 class="d-flex mt-3 p-1 border-bottom border-3 oswald display-4 " id="page-heading">
+      <div class="d-inline-block">
+        <%- item.itemName %>
+        <%- include('partials/editItemBtn.ejs') %>
+      </div>
+      <div class="d-inline-block ms-auto">
+        <%- include('partials/deleteItemBtn.ejs') %>
+      </div>
     </h1>
+    <% index++; %>
     <div class="d-grid gap-3 mt-5">
       <div class="row">
         <div class="col">
@@ -24,6 +30,7 @@
             </div>
           </div>
         </div>
+        <% index++; %>
         <div class="col">
           <div class="card keepr-card border-teal h-100">
             <div class="card-body">
@@ -38,6 +45,7 @@
       </div>
 
       <div class="row">
+        <% index++; %>
         <div class="col">
           <div class="card keepr-card desc-card">
             <div class="card-body">
@@ -56,6 +64,7 @@
       <div class="row mx-0">
         <div class="col-3">
         </div>
+        <% index++; %>
         <div class="col-6">
           <div class="card keepr-card border-pink h-100">
             <div class="card-body">
