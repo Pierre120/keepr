@@ -206,7 +206,7 @@ let initRoutes = (app) => {
       backLink: '/workspace/inventory',
       title: itemPaths[req.params.itemCode].itemName,
       sampleItem: itemPaths[req.params.itemCode],
-      editItemModalTargets: editItemModalIDs
+      editItemModals: editItemModalIDs
     });
   });
   // --- END ITEMS PAGE ---
