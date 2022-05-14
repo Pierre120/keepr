@@ -1,0 +1,36 @@
+<div class="modal fade" id="<%= editItemModals[index] %>" tabindex="-1" 
+      aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel"><%- editItemModals[index].title %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3 form-floating">
+            <% if(editItemModals[index].type === 'textarea') { %>
+              <textarea class="form-control" id="<%= editItemModals[index].inputId %>"></textarea>
+            <% } else if(editItemModals[index].type === 'text-input') { %>
+              <input type="text" class="form-control" id="<%= editItemModals[index].inputId %>">
+            <% } else { %>
+              <select class="form-select" aria-label="Assign Collaborator to Item">
+                <option selected>Assign a Collaborator</option>
+                <% for(let collab of ditItemModals[index].collaborators) { %>
+                  <option value="<%= collab %>"><%- collab %></option>
+                <% } %>
+              </select>
+            <% } %>
+            <label for="<%= editItemModals[index].inputId %>" class="col-form-label">
+              <%- editItemModals[index].label %>:
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
