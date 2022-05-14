@@ -108,10 +108,18 @@ const sampleWorkspaces = {
 };
 
 const editItemModalIDs = [
-  'editItemPCode',
-  'editItemQtyUnit',
-  'editItemDesc',
-  'editItemAssigments'
+  {
+    id: 'editItemPCode'
+  },
+  {
+    id: 'editItemQtyUnit'
+  },
+  {
+    id: 'editItemDesc'
+  },
+  {
+    id: 'editItemAssigments'
+  }
 ];
 // --- END SAMPLE DATA ---
 
