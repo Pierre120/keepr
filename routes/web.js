@@ -205,7 +205,8 @@ let initRoutes = (app) => {
       layout: './layouts/item-page',
       backLink: '/workspace/inventory',
       title: itemPaths[req.params.itemCode].itemName,
-      sampleItem: itemPaths[req.params.itemCode]
+      sampleItem: itemPaths[req.params.itemCode],
+      editItemModalTargets: editItemModalIDs
     });
   });
   // --- END ITEMS PAGE ---
