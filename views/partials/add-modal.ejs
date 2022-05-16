@@ -20,7 +20,7 @@
       <% if(addModalId === 'addWorkspaceModal') { %>
         <form id="addWorkspaceForm" method="post" action="<%= formSubmitPath %>">
           <div class="mb-3 form-floating">
-            <input type="text" class="form-control" id="workspace" placeholder="Workspace">
+            <input type="text" class="form-control" id="workspace" placeholder="Workspace" required>
             <label for="workspace" class="col-form-label">
               Workspace
             </label>
@@ -30,19 +30,19 @@
       <% } else if(addModalId === 'addItemModal') { %>
         <form id="addItemForm" method="post" action="<%= formSubmitPath %>">
           <div class="mb-3 form-floating">
-            <input type="text" class="form-control" id="name" placeholder="Item Name">
+            <input type="text" class="form-control" id="name" placeholder="Item Name" required>
             <label for="name" class="col-form-label">
               Item Name
             </label>
           </div>
           <div class="mb-3 form-floating">
-            <input type="text" class="form-control" id="code" placeholder="Item Code">
+            <input type="text" class="form-control" id="code" placeholder="Item Code" required>
             <label for="newWorkspace" class="col-form-label">
               Item Code
             </label>
           </div>
           <div class="mb-3 form-floating">
-            <input type="text" class="form-control" id="qty-unit" placeholder="Qty/Unit">
+            <input type="text" class="form-control" id="qty-unit" placeholder="Qty/Unit" required>
             <label for="qty-unit" class="col-form-label">
               Qty/Unit
             </label>
@@ -50,7 +50,7 @@
           <div class="mb-3 form-floating">
             <textarea class="form-control" id="description" placeholder="Description"></textarea>
             <label for="description" class="col-form-label">
-              Description
+              Description (Optional)
             </label>
           </div>
         </form>
@@ -58,7 +58,7 @@
       <% } else if(addModalId === 'addCollaboratorModal') { %>
         <form id="AddCollaboratorForm" method="post" action="<%= formSubmitPath %>">
           <div class="mb-3 form-floating">
-            <input type="text" class="form-control" id="username" placeholder="Collaborator">
+            <input type="text" class="form-control" id="username" placeholder="Collaborator" required>
             <label for="username" class="col-form-label">
               Collaborator
             </label>
