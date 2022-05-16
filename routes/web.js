@@ -218,7 +218,8 @@ let initRoutes = (app) => {
       title: itemPaths[req.params.itemCode].itemName,
       sampleItem: itemPaths[req.params.itemCode],
       editItemModalIds: editItemModalIDs,
-      index: 0
+      index: 0,
+      formSubmitPath: req.path
     });
   });
   // --- END ITEMS PAGE ---
