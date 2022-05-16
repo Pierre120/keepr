@@ -3,35 +3,35 @@
     {
       id: 'editItemNameModal',
       title: 'Edit Item Name',
-      type: 'text-input',
+      inputType: 'text-input',
       inputId: 'updateItemName',
       label: 'Item Name'
     },
     {
       id: 'editItemPCodeModal',
       title: 'Edit Item Product Code',
-      type: 'text-input',
+      inputType: 'text-input',
       inputId: 'updateItemPCode',
       label: 'Item Product Code'
     },
     {
       id: 'editItemQtyUnitModal',
       title: 'Edit Item Qty/Unit',
-      type: 'text-input',
+      inputType: 'text-input',
       inputId: 'updateItemQtyUnit',
       label: 'Item Qty/Unit'
     },
     {
       id: 'editItemDescModal',
       title: 'Edit Item Description',
-      type: 'textarea',
+      inputType: 'textarea',
       inputId: 'updateItemDesc',
       label: 'Item Description'
     },
     {
       id: 'editItemCollabsModal',
       title: 'Edit Item Collaborators',
-      type: '',
+      inputType: '',
       inputId: 'updateItemAssigments',
       label: 'Assign a Collaborator'
     }
@@ -50,9 +50,9 @@
       <div class="modal-body">
         <form>
           <div class="mb-3 form-floating">
-            <% if(editModal.type === 'textarea') { %>
+            <% if(editModal.inputType === 'textarea') { %>
               <textarea class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>"></textarea>
-            <% } else if(editModal.type === 'text-input') { %>
+            <% } else if(editModal.inputType === 'text-input') { %>
               <input type="text" class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>">
             <% } else { %>
               <select class="form-select" id="<%= editModal.inputId %>" aria-label="Assign Collaborator to Item">
