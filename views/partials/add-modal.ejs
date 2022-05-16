@@ -1,4 +1,5 @@
 <% if(addModalId !== '') { %>
+  <% let targetForm = ''; %>
 
   <div class="modal fade montserrat" id="<%= addModalId %>" tabindex="-1" 
     aria-labelledby="modalLabel" aria-hidden="true">
@@ -17,7 +18,7 @@
     <div class="modal-body">
       
       <% if(addModalId === 'addWorkspaceModal') { %>
-        <form>
+        <form id="addWorkspaceForm">
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="workspace" placeholder="Workspace">
             <label for="workspace" class="col-form-label">
@@ -25,8 +26,9 @@
             </label>
           </div>
         </form>
+        <% targetForm = 'addWorkspaceForm'; %>
       <% } else if(addModalId === 'addItemModal') { %>
-        <form>
+        <form id="addItemForm">
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="name" placeholder="Item Name">
             <label for="name" class="col-form-label">
@@ -52,8 +54,9 @@
             </label>
           </div>
         </form>
+        <% targetForm = 'addItemForm'; %>
       <% } else if(addModalId === 'addCollaboratorModal') { %>
-        <form>
+        <form id="AddCollaboratorForm">
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="username" placeholder="Collaborator">
             <label for="username" class="col-form-label">
@@ -61,6 +64,7 @@
             </label>
           </div>
         </form>
+        <% targetForm = 'AddCollaboratorForm'; %>
       <% } %>
 
     </div>
