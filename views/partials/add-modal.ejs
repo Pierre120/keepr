@@ -1,20 +1,20 @@
-<div class="modal fade montserrat" id="<%= addModal.id %>" tabindex="-1" 
+<div class="modal fade montserrat" id="<%= addModalId %>" tabindex="-1" 
   aria-labelledby="modalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
 <div class="modal-content">
   <div class="modal-header">
-    <% if(addModal.id === 'addWorkspaceModal') { %>
+    <% if(addModalId === 'addWorkspaceModal') { %>
       <h5 class="modal-title" id="modalLabel">Add Workspace</h5>
-    <% } else if(addModal.id === 'addItemModal') { %>
+    <% } else if(addModalId === 'addItemModal') { %>
       <h5 class="modal-title" id="modalLabel">Add Item</h5>
-    <% } else if(addModal.id === 'addCollaboratorModal') { %>
+    <% } else if(addModalId === 'addCollaboratorModal') { %>
       <h5 class="modal-title" id="modalLabel">Add Collaborator</h5>
     <% } %>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
   </div>
   <div class="modal-body">
     
-    <% if(addModal.id === 'addWorkspaceModal') { %>
+    <% if(addModalId === 'addWorkspaceModal') { %>
       <form>
         <div class="mb-3 form-floating">
           <input type="text" class="form-control" id="workspace" placeholder="Workspace">
@@ -23,7 +23,7 @@
           </label>
         </div>
       </form>
-    <% } else if(addModal.id === 'addItemModal') { %>
+    <% } else if(addModalId === 'addItemModal') { %>
       <form>
         <div class="mb-3 form-floating">
           <input type="text" class="form-control" id="name" placeholder="Item Name">
@@ -50,7 +50,7 @@
           </label>
         </div>
       </form>
-    <% } else if(addModal.id === 'addCollaboratorModal') { %>
+    <% } else if(addModalId === 'addCollaboratorModal') { %>
       <form>
         <div class="mb-3 form-floating">
           <input type="text" class="form-control" id="username" placeholder="Collaborator">
