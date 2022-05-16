@@ -62,11 +62,11 @@
               method="post" action="<%= formSubmitPath %>" novalidate>
           <div class="mb-3 form-floating">
             <% if(editModal.inputType === 'textarea') { %>
-              <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>"></textarea>
+              <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required></textarea>
             <% } else if(editModal.inputType === 'text-input') { %>
-              <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>">
+              <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
             <% } else { %>
-              <select class="form-select" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item">
+              <select class="form-select" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item" required>
                 <option selected disabled value=""><%- editModal.label %></option>
                 <% if(sampleItem.assignedPeople.length > 0) { %>
                 <% for(let collab of sampleItem.assignedPeople) { %>
