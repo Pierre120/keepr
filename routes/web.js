@@ -112,7 +112,7 @@ const editItemModalIDs = [
   'editItemPCodeModal',
   'editItemQtyUnitModal',
   'editItemDescModal',
-  'editItemCollaboratorsModal'
+  'editItemCollabsModal'
 ];
 // --- END SAMPLE DATA ---
 
