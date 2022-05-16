@@ -158,7 +158,10 @@ let initRoutes = (app) => {
   });// Register page
 
   router.get('/app', (req, res) => {
-      return res.render('home', {layout: './layouts/home_layout'})
+      return res.render('home', {
+        layout: './layouts/home_layout',
+        addModalId: 'addWorkspaceModal'
+      });
   }); // App/Home page
 
   // --- ACCOUNTS PAGE ---
