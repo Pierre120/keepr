@@ -212,7 +212,8 @@ let initRoutes = (app) => {
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       sampleItems: sampleData,
-      addModalId: 'addItemModal'
+      addModalId: 'addItemModal',
+      formSubmitPath: req.path
     });
   }); // inventory
 
@@ -222,7 +223,8 @@ let initRoutes = (app) => {
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
-      addModalId: 'addCollaboratorModal'
+      addModalId: 'addCollaboratorModal',
+      formSubmitPath: req.path
     })
   }); // collaborators
 
