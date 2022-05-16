@@ -158,7 +158,11 @@ let initRoutes = (app) => {
   });// Register page
 
   router.get('/app', (req, res) => {
-      return res.render('home', {layout: './layouts/home_layout'})
+    return res.render('home', {
+      layout: './layouts/home_layout',
+      addModalId: 'addWorkspaceModal',
+      formSubmitPath: req.path
+    });
   }); // App/Home page
 
   // --- ACCOUNTS PAGE ---
@@ -196,7 +200,8 @@ let initRoutes = (app) => {
       active: 0,
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
-      workspacePath: sampleWorkspaces[req.params.workspace].path
+      workspacePath: sampleWorkspaces[req.params.workspace].path,
+      addModalId: ''
     })
   }); // dashboard
 
@@ -206,7 +211,9 @@ let initRoutes = (app) => {
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
-      sampleItems: sampleData
+      sampleItems: sampleData,
+      addModalId: 'addItemModal',
+      formSubmitPath: req.path
     });
   }); // inventory
 
@@ -215,7 +222,9 @@ let initRoutes = (app) => {
       active: 2,
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
-      workspacePath: sampleWorkspaces[req.params.workspace].path
+      workspacePath: sampleWorkspaces[req.params.workspace].path,
+      addModalId: 'addCollaboratorModal',
+      formSubmitPath: req.path
     })
   }); // collaborators
 
@@ -224,7 +233,8 @@ let initRoutes = (app) => {
       active: 3,
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
-      workspacePath: sampleWorkspaces[req.params.workspace].path
+      workspacePath: sampleWorkspaces[req.params.workspace].path,
+      addModalId: ''
     })
   }); // history
   // --- WORKSPACE PAGES ---
