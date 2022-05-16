@@ -18,7 +18,7 @@
     <div class="modal-body">
       
       <% if(addModalId === 'addWorkspaceModal') { %>
-        <form id="addWorkspaceForm">
+        <form id="addWorkspaceForm" method="post" action="<%= formSubmitPath %>">
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="workspace" placeholder="Workspace">
             <label for="workspace" class="col-form-label">
@@ -28,7 +28,7 @@
         </form>
         <% targetForm = 'addWorkspaceForm'; %>
       <% } else if(addModalId === 'addItemModal') { %>
-        <form id="addItemForm">
+        <form id="addItemForm" method="post" action="<%= formSubmitPath %>">
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="name" placeholder="Item Name">
             <label for="name" class="col-form-label">
@@ -56,7 +56,7 @@
         </form>
         <% targetForm = 'addItemForm'; %>
       <% } else if(addModalId === 'addCollaboratorModal') { %>
-        <form id="AddCollaboratorForm">
+        <form id="AddCollaboratorForm" method="post" action="<%= formSubmitPath %>">
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="username" placeholder="Collaborator">
             <label for="username" class="col-form-label">
