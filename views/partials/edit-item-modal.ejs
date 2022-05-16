@@ -79,6 +79,9 @@
             <label for="<%= editModal.inputName %>" class="col-form-label">
               <%- editModal.label %>
             </label>
+            <div class="invalid-feedback">
+              <%- editModal.invalidFeedback %>
+            </div>
             <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
           </div>
         </form>
