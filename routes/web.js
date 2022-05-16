@@ -158,10 +158,11 @@ let initRoutes = (app) => {
   });// Register page
 
   router.get('/app', (req, res) => {
-      return res.render('home', {
-        layout: './layouts/home_layout',
-        addModalId: 'addWorkspaceModal'
-      });
+    return res.render('home', {
+      layout: './layouts/home_layout',
+      addModalId: 'addWorkspaceModal',
+      formSubmitPath: req.path
+    });
   }); // App/Home page
 
   // --- ACCOUNTS PAGE ---
