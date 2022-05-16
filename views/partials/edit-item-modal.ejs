@@ -4,7 +4,7 @@
       id: 'editItemNameModal',
       title: 'Edit Item Name',
       inputType: 'text-input',
-      inputId: 'updateItemName',
+      inputName: 'newItemName',
       label: 'Item Name',
       itemProperty: 'name'
     },
@@ -12,7 +12,7 @@
       id: 'editItemPCodeModal',
       title: 'Edit Item Product Code',
       inputType: 'text-input',
-      inputId: 'updateItemPCode',
+      inputName: 'newItemPCode',
       label: 'Item Product Code',
       itemProperty: 'code'
     },
@@ -20,7 +20,7 @@
       id: 'editItemQtyUnitModal',
       title: 'Edit Item Qty/Unit',
       inputType: 'text-input',
-      inputId: 'updateItemQtyUnit',
+      inputName: 'newItemQtyUnit',
       label: 'Item Qty/Unit',
       itemProperty: 'qtyUnit'
     },
@@ -28,7 +28,7 @@
       id: 'editItemDescModal',
       title: 'Edit Item Description',
       inputType: 'textarea',
-      inputId: 'updateItemDesc',
+      inputName: 'newItemDesc',
       label: 'Item Description',
       itemProperty: 'description'
     },
@@ -36,7 +36,7 @@
       id: 'editItemCollabsModal',
       title: 'Edit Item Collaborators',
       inputType: '',
-      inputId: 'updateItemAssigments',
+      inputName: 'newItemCollaborator',
       label: 'Assign a Collaborator',
       itemProperty: 'collaborators'
     }
@@ -56,11 +56,11 @@
         <form>
           <div class="mb-3 form-floating">
             <% if(editModal.inputType === 'textarea') { %>
-              <textarea class="form-control" name="<%= editModal.inputId %>" placeholder="<%= editModal.label %>"></textarea>
+              <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>"></textarea>
             <% } else if(editModal.inputType === 'text-input') { %>
-              <input type="text" class="form-control" name="<%= editModal.inputId %>" placeholder="<%= editModal.label %>">
+              <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>">
             <% } else { %>
-              <select class="form-select" name="<%= editModal.inputId %>" aria-label="Assign Collaborator to Item">
+              <select class="form-select" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item">
                 <option selected><%- editModal.label %></option>
                 <% if(sampleItem.assignedPeople.length > 0) { %>
                 <% for(let collab of sampleItem.assignedPeople) { %>
@@ -69,7 +69,7 @@
                 <% } %>
               </select>
             <% } %>
-            <label for="<%= editModal.inputId %>" class="col-form-label">
+            <label for="<%= editModal.inputName %>" class="col-form-label">
               <%- editModal.label %>
             </label>
             <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
