@@ -109,7 +109,7 @@ const sampleWorkspaces = {
 
 const editItemModalIDs = [
   'editItemNameModal',
-  'editItemPCodeModal',
+  'editItemCodeModal',
   'editItemQtyUnitModal',
   'editItemDescModal',
   'editItemCollabsModal'
