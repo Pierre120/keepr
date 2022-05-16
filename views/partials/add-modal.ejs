@@ -1,0 +1,120 @@
+<% if(addModalId !== '') { %>
+  <% let targetForm = ''; %>
+
+  <div class="modal fade montserrat" id="<%= addModalId %>" tabindex="-1" 
+    aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <% if(addModalId === 'addWorkspaceModal') { %>
+        <h5 class="modal-title" id="modalLabel">Add Workspace</h5>
+      <% } else if(addModalId === 'addItemModal') { %>
+        <h5 class="modal-title" id="modalLabel">Add Item</h5>
+      <% } else if(addModalId === 'addCollaboratorModal') { %>
+        <h5 class="modal-title" id="modalLabel">Add Collaborator</h5>
+      <% } %>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      
+      <% if(addModalId === 'addWorkspaceModal') { %>
+        <form id="addWorkspaceForm" class="needs-validation"
+              method="post" action="<%= formSubmitPath %>" novalidate>
+          <div class="mb-3 form-floating">
+            <input type="text" class="form-control" name="workspace" placeholder="Workspace" required>
+            <label for="workspace" class="col-form-label">
+              Workspace
+            </label>
+            <div class="invalid-feedback">
+              Please provide a valid workspace name.
+            </div>
+          </div>
+        </form>
+        <% targetForm = 'addWorkspaceForm'; %>
+      <% } else if(addModalId === 'addItemModal') { %>
+        <form id="addItemForm" class="needs-validation"
+              method="post" action="<%= formSubmitPath %>" novalidate>
+          <div class="mb-3 form-floating">
+            <input type="text" class="form-control" name="name" placeholder="Item Name" required>
+            <label for="name" class="col-form-label">
+              Item Name
+            </label>
+            <div class="invalid-feedback">
+              Please provide a valid item name.
+            </div>
+          </div>
+          <div class="mb-3 form-floating">
+            <input type="text" class="form-control" name="code" placeholder="Item Code" required>
+            <label for="newWorkspace" class="col-form-label">
+              Item Code
+            </label>
+            <div class="invalid-feedback">
+              Please provide a valid item code.
+            </div>
+          </div>
+          <div class="mb-3 form-floating">
+            <input type="text" class="form-control" name="qtyUnit" placeholder="Qty/Unit" required>
+            <label for="qty-unit" class="col-form-label">
+              Qty/Unit
+            </label>
+            <div class="invalid-feedback">
+              Please provide a valid quantity and unit.
+            </div>
+          </div>
+          <div class="mb-3 form-floating">
+            <textarea class="form-control" name="description" placeholder="Description"></textarea>
+            <label for="description" class="col-form-label">
+              Description (Optional)
+            </label>
+          </div>
+        </form>
+        <% targetForm = 'addItemForm'; %>
+      <% } else if(addModalId === 'addCollaboratorModal') { %>
+        <form id="AddCollaboratorForm" class="needs-validation"
+              method="post" action="<%= formSubmitPath %>" novalidate>
+          <div class="mb-3 form-floating">
+            <input type="text" class="form-control" name="username" placeholder="Collaborator" required>
+            <label for="username" class="col-form-label">
+              Collaborator
+            </label>
+            <div class="invalid-feedback">
+              Please provide a valid username.
+            </div>
+          </div>
+        </form>
+        <% targetForm = 'AddCollaboratorForm'; %>
+      <% } %>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
+      <button type="submit" class="btn btn-secondary" form="<%= targetForm %>">Confirm</button>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <script>
+    // Client-side validation
+    (function () {
+      'use strict'
+
+      // Fetch all the forms
+      var forms = document.querySelectorAll('.needs-validation')
+
+      // Loop over them and prevent submission for empty required inputs
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })();
+  </script>
+
+<% } %>
