@@ -107,67 +107,20 @@ const sampleWorkspaces = {
   }
 };
 
-const editItemModalObjects = [
-  {
-    id: 'editItemName',
-    title: 'Edit Item Name',
-    type: 'text-input',
-    inputId: 'updateItemName',
-    label: 'Item Name'
-  },
-  {
-    id: 'editItemPCode',
-    title: 'Edit Item Product Code',
-    type: 'text-input',
-    inputId: 'updateItemPCode',
-    label: 'Item Product Code'
-  },
-  {
-    id: 'editItemQtyUnit',
-    title: 'Edit Item Qty/Unit',
-    type: 'text-input',
-    inputId: 'updateItemQtyUnit',
-    label: 'Item Qty/Unit'
-  },
-  {
-    id: 'editItemDesc',
-    title: 'Edit Item Description',
-    type: 'textarea',
-    inputId: 'updateItemDesc',
-    label: 'Item Description'
-  },
-  {
-    id: 'editItemAssigments',
-    title: 'Edit Item Collaborators',
-    type: '',
-    inputId: 'updateItemAssigments',
-    label: 'Assign a Collaborator'
-  }
+const editItemModalIDs = [
+  'editItemNameModal',
+  'editItemCodeModal',
+  'editItemQtyUnitModal',
+  'editItemDescModal',
+  'editItemCollabsModal'
 ];
 
-const editAccountModalObjects = [
-  {
-    id: 'editAccountUsername',
-    title: 'Edit Username',
-    type: 'text-input',
-    inputId: 'updateAccountUsername',
-    label: 'Username'
-  },
-  {
-    id: 'editAccountDisplayName',
-    title: 'Edit Display Name',
-    type: 'text-input',
-    inputId: 'updateAccountDisplayName',
-    label: 'Display Name'
-  },
-  {
-    id: 'editAccountPassword',
-    title: 'Edit Password',
-    type: 'password',
-    inputId: 'updateAccountPassword',
-    label: 'Password'
-  }
+const editAcctModalIDs = [
+  'editAccountUsernameModal',
+  'editAccountDisplayNameModal',
+  'editAccountPasswordModal'
 ];
+
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
@@ -196,8 +149,10 @@ let initRoutes = (app) => {
       backLink: '/workspace/dashboard',
       username: 'JuanDelaCruz_96',
       displayName: 'St4rL0rd96',
-      editItemModals: editAccountModalObjects,
-      index: 0
+      editItemModalIds: editAcctModalIDs,
+      index: 0,
+      formSubmitPath: req.path,
+      isItem: 0
     });
   });
 
@@ -250,7 +205,11 @@ let initRoutes = (app) => {
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: 'addCollaboratorModal',
-      formSubmitPath: req.path
+      formSubmitPath: req.path,
+      // tentative to make edit button work
+      editItemModalIds: editAcctModalIDs,
+      index: 0,
+      isItem: 0
     })
   }); // collaborators
 
@@ -273,8 +232,10 @@ let initRoutes = (app) => {
       backLink: '/workspace/inventory',
       title: itemPaths[req.params.itemCode].itemName,
       sampleItem: itemPaths[req.params.itemCode],
-      editItemModals: editItemModalObjects,
-      index: 0
+      editItemModalIds: editItemModalIDs,
+      index: 0,
+      formSubmitPath: req.path,
+      isItem: 1
     });
   });
   // --- END ITEMS PAGE ---
