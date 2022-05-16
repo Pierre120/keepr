@@ -61,7 +61,7 @@
               <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>">
             <% } else { %>
               <select class="form-select" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item">
-                <option selected><%- editModal.label %></option>
+                <option selected disabled value=""><%- editModal.label %></option>
                 <% if(sampleItem.assignedPeople.length > 0) { %>
                 <% for(let collab of sampleItem.assignedPeople) { %>
                   <option value="<%= collab %>"><%- collab %></option>
