@@ -220,7 +220,8 @@ let initRoutes = (app) => {
       active: 2,
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
-      workspacePath: sampleWorkspaces[req.params.workspace].path
+      workspacePath: sampleWorkspaces[req.params.workspace].path,
+      addModalId: 'addCollaboratorModal'
     })
   }); // collaborators
 
