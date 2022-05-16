@@ -58,7 +58,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+        <form id="<%= editModal.formId %>" class="needs-validation"
+              method="post" action="<%= formSubmitPath %>" novalidate>
           <div class="mb-3 form-floating">
             <% if(editModal.inputType === 'textarea') { %>
               <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>"></textarea>
