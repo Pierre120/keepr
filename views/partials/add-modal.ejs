@@ -19,7 +19,7 @@
       
       <% if(addModalId === 'addWorkspaceModal') { %>
         <form id="addWorkspaceForm" class="needs-validation"
-              method="post" action="<%= formSubmitPath %>">
+              method="post" action="<%= formSubmitPath %>" novalidate>
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="workspace" placeholder="Workspace" required>
             <label for="workspace" class="col-form-label">
@@ -33,7 +33,7 @@
         <% targetForm = 'addWorkspaceForm'; %>
       <% } else if(addModalId === 'addItemModal') { %>
         <form id="addItemForm" class="needs-validation"
-              method="post" action="<%= formSubmitPath %>">
+              method="post" action="<%= formSubmitPath %>" novalidate>
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="name" placeholder="Item Name" required>
             <label for="name" class="col-form-label">
@@ -71,7 +71,7 @@
         <% targetForm = 'addItemForm'; %>
       <% } else if(addModalId === 'addCollaboratorModal') { %>
         <form id="AddCollaboratorForm" class="needs-validation"
-              method="post" action="<%= formSubmitPath %>">
+              method="post" action="<%= formSubmitPath %>" novalidate>
           <div class="mb-3 form-floating">
             <input type="text" class="form-control" id="username" placeholder="Collaborator" required>
             <label for="username" class="col-form-label">
