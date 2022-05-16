@@ -114,6 +114,13 @@ const editItemModalIDs = [
   'editItemDescModal',
   'editItemCollabsModal'
 ];
+
+const editAcctModalIDs = [
+  'editAccountUsernameModal',
+  'editAccountDisplayNameModal',
+  'editAccountPasswordModal'
+];
+
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
@@ -141,7 +148,11 @@ let initRoutes = (app) => {
       layout: './layouts/account-page',
       backLink: '/workspace/dashboard',
       username: 'JuanDelaCruz_96',
-      displayName: 'St4rL0rd96'
+      displayName: 'St4rL0rd96',
+      editItemModalIds: editAcctModalIDs,
+      index: 0,
+      formSubmitPath: req.path,
+      isItem: 0
     });
   });
 
@@ -194,7 +205,11 @@ let initRoutes = (app) => {
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: 'addCollaboratorModal',
-      formSubmitPath: req.path
+      formSubmitPath: req.path,
+      // tentative to make edit button work
+      editItemModalIds: editAcctModalIDs,
+      index: 0,
+      isItem: 0
     })
   }); // collaborators
 
@@ -219,7 +234,8 @@ let initRoutes = (app) => {
       sampleItem: itemPaths[req.params.itemCode],
       editItemModalIds: editItemModalIDs,
       index: 0,
-      formSubmitPath: req.path
+      formSubmitPath: req.path,
+      isItem: 1
     });
   });
   // --- END ITEMS PAGE ---

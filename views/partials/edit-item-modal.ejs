@@ -53,14 +53,58 @@
   ];
 %>
 
-<% for(let editModal of editItemModals) { %>
+<%
+  const editAccountModals = [
+    {
+      id: 'editAccountUsernameModal',
+      title: 'Edit Username',
+      inputType: 'text-input',
+      inputName: 'newAcctUsername',
+      label: 'Edit Username',
+      itemProperty: 'acctUsername',
+      formId: 'editAcctUsernameForm',
+      invalidFeedback: 'Please provide a valid username.'
+    },
+    {
+      id: 'editAccountDisplayNameModal',
+      title: 'Edit Item Collaborators',
+      inputType: 'text-input',
+      inputName: 'newAcctDisplayName',
+      label: 'Edit Display Name',
+      itemProperty: 'acctDisplayName',
+      formId: 'editAcctDisplayNameForm',
+      invalidFeedback: 'Please provide a valid display name.'
+    },
+    {
+      id: 'editAccountPasswordModal',
+      title: 'Edit Password',
+      inputType: 'password',
+      inputName: 'newAcctPassword',
+      label: 'Edit Password',
+      itemProperty: 'acctPassword',
+      formId: 'editPasswordForm',
+      invalidFeedback: 'Please provide a valid password.'
+    }
+  ];
+%>
+
+<% 
+  let editAllModals;
+  if(isItem === 1) {
+    editAllModals = editItemModals;
+  }
+  else {
+    editAllModals = editAccountModals;
+  }
+  for(let editModal of editAllModals) { 
+%>
 <div class="modal fade montserrat" id="<%= editModal.id %>" tabindex="-1" 
       aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modalLabel"><%- editModal.title %></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
       </div>
       <div class="modal-body">
 
@@ -71,6 +115,8 @@
               <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required></textarea>
             <% } else if(editModal.inputType === 'text-input') { %>
               <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
+            <% } else if(editModal.inputType === 'password') { %>
+              <input type="password" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
             <% } else { %>
               <select class="form-select" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item" required>
                 <option selected disabled value=""><%- editModal.label %></option>
@@ -93,7 +139,7 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
         <button type="submit" class="btn btn-secondary" form="<%= editModal.formId %>">Confirm</button>
       </div>
     </div>
@@ -102,6 +148,14 @@
 <% } %>
 
 <script>
+  // Clear form when closed or confirmed
+  function clearForm() {
+    let toClear = document.getElementsByClassName("form-control");
+    for(let i = 0; i < toClear.length; i++){
+      toClear[i].value = "";
+    }
+  };
+
   // Client-side validation
   (function () {
     'use strict'
