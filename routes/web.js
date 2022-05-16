@@ -210,7 +210,8 @@ let initRoutes = (app) => {
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
-      sampleItems: sampleData
+      sampleItems: sampleData,
+      addModalId: 'addItemModal'
     });
   }); // inventory
 
