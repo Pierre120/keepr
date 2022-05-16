@@ -144,6 +144,30 @@ const editItemModalObjects = [
     label: 'Assign a Collaborator'
   }
 ];
+
+const editAccountModalObjects = [
+  {
+    id: 'editAccountUsername',
+    title: 'Edit Username',
+    type: 'text-input',
+    inputId: 'updateAccountUsername',
+    label: 'Username'
+  },
+  {
+    id: 'editAccountDisplayName',
+    title: 'Edit Display Name',
+    type: 'text-input',
+    inputId: 'updateAccountDisplayName',
+    label: 'Display Name'
+  },
+  {
+    id: 'editAccountPassword',
+    title: 'Edit Password',
+    type: 'password',
+    inputId: 'updateAccountPassword',
+    label: 'Password'
+  }
+];
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
@@ -171,7 +195,9 @@ let initRoutes = (app) => {
       layout: './layouts/account-page',
       backLink: '/workspace/dashboard',
       username: 'JuanDelaCruz_96',
-      displayName: 'St4rL0rd96'
+      displayName: 'St4rL0rd96',
+      editItemModals: editAccountModalObjects,
+      index: 0
     });
   });
 

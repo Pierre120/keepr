@@ -14,6 +14,8 @@
               <textarea class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>"></textarea>
             <% } else if(editModal.type === 'text-input') { %>
               <input type="text" class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>">
+            <% } else if(editModal.type === 'password') { %>
+              <input type="password" class="form-control" id="<%= editModal.inputId %>" placeholder="">
             <% } else { %>
               <select class="form-select" id="<%= editModal.inputId %>" aria-label="Assign Collaborator to Item">
                 <option selected><%- editModal.label %></option>
@@ -31,10 +33,19 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-secondary">Confirm</button>
+        <button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="clearForm()">Confirm</button>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  function clearForm() {
+    let toClear = document.getElementsByClassName("form-control");
+    for(let i = 0; i < toClear.length; i++){
+      toClear[i].value = "";
+    }
+  }
+</script>
 <% } %>
