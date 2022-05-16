@@ -107,42 +107,12 @@ const sampleWorkspaces = {
   }
 };
 
-const editItemModalObjects = [
-  {
-    id: 'editItemName',
-    title: 'Edit Item Name',
-    type: 'text-input',
-    inputId: 'updateItemName',
-    label: 'Item Name'
-  },
-  {
-    id: 'editItemPCode',
-    title: 'Edit Item Product Code',
-    type: 'text-input',
-    inputId: 'updateItemPCode',
-    label: 'Item Product Code'
-  },
-  {
-    id: 'editItemQtyUnit',
-    title: 'Edit Item Qty/Unit',
-    type: 'text-input',
-    inputId: 'updateItemQtyUnit',
-    label: 'Item Qty/Unit'
-  },
-  {
-    id: 'editItemDesc',
-    title: 'Edit Item Description',
-    type: 'textarea',
-    inputId: 'updateItemDesc',
-    label: 'Item Description'
-  },
-  {
-    id: 'editItemAssigments',
-    title: 'Edit Item Collaborators',
-    type: '',
-    inputId: 'updateItemAssigments',
-    label: 'Assign a Collaborator'
-  }
+const editItemModalIDs = [
+  'editItemNameModal',
+  'editItemPCodeModal',
+  'editItemQtyUnitModal',
+  'editItemDescModal',
+  'editItemCollaboratorsModal'
 ];
 // --- END SAMPLE DATA ---
 
