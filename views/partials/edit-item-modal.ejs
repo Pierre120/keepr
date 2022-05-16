@@ -1,3 +1,58 @@
+<%
+  const editItemModals = [
+    {
+      id: 'editItemNameModal',
+      title: 'Edit Item Name',
+      inputType: 'text-input',
+      inputName: 'newItemName',
+      label: 'Item Name',
+      itemProperty: 'name',
+      formId: 'editItemNameForm',
+      invalidFeedback: 'Please provide a valid item name.'
+    },
+    {
+      id: 'editItemCodeModal',
+      title: 'Edit Item Code',
+      inputType: 'text-input',
+      inputName: 'newItemCode',
+      label: 'Item Code',
+      itemProperty: 'code',
+      formId: 'editItemCodeForm',
+      invalidFeedback: 'Please provide a valid item code.'
+    },
+    {
+      id: 'editItemQtyUnitModal',
+      title: 'Edit Item Qty/Unit',
+      inputType: 'text-input',
+      inputName: 'newItemQtyUnit',
+      label: 'Item Qty/Unit',
+      itemProperty: 'qtyUnit',
+      formId: 'editItemQtyUnitForm',
+      invalidFeedback: 'Please provide a valid item qty/unit.'
+    },
+    {
+      id: 'editItemDescModal',
+      title: 'Edit Item Description',
+      inputType: 'textarea',
+      inputName: 'newItemDesc',
+      label: 'Item Description',
+      itemProperty: 'description',
+      formId: 'editItemDescForm',
+      invalidFeedback: 'Please provide a valid item description.'
+    },
+    {
+      id: 'editItemCollabsModal',
+      title: 'Edit Item Collaborators',
+      inputType: '',
+      inputName: 'newItemCollaborator',
+      label: 'Assign a Collaborator',
+      itemProperty: 'collaborators',
+      formId: 'editItemCollabsForm',
+      invalidFeedback: 'Please provide a valid username.'
+    }
+  ];
+%>
+
 <% for(let editModal of editItemModals) { %>
 <div class="modal fade montserrat" id="<%= editModal.id %>" tabindex="-1" 
       aria-labelledby="modalLabel" aria-hidden="true">
@@ -8,15 +63,17 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
+
+        <form id="<%= editModal.formId %>" class="needs-validation"
+              method="post" action="<%= formSubmitPath %>" novalidate>
           <div class="mb-3 form-floating">
-            <% if(editModal.type === 'textarea') { %>
-              <textarea class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>"></textarea>
-            <% } else if(editModal.type === 'text-input') { %>
-              <input type="text" class="form-control" id="<%= editModal.inputId %>" placeholder="<%= editModal.label %>">
+            <% if(editModal.inputType === 'textarea') { %>
+              <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required></textarea>
+            <% } else if(editModal.inputType === 'text-input') { %>
+              <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
             <% } else { %>
-              <select class="form-select" id="<%= editModal.inputId %>" aria-label="Assign Collaborator to Item">
-                <option selected><%- editModal.label %></option>
+              <select class="form-select" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item" required>
+                <option selected disabled value=""><%- editModal.label %></option>
                 <% if(sampleItem.assignedPeople.length > 0) { %>
                 <% for(let collab of sampleItem.assignedPeople) { %>
                   <option value="<%= collab %>"><%- collab %></option>
@@ -24,17 +81,45 @@
                 <% } %>
               </select>
             <% } %>
-            <label for="<%= editModal.inputId %>" class="col-form-label">
+            <label for="<%= editModal.inputName %>" class="col-form-label">
               <%- editModal.label %>
             </label>
+            <div class="invalid-feedback">
+              <%- editModal.invalidFeedback %>
+            </div>
+            <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
           </div>
         </form>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-secondary">Confirm</button>
+        <button type="submit" class="btn btn-secondary" form="<%= editModal.formId %>">Confirm</button>
       </div>
     </div>
   </div>
 </div>
 <% } %>
+
+<script>
+  // Client-side validation
+  (function () {
+    'use strict'
+
+    // Fetch all the forms
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission for empty required inputs
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })();
+</script>
