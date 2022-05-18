@@ -79,9 +79,9 @@
     else if (deleteModalId === 'deleteItemModal' ) {
         deleteModals = deleteItemModalObjects;
     } 
-    for(let deleteModal of deleteModals) {
 %>
 
+<% for(let deleteModal of deleteModals) { %>
 
 <div class="modal fade montserrat" id="<%= deleteModal.id %>" tabindex="-1" 
     aria-labelledby="modalLabel" aria-hidden="true">
