@@ -83,7 +83,7 @@
 
 <% if(deleteModalId === 'deleteCollaboratorModal') { %>
 
-<div class="modal fade montserrat" id="<%= deleteModalId %>" tabindex="-1" 
+<div class="modal fade montserrat" id="deleteCollaboratorModal" tabindex="-1" 
 	aria-labelledby="modalLabel" aria-hidden="true">
 <div class="modal-dialog modal-dialog-centered">
 	<div class="modal-content">
@@ -93,7 +93,8 @@
 		</div>
 		<div class="modal-body">
 			<p>
-				Are you sure you want to remove <span id="collabToRemove" class="fw-bold"></span> as a collaborator of this workspace? 
+				Are you sure you want to remove 
+				<span id="collabToRemove" class="fw-bold"></span> as a collaborator of this workspace? 
 				<span class="text-danger">(This action can't be undone.)</span>
 			</p>
 		</div>
@@ -105,5 +106,23 @@
 	</div>
 </div>
 </div>
+
+<script>
+	let removeCollabModal = document.getElementById('deleteCollaboratorModal')
+	removeCollabModal.addEventListener('show.bs.modal', function (event) {
+		// Button that triggered the modal
+		let button = event.relatedTarget;
+		// Extract info from data-bs-* attributes
+		let collaborator = button.getAttribute('data-bs-collaborator');
+		// Update the modal's content.
+		let modalUserSpan = removeCollabModal.querySelector('.modal-body #collabToRemove');
+		modalUserSpan.textContent = '@' + collaborator;
+
+		// Update the form's action attribute
+		let removeForm = document.getElementById("deleteCollaboratorForm");
+		removeForm.action = formSubmitPath + '/' + collaborator;
+	});
+
+</script>
 
 <% } %>
