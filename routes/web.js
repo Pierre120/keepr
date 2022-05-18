@@ -240,6 +240,7 @@ let initRoutes = (app) => {
       sortModalId : sortModalIDs[1],
       sortFormSubmitPath: req.path,
       formSubmitPath: req.path,
+      hasDeleteWorkspace: true,
       deleteModalId: 'deleteHistoryModal'
     })
   }); // history
