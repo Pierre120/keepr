@@ -158,6 +158,7 @@ let initRoutes = (app) => {
       index: 0,
       formSubmitPath: req.path,
       isItem: 0,
+      hasDeleteWorkspace: false,
       deleteModalId: 'deleteAccountModal'
     });
   });
