@@ -207,6 +207,7 @@ let initRoutes = (app) => {
       formSubmitPath: req.path,
       sortModalId: sortModalIDs[0],
       sortFormSubmitPath: req.path,
+      hasDeleteWorkspace: true,
       deleteModalId: ''
     });
   }); // inventory
