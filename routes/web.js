@@ -121,6 +121,11 @@ const editAcctModalIDs = [
   'editAccountPasswordModal'
 ];
 
+const sortModalIDs = [
+  'sortItemModal',
+  'sortHistoryModal'
+];
+
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
@@ -182,19 +187,22 @@ let initRoutes = (app) => {
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
-      addModalId: ''
+      addModalId: '',
+      sortModalId: ''
     })
   }); // dashboard
 
   router.get('/:workspace/inventory', (req, res) => {
-    return res.render('inventory', { 
+    return res.render('inventory', {
       active: 1,
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       sampleItems: sampleData,
       addModalId: 'addItemModal',
-      formSubmitPath: req.path
+      formSubmitPath: req.path,
+      sortModalId: sortModalIDs[0],
+      sortFormSubmitPath: req.path
     });
   }); // inventory
 
@@ -209,7 +217,8 @@ let initRoutes = (app) => {
       // tentative to make edit button work
       editItemModalIds: editAcctModalIDs,
       index: 0,
-      isItem: 0
+      isItem: 0,
+      sortModalId: ''
     })
   }); // collaborators
 
@@ -219,7 +228,9 @@ let initRoutes = (app) => {
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
-      addModalId: ''
+      addModalId: '',
+      sortModalId : sortModalIDs[1],
+      sortFormSubmitPath: req.path
     })
   }); // history
   // --- WORKSPACE PAGES ---

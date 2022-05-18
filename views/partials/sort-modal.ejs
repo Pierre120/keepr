@@ -1,0 +1,117 @@
+<% if(sortModalId !== '') { %>
+<%
+	const sortModal = [
+		{
+			id: 'sortItemModal', //for Sorting the Items 
+			title: 'Sort Items',
+			formId: 'sortItemForm'
+		},
+		{
+			id: 'sortHistoryModal', //for Sorting the History contents
+			title: 'Sort History',
+			formId: 'sortHistoryForm'
+    }
+	];
+%>
+<% let index = 0; %>
+<% 
+	if(sortModalId === 'sortHistoryModal') { 
+		index = 1;
+	}
+%>
+
+<div class="modal fade montserrat" id="<%= sortModal[index].id %>" tabindex="-1" 
+    aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="modalLabel"><%- sortModal[index].title %></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
+    </div>
+    <div class="modal-body">
+
+      <form id="<%= sortModal[index].formId %>" class="needs-validation"
+            method="post" action="<%= sortFormSubmitPath %>" novalidate>
+        
+					<% if(index === 0) { %>  <!-- For Item Name -->
+						<div class="mb-3 form-floating">
+							<select class="form-select" name="sortFocus" aria-label="Sort Focus" required>
+								<option selected disabled value="">Choose which to sort</option>
+								<option value="name">Name</option>
+								<option value="qtyUnit">Quantity</option>
+							</select>
+							<label for="sortFocus" class="col-form-label">
+								Sort by:
+							</label>
+							<div class="invalid-feedback">
+								Provide a valid option.
+							</div>
+						</div>
+						<div class="mb-3 form-floating">
+							<select class="form-select" name="sortOrder" aria-label="Sort Order" required>
+								<option selected disabled value="">Choose a sort order</option>
+								<option value="ASC">Ascending</option>
+								<option value="DESC">Descending</option>
+							</select>
+							<label for="sortOrder" class="col-form-label">
+								Order by:
+							</label>
+							<div class="invalid-feedback">
+								Provide a valid option.
+							</div>
+						</div>
+					<% } else { %>   <!-- For History -->
+						<div class="mb-3 form-floating">
+							<select class="form-select" name="sortHistory" aria-label="Sort Order" required>
+								<option selected disabled value="">Choose a sort order</option>
+								<option value="ASC">Date: Latest to Oldest</option>
+								<option value="DESC">Date: Oldest to Latest</option>
+							</select>
+							<label for="sortOrder" class="col-form-label">
+								Order by:
+							</label>
+							<div class="invalid-feedback">
+								Provide a valid option.
+							</div>
+						</div>
+					<% } %>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
+      <button type="submit" class="btn btn-secondary" form="<%= sortModal[index].formId %>">Confirm</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  // Clear form when closed or confirmed
+  function clearForm() {
+    let toClear = document.getElementsByClassName("form-control");
+    for(let i = 0; i < toClear.length; i++){
+      toClear[i].value = "";
+    }
+  };
+
+  // Client-side validation
+  (function () {
+    'use strict'
+
+    // Fetch all the forms
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission for empty required inputs
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })();
+</script>
+<% } %>
