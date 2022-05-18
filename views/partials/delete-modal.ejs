@@ -1,46 +1,68 @@
 <% if (deleteModalId !== '') { %>
 <%
-    const deleteAccountModalObjects = [
-        {
-            id: 'deleteAccountModal',
-            title: 'Delete Account',
-            toDelete: 'your Account',
-            formId: 'deleteAccountForm'
-        }
-    ];
+	const deleteModalObjects = [
+		{
+			id: 'deleteWorkspaceModal',
+			title: 'Delete Workspace',
+			toDelete: 'this workspace',
+			formId: 'deleteWorkspaceForm'
+		},
+		{
+			id: 'deleteItemModal',
+			title: 'Delete Item',
+			toDelete: 'this item',
+			formId: 'deleteItemForm'
+		},
+		{
+			id: 'deleteHistoryModal',
+			title: 'Delete History',
+			toDelete: 'this workspace\'s history',
+			formId: 'deleteHistoryForm'
+		},
+		{
+			id: 'deleteAccountModal',
+			title: 'Delete Account',
+			toDelete: 'your Account',
+			formId: 'deleteAccountForm'
+		}
+	];
+	
 %>
 
 <%
-    const deleteWorkspaceModalObjects = [
-        {
-            id: 'deleteWorkspaceModal',
-            title: 'Delete Workspace',
-            toDelete: 'this workspace',
-            formId: 'deleteWorkspaceForm'
-        }
-    ];
-%>
-
-<%
-    const deleteHistoryModalObjects = [
-        {
-            id: 'deleteHistoryModal',
-            title: 'Delete History',
-            toDelete: 'this workspace\'s history',
-            formId: 'deleteHistoryForm'
-        }
-    ];
-%>
-
-<%
-    const deleteItemModalObjects = [
-        {
-            id: 'deleteItemModal',
-            title: 'Delete Item',
-            toDelete: 'this item',
-            formId: 'deleteItemForm'
-        }
-    ];
+// for reference
+	const deleteAccountModalObjects = [
+		{
+			id: 'deleteAccountModal',
+			title: 'Delete Account',
+			toDelete: 'your Account',
+			formId: 'deleteAccountForm'
+		}
+	];
+	const deleteWorkspaceModalObjects = [
+		{
+			id: 'deleteWorkspaceModal',
+			title: 'Delete Workspace',
+			toDelete: 'this workspace',
+			formId: 'deleteWorkspaceForm'
+		}
+	];
+	const deleteHistoryModalObjects = [
+		{
+			id: 'deleteHistoryModal',
+			title: 'Delete History',
+			toDelete: 'this workspace\'s history',
+			formId: 'deleteHistoryForm'
+		}
+	];
+	const deleteItemModalObjects = [
+		{
+			id: 'deleteItemModal',
+			title: 'Delete Item',
+			toDelete: 'this item',
+			formId: 'deleteItemForm'
+		}
+	];
 %>
 
 <% 
