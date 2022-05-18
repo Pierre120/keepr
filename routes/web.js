@@ -157,7 +157,8 @@ let initRoutes = (app) => {
       editItemModalIds: editAcctModalIDs,
       index: 0,
       formSubmitPath: req.path,
-      isItem: 0
+      isItem: 0,
+      deleteModalId: 'deleteAccountModal'
     });
   });
 
@@ -188,7 +189,9 @@ let initRoutes = (app) => {
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: '',
-      sortModalId: ''
+      sortModalId: '',
+      deleteModalId: '',
+      formSubmitPath: req.path
     })
   }); // dashboard
 
@@ -202,7 +205,8 @@ let initRoutes = (app) => {
       addModalId: 'addItemModal',
       formSubmitPath: req.path,
       sortModalId: sortModalIDs[0],
-      sortFormSubmitPath: req.path
+      sortFormSubmitPath: req.path,
+      deleteModalId: ''
     });
   }); // inventory
 
@@ -214,6 +218,7 @@ let initRoutes = (app) => {
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: 'addCollaboratorModal',
       formSubmitPath: req.path,
+      deleteModalId: '',
       // tentative to make edit button work
       editItemModalIds: editAcctModalIDs,
       index: 0,
@@ -230,7 +235,9 @@ let initRoutes = (app) => {
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: '',
       sortModalId : sortModalIDs[1],
-      sortFormSubmitPath: req.path
+      sortFormSubmitPath: req.path,
+      formSubmitPath: req.path,
+      deleteModalId: 'deleteHistoryModal'
     })
   }); // history
   // --- WORKSPACE PAGES ---
@@ -246,7 +253,8 @@ let initRoutes = (app) => {
       editItemModalIds: editItemModalIDs,
       index: 0,
       formSubmitPath: req.path,
-      isItem: 1
+      isItem: 1,
+      deleteModalId: 'deleteItemModal'
     });
   });
   // --- END ITEMS PAGE ---
