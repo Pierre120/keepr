@@ -190,6 +190,7 @@ let initRoutes = (app) => {
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: '',
       sortModalId: '',
+      hasDeleteWorkspace: true,
       deleteModalId: '',
       formSubmitPath: req.path
     })
