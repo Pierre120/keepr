@@ -66,19 +66,28 @@
 %>
 
 <% 
-    let deleteModals;
-    if (deleteModalId === 'deleteAccountModal') {
-        deleteModals = deleteAccountModalObjects;
-    } 
-    else if (deleteModalId === 'deleteWorkspaceModal') {
-        deleteModals = deleteWorkspaceModalObjects;
-    } 
-    else if (deleteModalId === 'deleteHistoryModal') {
-        deleteModals = deleteHistoryModalObjects;
-    }
-    else if (deleteModalId === 'deleteItemModal' ) {
-        deleteModals = deleteItemModalObjects;
-    } 
+    let deleteModals = new Array();
+		/*
+			index - delete modal:
+			0 - workspace
+			1 - item
+			2 - history
+			3 - account
+		*/
+
+		if(inWorkspace === true) {
+			deleteModals.push(deleteModalObjects[0]);
+
+			if(deleteModalId === 'deleteItemModal' ) {
+        deleteModals.push(deleteModalObjects[1]);
+			}
+			else if(deleteModalId === 'deleteHistoryModal') {
+				deleteModals.push(deleteModalObjects[2]);
+			}
+		} else {
+			deleteModals.push(deleteModalObjects[3]);
+		}
+
 %>
 
 <% for(let deleteModal of deleteModals) { %>
