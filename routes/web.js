@@ -76,6 +76,14 @@ const sampleOtherUsers = [
   }
 ];
 
+const collabUsernames = [
+  sampleOtherUsers[0].username,
+  sampleOtherUsers[1].username,
+  sampleOtherUsers[2].username,
+  sampleOtherUsers[3].username,
+  sampleOtherUsers[4].username
+];
+
 const userPaths = {
   bohxfaith: sampleOtherUsers[0],
   bohxairon: sampleOtherUsers[1],
