@@ -227,6 +227,7 @@ let initRoutes = (app) => {
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
+      collabUnames: collabUsernames,
       addModalId: 'addCollaboratorModal',
       formSubmitPath: req.path,
       hasDeleteWorkspace: true,
