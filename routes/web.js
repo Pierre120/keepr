@@ -220,6 +220,7 @@ let initRoutes = (app) => {
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: 'addCollaboratorModal',
       formSubmitPath: req.path,
+      hasDeleteWorkspace: true,
       deleteModalId: '',
       // tentative to make edit button work
       editItemModalIds: editAcctModalIDs,
