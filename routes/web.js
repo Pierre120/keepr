@@ -232,7 +232,7 @@ let initRoutes = (app) => {
       addModalId: 'addCollaboratorModal',
       formSubmitPath: req.path,
       hasDeleteWorkspace: true,
-      deleteModalId: '',
+      deleteModalId: 'deleteCollaboratorModal',
       // tentative to make edit button work
       editItemModalIds: editAcctModalIDs,
       index: 0,
