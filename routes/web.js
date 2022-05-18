@@ -76,6 +76,14 @@ const sampleOtherUsers = [
   }
 ];
 
+const collabUsernames = [
+  sampleOtherUsers[0].username,
+  sampleOtherUsers[1].username,
+  sampleOtherUsers[2].username,
+  sampleOtherUsers[3].username,
+  sampleOtherUsers[4].username
+];
+
 const userPaths = {
   bohxfaith: sampleOtherUsers[0],
   bohxairon: sampleOtherUsers[1],
@@ -157,7 +165,9 @@ let initRoutes = (app) => {
       editItemModalIds: editAcctModalIDs,
       index: 0,
       formSubmitPath: req.path,
-      isItem: 0
+      isItem: 0,
+      hasDeleteWorkspace: false,
+      deleteModalId: 'deleteAccountModal'
     });
   });
 
@@ -188,7 +198,10 @@ let initRoutes = (app) => {
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: '',
-      sortModalId: ''
+      sortModalId: '',
+      hasDeleteWorkspace: true,
+      deleteModalId: '',
+      formSubmitPath: req.path
     })
   }); // dashboard
 
@@ -202,7 +215,9 @@ let initRoutes = (app) => {
       addModalId: 'addItemModal',
       formSubmitPath: req.path,
       sortModalId: sortModalIDs[0],
-      sortFormSubmitPath: req.path
+      sortFormSubmitPath: req.path,
+      hasDeleteWorkspace: true,
+      deleteModalId: ''
     });
   }); // inventory
 
@@ -212,8 +227,12 @@ let initRoutes = (app) => {
       layout: './layouts/workspace',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
+      collabUnames: collabUsernames,
+      index: 0,
       addModalId: 'addCollaboratorModal',
       formSubmitPath: req.path,
+      hasDeleteWorkspace: true,
+      deleteModalId: 'deleteCollaboratorModal',
       // tentative to make edit button work
       editItemModalIds: editAcctModalIDs,
       index: 0,
@@ -230,7 +249,10 @@ let initRoutes = (app) => {
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: '',
       sortModalId : sortModalIDs[1],
-      sortFormSubmitPath: req.path
+      sortFormSubmitPath: req.path,
+      formSubmitPath: req.path,
+      hasDeleteWorkspace: true,
+      deleteModalId: 'deleteHistoryModal'
     })
   }); // history
   // --- WORKSPACE PAGES ---
@@ -246,7 +268,9 @@ let initRoutes = (app) => {
       editItemModalIds: editItemModalIDs,
       index: 0,
       formSubmitPath: req.path,
-      isItem: 1
+      isItem: 1,
+      hasDeleteWorkspace: false,
+      deleteModalId: 'deleteItemModal'
     });
   });
   // --- END ITEMS PAGE ---

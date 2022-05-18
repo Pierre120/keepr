@@ -1,0 +1,30 @@
+<script>
+  // Clear form when closed or confirmed
+  function clearForm() {
+    let toClear = document.getElementsByClassName("form-control");
+    for(let i = 0; i < toClear.length; i++){
+      toClear[i].value = "";
+    }
+  };
+
+  // Client-side validation
+  (function () {
+    'use strict'
+
+    // Fetch all the forms
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission for empty required inputs
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })();
+</script>
