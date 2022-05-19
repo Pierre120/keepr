@@ -88,13 +88,33 @@
   ];
 %>
 
+<%
+  const editItemsAssignedModals = [
+    {
+      id: 'editItemsAssignedModal',
+      title: 'Edit Assigned Items',
+      inputType: 'checkbox',
+      inputName: 'newItemsAssigned',
+      label: 'Edit Assigned Items',
+      itemProperty: 'itemsAssigned',
+      formId: 'editItemsAssignedForm',
+      invalidFeedback: ''
+    }
+  ];
+%>
+
 <% 
   let editAllModals;
   if(isItem === 1) {
     editAllModals = editItemModals;
   }
   else {
-    editAllModals = editAccountModals;
+    if(isAcct === 1) {
+      editAllModals = editAccountModals;
+    }
+    else {
+      editAllModals = editItemsAssignedModals;
+    }
   }
   for(let editModal of editAllModals) { 
 %>
@@ -104,42 +124,80 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modalLabel"><%- editModal.title %></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
+        <% if(isAcct === 0) { %>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <% } else { %>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
+        <% } %>
       </div>
       <div class="modal-body">
 
-        <form id="<%= editModal.formId %>" class="needs-validation"
-              method="post" action="<%= formSubmitPath %>" novalidate>
-          <div class="mb-3 form-floating">
-            <% if(editModal.inputType === 'textarea') { %>
-              <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required></textarea>
-            <% } else if(editModal.inputType === 'text-input') { %>
-              <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
-            <% } else if(editModal.inputType === 'password') { %>
-              <input type="password" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
-            <% } else { %>
-              <select class="form-select selection-input" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item" required>
-                <option selected disabled value=""><%- editModal.label %></option>
-                <% if(sampleItem.assignedPeople.length > 0) { %>
-                <% for(let collab of sampleItem.assignedPeople) { %>
-                  <option value="<%= collab %>"><%- collab %></option>
-                <% } %>
-                <% } %>
-              </select>
-            <% } %>
-            <label for="<%= editModal.inputName %>" class="col-form-label">
-              <%- editModal.label %>
-            </label>
-            <div class="invalid-feedback">
-              <%- editModal.invalidFeedback %>
-            </div>
+        <% if(editModal.id === 'editItemsAssignedModal') { %>
+          <form id="<%= editModal.formId %>" method="post" action="<%= formSubmitPath %>" novalidate>
+            <div class="mb-3 form-floating">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[0] %>]">
+                    Super Cheesecake
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[1] %>]">
+                    Cheesey Cheesecake
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[2] %>]">
+                    Jojo Cheesecake
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[3] %>]">
+                    Ube Cheesecake
+                </li>
+                <li class="list-group-item">
+                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[4] %>]">
+                    Halo-halo Cheesecake
+                </li>
+              </ul>
             <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
+            </div>
+          </form>
+        <% } else { %>
+          <form id="<%= editModal.formId %>" class="needs-validation"
+            method="post" action="<%= formSubmitPath %>" novalidate>
+        <div class="mb-3 form-floating">
+          <% if(editModal.inputType === 'textarea') { %>
+            <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required></textarea>
+          <% } else if(editModal.inputType === 'text-input') { %>
+            <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
+          <% } else if(editModal.inputType === 'password') { %>
+            <input type="password" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
+          <% } else { %>
+            <select class="form-select selection-input" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item" required>
+              <option selected disabled value=""><%- editModal.label %></option>
+              <% if(sampleItem.assignedPeople.length > 0) { %>
+              <% for(let collab of sampleItem.assignedPeople) { %>
+                <option value="<%= collab %>"><%- collab %></option>
+              <% } %>
+              <% } %>
+            </select>
+          <% } %>
+          <label for="<%= editModal.inputName %>" class="col-form-label">
+            <%- editModal.label %>
+          </label>
+          <div class="invalid-feedback">
+            <%- editModal.invalidFeedback %>
           </div>
-        </form>
+          <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
+        </div>
+      </form>
+        <% } %>
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
+        <% if(isAcct === 0) { %>
+          <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
+        <% } else { %>
+          <button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
+        <% } %>
         <button type="submit" class="btn btn-secondary" form="<%= editModal.formId %>">Confirm</button>
       </div>
     </div>

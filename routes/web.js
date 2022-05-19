@@ -129,6 +129,10 @@ const editAcctModalIDs = [
   'editAccountPasswordModal'
 ];
 
+const editItemsAssignedID = [
+  'editItemsAssignedModal'
+];
+
 const sortModalIDs = [
   'sortItemModal',
   'sortHistoryModal'
@@ -166,6 +170,7 @@ let initRoutes = (app) => {
       index: 0,
       formSubmitPath: req.path,
       isItem: 0,
+      isAcct: 1,
       hasDeleteWorkspace: false,
       deleteModalId: 'deleteAccountModal'
     });
@@ -176,7 +181,13 @@ let initRoutes = (app) => {
       layout: './layouts/account-page',
       backLink: '/workspace/collaborators',
       username: userPaths[req.params.user].username,
-      displayName: userPaths[req.params.user].displayName
+      displayName: userPaths[req.params.user].displayName,
+      isItem: 0,
+      isAcct: 0,
+      formSubmitPath: req.path,
+      sampleItem: '',
+      hasDeleteWorkspace: '',
+      deleteModalId:''
     });
   });
   // --- END ACCOUNTS PAGE ---
@@ -201,7 +212,12 @@ let initRoutes = (app) => {
       sortModalId: '',
       hasDeleteWorkspace: true,
       deleteModalId: '',
-      formSubmitPath: req.path
+      formSubmitPath: req.path,
+      editItemModalIds: editItemsAssignedID,
+      sampleItem: itemPaths,
+      index: 0,
+      isItem: 0,
+      isAcct: 0
     })
   }); // dashboard
 
@@ -217,7 +233,12 @@ let initRoutes = (app) => {
       sortModalId: sortModalIDs[0],
       sortFormSubmitPath: req.path,
       hasDeleteWorkspace: true,
-      deleteModalId: ''
+      deleteModalId: '',
+      editItemModalIds: editItemsAssignedID,
+      sampleItem: itemPaths,
+      index: 0,
+      isItem: 0,
+      isAcct: 0
     });
   }); // inventory
 
@@ -233,10 +254,11 @@ let initRoutes = (app) => {
       formSubmitPath: req.path,
       hasDeleteWorkspace: true,
       deleteModalId: 'deleteCollaboratorModal',
-      // tentative to make edit button work
-      editItemModalIds: editAcctModalIDs,
+      editItemModalIds: editItemsAssignedID,
+      sampleItem: itemPaths,
       index: 0,
       isItem: 0,
+      isAcct: 0,
       sortModalId: ''
     })
   }); // collaborators
@@ -252,7 +274,12 @@ let initRoutes = (app) => {
       sortFormSubmitPath: req.path,
       formSubmitPath: req.path,
       hasDeleteWorkspace: true,
-      deleteModalId: 'deleteHistoryModal'
+      deleteModalId: 'deleteHistoryModal',
+      editItemModalIds: editItemsAssignedID,
+      sampleItem: itemPaths,
+      index: 0,
+      isItem: 0,
+      isAcct: 0
     })
   }); // history
   // --- WORKSPACE PAGES ---
@@ -270,7 +297,8 @@ let initRoutes = (app) => {
       formSubmitPath: req.path,
       isItem: 1,
       hasDeleteWorkspace: false,
-      deleteModalId: 'deleteItemModal'
+      deleteModalId: 'deleteItemModal',
+      isAcct: 0
     });
   });
   // --- END ITEMS PAGE ---
