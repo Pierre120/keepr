@@ -118,7 +118,7 @@
             <% } else if(editModal.inputType === 'password') { %>
               <input type="password" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
             <% } else { %>
-              <select class="form-select" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item" required>
+              <select class="form-select selection-input" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item" required>
                 <option selected disabled value=""><%- editModal.label %></option>
                 <% if(sampleItem.assignedPeople.length > 0) { %>
                 <% for(let collab of sampleItem.assignedPeople) { %>
