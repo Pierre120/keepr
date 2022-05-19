@@ -7,6 +7,14 @@
     }
   };
 
+  // Reset back to the default selected option for
+  function resetSelection() {
+    let sortOptions = document.getElementsByClassName("sort-selection");
+    for(let option of sortOptions) {
+      option.selectedIndex = 0;
+    }
+  }
+
   // Client-side validation
   (function () {
     'use strict'
