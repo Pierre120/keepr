@@ -4,9 +4,16 @@
     // Get all validated forms
     let forms = document.getElementsByClassName('was-validated');
 
+    // Clear text inputs
     let toClear = document.getElementsByClassName("form-control");
     for(let i = 0; i < toClear.length; i++){
       toClear[i].value = "";
+    }
+
+    // Clear selection inputs
+    let sortOptions = document.getElementsByClassName("selection-input");
+    for(let option of sortOptions) {
+      option.selectedIndex = 0;
     }
 
     // Loop over the array of forms and remove validation styling
