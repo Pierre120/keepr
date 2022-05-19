@@ -13,7 +13,7 @@
       <% } else if(addModalId === 'addCollaboratorModal') { %>
         <h5 class="modal-title" id="modalLabel">Add Collaborator</h5>
       <% } %>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
     </div>
     <div class="modal-body">
       
@@ -87,7 +87,7 @@
 
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
       <button type="submit" class="btn btn-secondary" form="<%= targetForm %>">Confirm</button>
     </div>
   </div>

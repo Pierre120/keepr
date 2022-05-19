@@ -104,17 +104,15 @@
 %>
 
 <% 
-  let editAllModals;
-  if(isItem === 1) {
+  let editAllModals = [];
+  if(isItem === true) {
     editAllModals = editItemModals;
   }
-  else {
-    if(isAcct === 1) {
-      editAllModals = editAccountModals;
-    }
-    else {
-      editAllModals = editItemsAssignedModals;
-    }
+  else if(isAcct === true) {
+    editAllModals = editAccountModals;
+  }
+  else if(isAssign === true) {
+    editAllModals = editItemsAssignedModals;
   }
   for(let editModal of editAllModals) { 
 %>
@@ -136,26 +134,12 @@
           <form id="<%= editModal.formId %>" method="post" action="<%= formSubmitPath %>" novalidate>
             <div class="mb-3 form-floating">
               <ul class="list-group">
+              <% for(let item of sampleItems) { %>
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[0] %>]">
-                    Super Cheesecake
+                  <input class="form-check-input me-1" type="checkbox" value="<%= item.itemName %>" aria-label="..." name="<%= item.productCode %>">
+                  <%- item.itemName %>
                 </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[1] %>]">
-                    Cheesey Cheesecake
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[2] %>]">
-                    Jojo Cheesecake
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[3] %>]">
-                    Ube Cheesecake
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= editModal.inputName %>[<%= sampleItem[4] %>]">
-                    Halo-halo Cheesecake
-                </li>
+              <% } %>
               </ul>
             <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
             </div>
