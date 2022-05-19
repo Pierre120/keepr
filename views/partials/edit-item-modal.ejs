@@ -134,31 +134,12 @@
           <form id="<%= editModal.formId %>" method="post" action="<%= formSubmitPath %>" novalidate>
             <div class="mb-3 form-floating">
               <ul class="list-group">
+              <% for(let item of sampleItems) { %>
                 <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= sampleItems[0].itemName %>">
-                  <% console.log(sampleItems[0].itemName) %>
-                    Super Cheesecake
+                  <input class="form-check-input me-1" type="checkbox" value="<%= item.itemName %>" aria-label="..." name="<%= item.productCode %>">
+                  <%- item.itemName %>
                 </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= sampleItems[1].itemName %>">
-                  <% console.log(sampleItems[1].itemName) %>
-                    Cheesey Cheesecake
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= sampleItems[2].itemName %>">
-                  <% console.log(sampleItems[2].itemName) %>
-                    Jojo Cheesecake
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= sampleItems[3].itemName %>">
-                  <% console.log(sampleItems[3].itemName) %>
-                    Ube Cheesecake
-                </li>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." name="<%= sampleItems[4].itemName %>">
-                  <% console.log(sampleItems[4].itemName) %>
-                    Halo-halo Cheesecake
-                </li>
+              <% } %>
               </ul>
             <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
             </div>
