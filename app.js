@@ -26,4 +26,7 @@ app.set('layout', './layouts/login');
 initRoutes(app);
 
 // Listen on local host port
-app.listen(PORT, () => console.log(`App listening on port: ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`App listening on port: ${PORT}`);
+  console.log(`Open keepr app locally: http://localhost:5000/`);
+});
