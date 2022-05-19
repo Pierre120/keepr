@@ -1,9 +1,17 @@
 <script>
   // Clear form when closed or confirmed
   function clearForm() {
+    // Get all validated forms
+    let forms = document.getElementsByClassName('was-validated');
+
     let toClear = document.getElementsByClassName("form-control");
     for(let i = 0; i < toClear.length; i++){
       toClear[i].value = "";
+    }
+
+    // Loop over the array of forms and remove validation styling
+    for(let form of forms) {
+      form.classList.remove('was-validated');
     }
   };
 
