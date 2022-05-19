@@ -35,7 +35,7 @@
         
 					<% if(index === 0) { %>  <!-- For Item Name -->
 						<div class="mb-3 form-floating">
-							<select class="form-select sort-selection" name="sortFocus" aria-label="Sort Focus" required>
+							<select class="form-select selection-input" name="sortFocus" aria-label="Sort Focus" required>
 								<option selected disabled value="">Choose which to sort</option>
 								<option value="name">Name</option>
 								<option value="qtyUnit">Quantity</option>
@@ -48,7 +48,7 @@
 							</div>
 						</div>
 						<div class="mb-3 form-floating">
-							<select class="form-select sort-selection" name="sortOrder" aria-label="Sort Order" required>
+							<select class="form-select selection-input" name="sortOrder" aria-label="Sort Order" required>
 								<option selected disabled value="">Choose a sort order</option>
 								<option value="ASC">Ascending</option>
 								<option value="DESC">Descending</option>
@@ -62,7 +62,7 @@
 						</div>
 					<% } else { %>   <!-- For History -->
 						<div class="mb-3 form-floating">
-							<select class="form-select sort-selection" name="sortHistory" aria-label="Sort Order" required>
+							<select class="form-select selection-input" name="sortHistory" aria-label="Sort Order" required>
 								<option selected disabled value="">Choose a sort order</option>
 								<option value="ASC">Date: Latest to Oldest</option>
 								<option value="DESC">Date: Oldest to Latest</option>
