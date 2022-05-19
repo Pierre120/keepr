@@ -9,9 +9,17 @@
 
   // Reset back to the default selected option for cancelled sort operation
   function resetSelection() {
+    // Get all validated forms
+    let forms = document.getElementsByClassName('was-validated');
+
     let sortOptions = document.getElementsByClassName("sort-selection");
     for(let option of sortOptions) {
       option.selectedIndex = 0;
+    }
+
+    // Loop over the array of forms and remove validation styling
+    for(let form of forms) {
+      form.classList.remove('was-validated');
     }
   }
 
