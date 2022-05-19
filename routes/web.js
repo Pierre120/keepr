@@ -169,8 +169,9 @@ let initRoutes = (app) => {
       editItemModalIds: editAcctModalIDs,
       index: 0,
       formSubmitPath: req.path,
-      isItem: 0,
-      isAcct: 1,
+      isItem: false,
+      isAcct: true,
+      isAssign: false,
       hasDeleteWorkspace: false,
       deleteModalId: 'deleteAccountModal'
     });
@@ -182,8 +183,9 @@ let initRoutes = (app) => {
       backLink: '/workspace/collaborators',
       username: userPaths[req.params.user].username,
       displayName: userPaths[req.params.user].displayName,
-      isItem: 0,
-      isAcct: 0,
+      isItem: false,
+      isAcct: false,
+      isAssign: false,
       formSubmitPath: req.path,
       sampleItem: '',
       hasDeleteWorkspace: '',
@@ -216,8 +218,9 @@ let initRoutes = (app) => {
       editItemModalIds: editItemsAssignedID,
       sampleItem: itemPaths,
       index: 0,
-      isItem: 0,
-      isAcct: 0
+      isItem: false,
+      isAcct: false,
+      isAssign: false
     })
   }); // dashboard
 
@@ -237,8 +240,9 @@ let initRoutes = (app) => {
       editItemModalIds: editItemsAssignedID,
       sampleItem: itemPaths,
       index: 0,
-      isItem: 0,
-      isAcct: 0
+      isItem: false,
+      isAcct: false,
+      isAssign: false
     });
   }); // inventory
 
@@ -255,10 +259,11 @@ let initRoutes = (app) => {
       hasDeleteWorkspace: true,
       deleteModalId: 'deleteCollaboratorModal',
       editItemModalIds: editItemsAssignedID,
-      sampleItem: itemPaths,
+      sampleItems: sampleData,
       index: 0,
-      isItem: 0,
-      isAcct: 0,
+      isItem: false,
+      isAcct: false,
+      isAssign: true,
       sortModalId: ''
     })
   }); // collaborators
@@ -278,8 +283,9 @@ let initRoutes = (app) => {
       editItemModalIds: editItemsAssignedID,
       sampleItem: itemPaths,
       index: 0,
-      isItem: 0,
-      isAcct: 0
+      isItem: false,
+      isAcct: false,
+      isAssign: false
     })
   }); // history
   // --- WORKSPACE PAGES ---
@@ -295,10 +301,11 @@ let initRoutes = (app) => {
       editItemModalIds: editItemModalIDs,
       index: 0,
       formSubmitPath: req.path,
-      isItem: 1,
+      isItem: true,
+      isAcct: false,
+      isAssign: false,
       hasDeleteWorkspace: false,
-      deleteModalId: 'deleteItemModal',
-      isAcct: 0
+      deleteModalId: 'deleteItemModal'
     });
   });
   // --- END ITEMS PAGE ---
