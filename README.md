@@ -3,6 +3,8 @@ keepr is an online inventory management web application. Registered users can ad
 
 
 ## HOW TO INSTALL *keepr*
+*__NOTE__: If you downloaded the ZIP file of this project you can skip step 1.* 
+
 1. Clone the repository.
 ```
 git clone https://github.com/Pierre120/keepr.git
