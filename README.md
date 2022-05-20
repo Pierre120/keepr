@@ -27,7 +27,7 @@ npm run dev
 
 ## FEATURES
 All the features of this project can be found in our 
-[MP - Phase 0 document](https://docs.google.com/document/d/1RjlozwxHbKs-vMKJAeNAD51cs9LC3cwS/edit?usp=sharing&ouid=107324234949978838161&rtpof=true&sd=true)
+[MP - Phase 0 document](https://docs.google.com/document/d/1RjlozwxHbKs-vMKJAeNAD51cs9LC3cwS/edit?usp=sharing&ouid=107324234949978838161&rtpof=true&sd=true).
 
 
 ## WHILE ON DEVELOPMENT
