@@ -20,7 +20,7 @@ app.use('/img', express.static(__dirname + 'public/img'));
 // Configure Templating Engine
 app.use(ejsLayouts);
 app.set('view engine', 'ejs');
-app.set('layout', './layouts/login');
+app.set('layout', './layouts/login-page');
 
 // Navigation or routing
 initRoutes(app);
