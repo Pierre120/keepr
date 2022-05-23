@@ -153,7 +153,7 @@ let initRoutes = (app) => {
 
   router.get('/app', (req, res) => {
     return res.render('home', {
-      layout: './layouts/home_layout',
+      layout: './layouts/home-page',
       addModalId: 'addWorkspaceModal',
       formSubmitPath: req.path
     });
