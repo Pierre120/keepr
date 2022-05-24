@@ -1,5 +1,8 @@
 // Node modules
 /node_modules
 
+// Environment variables
+.env
+
 // Text editor settings
 /.vscode
