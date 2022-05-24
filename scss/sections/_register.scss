@@ -3,89 +3,89 @@
 @use '../components/animations' as *;
 
 #bg-plain {
-    background-image: radial-gradient($primary, rgba(113, 98, 217, 0.5));
-    height:100%; 
-    background-repeat: no-repeat; 
-    background-attachment: fixed;
-    padding-top: auto;
-    padding-bottom: auto;
+  background-image: radial-gradient($primary, rgba(113, 98, 217, 0.5));
+  height:100%; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  padding-top: auto;
+  padding-bottom: auto;
 }
 
 #bg-container {
-    @extend .col-12;
-    @extend .fade-in-up;
-    @extend .py-5;
-    width: 100%;
-    background: #FEF9F9;
-    border-radius: 10px;
+  @extend .col-12;
+  @extend .fade-in-up;
+  @extend .py-5;
+  width: 100%;
+  background: #FEF9F9;
+  border-radius: 10px;
 }
 
 .center {
-    @extend .container;
-    @extend .text-center;
-    width: 400px;
+  @extend .container;
+  @extend .text-center;
+  width: 400px;
 }
 
 .center h1{
-    @extend .text-gray;
-    @extend .text-center;
-    @extend .oswald;
-    padding: 0 0 10px 0;
-    border-bottom: 1px solid $dark-purple;
+  @extend .text-gray;
+  @extend .text-center;
+  @extend .oswald;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid $dark-purple;
 }
 
 .center form{
-    padding: 0 40px;
-    box-sizing: border-box
+  padding: 0 40px;
+  box-sizing: border-box
 }
 
 form .text-field{
-    @extend .position-relative;
-    border-bottom: 1px solid #C4C4C4;
-    margin: 30px 0
+  @extend .position-relative;
+  border-bottom: 1px solid #C4C4C4;
+  margin: 30px 0
 }
 
 .text-field input{
-    @extend .w-100;
-    padding: 0 5px;
-    height: 40px;
-    font-size: 16px;
-    border: none;
-    background: none;
-    outline: none;
+  @extend .w-100;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
 }
 
 .text-field label{
-    @extend .position-absolute;
-    @extend .fs-6;
-    @extend .montserrat;
-    @extend .fw-light;
-    top: 50%;
-    left: 5px; 
-    color: $dark-purple;
-    transform: translateY(-50%);
-    pointer-events: none;
-    transition: .5s
+  @extend .position-absolute;
+  @extend .fs-6;
+  @extend .montserrat;
+  @extend .fw-light;
+  top: 50%;
+  left: 5px; 
+  color: $dark-purple;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: .5s
 }
 
 .text-field span::before{
-    @extend .position-absolute;
-    @extend .bg-darkpurple;
-    content:'';
-    top: 40px;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    transition: .5s;
+  @extend .position-absolute;
+  @extend .bg-darkpurple;
+  content:'';
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  transition: .5s;
 }
 
 .text-field input:focus ~ label,
 .text-field input:valid ~ label{
-    @extend .text-darkpurple;
-    top:-5px;
+  @extend .text-darkpurple;
+  top:-5px;
 }
 
 .text-field input:focus ~ span::before,
 .text-field input:valid ~ span::before{
-    @extend .w-100;
+  @extend .w-100;
 }
