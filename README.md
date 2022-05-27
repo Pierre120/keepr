@@ -19,7 +19,7 @@ cd keepr
 npm install
 ```
 
-3. Running project.
+3. Running project.<br/>
 *__NOTE__: If you're using your local MongoDB server then be sure that your server is up and running.*
 ```
 npm run dev
@@ -37,11 +37,11 @@ Compilation is needed whenever there are saved changes with the SASS (`.scss`) f
 ```
 npm run compile:sass
 ```
-This command behaves like the `npm run dev` command.<br>
+This command behaves like the `npm run dev` command.<br/>
 Every changes made to the SASS files it will automatically compile it to CSS.
 
 ### RUNNING ON LOCAL MONGODB SERVER
-Starting up the local MongoDB server is needed since the application needs to connect to a MongoDB server.<br>
+Starting up the local MongoDB server is needed since the application needs to connect to a MongoDB server.<br/>
 Run this command in a separate command prompt, terminal or any terminal-like program.
 ```
 mongod
