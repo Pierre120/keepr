@@ -47,6 +47,23 @@ Run this command in a separate command prompt, terminal or any terminal-like pro
 mongod
 ```
 
+### SETTING UP LOCAL ENVIRONMENT VARIABLES
+1. Add a `.env` file in the root path (`.`) of the project folder. The same directory level as the `.env.example` file.
+2. Copy the contents of `.env.example` file to `.env` file.
+3. Set the `PORT` value to `5000`.
+```
+PORT=5000
+SESSION_SECRET=
+MONGODB_URL=""
+```
+4. Set the `MONGODB_URL` to `"mongodb://localhost/<db-name>"`.<br/>
+*__PS__: I used this --> `MONGODB_URL="mongodb://localhost/keepr_db"`*
+```
+PORT=5000
+SESSION_SECRET=
+MONGODB_URL="mongodb://localhost/<db-name>"
+```
+
 
 ## IMPORTANT NOTES FOR COLLABORATORS
 - Tab: 2 spaces
