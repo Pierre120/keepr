@@ -1,3 +1,8 @@
+// Use local environment variables during development
+if(process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 // Imports
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
