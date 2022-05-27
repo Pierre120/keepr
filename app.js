@@ -7,10 +7,14 @@ if(process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const connectDB = require('./database/connectDB.js');
 const initRoutes = require('./routes/web');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+// Connect to DB
+connectDB();
 
 // Configure body-parser
 app.use(bodyParser.urlencoded({extended:false}));
