@@ -1,11 +1,20 @@
+// Use local environment variables during development
+if(process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 // Imports
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const connectDB = require('./database/connectDB.js');
 const initRoutes = require('./routes/web');
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
+// Connect to DB
+connectDB();
 
 // Configure body-parser
 app.use(bodyParser.urlencoded({extended:false}));
@@ -20,7 +29,7 @@ app.use('/img', express.static(__dirname + 'public/img'));
 // Configure Templating Engine
 app.use(ejsLayouts);
 app.set('view engine', 'ejs');
-app.set('layout', './layouts/login');
+app.set('layout', './layouts/login-page');
 
 // Navigation or routing
 initRoutes(app);

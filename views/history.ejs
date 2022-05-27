@@ -37,63 +37,62 @@
 <div class="main-content container-lg my-3 fade-in-up">
 <div class="outer-layer row px-4 py-4">
 
-    <div class="row p-0 w-100">
-        <div class="col-10 ps-4">
-            <h3 id="history-table-header"> Quantity Updates History <span class="hist-buttons"><%-include('partials/deleteItemBtn.ejs'); %></span></h3>
-            <hr class="hist-black-line">
-        </div>
-        <!--<a class="hist-sort"><%-include('partials/sort_btn.ejs');%></a> -->
-        <div class="col">
-            <div class="row p-0 m-0 h-100">
-                <div class="col p-0 align-self-end text-end">
-                    <%- include('./partials/sort_btn.ejs'); %>
-                </div>
-            </div>
-        </div>
+  <div class="row p-0 w-100">
+    <div class="col-10 ps-4">
+      <h3 id="history-table-header"> Quantity Updates History <span class="hist-buttons"><%-include('partials/btn-delete-item.ejs'); %></span></h3>
+      <hr class="hist-black-line">
     </div>
-
-    <!-- History table -->
-    <div class="table-box w-100">
-        <!-- Table header -->
-        <div class="table-row">
-            <div class="table-cell cell-header">
-                <h3 class="card-title text-pink"><strong>Item</strong></h3>
-            </div>
-            <div class="table-cell cell-header">
-                <h3 class="card-title text-pink"><strong>Qty</strong></h3>
-            </div>
-            <div class="table-cell cell-header"> 
-                <h3 class="card-title text-pink"><strong>Date</strong></h3>
-            </div>
-            <div class="table-cell cell-header"> 
-                <h3 class="card-title text-pink"><strong>Editor</strong></h3>
-            </div>
+    <div class="col">
+      <div class="row p-0 m-0 h-100">
+        <div class="col p-0 align-self-end text-end">
+            <%- include('./partials/btn-sort.ejs'); %>
         </div>
-        <!-- END Table header -->
-
-        <!-- Table data -->
-        <% for(let record of history) { %>
-        <div class="table-row row-contents">
-            <div class="table-cell">
-                <p><strong><%-record.item%></strong></p>
-            </div>
-            <div class="table-cell">
-                <p><strong><%- record.qty %></strong></p>
-            </div>
-            <div class="table-cell"> 
-                <p><strong><%- record.date %></strong></p>
-            </div>
-            <div class="table-cell last-cell"> 
-                <p><strong><%-record.user%></strong></p>
-            </div>
-        </div>
-        <% }                            %>
-        <!--END of Table data -->
+      </div>
     </div>
-    <!-- END History table -->
+  </div>
+
+  <!-- History table -->
+  <div class="table-box w-100">
+    <!-- Table header -->
+    <div class="table-row">
+      <div class="table-cell cell-header">
+        <h3 class="card-title text-pink"><strong>Item</strong></h3>
+      </div>
+      <div class="table-cell cell-header">
+        <h3 class="card-title text-pink"><strong>Qty</strong></h3>
+      </div>
+      <div class="table-cell cell-header"> 
+        <h3 class="card-title text-pink"><strong>Date</strong></h3>
+      </div>
+      <div class="table-cell cell-header"> 
+        <h3 class="card-title text-pink"><strong>Editor</strong></h3>
+      </div>
+    </div>
+    <!-- END Table header -->
+
+    <!-- Table data -->
+    <% for(let record of history) { %>
+    <div class="table-row row-contents">
+      <div class="table-cell">
+        <p><strong><%-record.item%></strong></p>
+      </div>
+      <div class="table-cell">
+        <p><strong><%- record.qty %></strong></p>
+      </div>
+      <div class="table-cell"> 
+        <p><strong><%- record.date %></strong></p>
+      </div>
+      <div class="table-cell last-cell"> 
+        <p><strong><%-record.user%></strong></p>
+      </div>
+    </div>
+    <% }                            %>
+    <!--END of Table data -->
+  </div>
+  <!-- END History table -->
 
 </div>
 
 </div> 
 
-<%- include('./partials/backToTopBtn.ejs') %>
+<%- include('./partials/btn-back-to-top.ejs') %>

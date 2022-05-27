@@ -148,12 +148,12 @@ let initRoutes = (app) => {
   }); // Landing page
 
   router.get('/register', (req,res) =>{
-    return res.render('register-contents', { layout: './layouts/register' })
+    return res.render('register', { layout: './layouts/register-page' })
   });// Register page
 
   router.get('/app', (req, res) => {
     return res.render('home', {
-      layout: './layouts/home_layout',
+      layout: './layouts/home-page',
       addModalId: 'addWorkspaceModal',
       formSubmitPath: req.path
     });
@@ -207,7 +207,7 @@ let initRoutes = (app) => {
   router.get('/:workspace/dashboard', (req, res) => {
     return res.render('dashboard', {
       active: 0,
-      layout: './layouts/workspace',
+      layout: './layouts/workspace-page',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: '',
@@ -227,7 +227,7 @@ let initRoutes = (app) => {
   router.get('/:workspace/inventory', (req, res) => {
     return res.render('inventory', {
       active: 1,
-      layout: './layouts/workspace',
+      layout: './layouts/workspace-page',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       sampleItems: sampleData,
@@ -249,7 +249,7 @@ let initRoutes = (app) => {
   router.get('/:workspace/collaborators', (req, res) => {
     return res.render('collaborators', {
       active: 2,
-      layout: './layouts/workspace',
+      layout: './layouts/workspace-page',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       collabUnames: collabUsernames,
@@ -271,7 +271,7 @@ let initRoutes = (app) => {
   router.get('/:workspace/history', (req, res) => {
     return res.render('history', {
       active: 3,
-      layout: './layouts/workspace',
+      layout: './layouts/workspace-page',
       workspace: sampleWorkspaces[req.params.workspace].name,
       workspacePath: sampleWorkspaces[req.params.workspace].path,
       addModalId: '',
