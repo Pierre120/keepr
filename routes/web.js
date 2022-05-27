@@ -142,176 +142,173 @@ const sortModalIDs = [
 
 let router = express.Router();
 
-let initRoutes = (app) => {
-  router.get('/', (req, res) => {
-    return res.render('index');
-  }); // Landing page
+router.get('/', (req, res) => {
+  return res.render('index');
+}); // Landing page
 
-  router.get('/register', (req,res) =>{
-    return res.render('register', { layout: './layouts/register-page' })
-  });// Register page
+router.get('/register', (req,res) =>{
+  return res.render('register', { layout: './layouts/register-page' })
+});// Register page
 
-  router.get('/app', (req, res) => {
-    return res.render('home', {
-      layout: './layouts/home-page',
-      addModalId: 'addWorkspaceModal',
-      formSubmitPath: req.path
-    });
-  }); // App/Home page
-
-  // --- ACCOUNTS PAGE ---
-  router.get('/accounts/personal', (req, res) => {
-    return res.render('account', {
-      layout: './layouts/account-page',
-      backLink: '/workspace/dashboard',
-      username: 'JuanDelaCruz_96',
-      displayName: 'St4rL0rd96',
-      editItemModalIds: editAcctModalIDs,
-      index: 0,
-      formSubmitPath: req.path,
-      isItem: false,
-      isAcct: true,
-      isAssign: false,
-      hasDeleteWorkspace: false,
-      deleteModalId: 'deleteAccountModal'
-    });
+router.get('/app', (req, res) => {
+  return res.render('home', {
+    layout: './layouts/home-page',
+    addModalId: 'addWorkspaceModal',
+    formSubmitPath: req.path
   });
+}); // App/Home page
 
-  router.get('/accounts/:user', (req, res) => {
-    return res.render('others-account', { 
-      layout: './layouts/account-page',
-      backLink: '/workspace/collaborators',
-      username: userPaths[req.params.user].username,
-      displayName: userPaths[req.params.user].displayName,
-      isItem: false,
-      isAcct: false,
-      isAssign: false,
-      formSubmitPath: req.path,
-      sampleItem: '',
-      hasDeleteWorkspace: '',
-      deleteModalId:''
-    });
+// --- ACCOUNTS PAGE ---
+router.get('/accounts/personal', (req, res) => {
+  return res.render('account', {
+    layout: './layouts/account-page',
+    backLink: '/workspace/dashboard',
+    username: 'JuanDelaCruz_96',
+    displayName: 'St4rL0rd96',
+    editItemModalIds: editAcctModalIDs,
+    index: 0,
+    formSubmitPath: req.path,
+    isItem: false,
+    isAcct: true,
+    isAssign: false,
+    hasDeleteWorkspace: false,
+    deleteModalId: 'deleteAccountModal'
   });
-  // --- END ACCOUNTS PAGE ---
+});
 
-  // --- SEARCH RESULT PAGE
-  router.get('/search-results/query', (req, res) => {
-    return res.render('search-results', {
-      layout: './layouts/results-page',
-      sampleItems: sampleData
-    });
-  }); // Search results page
-  // --- END SEARCH RESULT PAGE
-
-  // --- WORKSPACE PAGES ---
-  router.get('/:workspace/dashboard', (req, res) => {
-    return res.render('dashboard', {
-      active: 0,
-      layout: './layouts/workspace-page',
-      workspace: sampleWorkspaces[req.params.workspace].name,
-      workspacePath: sampleWorkspaces[req.params.workspace].path,
-      addModalId: '',
-      sortModalId: '',
-      hasDeleteWorkspace: true,
-      deleteModalId: '',
-      formSubmitPath: req.path,
-      editItemModalIds: editItemsAssignedID,
-      sampleItem: itemPaths,
-      index: 0,
-      isItem: false,
-      isAcct: false,
-      isAssign: false
-    })
-  }); // dashboard
-
-  router.get('/:workspace/inventory', (req, res) => {
-    return res.render('inventory', {
-      active: 1,
-      layout: './layouts/workspace-page',
-      workspace: sampleWorkspaces[req.params.workspace].name,
-      workspacePath: sampleWorkspaces[req.params.workspace].path,
-      sampleItems: sampleData,
-      addModalId: 'addItemModal',
-      formSubmitPath: req.path,
-      sortModalId: sortModalIDs[0],
-      sortFormSubmitPath: req.path,
-      hasDeleteWorkspace: true,
-      deleteModalId: '',
-      editItemModalIds: editItemsAssignedID,
-      sampleItem: itemPaths,
-      index: 0,
-      isItem: false,
-      isAcct: false,
-      isAssign: false
-    });
-  }); // inventory
-
-  router.get('/:workspace/collaborators', (req, res) => {
-    return res.render('collaborators', {
-      active: 2,
-      layout: './layouts/workspace-page',
-      workspace: sampleWorkspaces[req.params.workspace].name,
-      workspacePath: sampleWorkspaces[req.params.workspace].path,
-      collabUnames: collabUsernames,
-      index: 0,
-      addModalId: 'addCollaboratorModal',
-      formSubmitPath: req.path,
-      hasDeleteWorkspace: true,
-      deleteModalId: 'deleteCollaboratorModal',
-      editItemModalIds: editItemsAssignedID,
-      sampleItems: sampleData,
-      index: 0,
-      isItem: false,
-      isAcct: false,
-      isAssign: true,
-      sortModalId: ''
-    })
-  }); // collaborators
-
-  router.get('/:workspace/history', (req, res) => {
-    return res.render('history', {
-      active: 3,
-      layout: './layouts/workspace-page',
-      workspace: sampleWorkspaces[req.params.workspace].name,
-      workspacePath: sampleWorkspaces[req.params.workspace].path,
-      addModalId: '',
-      sortModalId : sortModalIDs[1],
-      sortFormSubmitPath: req.path,
-      formSubmitPath: req.path,
-      hasDeleteWorkspace: true,
-      deleteModalId: 'deleteHistoryModal',
-      editItemModalIds: editItemsAssignedID,
-      sampleItem: itemPaths,
-      index: 0,
-      isItem: false,
-      isAcct: false,
-      isAssign: false
-    })
-  }); // history
-  // --- WORKSPACE PAGES ---
-
-
-  // --- ITEMS PAGE ---
-  router.get('/:workspace/:itemCode', (req, res) => {
-    return res.render('item', {
-      layout: './layouts/item-page',
-      backLink: '/workspace/inventory',
-      title: itemPaths[req.params.itemCode].itemName,
-      sampleItem: itemPaths[req.params.itemCode],
-      editItemModalIds: editItemModalIDs,
-      index: 0,
-      formSubmitPath: req.path,
-      isItem: true,
-      isAcct: false,
-      isAssign: false,
-      hasDeleteWorkspace: false,
-      deleteModalId: 'deleteItemModal'
-    });
+router.get('/accounts/:user', (req, res) => {
+  return res.render('others-account', { 
+    layout: './layouts/account-page',
+    backLink: '/workspace/collaborators',
+    username: userPaths[req.params.user].username,
+    displayName: userPaths[req.params.user].displayName,
+    isItem: false,
+    isAcct: false,
+    isAssign: false,
+    formSubmitPath: req.path,
+    sampleItem: '',
+    hasDeleteWorkspace: '',
+    deleteModalId:''
   });
-  // --- END ITEMS PAGE ---
+});
+// --- END ACCOUNTS PAGE ---
 
-  return app.use('/', router); // Set the router
-};
+// --- SEARCH RESULT PAGE
+router.get('/search-results/query', (req, res) => {
+  return res.render('search-results', {
+    layout: './layouts/results-page',
+    sampleItems: sampleData
+  });
+}); // Search results page
+// --- END SEARCH RESULT PAGE
+
+// --- WORKSPACE PAGES ---
+router.get('/:workspace/dashboard', (req, res) => {
+  return res.render('dashboard', {
+    active: 0,
+    layout: './layouts/workspace-page',
+    workspace: sampleWorkspaces[req.params.workspace].name,
+    workspacePath: sampleWorkspaces[req.params.workspace].path,
+    addModalId: '',
+    sortModalId: '',
+    hasDeleteWorkspace: true,
+    deleteModalId: '',
+    formSubmitPath: req.path,
+    editItemModalIds: editItemsAssignedID,
+    sampleItem: itemPaths,
+    index: 0,
+    isItem: false,
+    isAcct: false,
+    isAssign: false
+  })
+}); // dashboard
+
+router.get('/:workspace/inventory', (req, res) => {
+  return res.render('inventory', {
+    active: 1,
+    layout: './layouts/workspace-page',
+    workspace: sampleWorkspaces[req.params.workspace].name,
+    workspacePath: sampleWorkspaces[req.params.workspace].path,
+    sampleItems: sampleData,
+    addModalId: 'addItemModal',
+    formSubmitPath: req.path,
+    sortModalId: sortModalIDs[0],
+    sortFormSubmitPath: req.path,
+    hasDeleteWorkspace: true,
+    deleteModalId: '',
+    editItemModalIds: editItemsAssignedID,
+    sampleItem: itemPaths,
+    index: 0,
+    isItem: false,
+    isAcct: false,
+    isAssign: false
+  });
+}); // inventory
+
+router.get('/:workspace/collaborators', (req, res) => {
+  return res.render('collaborators', {
+    active: 2,
+    layout: './layouts/workspace-page',
+    workspace: sampleWorkspaces[req.params.workspace].name,
+    workspacePath: sampleWorkspaces[req.params.workspace].path,
+    collabUnames: collabUsernames,
+    index: 0,
+    addModalId: 'addCollaboratorModal',
+    formSubmitPath: req.path,
+    hasDeleteWorkspace: true,
+    deleteModalId: 'deleteCollaboratorModal',
+    editItemModalIds: editItemsAssignedID,
+    sampleItems: sampleData,
+    index: 0,
+    isItem: false,
+    isAcct: false,
+    isAssign: true,
+    sortModalId: ''
+  })
+}); // collaborators
+
+router.get('/:workspace/history', (req, res) => {
+  return res.render('history', {
+    active: 3,
+    layout: './layouts/workspace-page',
+    workspace: sampleWorkspaces[req.params.workspace].name,
+    workspacePath: sampleWorkspaces[req.params.workspace].path,
+    addModalId: '',
+    sortModalId : sortModalIDs[1],
+    sortFormSubmitPath: req.path,
+    formSubmitPath: req.path,
+    hasDeleteWorkspace: true,
+    deleteModalId: 'deleteHistoryModal',
+    editItemModalIds: editItemsAssignedID,
+    sampleItem: itemPaths,
+    index: 0,
+    isItem: false,
+    isAcct: false,
+    isAssign: false
+  })
+}); // history
+// --- WORKSPACE PAGES ---
+
+
+// --- ITEMS PAGE ---
+router.get('/:workspace/:itemCode', (req, res) => {
+  return res.render('item', {
+    layout: './layouts/item-page',
+    backLink: '/workspace/inventory',
+    title: itemPaths[req.params.itemCode].itemName,
+    sampleItem: itemPaths[req.params.itemCode],
+    editItemModalIds: editItemModalIDs,
+    index: 0,
+    formSubmitPath: req.path,
+    isItem: true,
+    isAcct: false,
+    isAssign: false,
+    hasDeleteWorkspace: false,
+    deleteModalId: 'deleteItemModal'
+  });
+});
+// --- END ITEMS PAGE ---
+
 
 // Exports the function for the app.js to use
-module.exports = initRoutes;
+module.exports = router;
