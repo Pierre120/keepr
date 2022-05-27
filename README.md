@@ -37,11 +37,11 @@ Compilation is needed whenever there are saved changes with the SASS (`.scss`) f
 ```
 npm run compile:sass
 ```
-This command behaves like the `npm run dev` command.
+This command behaves like the `npm run dev` command.<br>
 Every changes made to the SASS files it will automatically compile it to CSS.
 
 ### RUNNING ON LOCAL MONGODB SERVER
-Starting up the local MongoDB server is needed since the application needs to connect to a MongoDB server.
+Starting up the local MongoDB server is needed since the application needs to connect to a MongoDB server.<br>
 Run this command in a separate command prompt, terminal or any terminal-like program.
 ```
 mongod
