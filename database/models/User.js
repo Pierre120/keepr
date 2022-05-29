@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// User schema
 const UserSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -16,3 +17,8 @@ const UserSchema = new mongoose.Schema({
     required: true
   }
 });
+
+// Static methods
+UserSchema.statics.findOneByUsername = function(strUsername) {
+  return this.findOne({ username: strUsername });
+};
