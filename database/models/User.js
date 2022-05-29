@@ -22,3 +22,7 @@ const UserSchema = new mongoose.Schema({
 UserSchema.statics.findOneByUsername = function(strUsername) {
   return this.findOne({ username: strUsername });
 };
+
+UserSchema.statics.findOneByDisplayName = function(strDispName) {
+  return this.findOne({ displayName: strDispName });
+};
