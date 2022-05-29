@@ -26,3 +26,6 @@ UserSchema.statics.findOneByUsername = function(strUsername) {
 UserSchema.statics.findOneByDisplayName = function(strDispName) {
   return this.findOne({ displayName: strDispName });
 };
+
+// Export UserSchema model
+module.exports = mongoose.model('User', UserSchema);
