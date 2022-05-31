@@ -1,8 +1,20 @@
 const User = require('../database/models/User.js');
 
 // For adding new user to the database
-const createUser = (req, res) => {
+const createUser = async (req, res) => {
+  const newUser = new User({
+    username: req.body.username,
+    displayName: req.body.displayName,
+    password: req.body.password // needs hashing
+  });
 
+  try {
+    await newUser.save();
+    res.redirect('/app');
+  } catch (err) {
+    console.log(err);
+    res.redirect('/register');
+  }
 };
 
 // For editing info of user
