@@ -1,7 +1,7 @@
 const User = require('../database/models/User.js');
 
 // For adding new user to the database
-const createUser = async (req, res) => {
+const registerUser = async (req, res) => {
   const newUser = new User({
     username: req.body.username,
     displayName: req.body.displayName,
