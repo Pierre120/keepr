@@ -9,9 +9,10 @@ const WorkspaceSchema = new mongoose.Schema({
 
     owner:{
         type: mongoose.SchemaTypes.ObjectId,
-        ref: "User",
+        required: true,
+        ref: "User"
     },
-    
+
     collaborators:{
         type: [mongoose.SchemaTypes.ObjectId],
         ref: "Collaborators"
