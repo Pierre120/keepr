@@ -2,11 +2,14 @@ const User = require('../database/models/User.js');
 
 // For adding new user to the database
 const registerUser = async (req, res) => {
+  // TODO: hash password using bcrypt before storing
   const newUser = new User({
     username: req.body.username,
     displayName: req.body.displayName,
     password: req.body.password // needs hashing
   });
+
+  // TODO: add session
 
   try {
     await newUser.save();
