@@ -5,20 +5,23 @@ const WorkspaceSchema = new mongoose.Schema({
     name:{
         type: String,
         owner: mongoose.SchemaTypes.ObjectId,
-        ref: User,
+        ref: "User",
         required: true
     },
 
     collaborators:{
-        type: [mongoose.SchemaTypes.ObjectId]
+        type: [mongoose.SchemaTypes.ObjectId],
+        ref: "Collaborators"
     },
 
     history:{
-        type: [mongoose.SchemaTypes.ObjectId]
+        type: [mongoose.SchemaTypes.ObjectId],
+        ref: "History"
     },
 
     inventory:{
-        type: [mongoose.SchemaTypes.ObjectId]
+        type: [mongoose.SchemaTypes.ObjectId],
+        ref: "Inventory"
     }
 });
 
