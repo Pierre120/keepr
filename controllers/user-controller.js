@@ -38,8 +38,14 @@ const editUser = async (req, res) => {
 };
 
 // For deleting a user in a database
-const deleteUser = (req, res) => {
-
+const deleteUser = async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.id);
+    res.redirect('/');
+  } catch (err) {
+    console.log(err);
+    res.redirect('/accounts/' + req.params.id);
+  }
 };
 
 // For viewing user account
