@@ -4,8 +4,11 @@ const mongoose = require('mongoose');
 const CollaboratorSchema = new mongoose.Schema({
     displayName: {
         type: String,
-        required: true,
-        unique: true
+        required: true
+    },
+    workspace: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Workspace'
     },
     assignedItems: {
         type: [mongoose.SchemaTypes.ObjectId],
