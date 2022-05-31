@@ -21,8 +21,20 @@ const registerUser = async (req, res) => {
 };
 
 // For editing info of user
-const editUser = (req, res) => {
-
+const editUser = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+    const { username, displayName, password } = req.body;
+    // TODO: hash password using bcrypt before storing
+    user.username = username;
+    user.displayName = displayName;
+    user.password = password;
+    await user.save();
+    res.redirect('/accounts/' + req.params.id);
+  } catch (err) {
+    console.log(err);
+    res.redirect('/accounts/' + req.params.id);
+  }
 };
 
 // For deleting a user in a database
