@@ -23,8 +23,8 @@ const WorkspaceSchema = new mongoose.Schema({
     }
 });
 
-UserSchema.statics.findOneByName = function(strName) {
+WorkspaceSchema.statics.findOneByName = function(strName) {
     return this.findOne({ name: strName });
 };
 
-module.exports('Workspace', WorkspaceSchema);
+module.exports = mongoose.model('Workspace', WorkspaceSchema);

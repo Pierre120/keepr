@@ -20,11 +20,11 @@ const HistorySchema = new mongoose.Schema({
     quantity:{
         type: Number,
         required:true,
-        min: 1
+        min: 0
     }
 
 
 });
 
 
-module.exports('History', HistorySchema);
+module.exports = mongoose.model('History', HistorySchema);
