@@ -4,11 +4,14 @@ const User = require('./User');
 const WorkspaceSchema = new mongoose.Schema({
     name:{
         type: String,
-        owner: mongoose.SchemaTypes.ObjectId,
-        ref: "User",
         required: true
     },
 
+    owner:{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "User",
+    },
+    
     collaborators:{
         type: [mongoose.SchemaTypes.ObjectId],
         ref: "Collaborators"
