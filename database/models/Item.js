@@ -1,15 +1,20 @@
 const mongoose = require('mongoose');
-const User = require('./User');
 
 // Item schema
 const ItemSchema = new mongoose.Schema({
+    itemName: {
+        type: String,
+        required: true,
+        unique: true
+    },
     pcode: {
         type: String,
         required: true,
         unique: true
     },
     qtyUnit: {
-        type: String
+        type: String,
+        required: true
     },
     description: {
         type: String
@@ -23,6 +28,10 @@ const ItemSchema = new mongoose.Schema({
 // Static method
 ItemSchema.statics.findOneByProductCode = function(strCode) {
     return this.findOne({ pcode: strCode });
+};
+
+ItemSchema.statics.findOneByItemName = function(strName) {
+    return this.findOne({ itemName: strName });
 };
 
 // Export ItemSchema model
