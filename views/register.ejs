@@ -17,13 +17,15 @@
             <span></span>
             <label>Password</label>
         </div>
+        <div id="err-msg" class="mx-0 mb-2 p-0 text-middle text-pink" 
+            style="font-size: 0.8rem;margin-top: -0.75rem;"></div>
         <%- include('partials/btn-register.ejs') %>
     </form>
 </div>
 
 <script>
-    function redirectToWorkspace() {
-        window.location.assign('http://localhost:5000/app');
+    function redirectToLogin() {
+        window.location.assign('/');
     }
 
     function checkEmptyInputs() {
@@ -55,12 +57,26 @@
     }
 
     function validateRegForm() {
-        let regForm = document.forms["reg-form"];
-
         let emptyFieldExists = checkEmptyInputs();
 
         if(!emptyFieldExists) {
-            redirectToWorkspace();
+            let newUser = {
+                username: $('#reg-name').val(),
+                displayName: $('#reg-display-name').val(),
+                password: $('#reg-password').val()
+            };
+            console.log(newUser)
+
+            $.post('/register', newUser, function(result) {
+                console.log(result)
+                if(result === false) {
+                    $('#err-msg').text('Username and/or display name already exists!');
+                }
+                else {
+                    $('#err-msg').val('');
+                    redirectToLogin();
+                }
+            })
         }
     }
 </script>
