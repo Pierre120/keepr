@@ -17,35 +17,33 @@
             <span></span>
             <label>Password</label>
         </div>
+        <div id="err-msg" class="mx-0 mb-2 p-0 text-middle text-pink" 
+            style="font-size: 0.8rem;margin-top: -0.75rem;"></div>
         <%- include('partials/btn-register.ejs') %>
     </form>
 </div>
 
 <script>
-    function redirectToWorkspace() {
-        window.location.assign('http://localhost:5000/app');
+    function redirectToLogin() {
+        window.location.assign('/');
     }
 
-    function checkEmptyInputs(userObj) {
-        let emptyInput = false
-        for(let invalidFields of userObj) {
-            if(invalidFields.value === '') {
-                if(invalidFields.id === 'reg-name'){
-                    document.getElementsByTagName("label")[0].style.color = "pink";
-                    invalidFields.style["border-bottom"] = "1px solid pink";
-                    emptyInput = true;
-                }
-                else if(invalidFields.id === 'reg-display-name'){
-                    document.getElementsByTagName("label")[1].style.color = "pink";
-                    invalidFields.style["border-bottom"] = "1px solid pink";
-                    emptyInput = true;
-                }
-                else if(invalidFields.id === 'reg-password'){
-                    document.getElementsByTagName("label")[2].style.color = "pink";
-                    invalidFields.style["border-bottom"] = "1px solid pink";
-                    emptyInput = true;
-                }
-            }
+    function checkEmptyInputs() {
+        let emptyInput = false;
+        if(document.getElementById('reg-name').value === ''){
+            document.getElementsByTagName("label")[0].style.color = "pink";
+            document.getElementsByClassName('text-field')[0].style["border-bottom"] = "1px solid pink";
+            emptyInput = true;
+        }
+        if(document.getElementById('reg-display-name').value === ''){
+            document.getElementsByTagName("label")[1].style.color = "pink";
+            document.getElementsByClassName('text-field')[1].style["border-bottom"] = "1px solid pink";
+            emptyInput = true;
+        }
+        if(document.getElementById('reg-password').value === ''){
+            document.getElementsByTagName("label")[2].style.color = "pink";
+            document.getElementsByClassName('text-field')[2].style["border-bottom"] = "1px solid pink";
+            emptyInput = true;
         }
         return emptyInput;
     }
@@ -59,12 +57,26 @@
     }
 
     function validateRegForm() {
-        let user = document.forms["reg-form"];
-
-        let emptyFieldExists = checkEmptyInputs(user);
+        let emptyFieldExists = checkEmptyInputs();
 
         if(!emptyFieldExists) {
-            redirectToWorkspace();
+            let newUser = {
+                username: $('#reg-name').val(),
+                displayName: $('#reg-display-name').val(),
+                password: $('#reg-password').val()
+            };
+            console.log(newUser)
+
+            $.post('/register', newUser, function(result) {
+                console.log(result)
+                if(result === false) {
+                    $('#err-msg').text('Username and/or display name already exists!');
+                }
+                else {
+                    $('#err-msg').val('');
+                    redirectToLogin();
+                }
+            })
         }
     }
 </script>
