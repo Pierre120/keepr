@@ -26,26 +26,22 @@
         window.location.assign('http://localhost:5000/app');
     }
 
-    function checkEmptyInputs(userObj) {
-        let emptyInput = false
-        for(let invalidFields of userObj) {
-            if(invalidFields.value === '') {
-                if(invalidFields.id === 'reg-name'){
-                    document.getElementsByTagName("label")[0].style.color = "pink";
-                    invalidFields.style["border-bottom"] = "1px solid pink";
-                    emptyInput = true;
-                }
-                else if(invalidFields.id === 'reg-display-name'){
-                    document.getElementsByTagName("label")[1].style.color = "pink";
-                    invalidFields.style["border-bottom"] = "1px solid pink";
-                    emptyInput = true;
-                }
-                else if(invalidFields.id === 'reg-password'){
-                    document.getElementsByTagName("label")[2].style.color = "pink";
-                    invalidFields.style["border-bottom"] = "1px solid pink";
-                    emptyInput = true;
-                }
-            }
+    function checkEmptyInputs() {
+        let emptyInput = false;
+        if(document.getElementById('reg-name').value === ''){
+            document.getElementsByTagName("label")[0].style.color = "pink";
+            document.getElementsByClassName('text-field')[0].style["border-bottom"] = "1px solid pink";
+            emptyInput = true;
+        }
+        if(document.getElementById('reg-display-name').value === ''){
+            document.getElementsByTagName("label")[1].style.color = "pink";
+            document.getElementsByClassName('text-field')[1].style["border-bottom"] = "1px solid pink";
+            emptyInput = true;
+        }
+        if(document.getElementById('reg-password').value === ''){
+            document.getElementsByTagName("label")[2].style.color = "pink";
+            document.getElementsByClassName('text-field')[2].style["border-bottom"] = "1px solid pink";
+            emptyInput = true;
         }
         return emptyInput;
     }
@@ -59,9 +55,9 @@
     }
 
     function validateRegForm() {
-        let user = document.forms["reg-form"];
+        let regForm = document.forms["reg-form"];
 
-        let emptyFieldExists = checkEmptyInputs(user);
+        let emptyFieldExists = checkEmptyInputs();
 
         if(!emptyFieldExists) {
             redirectToWorkspace();
