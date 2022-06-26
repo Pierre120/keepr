@@ -146,9 +146,6 @@ router.get('/', (req, res) => {
   return res.render('index');
 }); // Landing page
 
-router.get('/register', (req,res) =>{
-  return res.render('register', { layout: './layouts/register-page' })
-});// Register page
 
 router.get('/app', (req, res) => {
   return res.render('home', {
