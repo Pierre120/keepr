@@ -13,7 +13,7 @@ const createNewUser = async (req, res) => {
   });
 
   try {
-    await user.save();
+    await newUser.save();
     res.send(true); // Registered successfully
   } catch(err) {
     console.log(err);
