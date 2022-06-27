@@ -1,4 +1,4 @@
-const User = require('../database/models/User.js');
+const User = require('../models/User.js');
 const bcrypt = require('bcrypt');
 
 // For creating new user
