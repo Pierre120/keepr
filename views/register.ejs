@@ -1,6 +1,7 @@
 <div class="center">
     <img src="img/register_logo.png" class="pb-2"/>
     <h1>REGISTER</h1>
+    <div id="alert-placeholder" class="m-0 p-0"></div>
     <form name="reg-form">
         <div class="text-field">
             <input type="text" id="reg-name" onclick="resetInputBorder('reg-name')" required>
@@ -17,8 +18,6 @@
             <span></span>
             <label>Password</label>
         </div>
-        <div id="err-msg" class="mx-0 mb-2 p-0 text-middle text-pink" 
-            style="font-size: 0.8rem;margin-top: -0.75rem;"></div>
         <%- include('partials/btn-register.ejs') %>
     </form>
 </div>
@@ -69,13 +68,8 @@
 
             $.post('/register', newUser, function(result) {
                 console.log(result)
-                if(result === false) {
-                    $('#err-msg').text('Username and/or display name already exists!');
-                }
-                else {
-                    $('#err-msg').val('');
-                    redirectToLogin();
-                }
+                if(result === true) redirectToLogin();
+                else if(result !== '') $('#alert-placeholder').append(result);
             })
         }
     }
