@@ -8,6 +8,7 @@ const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const sessionStore = require('./configs/session-config.js');
 const connectDB = require('./models/connectDB.js');
 const initRoutes = require('./routes/main-router.js');
 
@@ -36,7 +37,8 @@ app.set('layout', './layouts/login-page');
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false, // to avoid saving same session
-  saveUninitialized: false // don't save empty input to sessions
+  saveUninitialized: false, // don't save empty input to sessions
+  store: sessionStore // Where to store sessions
 }));
 
 // Navigation or routing
