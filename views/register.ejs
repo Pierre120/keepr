@@ -23,8 +23,8 @@
 </div>
 
 <script>
-  function redirectToLogin() {
-    window.location.assign('/');
+  function redirectToLogin(path) {
+    window.location.assign(path);
   }
 
   function checkEmptyInputs() {
@@ -67,9 +67,8 @@
       console.log(newUser)
 
       $.post('/register', newUser, function(result) {
-        console.log(result)
-        if(result === true) redirectToLogin();
-        else if(result !== '') $('#alert-placeholder').append(result);
+        if(result.bool === true) redirectToLogin(result.content);
+        else if(result.bool === false) $('#alert-placeholder').append(result.content);
       })
   }
   }
