@@ -17,15 +17,15 @@ const loginUser = async (req, res) => {
   // Checks if user exists
   if(!user) {
     // Sends the alert to user
-    res.render('partials/alert', {
+    return res.render('partials/alert', {
       type: 'warning',
       message: errMsg
     }, (err, html) => {
       if(err) {
         console.log(err);
-        return res.send(false);
+        res.send(false);
       } else {
-        return res.send(html)
+        res.send({ isErr: 1, content: html })
       }
     });
   }
@@ -34,22 +34,22 @@ const loginUser = async (req, res) => {
   const isMatch = await bcrypt.compare(password, user.password);
   if(!isMatch) {
     // Sends the alert to user
-    res.render('partials/alert', {
+    return res.render('partials/alert', {
       type: 'warning',
       message: errMsg
     }, (err, html) => {
       if(err) {
         console.log(err);
-        return res.send(false);
+        res.send(false);
       } else {
-        return res.send(html)
+        res.send({ isErr: 1, content: html });
       }
     });
-
-    // Authenticate and add session
-    req.session.isAuth = true;
-    res.redirect('/app'); // redirect to the home page
   }
+
+  // Authenticate and add session
+  req.session.isAuth = true;
+  res.send({ isErr: 0, content: '/app' }); // redirect to the home page
 }
 
 // For logging out users

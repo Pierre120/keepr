@@ -169,8 +169,15 @@
 <script>
   function submitForm(user) {
     $.post('/', user, function(result) {
-      if(result) {
-        $('alert-placeholder').append(result);
+      if(result === false) return;
+
+      switch(result.isErr) {
+        case 1:
+          $('#alert-placeholder').append(result.content);
+          break;
+        case 0:
+          window.location.assign(result.content);
+          break;
       }
     })
   }

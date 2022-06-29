@@ -141,11 +141,11 @@ const sortModalIDs = [
 // --- END SAMPLE DATA ---
 
 let router = express.Router();
-
+/*
 router.get('/', (req, res) => {
   return res.render('index');
 }); // Landing page
-
+*/
 
 router.get('/app', (req, res) => {
   return res.render('home', {
