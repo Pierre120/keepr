@@ -1,4 +1,4 @@
-const User = require('../database/models/User.js');
+const User = require('../models/User.js');
 const bcrypt = require('bcrypt');
 
 // For creating new user
@@ -17,7 +17,18 @@ const createNewUser = async (req, res) => {
     res.send(true); // Registered successfully
   } catch(err) {
     console.log(err);
-    res.send(false); // Failed to register
+    res.render('partials/alert', {
+      type: 'warning',
+      message: '<strong>Username</strong> and/or <strong>display name</strong> already exists!'
+    }, (err, html) => {
+      if(err) {
+        console.log(err);
+        res.send('');
+      } else {
+        // there is an existing user with same username and/or display name
+        res.send(html);
+      }
+    }); // Failed to register
   }
 };
 

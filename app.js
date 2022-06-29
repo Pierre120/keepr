@@ -7,7 +7,7 @@ if(process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
-const connectDB = require('./database/connectDB.js');
+const connectDB = require('./models/connectDB.js');
 const initRoutes = require('./routes/main-router.js');
 
 const app = express();
