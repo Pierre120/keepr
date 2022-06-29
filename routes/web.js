@@ -1,5 +1,6 @@
 // Imports
 const express = require('express');
+const authMW = require('../middlewares/authentication.js');
 
 // --- ITEM SAMPLE DATA ---
 const sampleData = [
@@ -142,12 +143,7 @@ const sortModalIDs = [
 
 let router = express.Router();
 
-router.get('/', (req, res) => {
-  return res.render('index');
-}); // Landing page
-
-
-router.get('/app', (req, res) => {
+router.get('/app', authMW.isLoggedIn, (req, res) => {
   return res.render('home', {
     layout: './layouts/home-page',
     addModalId: 'addWorkspaceModal',
