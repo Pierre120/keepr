@@ -1,5 +1,4 @@
-const User = require('../database/models/History.js');
-const bcrypt = require('bcrypt');
+const History = require('../database/models/History.js');
 
 const viewHistoryPage = async(req,res) =>{
     res.render('history', {layout: './layouts/workspace-page'});
