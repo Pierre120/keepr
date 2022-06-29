@@ -6,11 +6,15 @@ const viewLoginPage = (req, res) => {
 }
 
 const loginUser = async (req, res) => {
+  // Get credentials of logging in user
   const {username, password} = req.body;
+  // Find the user in the db given the username
   const user = await User.findOneByUsername(username);
   const errMsg = 'Invalid username and/or password';
 
+  // Checks if user exists
   if(!user) {
+    // Sends the alert to user
     res.render('partials/alert', {
       type: 'warning',
       message: errMsg
@@ -24,9 +28,10 @@ const loginUser = async (req, res) => {
     });
   }
 
+  // Checks if the given password is a match
   const isMatch = await bcrypt.compare(password, user.password);
-
   if(!isMatch) {
+    // Sends the alert to user
     res.render('partials/alert', {
       type: 'warning',
       message: errMsg
@@ -39,14 +44,19 @@ const loginUser = async (req, res) => {
       }
     });
 
+    // Authenticate and add session
     req.session.isAuth = true;
-    res.redirect('/app');
+    res.redirect('/app'); // redirect to the home page
   }
 }
 
 
 const logoutUser = (req, res) => {
-
+  // Delete the session of the user
+  req.session.destroy((err) => {
+    if(err) { return console.log(err); }
+    res.redirect('/');
+  });
 }
 
 module.exports = {
