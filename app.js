@@ -7,6 +7,7 @@ if(process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const connectDB = require('./models/connectDB.js');
 const initRoutes = require('./routes/main-router.js');
 
@@ -30,6 +31,13 @@ app.use('/img', express.static(__dirname + 'public/img'));
 app.use(ejsLayouts);
 app.set('view engine', 'ejs');
 app.set('layout', './layouts/login-page');
+
+// Session middleware setup
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false, // to avoid saving same session
+  saveUninitialized: false // don't save empty input to sessions
+}));
 
 // Navigation or routing
 initRoutes(app);
