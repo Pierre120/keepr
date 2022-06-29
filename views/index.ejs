@@ -142,6 +142,8 @@
           <form name="login-form" class="d-grid grid-3 my-3" style="margin-left: 7%; margin-right: 7%;">
             <h1 class="oswald text-center text-gray p-4">LOGIN</h1>
 
+            <div id="alert-placeholder" class="m-0 p-0"></div>
+
             <div class="mb-4">
               <label for="username" class="login-label">Username</label>
               <input type="text" class="login-input" id="login-username" onclick="resetInputBorder('login-username')" required>
@@ -165,19 +167,28 @@
 </div>
 
 <script>
-  function redirectToWorkspace() {
-    window.location.assign('http://localhost:5000/app');
+  function submitForm(user) {
+    $.post('/', user, function(result) {
+      if(result) {
+        $('alert-placeholder').append(result);
+      }
+    })
   }
 
-  function checkEmptyInputs(userObj) {
-    let emptyInput = false
-    for(let invalidFields of userObj) {
-        if(invalidFields.value === '' && invalidFields.id !== 'login-button') {
-            invalidFields.style["border-color"] = "pink";
-            invalidFields.style["box-shadow"] = "0 0 0 0.1rem pink";
-            emptyInput = true;
-        }
+  function checkEmptyInputs(usernameField, passwordField) {
+    let emptyInput = false;
+
+    if(usernameField.value === '') {
+      usernameField.style["border-color"] = "pink";
+      usernameField.style["box-shadow"] = "0 0 0 0.1rem pink";
+      emptyInput = true;
     }
+    if(passwordField.value === '') {
+      passwordField.style["border-color"] = "pink";
+      passwordField.style["box-shadow"] = "0 0 0 0.1rem pink";
+      emptyInput = true;
+    }
+
     return emptyInput;
   }
 
@@ -189,12 +200,17 @@
   }
 
   function validateLoginForm() {
-    let user = document.forms["login-form"];
+    let usernameField = document.getElementById('login-username');
+    let passwordField = document.getElementById('login-password');
+    let user = {
+      username: usernameField.value,
+      password: passwordField.value
+    }
 
-    let emptyFieldExists = checkEmptyInputs(user);
+    let emptyFieldExists = checkEmptyInputs(usernameField, passwordField);
 
     if(!emptyFieldExists) {
-        redirectToWorkspace();
+        submitForm(user);
     }
   }
 </script>
