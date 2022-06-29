@@ -1,10 +1,12 @@
 const bcrypt = require('bcrypt');
 const User = require('../models/User.js');
 
+// For accessing the login page
 const viewLoginPage = (req, res) => {
   res.render('index');
 }
 
+// For logging in users
 const loginUser = async (req, res) => {
   // Get credentials of logging in user
   const {username, password} = req.body;
@@ -50,7 +52,7 @@ const loginUser = async (req, res) => {
   }
 }
 
-
+// For logging out users
 const logoutUser = (req, res) => {
   // Delete the session of the user
   req.session.destroy((err) => {
