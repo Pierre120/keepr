@@ -16,6 +16,7 @@ const loginUser = async (req, res) => {
   // Checks if user exists
   if(!user) {
     // Sends the alert to user
+    console.log("User doesn't exists.");
     return sendAlert(res);
   }
 
@@ -23,10 +24,12 @@ const loginUser = async (req, res) => {
   const isMatch = await bcrypt.compare(password, user.password);
   if(!isMatch) {
     // Sends the alert to user
+    console.log('Incorrect password.');
     return sendAlert(res);
   }
 
   // Authenticate and add session
+  console.log('Authenticated and Logged in with new Session.');
   req.session.isAuth = true;
   res.send({ isErr: 0, content: '/app' }); // redirect to the home page
 }
@@ -53,6 +56,7 @@ const logoutUser = (req, res) => {
   // Delete the session of the user
   req.session.destroy((err) => {
     if(err) { return console.log(err); }
+    console.log('User logged out and session is terminated.');
     res.redirect('/');
   });
 }
