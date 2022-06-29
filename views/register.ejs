@@ -1,76 +1,76 @@
 <div class="center">
-    <img src="img/register_logo.png" class="pb-2"/>
-    <h1>REGISTER</h1>
-    <div id="alert-placeholder" class="m-0 p-0"></div>
-    <form name="reg-form">
-        <div class="text-field">
-            <input type="text" id="reg-name" onclick="resetInputBorder('reg-name')" required>
-            <span></span>
-            <label>Name</label>
-        </div>
-        <div class="text-field">
-            <input type="text" id="reg-display-name" onclick="resetInputBorder('reg-display-name')" required>
-            <span></span>
-            <label>Display Name</label>
-        </div>
-        <div class="text-field">
-            <input type="password" id="reg-password" onclick="resetInputBorder('reg-password')" required>
-            <span></span>
-            <label>Password</label>
-        </div>
-        <%- include('partials/btn-register.ejs') %>
-    </form>
+  <img src="img/register_logo.png" class="pb-2"/>
+  <h1>REGISTER</h1>
+  <div id="alert-placeholder" class="m-0 p-0"></div>
+  <form name="reg-form">
+    <div class="text-field">
+      <input type="text" id="reg-name" onclick="resetInputBorder('reg-name')" required>
+      <span></span>
+      <label>Name</label>
+    </div>
+    <div class="text-field">
+      <input type="text" id="reg-display-name" onclick="resetInputBorder('reg-display-name')" required>
+      <span></span>
+      <label>Display Name</label>
+    </div>
+    <div class="text-field">
+      <input type="password" id="reg-password" onclick="resetInputBorder('reg-password')" required>
+      <span></span>
+      <label>Password</label>
+    </div>
+    <%- include('partials/btn-register.ejs') %>
+  </form>
 </div>
 
 <script>
-    function redirectToLogin() {
-        window.location.assign('/');
+  function redirectToLogin() {
+    window.location.assign('/');
+  }
+
+  function checkEmptyInputs() {
+    let emptyInput = false;
+    if(document.getElementById('reg-name').value === ''){
+      document.getElementsByTagName("label")[0].style.color = "pink";
+      document.getElementsByClassName('text-field')[0].style["border-bottom"] = "1px solid pink";
+      emptyInput = true;
     }
-
-    function checkEmptyInputs() {
-        let emptyInput = false;
-        if(document.getElementById('reg-name').value === ''){
-            document.getElementsByTagName("label")[0].style.color = "pink";
-            document.getElementsByClassName('text-field')[0].style["border-bottom"] = "1px solid pink";
-            emptyInput = true;
-        }
-        if(document.getElementById('reg-display-name').value === ''){
-            document.getElementsByTagName("label")[1].style.color = "pink";
-            document.getElementsByClassName('text-field')[1].style["border-bottom"] = "1px solid pink";
-            emptyInput = true;
-        }
-        if(document.getElementById('reg-password').value === ''){
-            document.getElementsByTagName("label")[2].style.color = "pink";
-            document.getElementsByClassName('text-field')[2].style["border-bottom"] = "1px solid pink";
-            emptyInput = true;
-        }
-        return emptyInput;
+    if(document.getElementById('reg-display-name').value === ''){
+      document.getElementsByTagName("label")[1].style.color = "pink";
+      document.getElementsByClassName('text-field')[1].style["border-bottom"] = "1px solid pink";
+      emptyInput = true;
     }
-
-    function resetInputBorder(id) {
-        let field = document.forms["reg-form"][id];
-        document.getElementsByTagName("label")[0].style.color = "dark-purple";
-        document.getElementsByTagName("label")[1].style.color = "dark-purple";
-        document.getElementsByTagName("label")[2].style.color = "dark-purple";
-        field.style["border-bottom"] = "1px solid #C4C4C4";
+    if(document.getElementById('reg-password').value === ''){
+      document.getElementsByTagName("label")[2].style.color = "pink";
+      document.getElementsByClassName('text-field')[2].style["border-bottom"] = "1px solid pink";
+      emptyInput = true;
     }
+    return emptyInput;
+  }
 
-    function validateRegForm() {
-        let emptyFieldExists = checkEmptyInputs();
+  function resetInputBorder(id) {
+    let field = document.forms["reg-form"][id];
+    document.getElementsByTagName("label")[0].style.color = "dark-purple";
+    document.getElementsByTagName("label")[1].style.color = "dark-purple";
+    document.getElementsByTagName("label")[2].style.color = "dark-purple";
+    field.style["border-bottom"] = "1px solid #C4C4C4";
+  }
 
-        if(!emptyFieldExists) {
-            let newUser = {
-                username: $('#reg-name').val(),
-                displayName: $('#reg-display-name').val(),
-                password: $('#reg-password').val()
-            };
-            console.log(newUser)
+  function validateRegForm() {
+    let emptyFieldExists = checkEmptyInputs();
 
-            $.post('/register', newUser, function(result) {
-                console.log(result)
-                if(result === true) redirectToLogin();
-                else if(result !== '') $('#alert-placeholder').append(result);
-            })
-        }
-    }
+    if(!emptyFieldExists) {
+      let newUser = {
+        username: $('#reg-name').val(),
+        displayName: $('#reg-display-name').val(),
+        password: $('#reg-password').val()
+      };
+      console.log(newUser)
+
+      $.post('/register', newUser, function(result) {
+        console.log(result)
+        if(result === true) redirectToLogin();
+        else if(result !== '') $('#alert-placeholder').append(result);
+      })
+  }
+  }
 </script>
