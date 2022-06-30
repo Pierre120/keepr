@@ -27,6 +27,7 @@
             <label for="tmp" class="col-form-label"></label>
             <div class="invalid-feedback"></div>
           </div>
+          <input type="hidden" id="owner" name="owner">
         </form>
       </div>
       <div class="modal-footer">
@@ -165,6 +166,9 @@
 
     // Get the edit type
     let type = button.getAttribute('data-bs-edit-type');
+    // Get the owner of the current edit (can be an item or a user/collaborator)
+    let owner = button.getAttribute('data-bs-edit-owner');
+    $('#owner').val(owner); // update hidden input for owner
 
     // Modify displayed form
     switch(type) {
