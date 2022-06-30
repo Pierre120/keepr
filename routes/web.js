@@ -151,7 +151,7 @@ router.get('/app', authMW.isLoggedIn, (req, res) => {
   });
 }); // App/Home page
 
-router.post('/edit-password', (req, res) => {
+router.post('/edit-assigneditems', (req, res) => {
   console.log(req.body.username);
   console.log(req.body.displayName);
   console.log(req.body.owner)

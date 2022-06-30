@@ -21,7 +21,8 @@
             <!-- For Collaborator edit assigned items-->
             <ul class="list-group">
               <li class="list-group-item" id="liTmp">
-                <input class="form-check-input me-1" type="checkbox" aria-label="..." name="" value="" >
+                <input class="form-check-input me-1" type="checkbox" aria-label="..." name="None" value="None">
+                <span>None</span>
               </li>
             </ul>
             <label for="tmp" class="col-form-label"></label>
@@ -43,7 +44,9 @@
 
 <script>
   const inputTmp = $('#inputTmp').clone();
-  let isInit = false;
+  const optionTmp = $('#optionTmp').clone();
+  const liTmp = $('#liTmp').clone();
+  // let isInit = false;
   let editModal = document.getElementById('editModal');
   editModal.addEventListener('show.bs.modal', function (event) {
     // Get the button that triggered event
@@ -183,11 +186,11 @@
         $('#editForm').append(inputTmp);
 
         // Intialize  div for Item Name input
-        $('#inputTmp textarea').remove();
-        $('#inputTmp select').remove();
-        $('#inputTmp ul').remove();
-        $('#inputTmp input').attr({ name: 'itemName', placeholder: 'Item Name' });
-        $('#inputTmp label').attr({ for: 'itemName' }).text('Item Name');
+        $('#inputTmp > textarea').remove();
+        $('#inputTmp > select').remove();
+        $('#inputTmp > ul').remove();
+        $('#inputTmp > input').attr({ name: 'itemName', placeholder: 'Item Name' });
+        $('#inputTmp > label').attr({ for: 'itemName' }).text('Item Name');
         $('#inputTmp div.invalid-feedback').text('Please provide a valid item name.');
 
         // update hidden input for property
@@ -203,11 +206,11 @@
         $('#editForm').append(inputTmp);
 
         // Intialize div for Item Product Code input
-        $('#inputTmp textarea').remove();
-        $('#inputTmp select').remove();
-        $('#inputTmp ul').remove();
-        $('#inputTmp input').attr({ name: 'pcode', placeholder: 'Item Code' });
-        $('#inputTmp label').attr({ for: 'pcode' }).text('Item Code');
+        $('#inputTmp > textarea').remove();
+        $('#inputTmp > select').remove();
+        $('#inputTmp > ul').remove();
+        $('#inputTmp > input').attr({ name: 'pcode', placeholder: 'Item Code' });
+        $('#inputTmp > label').attr({ for: 'pcode' }).text('Item Code');
         $('#inputTmp div.invalid-feedback').text('Please provide a valid item code.');
 
         // update hidden input for property
@@ -223,11 +226,11 @@
         $('#editForm').append(inputTmp);
 
         // Intialize div for Item Qty/Unit input
-        $('#inputTmp textarea').remove();
-        $('#inputTmp select').remove();
-        $('#inputTmp ul').remove();
-        $('#inputTmp input').attr({ name: 'qtyUnit', placeholder: 'Item Qty/Unit' });
-        $('#inputTmp label').attr({ for: 'qtyUnit' }).text('Item Qty/Unit');
+        $('#inputTmp > textarea').remove();
+        $('#inputTmp > select').remove();
+        $('#inputTmp > ul').remove();
+        $('#inputTmp > input').attr({ name: 'qtyUnit', placeholder: 'Item Qty/Unit' });
+        $('#inputTmp > label').attr({ for: 'qtyUnit' }).text('Item Qty/Unit');
         $('#inputTmp div.invalid-feedback').text('Please provide a valid item qty/unit.');
 
         // update hidden input for property
@@ -243,11 +246,11 @@
         $('#editForm').append(inputTmp);
         
         // Intialize div for Item Description input
-        $('#inputTmp input').remove();
-        $('#inputTmp select').remove();
-        $('#inputTmp ul').remove();
-        $('#inputTmp textarea').attr({ name: 'description', placeholder: 'Item Description' });
-        $('#inputTmp label').attr({ for: 'description' }).text('Item Description');
+        $('#inputTmp > input').remove();
+        $('#inputTmp > select').remove();
+        $('#inputTmp > ul').remove();
+        $('#inputTmp > textarea').attr({ name: 'description', placeholder: 'Item Description' });
+        $('#inputTmp > label').attr({ for: 'description' }).text('Item Description');
         $('#inputTmp div.invalid-feedback').text('Please provide a valid item description.');
 
         // update hidden input for property
@@ -263,11 +266,11 @@
         $('#editForm').append(inputTmp);
 
         // Intialize div for Item's Assign Collaborator input
-        $('#inputTmp textarea').remove();
-        $('#inputTmp input').remove();
-        $('#inputTmp ul').remove();
-        $('#inputTmp select').attr({ name: 'assignedCollabs', placeholder: 'Assign a Collaborator' });
-        $('#inputTmp label').attr({ for: 'assignedCollabs' }).text('Assign a Collaborator');
+        $('#inputTmp > textarea').remove();
+        $('#inputTmp > input').remove();
+        $('#inputTmp > ul').remove();
+        $('#inputTmp > select').attr({ name: 'assignedCollabs', placeholder: 'Assign a Collaborator' });
+        $('#inputTmp > label').attr({ for: 'assignedCollabs' }).text('Assign a Collaborator');
         $('#inputTmp div.invalid-feedback').text('Please provide a valid username.');
 
         // update hidden input for property
@@ -281,18 +284,18 @@
           // list of collaborator.
           for(let dispName of data) {
             // Create an option
-            let option = $('#optionTmp').clone()
+            let option = $(optionTmp).clone()
                           .attr({ value: dispName }).removeAttr('id')
                           .text(dispName);
             // Append to the select element
             $('#input5 select').append(option);
           }
-
           $('#optionTmp').remove(); // Remove option template
-          // Close buttons clear form functionality
-          $('#headerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
-          $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
-        })
+        });
+
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
+        $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
         break;
       case 'username': // Show the username input only
         $('#editForm').attr({ action: '/edit-username'});// TODO: change the path
@@ -300,11 +303,11 @@
         $('#editForm').append(inputTmp);
 
         // Intialize div for Username input
-        $('#inputTmp textarea').remove();
-        $('#inputTmp select').remove();
-        $('#inputTmp ul').remove();
-        $('#inputTmp input').attr({ name: 'username', placeholder: 'Username' });
-        $('#inputTmp label').attr({ for: 'username' }).text('Username');
+        $('#inputTmp > textarea').remove();
+        $('#inputTmp > select').remove();
+        $('#inputTmp > ul').remove();
+        $('#inputTmp > input').attr({ name: 'username', placeholder: 'Username' });
+        $('#inputTmp > label').attr({ for: 'username' }).text('Username');
         $('#inputTmp div.invalid-feedback').text('Please provide a valid username.');
 
         // update hidden input for property
@@ -320,11 +323,11 @@
         $('#editForm').append(inputTmp);
         
         // Intialize div for Display Name input
-        $('#inputTmp textarea').remove();
-        $('#inputTmp select').remove();
-        $('#inputTmp ul').remove();
-        $('#inputTmp input').attr({ name: 'displayName', placeholder: 'Display Name' });
-        $('#inputTmp label').attr({ for: 'displayName' }).text('Display Name');
+        $('#inputTmp > textarea').remove();
+        $('#inputTmp > select').remove();
+        $('#inputTmp > ul').remove();
+        $('#inputTmp > input').attr({ name: 'displayName', placeholder: 'Display Name' });
+        $('#inputTmp > label').attr({ for: 'displayName' }).text('Display Name');
         $('#inputTmp div.invalid-feedback').text('Please provide a valid display name.');
 
         // update hidden input for property
@@ -340,11 +343,11 @@
         $('#editForm').append(inputTmp);
         
         // Intialize div Password input
-        $('#inputTmp textarea').remove();
-        $('#inputTmp select').remove();
-        $('#inputTmp ul').remove();
-        $('#inputTmp input').attr({ name: 'password', placeholder: 'Password', type: 'password' });
-        $('#inputTmp label').attr({ for: 'password' }).text('Password');
+        $('#inputTmp > textarea').remove();
+        $('#inputTmp > select').remove();
+        $('#inputTmp > ul').remove();
+        $('#inputTmp > input').attr({ name: 'password', placeholder: 'Password', type: 'password' });
+        $('#inputTmp > label').attr({ for: 'password' }).text('Password');
         $('#inputTmp div.invalid-feedback').text('Please provide a valid password.');
 
         // update hidden input for property
@@ -360,11 +363,11 @@
         $('#editForm').append(inputTmp);
 
         // Intialize div Collaborator's Assigned Item input
-        $('#inputTmp textarea').remove();
-        $('#inputTmp input').remove();
-        $('#inputTmp select').remove();
-        $('#inputTmp ul').attr({ name: 'collaborator', placeholder: 'Collaborator' });
-        $('#inputTmp label').attr({ for: 'collaborator' }).text('Collaborator');
+        $('#inputTmp > textarea').remove();
+        $('#inputTmp > input').remove();
+        $('#inputTmp > select').remove();
+        $('#inputTmp > label').remove();
+        $('#inputTmp > ul').attr({ name: 'collaborator', placeholder: 'Collaborator' });
         $('#inputTmp div.invalid-feedback').text('Please provide a valid username.');
 
         // update hidden input for property
@@ -376,21 +379,32 @@
           let i = 1;
           // NOTE: may edit as necessary
           // `data` is an array of `itemName` of current the current workspace
-          for(let item of data) {
+          console.log(data);
+          if(data.length === 0) {
             // Create li element for checkbox item
-            let checkbox = $('#liTmp').clone().attr({ id: 'item' + i });
+            let checkbox = $(liTmp).clone().attr({ id: 'item0'});
             // Append to the ul element
             $('#input1 ul').append(checkbox);
             // Edit the info of the checkbox item
-            $('li#item' + i + ' input').attr({ name: item, value: item });
+            $('#item0 input').attr({ name: 'None', value: 'None' });
+            $('#item0 span').text('None');
+          }
+          for(let item of data) {
+            // Create li element for checkbox item
+            let checkbox = $(liTmp).clone().attr({ id: 'item' + i });
+            // Append to the ul element
+            $('#input1 ul').append(checkbox);
+            // Edit the info of the checkbox item
+            $('#item' + i + ' input').attr({ name: item, value: item });
+            $('#item' + i + ' span').text(item);
             ++i; // increment count
           }
-
           $('#liTmp').remove(); // Remove checkbox list item template
-          // Close buttons clear form functionality
-          $('#headerEditCloseBtn').attr({ onclick: "clearAndReset('ul.list-group > li',1)" });
-          $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('ul.list-group > li',1)" });
         });
+
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: "clearAndReset('ul.list-group > li',1)" });
+        $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('ul.list-group > li',1)" });
         break;
     }
   });
