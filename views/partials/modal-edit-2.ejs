@@ -1,0 +1,255 @@
+<div class="modal fade montserrat" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="editForm" class="needs-validation" method="post" action="" novalidate>
+          <div class="mb-3 form-floating" id="inputTmp">
+            <!-- For description -->
+            <textarea class="form-control" name="tmp" placeholder="Tmp" required></textarea>
+            <!-- For text input or password -->
+            <input type="text" class="form-control" name="tmp" placeholder="Tmp" required>
+            <!-- For Item add collaborator assigned -->
+            <select class="form-select selection-input" name="tmp" aria-label="Tmp" required>
+              <option selected disabled value=""></option>
+              <option value="" id="optionTmp"></option>
+            </select>
+            <!-- For Collaborator edit assigned items-->
+            <ul class="list-group">
+              <li class="list-group-item" id="liTmp">
+                <input class="form-check-input me-1" type="checkbox" aria-label="..." name="" value="" >
+              </li>
+            </ul>
+            <label for="tmp" class="col-form-label"></label>
+            <div class="invalid-feedback"></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-secondary" form="editForm">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  let isInit = false;
+  let editModal = document.getElementById('editModal');
+  editModal.addEventListener('show.bs.modal', function (event) {
+    // Get the button that triggered event
+    let button = event.relatedTarget;
+    
+    if(!isInit) {
+      // Get edit category
+      let category = button.getAttribute('data-bs-edit-category');
+
+      // Start initializing forms
+      switch(category) {
+        case 'item':
+          $('#editForm').attr({ action: '/edit-item'});// TODO: change the path
+          // Create the div inputs
+          let itemNameInput = $('#inputTmp').clone().attr({id:'input1'});
+          let itemPCodeInput = $('#inputTmp').clone().attr({id:'input2'});
+          let itemQtyUnitInput = $('#inputTmp').clone().attr({id:'input3'});
+          let itemDescInput = $('#inputTmp').clone().attr({id:'input4'});
+          let itemCollabInput = $('#inputTmp').clone().attr({id:'input5'});
+
+          // Append new input divs
+          $('#editForm').append(itemNameInput,itemPCodeInput,itemQtyUnitInput,itemDescInput,itemCollabInput);
+          $('#inputTmp').remove(); // remove the template
+
+          // Intialize `#input1` div for Item Name input
+          $('#input1 textarea').remove();
+          $('#input1 select').remove();
+          $('#input1 ul').remove();
+          $('#input1 input').attr({ name: 'itemName', placeholder: 'Item Name' });
+          $('#input1 label').attr({ for: 'itemName' }).text('Item Name');
+          $('#input1 div.invalid-feedback').text('Please provide a valid item name.');
+
+          // Intialize `#input2` div for Item Product Code input
+          $('#input2 textarea').remove();
+          $('#input2 select').remove();
+          $('#input2 ul').remove();
+          $('#input2 input').attr({ name: 'pcode', placeholder: 'Item Code' });
+          $('#input2 label').attr({ for: 'pcode' }).text('Item Code');
+          $('#input2 div.invalid-feedback').text('Please provide a valid item code.');
+
+          // Intialize `#input3` div for Item Qty/Unit input
+          $('#input3 textarea').remove();
+          $('#input3 select').remove();
+          $('#input3 ul').remove();
+          $('#input3 input').attr({ name: 'qtyUnit', placeholder: 'Item Qty/Unit' });
+          $('#input3 label').attr({ for: 'qtyUnit' }).text('Item Qty/Unit');
+          $('#input3 div.invalid-feedback').text('Please provide a valid item qty/unit.');
+
+          // Intialize `#input4` div for Item Description input
+          $('#input3 input').remove();
+          $('#input3 select').remove();
+          $('#input3 ul').remove();
+          $('#input3 textarea').attr({ name: 'description', placeholder: 'Item Description' });
+          $('#input3 label').attr({ for: 'description' }).text('Item Description');
+          $('#input3 div.invalid-feedback').text('Please provide a valid item description.');
+
+          // Intialize `#input5` div for Item's Assign Collaborator input
+          $('#input3 textarea').remove();
+          $('#input3 input').remove();
+          $('#input3 ul').remove();
+          $('#input3 select').attr({ name: 'assignedCollabs', placeholder: 'Assign a Collaborator' });
+          $('#input3 label').attr({ for: 'assignedCollabs' }).text('Assign a Collaborator');
+          $('#input3 div.invalid-feedback').text('Please provide a valid username.');
+          break;
+        case 'account':
+          $('#editForm').attr({ action: '/edit-user'});// TODO: change the path
+          // Create div inputs
+          let usernameInput = $('#inputTmp').clone().attr({id:'input1'});
+          let dispNameInput = $('#inputTmp').clone().attr({id:'input2'});
+          let passwordInput = $('#inputTmp').clone().attr({id:'input3'});
+
+          // Append new input divs
+          $('#editForm').append(usernameInput,dispNameInput,passwordInput);
+          $('#inputTmp').remove(); // remove the template
+
+          // Intialize `#input1` div for Username input
+          $('#input1 textarea').remove();
+          $('#input1 select').remove();
+          $('#input1 ul').remove();
+          $('#input1 input').attr({ name: 'username', placeholder: 'Username' });
+          $('#input1 label').attr({ for: 'username' }).text('Username');
+          $('#input1 div.invalid-feedback').text('Please provide a valid username.');
+
+          // Intialize `#input2` div for Display Name input
+          $('#input2 textarea').remove();
+          $('#input2 select').remove();
+          $('#input2 ul').remove();
+          $('#input2 input').attr({ name: 'displayName', placeholder: 'Display Name' });
+          $('#input2 label').attr({ for: 'displayName' }).text('Display Name');
+          $('#input2 div.invalid-feedback').text('Please provide a valid display name.');
+
+          // Intialize `#input3` div Password input
+          $('#input3 textarea').remove();
+          $('#input3 select').remove();
+          $('#input3 ul').remove();
+          $('#input3 input').attr({ name: 'password', placeholder: 'Password', type: 'password' });
+          $('#input3 label').attr({ for: 'password' }).text('Password');
+          $('#input3 div.invalid-feedback').text('Please provide a valid password.');
+          break;
+        case 'collaboratorItem':
+          $('#editForm').attr({ action: '/edit-collabs'});// TODO: change the path
+          // Create div input
+          let collabInput = $('#inputTmp').clone().attr({id:'input1'});
+
+          // Append new input divs
+          $('#editForm').append(collabInput);
+          $('#inputTmp').remove(); // remove the template
+
+          // Intialize `#input1` div Collaborator's Assigned Item input
+          $('#input1 textarea').remove();
+          $('#input1 input').remove();
+          $('#input1 select').remove();
+          $('#input1 ul').attr({ name: 'collaborator', placeholder: 'Collaborator' });
+          $('#input1 label').attr({ for: 'collaborator' }).text('Collaborator');
+          $('#input1 div.invalid-feedback').text('Please provide a valid username.');
+          break;
+      }
+    }
+
+    // Get the edit type
+    let type = button.getAttribute('data-bs-edit-category');
+
+    // Modify displayed form
+    switch(type) {
+      case 'itemName': // Show the itemName input
+        $('#input1').show();
+        $('#input2').hide();
+        $('#input3').hide();
+        $('#input4').hide();
+        $('#input5').hide();
+        break;
+      case 'pcode': // Show the pcode input
+        $('#input1').hide();
+        $('#input2').show();
+        $('#input3').hide();
+        $('#input4').hide();
+        $('#input5').hide();
+        break;
+      case 'qtyUnit':  // Show the qtyUnit input
+        $('#input1').hide();
+        $('#input2').hide();
+        $('#input3').show();
+        $('#input4').hide();
+        $('#input5').hide();
+        break; 
+      case 'description': // Show the description input
+        $('#input1').hide();
+        $('#input2').hide();
+        $('#input3').hide();
+        $('#input4').show();
+        $('#input5').hide();
+        break;
+      case 'assignedCollabs': // Show the assignedCollabs input
+        $('#input1').hide();
+        $('#input2').hide();
+        $('#input3').hide();
+        $('#input4').hide();
+        $('#input5').show();
+        // NOTE: change path if necessary
+        // TODO: create a GET request for getting the array of available collaborators
+        $.get(window.location.href + '/getCollabs', function(data) {
+          // NOTE: may edit as necessary
+          // `data` is an array of `displayNames` of current item's
+          // list of collaborator.
+          for(let dispName of data) {
+            // Create an option
+            let option = $('#optionTmp').clone()
+                          .attr({ value: dispName }).removeAttr('id')
+                          .text(dispName);
+            // Append to the select element
+            $('#input5 select').append(option);
+          }
+
+          $('#optionTmp').remove(); // Remove option template
+        })
+        break;
+      case 'username': // Show the username input
+        $('#input1').show();
+        $('#input2').hide();
+        $('#input3').hide();
+        break;
+      case 'displayName': // Show the displayName input
+        $('#input1').hide();
+        $('#input2').show();
+        $('#input3').hide();
+        break;
+      case 'password': // Show the password input
+        $('#input1').hide();
+        $('#input2').hide();
+        $('#input3').show();
+        break;
+      case 'collaboratorItems': // Show the collaboratorItems input
+        // NOTE: change path if necessary
+        // TODO: create a GET request for getting the array of items in the workspace
+        $.get(window.location.href + '/getItems', function(data) {
+          let i = 1;
+          // NOTE: may edit as necessary
+          // `data` is an array of `itemName` of current the current workspace
+          for(let item of data) {
+            // Create li element for checkbox item
+            let checkbox = $('#liTmp').clone().attr({ id: 'item' + i });
+            // Append to the ul element
+            $('#input1 ul').append(checkbox);
+            // Edit the info of the checkbox item
+            $('li#item' + i + ' input').attr({ name: item, value: item });
+            ++i; // increment count
+          }
+
+          $('#liTmp').remove(); // Remove checkbox list item template
+        });
+        break;
+    }
+  });
+</script>
