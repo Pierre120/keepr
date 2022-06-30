@@ -1,7 +1,12 @@
 const User = require('../models/User.js');
 
-const viewAccountPage = (req, res) => {
+const viewAccountPage = async (req, res) => {
+  // retrieve user info to be viewed
+  const viewUser = await User.findOneByUsername(req.params.username);
+  // determine if the owner is viewing his/her account page
+  const isOwner = (req.session.user === viewUser._id) ? true : false;
 
+  
 }
 
 const updateUserInfo = (req, res) => {
