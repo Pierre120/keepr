@@ -22,6 +22,14 @@
     }
   }
 
+  function clearAndReset(selector, offset) {
+    clearForm();
+    $(selector).each(function (index) {
+      if(index < offset) return;
+      $this.remove();
+    });
+  }
+
 
   // Client-side validation
   (function () {

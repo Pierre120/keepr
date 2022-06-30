@@ -3,7 +3,8 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editModalLabel"></h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" id="headerEditCloseBtn"
+                data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form id="editForm" class="needs-validation" method="post" action="" novalidate>
@@ -13,7 +14,7 @@
             <!-- For text input or password -->
             <input type="text" class="form-control" name="tmp" placeholder="Tmp" required>
             <!-- For Item add collaborator assigned -->
-            <select class="form-select selection-input" name="tmp" aria-label="Tmp" required>
+            <select class="form-select selection-input" name="tmp" aria-label="Tmp" id="editSelect" required>
               <option selected disabled value=""></option>
               <option value="" id="optionTmp"></option>
             </select>
@@ -29,7 +30,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-gray" id="footerEditCloseBtn" 
+                data-bs-dismiss="modal">Close</button>
         <button type="submit" class="btn btn-secondary" form="editForm">Confirm</button>
       </div>
     </div>
@@ -172,6 +174,9 @@
         $('#input3').hide();
         $('#input4').hide();
         $('#input5').hide();
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'pcode': // Show the pcode input only
         $('#input1').hide();
@@ -179,6 +184,9 @@
         $('#input3').hide();
         $('#input4').hide();
         $('#input5').hide();
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'qtyUnit':  // Show the qtyUnit input only
         $('#input1').hide();
@@ -186,6 +194,9 @@
         $('#input3').show();
         $('#input4').hide();
         $('#input5').hide();
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break; 
       case 'description': // Show the description input only
         $('#input1').hide();
@@ -193,6 +204,9 @@
         $('#input3').hide();
         $('#input4').show();
         $('#input5').hide();
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'assignedCollabs': // Show the assignedCollabs input only
         $('#input1').hide();
@@ -215,23 +229,35 @@
             $('#input5 select').append(option);
           }
 
-          $('#optionTmp').remove(); // Hide option template for later use
+          $('#optionTmp').hide(); // Hide option template for later use
+          // Close buttons clear form functionality
+          $('#headerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
+          $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
         })
         break;
       case 'username': // Show the username input only
         $('#input1').show();
         $('#input2').hide();
         $('#input3').hide();
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'displayName': // Show the displayName input only
         $('#input1').hide();
         $('#input2').show();
         $('#input3').hide();
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'password': // Show the password input only
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').show();
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'collaboratorItems': // Show the collaboratorItems input only
         // NOTE: change path if necessary
@@ -251,6 +277,9 @@
           }
 
           $('#liTmp').hide(); // Hide checkbox list item template for later use
+          // Close buttons clear form functionality
+          $('#headerEditCloseBtn').attr({ onclick: "clearAndReset('ul.list-group > li',1)" });
+          $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('ul.list-group > li',1)" });
         });
         break;
     }
