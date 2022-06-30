@@ -173,6 +173,7 @@
     // Modify displayed form
     switch(type) {
       case 'itemName': // Show the itemName input only
+        $('#editModalLabel').text('Edit Item Name');
         $('#input1').show();
         $('#input2').hide();
         $('#input3').hide();
@@ -183,6 +184,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'pcode': // Show the pcode input only
+        $('#editModalLabel').text('Edit Item Code');
         $('#input1').hide();
         $('#input2').show();
         $('#input3').hide();
@@ -193,6 +195,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'qtyUnit':  // Show the qtyUnit input only
+        $('#editModalLabel').text('Edit Item Qty/Unit');
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').show();
@@ -203,6 +206,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break; 
       case 'description': // Show the description input only
+        $('#editModalLabel').text('Edit Item Description');
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').hide();
@@ -213,6 +217,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'assignedCollabs': // Show the assignedCollabs input only
+        $('#editModalLabel').text('Edit Item Collaborators');
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').hide();
@@ -240,6 +245,7 @@
         })
         break;
       case 'username': // Show the username input only
+        $('#editModalLabel').text('Edit Username');
         $('#input1').show();
         $('#input2').hide();
         $('#input3').hide();
@@ -248,6 +254,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'displayName': // Show the displayName input only
+        $('#editModalLabel').text('Edit Display Name');
         $('#input1').hide();
         $('#input2').show();
         $('#input3').hide();
@@ -256,6 +263,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'password': // Show the password input only
+        $('#editModalLabel').text('Edit Password');
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').show();
@@ -264,6 +272,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'collaboratorItems': // Show the collaboratorItems input only
+        $('#editModalLabel').text('Edit Assigned Items');
         // NOTE: change path if necessary
         // TODO: create a GET request for getting the array of items in the workspace
         $.get(window.location.href + '/getItems', function(data) {
