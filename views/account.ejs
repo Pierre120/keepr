@@ -25,7 +25,10 @@
             Username
             <% if(isOwner) { %>
               <%- include('partials/btn-edit-acct.ejs', {
-                editUserModalId: 'editAccountUsernameModal'}) 
+                  editOwner: user.username,
+                  editCategory: 'acccount',
+                  editType: 'username'
+                }) 
               %>
             <% } %>
           </h2>
@@ -42,7 +45,10 @@
             Display Name
             <% if(isOwner) { %>
               <%- include('partials/btn-edit-acct.ejs', {
-                editUserModalId: 'editAccountDisplayNameModal'})
+                  editOwner: user.username,
+                  editCategory: 'acccount',
+                  editType: 'displayName'
+                }) 
               %>
             <% } %>
           </h2>
@@ -58,8 +64,11 @@
             Password
             <% if(isOwner) { %>
               <%- include('partials/btn-edit-acct.ejs', {
-                editUserModalId: 'editAccountPasswordModal'}) 
-              %>
+                  editOwner: user.username,
+                  editCategory: 'acccount',
+                  editType: 'password'
+                }) 
+            %>
             <% } %>
           </h2>
           <p class="card-text card-text-first ">

@@ -156,8 +156,10 @@ router.get('/accounts/personal', (req, res) => {
   return res.render('account', {
     layout: './layouts/account-page',
     backLink: '/workspace/dashboard',
-    username: 'JuanDelaCruz_96',
-    displayName: 'St4rL0rd96',
+    user: {
+      username: 'JuanDelaCruz_96',
+      displayName: 'St4rL0rd96'
+    },
     editItemModalIds: editAcctModalIDs,
     index: 0,
     formSubmitPath: req.path,
@@ -165,7 +167,8 @@ router.get('/accounts/personal', (req, res) => {
     isAcct: true,
     isAssign: false,
     hasDeleteWorkspace: false,
-    deleteModalId: 'deleteAccountModal'
+    deleteModalId: 'deleteAccountModal',
+    isOwner: true
   });
 });
 
