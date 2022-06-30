@@ -14,9 +14,12 @@ const createNewUser = async (req, res) => {
 
   try {
     await newUser.save();
-    res.send(true); // Registered successfully
+    console.log('New user document created:');
+    console.log(newUser);
+    res.send({ bool: true, content: '/' }); // Registered successfully
   } catch(err) {
     console.log(err);
+    // Failed to register or create user document
     res.render('partials/alert', {
       type: 'warning',
       message: '<strong>Username</strong> and/or <strong>display name</strong> already exists!'
@@ -25,10 +28,11 @@ const createNewUser = async (req, res) => {
         console.log(err);
         res.send('');
       } else {
+        console.log('User already exists!');
         // there is an existing user with same username and/or display name
-        res.send(html);
+        res.send({ bool: false, content: html });
       }
-    }); // Failed to register
+    });
   }
 };
 
