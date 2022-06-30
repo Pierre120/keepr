@@ -23,11 +23,27 @@
   </div>
 </div>
 
+<%#
+  GUIDE FOR RETREVING FROM REQUEST BODY:
+    Add Workspace form req.body.~:
+      - workspace
+
+    Add Item form req.body.~:
+      - name
+      - code
+      - qtyUnit
+      - description
+    
+    Add Collaborator form req.body.~:
+      - username
+%>
 
 <script>
-  let isAppend = true;
+  let isInit = false;
   let addModal = document.getElementById('addModal');
   addModal.addEventListener('show.bs.modal', function (event) {
+    if(isInit) return;
+    console.log('Initialized add modal');
     // Get the button that triggered event
     let button = event.relatedTarget;
     // Get the type of add
@@ -55,10 +71,7 @@
         let input3 = $('#input1').clone().attr({id:'input3'});
         let input4 = $('#input1').clone().attr({id:'input4'});
         // Append div inputs to `#addForm` Form
-        if(isAppend) {
-          $('#addForm').append(input2,input3,input4);
-          isAppend = false;
-        }
+        $('#addForm').append(input2,input3,input4);
         // Modify input1 div `Item name`
         let input = $(input1).children()[0];
         let label = $(input1).children()[1];
@@ -105,20 +118,7 @@
         $(collaboratorFeedback).text('Please provide a valid username.');
         break;
     }
+    isInit = true;
   });
-  /*
-    GUIDE FOR RETREVING FROM REQUEST BODY:
-      Add Workspace form req.body.~:
-        - workspace
-
-      Add Item form req.body.~:
-        - name
-        - code
-        - qtyUnit
-        - description
-      
-      Add Collaborator form req.body.~:
-        - username
-  */
 </script>
 <% } %>
