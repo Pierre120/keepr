@@ -162,7 +162,7 @@
     }
 
     // Get the edit type
-    let type = button.getAttribute('data-bs-edit-category');
+    let type = button.getAttribute('data-bs-edit-type');
 
     // Modify displayed form
     switch(type) {
@@ -215,7 +215,7 @@
             $('#input5 select').append(option);
           }
 
-          $('#optionTmp').remove(); // Remove option template
+          $('#optionTmp').remove(); // Hide option template for later use
         })
         break;
       case 'username': // Show the username input only
@@ -250,7 +250,7 @@
             ++i; // increment count
           }
 
-          $('#liTmp').remove(); // Remove checkbox list item template
+          $('#liTmp').hide(); // Hide checkbox list item template for later use
         });
         break;
     }
