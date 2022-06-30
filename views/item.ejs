@@ -10,7 +10,11 @@
     <h1 class="d-flex mt-3 p-1 border-bottom border-3 oswald display-4 " id="page-heading">
       <div class="d-inline-block">
         <%- item.itemName %>
-        <%- include('partials/btn-edit-item.ejs') %>
+        <%- include('partials/btn-edit-item.ejs',  {
+            editOwner: item.itemName,
+            editType: 'itemName'
+          }) 
+        %>
       </div>
       <div class="d-inline-block ms-auto">
         <%- include('partials/btn-delete-item.ejs') %>
@@ -23,7 +27,11 @@
           <div class="card keepr-card border-darkpurple h-100">
             <div class="card-body">
               <h4 class="card-title fw-bold">Product Code
-                <%- include('partials/btn-edit-item.ejs') %>
+                <%- include('partials/btn-edit-item.ejs',  {
+                    editOwner: item.itemName,
+                    editType: 'pcode'
+                  }) 
+                %>
               </h4>
               <hr class="text-darkpurple">
               <p class="card-text card-text-first fs-4 fst-italic mt-5"><%- item.productCode %></p>
@@ -35,7 +43,11 @@
           <div class="card keepr-card border-teal h-100">
             <div class="card-body">
               <h4 class="card-title fw-bold">Qty/Unit
-                <%- include('partials/btn-edit-item.ejs') %>
+                <%- include('partials/btn-edit-item.ejs',  {
+                    editOwner: item.itemName,
+                    editType: 'qtyUnit'
+                  }) 
+                %>
               </h4>
               <hr class="text-teal">
               <p class="card-text fs-4 fst-italic mt-5"><%- item.qty %></p>
@@ -50,7 +62,11 @@
           <div class="card keepr-card desc-card">
             <div class="card-body">
               <h4 class="card-title fw-bold">Description
-                <%- include('partials/btn-edit-item.ejs') %>
+                <%- include('partials/btn-edit-item.ejs',  {
+                    editOwner: item.itemName,
+                    editType: 'description'
+                  }) 
+                %>
               </h4>
               <hr>
               <p class="card-text card-text-first fs-4 fst-italic mt-5">
@@ -69,7 +85,11 @@
           <div class="card keepr-card border-pink h-100">
             <div class="card-body">
               <h4 class="card-title fw-bold">Assigned to
-                <%- include('partials/btn-edit-item.ejs') %>
+                <%- include('partials/btn-edit-item.ejs',  {
+                    editOwner: item.itemName,
+                    editType: 'assignedCollabs'
+                  }) 
+                %>
               </h4>
               <hr class="text-pink">
               <p class="card-text fs-4 fst-italic mt-5">
