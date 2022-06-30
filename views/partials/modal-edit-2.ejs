@@ -156,6 +156,9 @@
           $('#input1 div.invalid-feedback').text('Please provide a valid username.');
           break;
       }
+
+      // Initlialized the modal
+      isInit = true;
     }
 
     // Get the edit type
@@ -163,35 +166,35 @@
 
     // Modify displayed form
     switch(type) {
-      case 'itemName': // Show the itemName input
+      case 'itemName': // Show the itemName input only
         $('#input1').show();
         $('#input2').hide();
         $('#input3').hide();
         $('#input4').hide();
         $('#input5').hide();
         break;
-      case 'pcode': // Show the pcode input
+      case 'pcode': // Show the pcode input only
         $('#input1').hide();
         $('#input2').show();
         $('#input3').hide();
         $('#input4').hide();
         $('#input5').hide();
         break;
-      case 'qtyUnit':  // Show the qtyUnit input
+      case 'qtyUnit':  // Show the qtyUnit input only
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').show();
         $('#input4').hide();
         $('#input5').hide();
         break; 
-      case 'description': // Show the description input
+      case 'description': // Show the description input only
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').hide();
         $('#input4').show();
         $('#input5').hide();
         break;
-      case 'assignedCollabs': // Show the assignedCollabs input
+      case 'assignedCollabs': // Show the assignedCollabs input only
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').hide();
@@ -215,22 +218,22 @@
           $('#optionTmp').remove(); // Remove option template
         })
         break;
-      case 'username': // Show the username input
+      case 'username': // Show the username input only
         $('#input1').show();
         $('#input2').hide();
         $('#input3').hide();
         break;
-      case 'displayName': // Show the displayName input
+      case 'displayName': // Show the displayName input only
         $('#input1').hide();
         $('#input2').show();
         $('#input3').hide();
         break;
-      case 'password': // Show the password input
+      case 'password': // Show the password input only
         $('#input1').hide();
         $('#input2').hide();
         $('#input3').show();
         break;
-      case 'collaboratorItems': // Show the collaboratorItems input
+      case 'collaboratorItems': // Show the collaboratorItems input only
         // NOTE: change path if necessary
         // TODO: create a GET request for getting the array of items in the workspace
         $.get(window.location.href + '/getItems', function(data) {
