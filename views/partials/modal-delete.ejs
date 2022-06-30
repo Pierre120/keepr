@@ -4,25 +4,29 @@
 			id: 'deleteWorkspaceModal',
 			title: 'Delete Workspace',
 			toDelete: 'this workspace',
-			formId: 'deleteWorkspaceForm'
+			formId: 'deleteWorkspaceForm',
+			postPath: '/workspace/delete'
 		},
 		{
 			id: 'deleteHistoryModal',
 			title: 'Delete History',
 			toDelete: 'this workspace\'s history',
-			formId: 'deleteHistoryForm'
+			formId: 'deleteHistoryForm',
+			postPath: '/history/delete'
 		},
 		{
 			id: 'deleteItemModal',
 			title: 'Delete Item',
 			toDelete: 'this item',
-			formId: 'deleteItemForm'
+			formId: 'deleteItemForm',
+			submitPath: '/item/delete'
 		},
 		{
 			id: 'deleteAccountModal',
 			title: 'Delete Account',
 			toDelete: 'your Account',
-			formId: 'deleteAccountForm'
+			formId: 'deleteAccountForm',
+			submitPath: '/account/delete'
 		}
 	];
 	
@@ -70,7 +74,7 @@
 					<span class="text-danger">(This action can't be undone.)</span>
 				</p>
 			</div>
-			<form id="<%= deleteModal.formId %>" method="post" action="<%= formSubmitPath %>" novalidate></form>
+			<form id="<%= deleteModal.formId %>" method="post" action="<%= deleteModal.submitPath %>" novalidate></form>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-gray" data-bs-dismiss="modal">Cancel</button>
 				<button type="submit" class="btn btn-danger" form="<%= deleteModal.formId %>">Confirm</button>
