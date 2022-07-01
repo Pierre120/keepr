@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%- displayName %></title>
+  <title><%- user.displayName %></title>
 
   <link rel="stylesheet" href="../css/style.css">
 
@@ -20,10 +20,12 @@
     <%- body %>
   </div>
 
-  <%- include('../partials/modal-edit.ejs') %>
-  <%- include('../partials/modal-delete.ejs') %>
+  <% if(isOwner) { %>
+    <%- include('../partials/modal-edit.ejs') %>
+    <%- include('../partials/modal-delete.ejs') %>
 
-  <%- include('../partials/form-validator.ejs') %>
+    <%- include('../partials/form-validator.ejs') %>
+  <% } %>
   
 </body>
 </html>
