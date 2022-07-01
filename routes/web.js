@@ -146,7 +146,7 @@ let router = express.Router();
 router.get('/app', authMW.isLoggedIn, (req, res) => {
   return res.render('home', {
     layout: './layouts/home-page',
-    addModalId: 'addWorkspaceModal',
+    hasAddModal: true,
     formSubmitPath: req.path
   });
 }); // App/Home page
@@ -205,7 +205,7 @@ router.get('/:workspace/dashboard', (req, res) => {
     layout: './layouts/workspace-page',
     workspace: sampleWorkspaces[req.params.workspace].name,
     workspacePath: sampleWorkspaces[req.params.workspace].path,
-    addModalId: '',
+    hasAddModal: false,
     sortModalId: '',
     isInWorkspace: true,
     deleteType: '',
@@ -226,7 +226,7 @@ router.get('/:workspace/inventory', (req, res) => {
     workspace: sampleWorkspaces[req.params.workspace].name,
     workspacePath: sampleWorkspaces[req.params.workspace].path,
     sampleItems: sampleData,
-    addModalId: 'addItemModal',
+    hasAddModal: true,
     formSubmitPath: req.path,
     sortModalId: sortModalIDs[0],
     sortFormSubmitPath: req.path,
@@ -249,7 +249,7 @@ router.get('/:workspace/collaborators', (req, res) => {
     workspacePath: sampleWorkspaces[req.params.workspace].path,
     collabUnames: collabUsernames,
     index: 0,
-    addModalId: 'addCollaboratorModal',
+    hasAddModal: true,
     formSubmitPath: req.path,
     isInWorkspace: true,
     deleteType: 'collaborator',
@@ -269,7 +269,7 @@ router.get('/:workspace/history', (req, res) => {
     layout: './layouts/workspace-page',
     workspace: sampleWorkspaces[req.params.workspace].name,
     workspacePath: sampleWorkspaces[req.params.workspace].path,
-    addModalId: '',
+    hasAddModal: false,
     sortModalId : sortModalIDs[1],
     sortFormSubmitPath: req.path,
     formSubmitPath: req.path,
