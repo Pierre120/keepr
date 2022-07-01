@@ -4,6 +4,8 @@ const userController = require('../controllers/user-controller.js');
 
 const router = express.Router();
 
-router.get('/:id', authMW.isLoggedIn, userController.viewAccountPage);
+router.get('/:userId', authMW.isLoggedIn, userController.viewAccountPage);
+router.post('/:userId/edit', authMW.isLoggedIn, userController.updateUserInfo);
+router.post('/:userId/delete', authMW.isLoggedIn, userController.deleteUser);
 
 module.exports = router;
