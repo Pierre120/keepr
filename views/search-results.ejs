@@ -1,22 +1,17 @@
-<%  const sampleList = new Object();
-    sampleList.workspaceColor = 'pink';
-    sampleList.items = sampleItems;
-%>
-
 <h1 class="my-3 border-bottom border-3 oswald display-4" id="page-heading">SEARCH RESULTS - "cheesecake"</h1>
 
 <!-- Item search results -->
 <div class="d-grid gap-2 fade-in-up">
-  <% for(let item of sampleList.items) {                                       %>
-  <a class="item-list-card border-<%= sampleList.workspaceColor %>" href="/search-results/<%= item.productCode %>">
+  <% for(let item of itemResults) {                                       %>
+  <a class="item-list-card border-pink" href="/search-results/<%= item.pcode %>">
     <div class="card-body">
       <h4 class="item-name"><%- item.itemName %></h4>
-      <hr class="text-<%= sampleList.workspaceColor %>">
+      <hr class="text-pink">
       <p class="item-desc">
         <%- item.description %>
       </p>
       <p class="item-qty">
-        <strong>Qty: <%- item.qty %></strong>
+        <strong>Qty: <%- item.qtyUnit %></strong>
       </p>
     </div>
   </a>

@@ -1,4 +1,4 @@
-<%
+<% // TODO: Remove this sample data once you can pass the array value of `history` 
   const history = [
     {
       item: 'Super Cheesecake',
@@ -77,6 +77,10 @@
     <!-- END Table header -->
 
     <!-- Table data -->
+    <%# 
+      TODO: Pass value `history` from the server.
+      It contains the array of update records of the current workspace.
+    %>
     <% for(let record of history) { %>
     <div class="table-row row-contents">
       <div class="table-cell">
