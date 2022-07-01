@@ -146,8 +146,7 @@ let router = express.Router();
 router.get('/app', authMW.isLoggedIn, (req, res) => {
   return res.render('home', {
     layout: './layouts/home-page',
-    hasAddModal: true,
-    formSubmitPath: req.path
+    hasAddModal: true
   });
 }); // App/Home page
 
@@ -162,7 +161,6 @@ router.get('/accounts/personal', (req, res) => {
     },
     hasEditModal: true,
     index: 0,
-    formSubmitPath: req.path,
     isItem: false,
     isAcct: true,
     isAssign: false,
@@ -181,7 +179,6 @@ router.get('/accounts/:user', (req, res) => {
     isItem: false,
     isAcct: false,
     isAssign: false,
-    formSubmitPath: req.path,
     sampleItem: '',
     isInWorkspace: '',
     deleteType:''
@@ -209,7 +206,6 @@ router.get('/:workspace/dashboard', (req, res) => {
     hasSortModal: false,
     isInWorkspace: true,
     deleteType: '',
-    formSubmitPath: req.path,
     hasEditModal: false,
     sampleItem: itemPaths,
     index: 0,
@@ -227,7 +223,6 @@ router.get('/:workspace/inventory', (req, res) => {
     workspacePath: sampleWorkspaces[req.params.workspace].path,
     sampleItems: sampleData,
     hasAddModal: true,
-    formSubmitPath: req.path,
     hasSortModal: 'item',
     sortFormSubmitPath: req.path,
     isInWorkspace: true,
@@ -250,7 +245,6 @@ router.get('/:workspace/collaborators', (req, res) => {
     collabUnames: collabUsernames,
     index: 0,
     hasAddModal: true,
-    formSubmitPath: req.path,
     isInWorkspace: true,
     deleteType: 'collaborator',
     hasEditModal: true,
@@ -272,7 +266,6 @@ router.get('/:workspace/history', (req, res) => {
     hasAddModal: false,
     hasSortModal: 'history',
     sortFormSubmitPath: req.path,
-    formSubmitPath: req.path,
     isInWorkspace: true,
     deleteType: 'history',
     hasEditModal: false,
@@ -295,7 +288,6 @@ router.get('/:workspace/:itemCode', (req, res) => {
     sampleItem: itemPaths[req.params.itemCode],
     hasEditModal: true,
     index: 0,
-    formSubmitPath: req.path,
     isItem: true,
     isAcct: false,
     isAssign: false,
