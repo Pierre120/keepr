@@ -5,7 +5,9 @@ const viewHomePage = async (req,res) =>{
 };
 
 const addWorkspace = async (req,res) => {
-    const newWorkspace = await Workspace.findById(req.)
+    const newWorkspace = await Workspace.findById(req.params.workspace);
+    const name = req.body;
+    
 };
 
 module.exports = {
