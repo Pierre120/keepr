@@ -16,8 +16,7 @@ const CollaboratorSchema = new mongoose.Schema({
     }, 
     viewId: {
         type: ObjectId,
-        required: true, 
-        unique: true
+        required: true
     }
 });
 
