@@ -2,7 +2,7 @@ const Workspace = require('../models/Workspace.js');
 
 const deleteWorkspace = async (req,res) =>{
     try{
-        await Workspace.findByIdAndDelete(req.body.workspace);
+        await Workspace.findByIdAndDelete(req.params.workspace);
         res.redirect('/app');
     }catch(err){
         res.redirect('back');
