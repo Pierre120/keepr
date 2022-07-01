@@ -146,7 +146,7 @@ let router = express.Router();
 router.get('/app', authMW.isLoggedIn, (req, res) => {
   return res.render('home', {
     layout: './layouts/home-page',
-    addModalId: 'addWorkspaceModal',
+    hasAddModal: true,
     formSubmitPath: req.path
   });
 }); // App/Home page
@@ -160,14 +160,14 @@ router.get('/accounts/personal', (req, res) => {
       username: 'JuanDelaCruz_96',
       displayName: 'St4rL0rd96'
     },
-    editItemModalIds: editAcctModalIDs,
+    hasEditModal: true,
     index: 0,
     formSubmitPath: req.path,
     isItem: false,
     isAcct: true,
     isAssign: false,
-    hasDeleteWorkspace: false,
-    deleteModalId: 'deleteAccountModal',
+    isInWorkspace: false,
+    deleteType: 'account',
     isOwner: true
   });
 });
@@ -183,8 +183,8 @@ router.get('/accounts/:user', (req, res) => {
     isAssign: false,
     formSubmitPath: req.path,
     sampleItem: '',
-    hasDeleteWorkspace: '',
-    deleteModalId:''
+    isInWorkspace: '',
+    deleteType:''
   });
 });
 // --- END ACCOUNTS PAGE ---
@@ -205,12 +205,12 @@ router.get('/:workspace/dashboard', (req, res) => {
     layout: './layouts/workspace-page',
     workspace: sampleWorkspaces[req.params.workspace].name,
     workspacePath: sampleWorkspaces[req.params.workspace].path,
-    addModalId: '',
-    sortModalId: '',
-    hasDeleteWorkspace: true,
-    deleteModalId: '',
+    hasAddModal: false,
+    hasSortModal: false,
+    isInWorkspace: true,
+    deleteType: '',
     formSubmitPath: req.path,
-    editItemModalIds: editItemsAssignedID,
+    hasEditModal: false,
     sampleItem: itemPaths,
     index: 0,
     isItem: false,
@@ -226,13 +226,13 @@ router.get('/:workspace/inventory', (req, res) => {
     workspace: sampleWorkspaces[req.params.workspace].name,
     workspacePath: sampleWorkspaces[req.params.workspace].path,
     sampleItems: sampleData,
-    addModalId: 'addItemModal',
+    hasAddModal: true,
     formSubmitPath: req.path,
-    sortModalId: sortModalIDs[0],
+    hasSortModal: 'item',
     sortFormSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: '',
-    editItemModalIds: editItemsAssignedID,
+    isInWorkspace: true,
+    deleteType: '',
+    hasEditModal: false,
     sampleItem: itemPaths,
     index: 0,
     isItem: false,
@@ -249,17 +249,17 @@ router.get('/:workspace/collaborators', (req, res) => {
     workspacePath: sampleWorkspaces[req.params.workspace].path,
     collabUnames: collabUsernames,
     index: 0,
-    addModalId: 'addCollaboratorModal',
+    hasAddModal: true,
     formSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: 'deleteCollaboratorModal',
-    editItemModalIds: editItemsAssignedID,
+    isInWorkspace: true,
+    deleteType: 'collaborator',
+    hasEditModal: true,
     sampleItems: sampleData,
     index: 0,
     isItem: false,
     isAcct: false,
     isAssign: true,
-    sortModalId: ''
+    hasSortModal: false
   })
 }); // collaborators
 
@@ -269,13 +269,13 @@ router.get('/:workspace/history', (req, res) => {
     layout: './layouts/workspace-page',
     workspace: sampleWorkspaces[req.params.workspace].name,
     workspacePath: sampleWorkspaces[req.params.workspace].path,
-    addModalId: '',
-    sortModalId : sortModalIDs[1],
+    hasAddModal: false,
+    hasSortModal: 'history',
     sortFormSubmitPath: req.path,
     formSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: 'deleteHistoryModal',
-    editItemModalIds: editItemsAssignedID,
+    isInWorkspace: true,
+    deleteType: 'history',
+    hasEditModal: false,
     sampleItem: itemPaths,
     index: 0,
     isItem: false,
@@ -293,14 +293,14 @@ router.get('/:workspace/:itemCode', (req, res) => {
     backLink: '/workspace/inventory',
     title: itemPaths[req.params.itemCode].itemName,
     sampleItem: itemPaths[req.params.itemCode],
-    editItemModalIds: editItemModalIDs,
+    hasEditModal: true,
     index: 0,
     formSubmitPath: req.path,
     isItem: true,
     isAcct: false,
     isAssign: false,
-    hasDeleteWorkspace: false,
-    deleteModalId: 'deleteItemModal'
+    isInWorkspace: false,
+    deleteType: 'item'
   });
 });
 // --- END ITEMS PAGE ---

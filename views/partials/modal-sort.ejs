@@ -1,4 +1,4 @@
-<% if(sortModalId !== '') { // TODO: make into boolean condition %>
+<% if(hasSortModal !== '') { // TODO: make into boolean condition %>
 <% // TODO: update POST path for sort
 	const sortModal = [
 		{
@@ -17,7 +17,7 @@
 %>
 <% let index = 0; %>
 <% 
-	if(sortModalId === 'sortHistoryModal') { 
+	if(hasSortModal === 'history') { 
 		index = 1;
 	}
 %>
