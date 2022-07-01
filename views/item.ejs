@@ -1,7 +1,4 @@
-<%
-  const item = sampleItem;
-%>
-
+<%# TODO: Make sure to pass the `item` object here from the server %>
 <div class="row fade-in-up">
   <div class="col-2 align-items-start">
     <%- include('partials/btn-back.ejs') %>
@@ -11,7 +8,7 @@
       <div class="d-inline-block">
         <%- item.itemName %>
         <%- include('partials/btn-edit-item.ejs',  {
-            editOwner: item.itemName,
+            editOwner: item._id,
             editType: 'itemName'
           }) 
         %>
@@ -22,7 +19,7 @@
         %>
       </div>
     </h1>
-    <% index++; %>
+    
     <div class="d-grid gap-3 mt-5">
       <div class="row">
         <div class="col">
@@ -30,42 +27,41 @@
             <div class="card-body">
               <h4 class="card-title fw-bold">Product Code
                 <%- include('partials/btn-edit-item.ejs',  {
-                    editOwner: item.itemName,
+                    editOwner: item._id,
                     editType: 'pcode'
                   }) 
                 %>
               </h4>
               <hr class="text-darkpurple">
-              <p class="card-text card-text-first fs-4 fst-italic mt-5"><%- item.productCode %></p>
+              <p class="card-text card-text-first fs-4 fst-italic mt-5"><%- item.pcode %></p>
             </div>
           </div>
         </div>
-        <% index++; %>
+        
         <div class="col">
           <div class="card keepr-card border-teal h-100">
             <div class="card-body">
               <h4 class="card-title fw-bold">Qty/Unit
                 <%- include('partials/btn-edit-item.ejs',  {
-                    editOwner: item.itemName,
+                    editOwner: item._id,
                     editType: 'qtyUnit'
                   }) 
                 %>
               </h4>
               <hr class="text-teal">
-              <p class="card-text fs-4 fst-italic mt-5"><%- item.qty %></p>
+              <p class="card-text fs-4 fst-italic mt-5"><%- item.qtyUnit %></p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <% index++; %>
         <div class="col">
           <div class="card keepr-card desc-card">
             <div class="card-body">
               <h4 class="card-title fw-bold">Description
                 <%- include('partials/btn-edit-item.ejs',  {
-                    editOwner: item.itemName,
+                    editOwner: item._id,
                     editType: 'description'
                   }) 
                 %>
@@ -80,15 +76,13 @@
       </div>
 
       <div class="row mx-0">
-        <div class="col-3">
-        </div>
-        <% index++; %>
+        <div class="col-3"></div>
         <div class="col-6">
           <div class="card keepr-card border-pink h-100">
             <div class="card-body">
               <h4 class="card-title fw-bold">Assigned to
                 <%- include('partials/btn-edit-item.ejs',  {
-                    editOwner: item.itemName,
+                    editOwner: item._id,
                     editType: 'assignedCollabs'
                   }) 
                 %>
@@ -96,11 +90,11 @@
               <hr class="text-pink">
               <p class="card-text fs-4 fst-italic mt-5">
                 <ul style="list-style-type:disc;">
-                <% for(let i=0; i < item.assignedPeople.length; i++) { %>
+                <% for(let i=0; i < item.assignedCollabs.length; i++) { %>
                   <% if(i === 0) { %>
-                  <li class="card-text card-text-first fs-5 fst-italic mb-1"><%- item.assignedPeople[i] %></li>
+                  <li class="card-text card-text-first fs-5 fst-italic mb-1"><%- item.assignedCollabs[i] %></li>
                   <% } else { %>
-                  <li class="card-text fs-5 fst-italic mb-1"><%- item.assignedPeople[i] %></li>
+                  <li class="card-text fs-5 fst-italic mb-1"><%- item.assignedCollabs[i] %></li>
                   <% } %>
                 <% } %>
                 </ul>
