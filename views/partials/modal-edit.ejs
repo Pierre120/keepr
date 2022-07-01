@@ -1,190 +1,302 @@
-<%
-  const editItemModals = [
-    {
-      id: 'editItemNameModal',
-      title: 'Edit Item Name',
-      inputType: 'text-input',
-      inputName: 'newItemName',
-      label: 'Item Name',
-      itemProperty: 'name',
-      formId: 'editItemNameForm',
-      invalidFeedback: 'Please provide a valid item name.'
-    },
-    {
-      id: 'editItemCodeModal',
-      title: 'Edit Item Code',
-      inputType: 'text-input',
-      inputName: 'newItemCode',
-      label: 'Item Code',
-      itemProperty: 'code',
-      formId: 'editItemCodeForm',
-      invalidFeedback: 'Please provide a valid item code.'
-    },
-    {
-      id: 'editItemQtyUnitModal',
-      title: 'Edit Item Qty/Unit',
-      inputType: 'text-input',
-      inputName: 'newItemQtyUnit',
-      label: 'Item Qty/Unit',
-      itemProperty: 'qtyUnit',
-      formId: 'editItemQtyUnitForm',
-      invalidFeedback: 'Please provide a valid item qty/unit.'
-    },
-    {
-      id: 'editItemDescModal',
-      title: 'Edit Item Description',
-      inputType: 'textarea',
-      inputName: 'newItemDesc',
-      label: 'Item Description',
-      itemProperty: 'description',
-      formId: 'editItemDescForm',
-      invalidFeedback: 'Please provide a valid item description.'
-    },
-    {
-      id: 'editItemCollabsModal',
-      title: 'Edit Item Collaborators',
-      inputType: '',
-      inputName: 'newItemCollaborator',
-      label: 'Assign a Collaborator',
-      itemProperty: 'collaborators',
-      formId: 'editItemCollabsForm',
-      invalidFeedback: 'Please provide a valid username.'
-    }
-  ];
-%>
-
-<%
-  const editAccountModals = [
-    {
-      id: 'editAccountUsernameModal',
-      title: 'Edit Username',
-      inputType: 'text-input',
-      inputName: 'newAcctUsername',
-      label: 'Edit Username',
-      itemProperty: 'acctUsername',
-      formId: 'editAcctUsernameForm',
-      invalidFeedback: 'Please provide a valid username.'
-    },
-    {
-      id: 'editAccountDisplayNameModal',
-      title: 'Edit Display Name',
-      inputType: 'text-input',
-      inputName: 'newAcctDisplayName',
-      label: 'Edit Display Name',
-      itemProperty: 'acctDisplayName',
-      formId: 'editAcctDisplayNameForm',
-      invalidFeedback: 'Please provide a valid display name.'
-    },
-    {
-      id: 'editAccountPasswordModal',
-      title: 'Edit Password',
-      inputType: 'password',
-      inputName: 'newAcctPassword',
-      label: 'Edit Password',
-      itemProperty: 'acctPassword',
-      formId: 'editPasswordForm',
-      invalidFeedback: 'Please provide a valid password.'
-    }
-  ];
-%>
-
-<%
-  const editItemsAssignedModals = [
-    {
-      id: 'editItemsAssignedModal',
-      title: 'Edit Assigned Items',
-      inputType: 'checkbox',
-      inputName: 'newItemsAssigned',
-      label: 'Edit Assigned Items',
-      itemProperty: 'itemsAssigned',
-      formId: 'editItemsAssignedForm',
-      invalidFeedback: ''
-    }
-  ];
-%>
-
-<% 
-  let editAllModals = [];
-  if(isItem === true) {
-    editAllModals = editItemModals;
-  }
-  else if(isAcct === true) {
-    editAllModals = editAccountModals;
-  }
-  else if(isAssign === true) {
-    editAllModals = editItemsAssignedModals;
-  }
-  for(let editModal of editAllModals) { 
-%>
-<div class="modal fade montserrat" id="<%= editModal.id %>" tabindex="-1" 
-      aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade montserrat" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="modalLabel"><%- editModal.title %></h5>
-        <% if(isAcct === 0) { %>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        <% } else { %>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="clearForm()"></button>
-        <% } %>
+        <h5 class="modal-title" id="editModalLabel"></h5>
+        <button type="button" class="btn-close" id="headerEditCloseBtn"
+                data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
-        <% if(editModal.id === 'editItemsAssignedModal') { %>
-          <form id="<%= editModal.formId %>" method="post" action="<%= formSubmitPath %>" novalidate>
-            <div class="mb-3 form-floating">
-              <ul class="list-group">
-              <% for(let item of sampleItems) { %>
-                <li class="list-group-item">
-                  <input class="form-check-input me-1" type="checkbox" value="<%= item.itemName %>" aria-label="..." name="<%= item.productCode %>">
-                  <%- item.itemName %>
-                </li>
-              <% } %>
-              </ul>
-            <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
-            </div>
-          </form>
-        <% } else { %>
-          <form id="<%= editModal.formId %>" class="needs-validation"
-            method="post" action="<%= formSubmitPath %>" novalidate>
-        <div class="mb-3 form-floating">
-          <% if(editModal.inputType === 'textarea') { %>
-            <textarea class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required></textarea>
-          <% } else if(editModal.inputType === 'text-input') { %>
-            <input type="text" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
-          <% } else if(editModal.inputType === 'password') { %>
-            <input type="password" class="form-control" name="<%= editModal.inputName %>" placeholder="<%= editModal.label %>" required>
-          <% } else { %>
-            <select class="form-select selection-input" name="<%= editModal.inputName %>" aria-label="Assign Collaborator to Item" required>
-              <option selected disabled value=""><%- editModal.label %></option>
-              <% if(sampleItem.assignedPeople.length > 0) { %>
-              <% for(let collab of sampleItem.assignedPeople) { %>
-                <option value="<%= collab %>"><%- collab %></option>
-              <% } %>
-              <% } %>
+        <form id="editForm" class="needs-validation" method="post" action="" novalidate>
+          <div class="mb-3 form-floating" id="inputTmp">
+            <!-- For description -->
+            <textarea class="form-control" name="tmp" placeholder="Tmp" required></textarea>
+            <!-- For text input or password -->
+            <input type="text" class="form-control" name="tmp" placeholder="Tmp" required>
+            <!-- For Item add collaborator assigned -->
+            <select class="form-select selection-input" name="tmp" aria-label="Tmp" id="editSelect" required>
+              <option selected disabled value="">Choose a Collaborator</option>
+              <option value="" id="optionTmp"></option>
             </select>
-          <% } %>
-          <label for="<%= editModal.inputName %>" class="col-form-label">
-            <%- editModal.label %>
-          </label>
-          <div class="invalid-feedback">
-            <%- editModal.invalidFeedback %>
+            <!-- For Collaborator edit assigned items-->
+            <ul class="list-group">
+              <li class="list-group-item" id="liTmp">
+                <input class="form-check-input me-1" type="checkbox" aria-label="..." name="None" value="None">
+                <span>None</span>
+              </li>
+            </ul>
+            <label for="tmp" class="col-form-label"></label>
+            <div class="invalid-feedback"></div>
           </div>
-          <input type="hidden" name="property" value="<%= editModal.itemProperty %>">
-        </div>
-      </form>
-        <% } %>
-
+          <input type="hidden" id="owner" name="owner">
+          <input type="hidden" id="property" name="property">
+        </form>
       </div>
       <div class="modal-footer">
-        <% if(isAcct === 0) { %>
-          <button type="button" class="btn btn-gray" data-bs-dismiss="modal">Close</button>
-        <% } else { %>
-          <button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
-        <% } %>
-        <button type="submit" class="btn btn-secondary" form="<%= editModal.formId %>">Confirm</button>
+        <button type="button" class="btn btn-gray" id="footerEditCloseBtn" 
+                data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-secondary" form="editForm">Confirm</button>
       </div>
     </div>
   </div>
 </div>
-<% } %>
+
+<%#
+  GUIDE FOR RETREVING FROM REQUEST BODY:
+    General edit form req.body.~:
+      - owner
+      - property
+      - <specific input>
+%>
+
+
+<script>
+  const inputTmp = $('#inputTmp').clone();
+  const optionTmp = $('#optionTmp').clone().attr({id:'optTemp'});
+  const liTmp = $('#liTmp').clone().attr({id:'liTemp'});
+  $('#inputTmp').remove(); // Remove template from display
+  let editModal = document.getElementById('editModal');
+  editModal.addEventListener('show.bs.modal', function (event) {
+    // Get the button that triggered event
+    let button = event.relatedTarget;
+
+    // remove the template to clear-up form
+    $('#inputDiv').remove();
+
+    // Get the edit type
+    let type = button.getAttribute('data-bs-edit-type');
+    // Get the owner of the current edit (can be an item or a user/collaborator)
+    let owner = button.getAttribute('data-bs-edit-owner');
+    $('#owner').val(owner); // update hidden input for owner
+
+    // Modify displayed form
+    switch(type) {
+      case 'itemName': // Show the itemName input only
+        $('#editForm').attr({ action: '/edit-itemname'});// TODO: change the path
+        $('#editModalLabel').text('Edit Item Name');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+
+        // Intialize  div for Item Name input
+        $('#inputDiv > textarea').remove();
+        $('#inputDiv > select').remove();
+        $('#inputDiv > ul').remove();
+        $('#inputDiv > input').attr({ name: 'itemName', placeholder: 'Item Name' });
+        $('#inputDiv > label').attr({ for: 'itemName' }).text('Item Name');
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid item name.');
+
+        // update hidden input for property
+        $('#property').val('itemName');
+
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        break;
+      case 'pcode': // Show the pcode input only
+        $('#editForm').attr({ action: '/edit-pcode'});// TODO: change the path
+        $('#editModalLabel').text('Edit Item Code');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+
+        // Intialize div for Item Product Code input
+        $('#inputDiv > textarea').remove();
+        $('#inputDiv > select').remove();
+        $('#inputDiv > ul').remove();
+        $('#inputDiv > input').attr({ name: 'pcode', placeholder: 'Item Code' });
+        $('#inputDiv > label').attr({ for: 'pcode' }).text('Item Code');
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid item code.');
+
+        // update hidden input for property
+        $('#property').val('pcode');
+        
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        break;
+      case 'qtyUnit':  // Show the qtyUnit input only
+        $('#editForm').attr({ action: '/edit-qtyunit'});// TODO: change the path
+        $('#editModalLabel').text('Edit Item Qty/Unit');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+
+        // Intialize div for Item Qty/Unit input
+        $('#inputDiv > textarea').remove();
+        $('#inputDiv > select').remove();
+        $('#inputDiv > ul').remove();
+        $('#inputDiv > input').attr({ name: 'qtyUnit', placeholder: 'Item Qty/Unit' });
+        $('#inputDiv > label').attr({ for: 'qtyUnit' }).text('Item Qty/Unit');
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid item qty/unit.');
+
+        // update hidden input for property
+        $('#property').val('qtyUnit');
+
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        break; 
+      case 'description': // Show the description input only
+        $('#editForm').attr({ action: '/edit-description'});// TODO: change the path
+        $('#editModalLabel').text('Edit Item Description');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+        
+        // Intialize div for Item Description input
+        $('#inputDiv > input').remove();
+        $('#inputDiv > select').remove();
+        $('#inputDiv > ul').remove();
+        $('#inputDiv > textarea').attr({ name: 'description', placeholder: 'Item Description' });
+        $('#inputDiv > label').attr({ for: 'description' }).text('Item Description');
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid item description.');
+
+        // update hidden input for property
+        $('#property').val('description');
+
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        break;
+      case 'assignedCollabs': // Show the assignedCollabs input only
+        $('#editForm').attr({ action: '/edit-assigncollabs'});// TODO: change the path
+        $('#editModalLabel').text('Edit Item Collaborators');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+
+        // Intialize div for Item's Assign Collaborator input
+        $('#inputDiv > textarea').remove();
+        $('#inputDiv > input').remove();
+        $('#inputDiv > ul').remove();
+        $('#inputDiv > select').attr({ name: 'assignedCollabs', placeholder: 'Assign a Collaborator' });
+        $('#inputDiv > label').attr({ for: 'assignedCollabs' }).text('Assign a Collaborator');
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid username.');
+
+        // update hidden input for property
+        $('#property').val('assignedCollabs');
+        
+        // NOTE: change path if necessary
+        // TODO: create a GET request for getting the array of available collaborators
+        $.get(window.location.href + '/getCollabs', function(data) {
+          // NOTE: may edit as necessary
+          // `data` is an array of `displayNames` of current item's
+          // list of collaborator.
+          for(let dispName of data) {
+            // Create an option
+            let option = $(optionTmp).clone()
+                          .attr({ value: dispName }).removeAttr('id')
+                          .text(dispName);
+            // Append to the select element
+            $('#inputTmp select').append(option);
+          }
+        });
+        $('#optionTmp').remove(); // Remove option template
+
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
+        $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
+        break;
+      case 'username': // Show the username input only
+        $('#editForm').attr({ action: '/edit-username'});// TODO: change the path
+        $('#editModalLabel').text('Edit Username');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+
+        // Intialize div for Username input
+        $('#inputDiv > textarea').remove();
+        $('#inputDiv > select').remove();
+        $('#inputDiv > ul').remove();
+        $('#inputDiv > input').attr({ name: 'username', placeholder: 'Username' });
+        $('#inputDiv > label').attr({ for: 'username' }).text('Username');
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid username.');
+
+        // update hidden input for property
+        $('#property').val('username');
+        
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        break;
+      case 'displayName': // Show the displayName input only
+        $('#editForm').attr({ action: '/edit-dispname'});// TODO: change the path
+        $('#editModalLabel').text('Edit Display Name');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+        
+        // Intialize div for Display Name input
+        $('#inputDiv > textarea').remove();
+        $('#inputDiv > select').remove();
+        $('#inputDiv > ul').remove();
+        $('#inputDiv > input').attr({ name: 'displayName', placeholder: 'Display Name' });
+        $('#inputDiv > label').attr({ for: 'displayName' }).text('Display Name');
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid display name.');
+
+        // update hidden input for property
+        $('#property').val('displayName');
+
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        break;
+      case 'password': // Show the password input only
+        $('#editForm').attr({ action: '/edit-password'});// TODO: change the path
+        $('#editModalLabel').text('Edit Password');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+        
+        // Intialize div Password input
+        $('#inputDiv > textarea').remove();
+        $('#inputDiv > select').remove();
+        $('#inputDiv > ul').remove();
+        $('#inputDiv > input').attr({ name: 'password', placeholder: 'Password', type: 'password' });
+        $('#inputDiv > label').attr({ for: 'password' }).text('Password');
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid password.');
+
+        // update hidden input for property
+        $('#property').val('password');
+        
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
+        break;
+      case 'collaboratorItems': // Show the collaboratorItems input only
+        $('#editForm').attr({ action: '/edit-assigneditems'});// TODO: change the path
+        $('#editModalLabel').text('Edit Assigned Items');
+        $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
+
+        // Intialize div Collaborator's Assigned Item input
+        $('#inputDiv > textarea').remove();
+        $('#inputDiv > input').remove();
+        $('#inputDiv > select').remove();
+        $('#inputDiv > label').remove();
+        $('#inputDiv > ul').attr({ name: 'collaborator', placeholder: 'Collaborator' });
+        $('#inputDiv div.invalid-feedback').text('Please provide a valid username.');
+
+        // update hidden input for property
+        $('#property').val('collaboratorItems');
+
+        // NOTE: change path if necessary
+        // TODO: create a GET request for getting the array of items in the workspace
+        $.get(window.location.href + '/getItems', function(data) {
+          let i = 1;
+          // NOTE: may edit as necessary
+          // `data` is an array of `itemName` of current the current workspace
+          console.log(data);
+          if(data.length === 0) {
+            // Create li element for checkbox item
+            let checkbox = $(liTmp).clone().attr({ id: 'item0'});
+            // Append to the ul element
+            $('#input1 ul').append(checkbox);
+            // Edit the info of the checkbox item
+            $('#item0 input').attr({ name: 'None', value: 'None' });
+            $('#item0 span').text('None');
+          }
+          for(let item of data) {
+            // Create li element for checkbox item
+            let checkbox = $(liTmp).clone().attr({ id: 'item' + i });
+            // Append to the ul element
+            $('#input1 ul').append(checkbox);
+            // Edit the info of the checkbox item
+            $('#item' + i + ' input').attr({ name: item, value: item });
+            $('#item' + i + ' span').text(item);
+            ++i; // increment count
+          }
+          $('#liTmp').remove(); // Remove checkbox list item template
+        });
+
+        // Close buttons clear form functionality
+        $('#headerEditCloseBtn').attr({ onclick: "clearAndReset('ul.list-group > li',1)" });
+        $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('ul.list-group > li',1)" });
+        break;
+    }
+  });
+</script>

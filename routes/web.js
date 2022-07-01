@@ -151,13 +151,6 @@ router.get('/app', authMW.isLoggedIn, (req, res) => {
   });
 }); // App/Home page
 
-router.post('/edit-description', (req, res) => {
-  console.log(req.body.username);
-  console.log(req.body.displayName);
-  console.log(req.body.owner)
-  res.send(`<h1>${req.body.username}, ${req.body.displayName}, ${req.body.owner}</h1>`);
-})
-
 // --- ACCOUNTS PAGE ---
 router.get('/accounts/personal', (req, res) => {
   return res.render('account', {
