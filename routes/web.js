@@ -166,8 +166,8 @@ router.get('/accounts/personal', (req, res) => {
     isItem: false,
     isAcct: true,
     isAssign: false,
-    hasDeleteWorkspace: false,
-    deleteModalId: 'deleteAccountModal',
+    isInWorkspace: false,
+    deleteType: 'account',
     isOwner: true
   });
 });
@@ -183,8 +183,8 @@ router.get('/accounts/:user', (req, res) => {
     isAssign: false,
     formSubmitPath: req.path,
     sampleItem: '',
-    hasDeleteWorkspace: '',
-    deleteModalId:''
+    isInWorkspace: '',
+    deleteType:''
   });
 });
 // --- END ACCOUNTS PAGE ---
@@ -207,8 +207,8 @@ router.get('/:workspace/dashboard', (req, res) => {
     workspacePath: sampleWorkspaces[req.params.workspace].path,
     addModalId: '',
     sortModalId: '',
-    hasDeleteWorkspace: true,
-    deleteModalId: '',
+    isInWorkspace: true,
+    deleteType: '',
     formSubmitPath: req.path,
     editItemModalIds: editItemsAssignedID,
     sampleItem: itemPaths,
@@ -230,8 +230,8 @@ router.get('/:workspace/inventory', (req, res) => {
     formSubmitPath: req.path,
     sortModalId: sortModalIDs[0],
     sortFormSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: '',
+    isInWorkspace: true,
+    deleteType: '',
     editItemModalIds: editItemsAssignedID,
     sampleItem: itemPaths,
     index: 0,
@@ -251,8 +251,8 @@ router.get('/:workspace/collaborators', (req, res) => {
     index: 0,
     addModalId: 'addCollaboratorModal',
     formSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: 'deleteCollaboratorModal',
+    isInWorkspace: true,
+    deleteType: 'collaborator',
     editItemModalIds: editItemsAssignedID,
     sampleItems: sampleData,
     index: 0,
@@ -273,8 +273,8 @@ router.get('/:workspace/history', (req, res) => {
     sortModalId : sortModalIDs[1],
     sortFormSubmitPath: req.path,
     formSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: 'deleteHistoryModal',
+    isInWorkspace: true,
+    deleteType: 'history',
     editItemModalIds: editItemsAssignedID,
     sampleItem: itemPaths,
     index: 0,
@@ -299,8 +299,8 @@ router.get('/:workspace/:itemCode', (req, res) => {
     isItem: true,
     isAcct: false,
     isAssign: false,
-    hasDeleteWorkspace: false,
-    deleteModalId: 'deleteItemModal'
+    isInWorkspace: false,
+    deleteType: 'item'
   });
 });
 // --- END ITEMS PAGE ---
