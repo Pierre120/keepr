@@ -3,6 +3,7 @@ const express = require('express');
 const tempRouter = require('./web.js');
 const regRouter = require('./register-router.js');
 const logRouter = require('./loginlogout-router.js');
+const userRouter = require('./user-router.js');
 
 // Main router
 let router = express.Router();
@@ -14,6 +15,7 @@ const initRoutes = (app) => {
   app.use('/', logRouter);
   app.use('/', tempRouter); // use web.js as a temporary router
   app.use('/register', regRouter); // Register Page
+  app.use('/user', userRouter); // User/Account Page
 };
 
 // Exports the function for the app.js to use
