@@ -17,7 +17,9 @@
         %>
       </div>
       <div class="d-inline-block ms-auto">
-        <%- include('partials/btn-delete-item.ejs') %>
+        <%- include('partials/btn-delete-item.ejs', {
+          deleteModalId: 'deleteItemModal'}) 
+        %>
       </div>
     </h1>
     <% index++; %>

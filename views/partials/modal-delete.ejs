@@ -1,18 +1,18 @@
-<%
+<% // TODO: update POST delete path
 	const deleteModalObjects = [
 		{
 			id: 'deleteWorkspaceModal',
 			title: 'Delete Workspace',
 			toDelete: 'this workspace',
 			formId: 'deleteWorkspaceForm',
-			postPath: '/workspace/delete'
+			submitPath: '/workspace/delete'
 		},
 		{
 			id: 'deleteHistoryModal',
 			title: 'Delete History',
 			toDelete: 'this workspace\'s history',
 			formId: 'deleteHistoryForm',
-			postPath: '/history/delete'
+			submitPath: '/history/delete'
 		},
 		{
 			id: 'deleteItemModal',
@@ -125,7 +125,7 @@
 		// Update the form's action attribute
 		let removeForm = document.getElementById("deleteCollaboratorForm");
 		let formPath = window.location.pathname;
-		removeForm.action = formPath + '/' + collaborator;
+		removeForm.action = formPath + '/' + collaborator; // TODO: update POST delete path
 		console.log(removeForm.action)
 	});
 
