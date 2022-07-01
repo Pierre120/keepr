@@ -11,7 +11,7 @@ const clearHistory = async(req,res) => {
         var history_arr = targetHistory.history;
         for(var i=0; i<history_arr.length; i++)
         {
-            History.findByIdAndDelete(history_arr[i]);
+            await History.findByIdAndDelete(history_arr[i]);
         }
         res.redirect('/app');
     }catch(err){
