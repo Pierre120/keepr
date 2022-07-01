@@ -23,39 +23,61 @@
         <div class="card-body">
           <h2 class="oswald fw-bolder">
             Username
-            <%- include('partials/btn-edit-acct.ejs') %>
+            <% if(isOwner) { %>
+              <%- include('partials/btn-edit-acct.ejs', {
+                  editOwner: user.username,
+                  editType: 'username'
+                }) 
+              %>
+            <% } %>
           </h2>
           
           <p class="card-text card-text-first ">
-            <%- username %>
+            <%- user.username %>
           </p>
         </div>
       </div>
-      <% index++; %>
+      
       <div class="card keepr-card card-account">
         <div class="card-body">
           <h2 class="oswald fw-bolder">
             Display Name
-            <%- include('partials/btn-edit-acct.ejs') %>
+            <% if(isOwner) { %>
+              <%- include('partials/btn-edit-acct.ejs', {
+                  editOwner: user.username,
+                  editType: 'displayName'
+                }) 
+              %>
+            <% } %>
           </h2>
           <p class="card-text card-text-first ">
-            <%- displayName %>
+            <%- user.displayName %>
           </p>
         </div>
       </div>
-      <% index++; %>
+      
       <div class="card keepr-card card-account">
         <div class="card-body">
           <h2 class="oswald fw-bolder">
             Password
-            <%- include('partials/btn-edit-acct.ejs') %>
+            <% if(isOwner) { %>
+              <%- include('partials/btn-edit-acct.ejs', {
+                  editOwner: user.username,
+                  editType: 'password'
+                }) 
+            %>
+            <% } %>
           </h2>
           <p class="card-text card-text-first ">
             ●●●●●●●●
           </p>
         </div>
       </div>
-      <%- include('partials/btn-delete-acct.ejs') %>
+      <% if(isOwner) { %>
+        <%- include('partials/btn-delete-acct.ejs', {
+          deleteModalId: 'deleteAccountModal'})
+        %>
+      <% } %>
     </div>
   </div>
   <div class="col-2">
