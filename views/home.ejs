@@ -1,31 +1,6 @@
-<% // Sample Data
-  const workspaces = [
-    {
-      name: 'Default Workspace',
-      themeColor: 'pink',
-      pathName: 'default'
-    },
-    {
-      name: 'Shoppee',
-      themeColor: 'lightpurple',
-      pathName: 'shoppee'
-    },
-    {
-      name: 'Lozoda',
-      themeColor: 'darkpurple',
-      pathName: 'lozoda'
-    },
-    {
-      name: 'Lolamove',
-      themeColor: 'teal',
-      pathName: 'lolamove'
-    },
-    {
-      name: 'Tsubibo',
-      themeColor: 'pink',
-      pathName: 'tsubibo'
-    }
-  ];
+<%
+  const colorThemes = ["darkpurple","lightpurple","teal","pink"];
+  let ind = -1;
 %>
 
 <div class="container-xl px-0 main-content">
@@ -45,12 +20,17 @@
     <!-- END Add Workspace Button -->
 
     <!-- Workspace Cards -->
+    <%# 
+      TODO: Pass value `workspaces` from the server.
+      It contains all the workspace of the current user.
+    %>
     <% for(let ws of workspaces) { %>
     <div class="col">
-      <a class="home-card h-200 bg-<%= ws.themeColor %>" href="/<%= ws.pathName %>/dashboard">
+      <%# TODO: Change the `ws.pathName` to its proper property %>
+      <a class="home-card h-200 bg-<%= colorThemes[++ind % 4] %>" href="/<%= ws._id %>/dashboard">
         <div class="card-body">
         </div>
-        <div class="card-footer border-top-0 bg-<%= ws.themeColor %>">
+        <div class="card-footer border-top-0 bg-<%= colorThemes[ind % 4] %>">
           <hr>
           <h6 class="card-title title-1 montserrat"><%- ws.name %></h6>
         </div>
