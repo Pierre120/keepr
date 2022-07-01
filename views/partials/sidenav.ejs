@@ -6,25 +6,26 @@
   
   <div class="row mx-0">
     <div id="workspace-name">
-      <p><%- workspace %></p>
+      <p><%- workspace.name %></p>
     </div>
 
+    <%# TODO: %>
     <ul class="nav nav-pills flex-column px-0 w-100 bg-lightpurple" id="nav-section">
       <li class="nav-item">
         <a class="nav-link text-white workspace-nav <%= activeButton[0] %>"
-            role="button" href="/<%= workspacePath %>/dashboard">Dashboard</a>
+            role="button" href="/<%= workspace._id %>/dashboard">Dashboard</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white workspace-nav <%= activeButton[1] %>" 
-            role="button" href="/<%= workspacePath %>/inventory">Inventory</a>
+            role="button" href="/<%= workspace._id %>/inventory">Inventory</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white text-start workspace-nav <%= activeButton[2] %>" 
-            role="button" href="/<%= workspacePath %>/collaborators">Collaborators</a>
+            role="button" href="/<%= workspace._id %>/collaborators">Collaborators</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white text-start workspace-nav <%= activeButton[3] %>" 
-            role="button" href="/<%= workspacePath %>/history">History</a>
+            role="button" href="/<%= workspace._id %>/history">History</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white workspace-nav" role="button" 
