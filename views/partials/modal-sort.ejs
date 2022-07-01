@@ -1,15 +1,17 @@
-<% if(sortModalId !== '') { %>
-<%
+<% if(sortModalId !== '') { // TODO: make into boolean condition %>
+<% // TODO: update POST path for sort
 	const sortModal = [
 		{
 			id: 'sortItemModal', //for Sorting the Items 
 			title: 'Sort Items',
-			formId: 'sortItemForm'
+			formId: 'sortItemForm',
+			submitPath: '/item/sort'
 		},
 		{
 			id: 'sortHistoryModal', //for Sorting the History contents
 			title: 'Sort History',
-			formId: 'sortHistoryForm'
+			formId: 'sortHistoryForm',
+			submitPath: '/history/sort'
     }
 	];
 %>
@@ -31,7 +33,7 @@
     <div class="modal-body">
 
       <form id="<%= sortModal[index].formId %>" class="needs-validation"
-            method="post" action="<%= sortFormSubmitPath %>" novalidate>
+            method="post" action="<%= sortModal[index].submitPath %>" novalidate>
         
 					<% if(index === 0) { %>  <!-- For Item Name -->
 						<div class="mb-3 form-floating">

@@ -28,10 +28,23 @@ const loginUser = async (req, res) => {
     return sendAlert(res);
   }
 
-  // Authenticate and add session
-  console.log('Authenticated and Logged in with new Session.');
-  req.session.isAuth = true;
-  res.send({ isErr: 0, content: '/app' }); // redirect to the home page
+  // Regenerate new session
+  req.session.regenerate((err) => {
+    if(err) return console.log(err);
+
+    // store User information
+    req.session.user = user._id;
+    // Authenticate User
+    req.session.isAuth = true;
+
+    // Save info added
+    req.session.save((err) => {
+      if(err) return console.log(err);
+
+      console.log('Authenticated and Logged in with new Session.');
+      res.send({ isErr: 0, content: '/app' }); // redirect to the home page
+    })
+  });
 }
 
 // for sending alerts
