@@ -36,6 +36,9 @@ app.set('layout', './layouts/login-page');
 // Session middleware setup
 app.use(session({
   secret: process.env.SESSION_SECRET,
+  cookie: {
+    maxAge: 1000*60*60*24
+  },
   resave: false, // to avoid saving same session
   saveUninitialized: false, // don't save empty input to sessions
   store: sessionStore // Where to store sessions
