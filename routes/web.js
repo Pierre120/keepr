@@ -206,7 +206,7 @@ router.get('/:workspace/dashboard', (req, res) => {
     workspace: sampleWorkspaces[req.params.workspace].name,
     workspacePath: sampleWorkspaces[req.params.workspace].path,
     hasAddModal: false,
-    sortModalId: '',
+    hasSortModal: false,
     isInWorkspace: true,
     deleteType: '',
     formSubmitPath: req.path,
@@ -228,7 +228,7 @@ router.get('/:workspace/inventory', (req, res) => {
     sampleItems: sampleData,
     hasAddModal: true,
     formSubmitPath: req.path,
-    sortModalId: sortModalIDs[0],
+    hasSortModal: 'item',
     sortFormSubmitPath: req.path,
     isInWorkspace: true,
     deleteType: '',
@@ -259,7 +259,7 @@ router.get('/:workspace/collaborators', (req, res) => {
     isItem: false,
     isAcct: false,
     isAssign: true,
-    sortModalId: ''
+    hasSortModal: false
   })
 }); // collaborators
 
@@ -270,7 +270,7 @@ router.get('/:workspace/history', (req, res) => {
     workspace: sampleWorkspaces[req.params.workspace].name,
     workspacePath: sampleWorkspaces[req.params.workspace].path,
     hasAddModal: false,
-    sortModalId : sortModalIDs[1],
+    hasSortModal: 'history',
     sortFormSubmitPath: req.path,
     formSubmitPath: req.path,
     isInWorkspace: true,
