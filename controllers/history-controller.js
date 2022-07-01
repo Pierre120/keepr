@@ -7,8 +7,8 @@ const viewHistoryPage = async(req,res) =>{
 
 const clearHistory = async(req,res) => {
     try{
-        var targetHistory = await Workspace.findById(req.body.workspace);
-        var history_arr = targetHistory.history;
+        const targetHistory = await Workspace.findById(req.body.workspace);
+        const history_arr = targetHistory.history;
         for(var i=0; i<history_arr.length; i++)
         {
             await History.findByIdAndDelete(history_arr[i]);
