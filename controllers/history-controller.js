@@ -7,7 +7,7 @@ const viewHistoryPage = async(req,res) =>{
 
 const clearHistory = async(req,res) => {
     try{
-        const targetHistory = await Workspace.findById(req.body.workspace);
+        const targetHistory = await Workspace.findById(req.params.workspace);
         const history_arr = targetHistory.history;
         for(var i=0; i<history_arr.length; i++)
         {
