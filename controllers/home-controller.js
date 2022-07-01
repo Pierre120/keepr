@@ -5,9 +5,18 @@ const viewHomePage = async (req,res) =>{
 };
 
 const addWorkspace = async (req,res) => {
-    const newWorkspace = await Workspace.findById(req.params.workspace);
-    const name = req.body;
-    
+    try{
+        const newWorkspace = new Workspace({
+            name: req.body.workspace,
+            owner: req.session.user,
+        });
+        await user.save();
+        res.redirect('/app');
+    }catch(err)
+    {
+        console.log(err);
+        res.redirect('back');
+    }
 };
 
 module.exports = {
