@@ -27,22 +27,27 @@ const updateUserInfo = async (req, res) => {
     // requesting user is the same user being edited
     if(!user || user.username !== req.body.owner) {
       // Redirect back to the account page of the user
-      return res.redirect(400, '/user' + req.params.userId);
+      return res.redirect(400, '/user/' + req.params.userId);
     }
   
     // Apply edits or updates
     user[req.body.property] = req.body[req.body.property];
     await user.save(); // save the changes
-    res.redirect(200, '/user' + req.params.userId);
+    res.redirect(200, '/user/' + req.params.userId);
   } catch (err) {
     // Error encountered
     console.log(err);
-    res.redirect(500, '/user' + req.params.userId);
+    res.redirect(500, '/user/' + req.params.userId);
   }
 }
 
-const deleteUser = (req, res) => {
-  
+const deleteUser = async (req, res) => {
+  try {
+    await User.findByIdAndDelete(req.params.userId);
+    res.redirect(200, '/');
+  } catch (err) {
+    res.redirect(500, '/user/' + req.params.userId);
+  }
 }
 
 const updateProfilePic = (req, res) => {
