@@ -4,9 +4,9 @@ const Item = require('../models/Item.js');
 // For getting the `Inventory` page
 const viewInventoryPage = async (req, res) => {
     // Get current Workspace
-    const currWorkspace = Workspace.findOneByID(req.params.workspace.ref);
+    const currWorkspace = Workspace.findOneById(req.params.workspace.referenceId);
     // Get array of Item objects with new Item
-    const inventoryItems = currWorkspace.inventory;
+    const inventoryItems = Item.find({_id: {$in: currWorkspace.inventory}});
 
     res.status(200).render('inventory', {
         active: 1,
@@ -29,13 +29,14 @@ const viewInventoryPage = async (req, res) => {
 const addItem = async (req, res) => {
     
     // Get current Workspace
-    const currWorkspace = Workspace.findOneByID(req.params.workspace.ref);
+    const currWorkspace = Workspace.findOneById(req.params.workspace.referenceId);
     // Current user is owner of workspace
     const isOwner = (req.session.user.equals(currWorkspace.owner)) ? true : false;;
 
     if(!isOwner) {
         // Retrieve original array of Item objects
-        const inventoryItems = currWorkspace.inventory;
+        const inventoryItems = Item.find({_id: {$in: currWorkspace.inventory}});
+
         // Display new item
         return res.status(400).render('inventory', {
             active: 1,
@@ -72,7 +73,7 @@ const addItem = async (req, res) => {
         console.log(newItem);
 
         // Get array of Item objects with new Item
-        const inventoryItems = currWorkspace.inventory;
+        const inventoryItems = Item.find({_id: {$in: currWorkspace.inventory}});
 
         // Display new item
         res.status(200).render('inventory', {
@@ -103,7 +104,9 @@ const sortItems = async (req, res) => {
     const sortFocus = req.body.sortFocus;
     const sortOrder = req.body.sortOrder;
     // Get current Workspace
-    const currWorkspace = Workspace.findOneByID(req.params.workspace.ref);
+    const currWorkspace = Workspace.findOneById(req.params.workspace.referenceId);
+    // Get array of Item objects
+    const inventoryItems = Item.find({_id: {$in: currWorkspace.inventory}});
 
     try {
         if(sortOrder == 'ASC') {
