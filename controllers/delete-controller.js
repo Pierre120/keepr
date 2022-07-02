@@ -1,12 +1,16 @@
 const Workspace = require('../models/Workspace.js');
 
+// For deleting workspace
 const deleteWorkspace = async (req,res) =>{
     try{
+        // For deleting the current workspace
         await Workspace.findByIdAndDelete(req.params.workspace);
-        res.redirect('/app');
+        console.log(`Deleted workspace: ${req.params.workspace}`);
+        res.status(200).redirect('/app');
     }catch(err){
-        res.redirect('back');
+        // Error encountered
         console.log(err);
+        res.status(500).redirect('/' + req.params.workspace + '/dashboard');
     }
 
 };
