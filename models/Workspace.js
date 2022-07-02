@@ -26,21 +26,11 @@ const WorkspaceSchema = new mongoose.Schema({
     inventory:{
         type: [mongoose.SchemaTypes.ObjectId],
         ref: "Inventory"
-    },
-
-    referenceId:{
-        type: mongoose.SchemaTypes.ObjectId,
-        required: true,
-        unique: true
     }
 });
 
 WorkspaceSchema.statics.findOneByName = function(strName) {
     return this.findOne({ name: strName });
-};
-
-WorkspaceSchema.statics.findOneByID = function(id) {
-    return this.findOne({ referenceId: id });
 };
 
 module.exports = mongoose.model('Workspace', WorkspaceSchema);
