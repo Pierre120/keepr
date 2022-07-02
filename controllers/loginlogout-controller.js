@@ -3,7 +3,7 @@ const User = require('../models/User.js');
 
 // For accessing the login page
 const viewLoginPage = (req, res) => {
-  res.render('index');
+  res.status(200).render('index');
 }
 
 // For logging in users
@@ -42,7 +42,7 @@ const loginUser = async (req, res) => {
       if(err) return console.log(err);
 
       console.log('Authenticated and Logged in with new Session.');
-      res.send({ isErr: 0, content: '/app' }); // redirect to the home page
+      res.status(200).send({ isErr: 0, content: '/app' }); // redirect to the home page
     })
   });
 }
@@ -70,7 +70,7 @@ const logoutUser = (req, res) => {
   req.session.destroy((err) => {
     if(err) { return console.log(err); }
     console.log('User logged out and session is terminated.');
-    res.redirect('/');
+    res.status(200).redirect('/');
   });
 }
 
