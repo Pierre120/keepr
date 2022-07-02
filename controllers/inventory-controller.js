@@ -85,21 +85,25 @@ const sortItems = async (req, res) => {
   console.log(sortOrder);
 
   try {
-    if(sortOrder == 'ASC' && sortFocus == 'itemName') {
-      inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
-                                  .sort({itemName: 1});
+    if(sortOrder == 'ASC') {
+      if(sortFocus == 'itemName') {
+        inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
+                                .sort({itemName: 1});
+      }
+      else {
+        inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
+                                .sort({qtyUnit: 1});
+      }
     }
-    else if(sortOrder == 'DESC' && sortFocus == 'itemName') {
-      inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
-                                  .sort({itemName: -1});
-    }
-    else if(sortOrder == 'ASC' && sortFocus == 'qtyUnit') {
-      inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
-                                  .sort({qtyUnit: 1});
-    }
-    else if(sortOrder == 'DESC' && sortFocus == 'qtyUnit') {
-      inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
-                                  .sort({qtyUnit: -1});
+    else {
+      if(sortFocus == 'itemName') {
+        inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
+                                .sort({itemName: -1});
+      }
+      else {
+        inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
+                                .sort({qtyUnit: -1});
+      }
     }
     console.log(inventoryItems);
     
