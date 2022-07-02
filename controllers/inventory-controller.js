@@ -11,8 +11,7 @@ const viewInventoryPage = async (req, res) => {
   console.log(currWorkspace);
   // Current user is owner of workspace
   const isOwner = (req.session.user.equals(currWorkspace.owner)) ? true : false;
-  // Get all the items inside the current workspace
-  // const inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}});
+
   let inventoryItems = [];
   for(let itemId of currWorkspace.inventory) {
     inventoryItems.push(await Item.findById(itemId));
@@ -32,11 +31,7 @@ const viewInventoryPage = async (req, res) => {
     hasEditModal: false,
     hasSortModal: 'item',
     isOwner: isOwner,
-    // TODO: Pass the `Workspace` object of the current user retrieved from mongodb
     workspace: currWorkspace,
-    // TODO: Pass the array of `Item` objects
-    // NOTE: Make the current workspace's Item's `assignedCollabs` property array into an object array.
-    //      Since this properties contains only the ObjectId and it will not render itself in the frontend.
     inventoryItems: inventoryItems
   });
 };
@@ -85,33 +80,31 @@ const sortItems = async (req, res) => {
   const sortOrder = req.body.sortOrder;
   // Get current Workspace
   const currWorkspace = await Workspace.findById(req.params.workspace);
-  // Generate query to obtain the items in the workspace
-  // const inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}});
+
   let inventoryItems;
   console.log(sortOrder);
 
   try {
-    if(sortOrder == 'ASC') {
-      /*
-      await inventoryItems.aggregate(
-        {$sort: {sortFocus: 1}}
-      );*/
+    if(sortOrder == 'ASC' && sortFocus == 'itemName') {
       inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
                                   .sort({itemName: 1});
     }
-    else {
-      /*
-      await currWorkspace.inventory.aggregate(
-        {$sort: {sortFocus: -1}}
-      );*/
+    else if(sortOrder == 'DESC' && sortFocus == 'itemName') {
       inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
                                   .sort({itemName: -1});
+    }
+    else if(sortOrder == 'ASC' && sortFocus == 'qtyUnit') {
+      inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
+                                  .sort({qtyUnit: 1});
+    }
+    else if(sortOrder == 'DESC' && sortFocus == 'qtyUnit') {
+      inventoryItems = await Item.find({_id: {$in: currWorkspace.inventory}})
+                                  .sort({qtyUnit: -1});
     }
     console.log(inventoryItems);
     
     // Clear inventory of workspace
     currWorkspace.inventory = [];
-    // await currWorkspace.save();
     // Save sorted inventory items in workspace
     for(let item of inventoryItems) {
       currWorkspace.inventory.push(item._id);
@@ -121,22 +114,6 @@ const sortItems = async (req, res) => {
 
     // Redirect back to inventory page
     res.status(200).redirect('/' + req.params.workspace + '/inventory');
-    /*res.status(200).render('inventory', {
-      active: 1,
-      layout: './layouts/workspace-page',
-      isInWorkspace: true,
-      deleteType: '',
-      hasAddModal: true,
-      hasEditModal: false,
-      hasSortModal: 'item',
-      isOwner: isOwner,
-      // TODO: Pass the `Workspace` object of the current user retrieved from mongodb
-      workspace: currWorkspace,
-      // TODO: Pass the array of `Item` objects
-      // NOTE: Make the current workspace's Item's `assignedCollabs` property array into an object array.
-      //      Since this properties contains only the ObjectId and it will not render itself in the frontend.
-      inventoryItems: inventoryItems
-    });*/
   } catch(err) {
     // For checking
     console.log(err); 
