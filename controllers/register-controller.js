@@ -16,7 +16,7 @@ const createNewUser = async (req, res) => {
     await newUser.save();
     console.log('New user document created:');
     console.log(newUser);
-    res.send({ bool: true, content: '/' }); // Registered successfully
+    res.status(200).send({ bool: true, content: '/' }); // Registered successfully
   } catch(err) {
     console.log(err);
     // Failed to register or create user document
@@ -38,7 +38,7 @@ const createNewUser = async (req, res) => {
 
 // For getting the `Register` page
 const viewRegisterPage = async (req, res) => {
-  res.render('register', { layout: './layouts/register-page' });
+  res.status(200).render('register', { layout: './layouts/register-page' });
 };
 
 module.exports = {
