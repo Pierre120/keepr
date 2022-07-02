@@ -29,8 +29,8 @@
       - workspace
 
     Add Item form req.body.~:
-      - name
-      - code
+      - itemName
+      - pcode
       - qtyUnit
       - description
     
@@ -64,7 +64,7 @@
         break;
       case "item":
         $('#addModalLabel').text('Add Item');
-        $('#addForm').attr({ action: '/add-item'});//change the path
+        $('#addForm').attr({ action: window.location.pathname + '/add-item'});//change the path
         // Create copies of the input elements
         let input1 = $('#input1');
         let input2 = $('#input1').clone().attr({id:'input2'});
@@ -76,15 +76,15 @@
         let input = $(input1).children()[0];
         let label = $(input1).children()[1];
         let feedback = $(input1).children()[2];
-        $(input).attr({ name: 'name', placeholder: 'Item Name' });
-        $(label).attr({ for: 'name' }).text('Item Name');
+        $(input).attr({ name: 'itemName', placeholder: 'Item Name' });
+        $(label).attr({ for: 'itemName' }).text('Item Name');
         $(feedback).text('Please provide a valid item name.');
         // Modify input2 div `Item Code`
         input = $('#input2').children()[0];
         label = $('#input2').children()[1];
         feedback = $('#input2').children()[2];
-        $(input).attr({ name: 'code', placeholder: 'Item Code' });
-        $(label).attr({ for: 'code' }).text('Item Code');
+        $(input).attr({ name: 'pcode', placeholder: 'Item Code' });
+        $(label).attr({ for: 'pcode' }).text('Item Code');
         $(feedback).text('Please provide a valid item code.');
         // Modify input3 div `Qty/Unit`
         input = $('#input3').children()[0];
