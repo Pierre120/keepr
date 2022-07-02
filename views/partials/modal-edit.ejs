@@ -1,3 +1,4 @@
+<% if(hasEditModal) { %>
 <div class="modal fade montserrat" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -69,10 +70,13 @@
     let owner = button.getAttribute('data-bs-edit-owner');
     $('#owner').val(owner); // update hidden input for owner
 
+    // Get submit path
+    let submitPath = window.location.pathname + '/edit';
+
     // Modify displayed form
     switch(type) {
       case 'itemName': // Show the itemName input only
-        $('#editForm').attr({ action: '/edit-itemname'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Item Name');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
 
@@ -92,7 +96,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'pcode': // Show the pcode input only
-        $('#editForm').attr({ action: '/edit-pcode'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Item Code');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
 
@@ -112,7 +116,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'qtyUnit':  // Show the qtyUnit input only
-        $('#editForm').attr({ action: '/edit-qtyunit'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Item Qty/Unit');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
 
@@ -132,7 +136,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break; 
       case 'description': // Show the description input only
-        $('#editForm').attr({ action: '/edit-description'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Item Description');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
         
@@ -152,7 +156,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'assignedCollabs': // Show the assignedCollabs input only
-        $('#editForm').attr({ action: '/edit-assigncollabs'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Item Collaborators');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
 
@@ -189,7 +193,7 @@
         $('#footerEditCloseBtn').attr({ onclick: "clearAndReset('#editSelect > li',2)" });
         break;
       case 'username': // Show the username input only
-        $('#editForm').attr({ action: '/edit-username'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Username');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
 
@@ -209,7 +213,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'displayName': // Show the displayName input only
-        $('#editForm').attr({ action: '/edit-dispname'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Display Name');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
         
@@ -229,7 +233,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'password': // Show the password input only
-        $('#editForm').attr({ action: '/edit-password'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Password');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
         
@@ -249,7 +253,7 @@
         $('#footerEditCloseBtn').attr({ onclick: 'clearForm()'});
         break;
       case 'collaboratorItems': // Show the collaboratorItems input only
-        $('#editForm').attr({ action: '/edit-assigneditems'});// TODO: change the path
+        $('#editForm').attr({ action: submitPath});// NOTE: You may opt to change the action/submit path
         $('#editModalLabel').text('Edit Assigned Items');
         $('#editForm').append($(inputTmp).clone().attr({id:'inputDiv'}));
 
@@ -300,3 +304,4 @@
     }
   });
 </script>
+<% } %>

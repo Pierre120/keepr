@@ -5,39 +5,39 @@ const authMW = require('../middlewares/authentication.js');
 // --- ITEM SAMPLE DATA ---
 const sampleData = [
   {
-    productCode: 'SCHCKE3434',
+    pcode: 'SCHCKE3434',
     itemName: 'Super Cheesecake',                                                                                       
     description: 'This is a traditional 9" Cheesecake, sides completely surrounded by our famous Graham Cracker Crust.',
-    qty: '0 slices',
-    assignedPeople: ['@bohx_airon','@bohx_faith']
+    qtyUnit: '0 slices',
+    assignedCollabs: ['@bohx_airon','@bohx_faith']
   },
   {
-    productCode: 'CCHCKE0909',
+    pcode: 'CCHCKE0909',
     itemName: 'Cheesey Cheesecake',
     description: "Make your cheesecake cheesier with Cheesy Cheesecake. Topped with 7 types of cheese which includes mozzarella, cheddar, blue cheese, parmesan, feta cheese, brie and cream cheese.",
-    qty: '1 whole',
-    assignedPeople: ['@bohx_pierre']
+    qtyUnit: '1 whole',
+    assignedCollabs: ['@bohx_pierre']
   },
   {
-    productCode: 'JCHCKE7070',
+    pcode: 'JCHCKE7070',
     itemName: 'Jojo Cheesecake',
     description: "Cheesecake's design is inspired from the anime 'JoJo's Bizarre Adventure'.",
-    qty: '2 whole',
-    assignedPeople: ['@bohx_airon','@bohx_pierre']
+    qtyUnit: '2 whole',
+    assignedCollabs: ['@bohx_airon','@bohx_pierre']
   },
   {
-    productCode: 'UCHCKE1212',
+    pcode: 'UCHCKE1212',
     itemName: 'Ube Cheesecake',
     description: "Make your cheesecake more ube-licious with a mix of a Filipino delicacy, ube.",
-    qty: '2 whole',
-    assignedPeople: ['@bohx_airon','@bohx_faith','@bohx_pierre']
+    qtyUnit: '2 whole',
+    assignedCollabs: ['@bohx_airon','@bohx_faith','@bohx_pierre']
   },
   {
-    productCode: 'HCHCKE7878',
+    pcode: 'HCHCKE7878',
     itemName: 'Halo-halo Cheesecake',
     description: "Halo-halo Cheesecake is the offspring of two well-known desserts, the halo-halo and cheesecake.",
-    qty: '3 slices',
-    assignedPeople: ['@bohx_faith','@bohx_pierre']
+    qtyUnit: '3 slices',
+    assignedCollabs: ['@bohx_faith','@bohx_pierre']
   }
 ];
 
@@ -96,23 +96,23 @@ const userPaths = {
 const sampleWorkspaces = {
   default: {
     name: 'Default Workspace',
-    path: 'default'
+    _id: 'default'
   },
   shoppee: {
     name: 'Shoppee',
-    path: 'shoppee'
+    _id: 'shoppee'
   },
   lozoda: {
     name: 'Lozoda',
-    path: 'lozoda'
+    _id: 'lozoda'
   },
   lolamove: {
     name: 'Lolamove',
-    path: 'lolamove'
+    _id: 'lolamove'
   },
   tsubibo: {
     name: 'Tsubibo',
-    path: 'tsubibo'
+    _id: 'tsubibo'
   }
 };
 
@@ -143,11 +143,13 @@ const sortModalIDs = [
 
 let router = express.Router();
 
+// APP/HOME PAGE
 router.get('/app', authMW.isLoggedIn, (req, res) => {
   return res.render('home', {
     layout: './layouts/home-page',
-    addModalId: 'addWorkspaceModal',
-    formSubmitPath: req.path
+    hasAddModal: true
+    // TODO: Pass the array of `Workspace` object of the current user retrieved from mongodb
+    // workspace: <variable>
   });
 }); // App/Home page
 
@@ -155,36 +157,26 @@ router.get('/app', authMW.isLoggedIn, (req, res) => {
 router.get('/accounts/personal', (req, res) => {
   return res.render('account', {
     layout: './layouts/account-page',
-    backLink: '/workspace/dashboard',
-    user: {
+    // TODO: Pass the `user` object
+    user: { 
       username: 'JuanDelaCruz_96',
       displayName: 'St4rL0rd96'
     },
-    editItemModalIds: editAcctModalIDs,
-    index: 0,
-    formSubmitPath: req.path,
-    isItem: false,
-    isAcct: true,
-    isAssign: false,
-    hasDeleteWorkspace: false,
-    deleteModalId: 'deleteAccountModal',
+    isInWorkspace: false,
+    deleteType: 'account',
+    hasEditModal: true,
     isOwner: true
   });
 });
 
+// This will be deprecated
 router.get('/accounts/:user', (req, res) => {
   return res.render('others-account', { 
     layout: './layouts/account-page',
-    backLink: '/workspace/collaborators',
+    isInWorkspace: '',
+    deleteType:'',
     username: userPaths[req.params.user].username,
     displayName: userPaths[req.params.user].displayName,
-    isItem: false,
-    isAcct: false,
-    isAssign: false,
-    formSubmitPath: req.path,
-    sampleItem: '',
-    hasDeleteWorkspace: '',
-    deleteModalId:''
   });
 });
 // --- END ACCOUNTS PAGE ---
@@ -193,94 +185,94 @@ router.get('/accounts/:user', (req, res) => {
 router.get('/search-results/query', (req, res) => {
   return res.render('search-results', {
     layout: './layouts/results-page',
-    sampleItems: sampleData
+    // TODO: Pass the array of `Item` objects base from the search query
+    itemResults: sampleData
   });
 }); // Search results page
 // --- END SEARCH RESULT PAGE
 
 // --- WORKSPACE PAGES ---
+// DASHBOARD PAGE
 router.get('/:workspace/dashboard', (req, res) => {
   return res.render('dashboard', {
     active: 0,
     layout: './layouts/workspace-page',
-    workspace: sampleWorkspaces[req.params.workspace].name,
-    workspacePath: sampleWorkspaces[req.params.workspace].path,
-    addModalId: '',
-    sortModalId: '',
-    hasDeleteWorkspace: true,
-    deleteModalId: '',
-    formSubmitPath: req.path,
-    editItemModalIds: editItemsAssignedID,
-    sampleItem: itemPaths,
-    index: 0,
-    isItem: false,
-    isAcct: false,
-    isAssign: false
+    isInWorkspace: true,
+    deleteType: '',
+    hasAddModal: false,
+    hasEditModal: false,
+    hasSortModal: false,
+    // TODO: Pass the `Workspace` object of the current user retrieved from mongodb
+    workspace: sampleWorkspaces[req.params.workspace]
+    // TODO: Pass the array of `updates`. Check the `dashboard.ejs` to see the structure.
+    // updates: <variable>,
+    // TODO: Pass the array of `lowStock`. 
+    // NOTE: You can just directly pass the array of `Item` objects.
+    // lowStock: <variable>,
+    // TODO: Pass the top `Item`. Just pass the `name` property of the top `Item` object.
+    // topItem: <variable>,
+    // TODO: Pass the total number of items in the workspace. Just use .inventory.length.
+    // totalItems: <variable>.inventory.length,
+    // TODO: Pass the total number of collaborators in the workspace. Just use .inventory.length.
+    // totalCollaborators: <variable>.inventory.length
   })
 }); // dashboard
 
+// INVENTORY PAGE
 router.get('/:workspace/inventory', (req, res) => {
   return res.render('inventory', {
     active: 1,
     layout: './layouts/workspace-page',
-    workspace: sampleWorkspaces[req.params.workspace].name,
-    workspacePath: sampleWorkspaces[req.params.workspace].path,
-    sampleItems: sampleData,
-    addModalId: 'addItemModal',
-    formSubmitPath: req.path,
-    sortModalId: sortModalIDs[0],
-    sortFormSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: '',
-    editItemModalIds: editItemsAssignedID,
-    sampleItem: itemPaths,
-    index: 0,
-    isItem: false,
-    isAcct: false,
-    isAssign: false
+    isInWorkspace: true,
+    deleteType: '',
+    hasAddModal: true,
+    hasEditModal: false,
+    hasSortModal: 'item',
+    // TODO: Pass the `Workspace` object of the current user retrieved from mongodb
+    workspace: sampleWorkspaces[req.params.workspace],
+    // TODO: Pass the array of `Item` objects
+    // NOTE: Make the current workspace's Item's `assignedCollabs` property array into an object array.
+    //      Since this properties contains only the ObjectId and it will not render itself in the frontend.
+    inventoryItems: sampleData
   });
 }); // inventory
 
+// COLLABORATORS PAGE
 router.get('/:workspace/collaborators', (req, res) => {
   return res.render('collaborators', {
     active: 2,
     layout: './layouts/workspace-page',
-    workspace: sampleWorkspaces[req.params.workspace].name,
-    workspacePath: sampleWorkspaces[req.params.workspace].path,
-    collabUnames: collabUsernames,
-    index: 0,
-    addModalId: 'addCollaboratorModal',
-    formSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: 'deleteCollaboratorModal',
-    editItemModalIds: editItemsAssignedID,
-    sampleItems: sampleData,
-    index: 0,
-    isItem: false,
-    isAcct: false,
-    isAssign: true,
-    sortModalId: ''
+    isInWorkspace: true,
+    deleteType: 'collaborator',
+    hasAddModal: true,
+    hasEditModal: true,
+    hasSortModal: false,
+    // TODO: Pass the `Workspace` object of the current user retrieved from mongodb
+    workspace: sampleWorkspaces[req.params.workspace]
+    // TODO: Pass the array of collaborators of the current workspace.
+    // NOTE: Make the current workspace's Collaborator's `assignedItems` property array into an object array.
+    //      Since this properties contains only the ObjectId and it will not render itself in the frontend.
+    // collaborators: <variable>
   })
 }); // collaborators
 
+// HISTORY PAGE
 router.get('/:workspace/history', (req, res) => {
   return res.render('history', {
     active: 3,
     layout: './layouts/workspace-page',
-    workspace: sampleWorkspaces[req.params.workspace].name,
-    workspacePath: sampleWorkspaces[req.params.workspace].path,
-    addModalId: '',
-    sortModalId : sortModalIDs[1],
-    sortFormSubmitPath: req.path,
-    formSubmitPath: req.path,
-    hasDeleteWorkspace: true,
-    deleteModalId: 'deleteHistoryModal',
-    editItemModalIds: editItemsAssignedID,
-    sampleItem: itemPaths,
-    index: 0,
-    isItem: false,
-    isAcct: false,
-    isAssign: false
+    isInWorkspace: true,
+    deleteType: 'history',
+    hasAddModal: false,
+    hasEditModal: false,
+    hasSortModal: 'history',
+    // TODO: Pass the `Workspace` object of the current user retrieved from mongodb
+    workspace: sampleWorkspaces[req.params.workspace]
+    // TODO: Pass the array of history records of the current workspace.
+    // NOTE: Make the Workspace's `history` property array into an object array.
+    //      Since this properties contains only the ObjectId and it will not render itself in the frontend.
+    // history: <variable>
+
   })
 }); // history
 // --- WORKSPACE PAGES ---
@@ -290,17 +282,13 @@ router.get('/:workspace/history', (req, res) => {
 router.get('/:workspace/:itemCode', (req, res) => {
   return res.render('item', {
     layout: './layouts/item-page',
-    backLink: '/workspace/inventory',
-    title: itemPaths[req.params.itemCode].itemName,
-    sampleItem: itemPaths[req.params.itemCode],
-    editItemModalIds: editItemModalIDs,
-    index: 0,
-    formSubmitPath: req.path,
-    isItem: true,
-    isAcct: false,
-    isAssign: false,
-    hasDeleteWorkspace: false,
-    deleteModalId: 'deleteItemModal'
+    isInWorkspace: false,
+    deleteType: 'item',
+    hasEditModal: true,
+    // TODO: Pass the `Item` object of the current workspace retrieved from mongodb
+    // NOTE: Make the Item's `assignedCollabs` property array into an object array.
+    //      Since this properties contains only the ObjectId and it will not render itself in the frontend.
+    item: itemPaths[req.params.itemCode]
   });
 });
 // --- END ITEMS PAGE ---

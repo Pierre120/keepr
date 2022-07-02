@@ -1,38 +1,8 @@
-<% // Sample Data
-  const collaborators = [
-    {
-      username: '@bohx_faith',
-      themeColor: 'pink',
-      assignedItems: ['Ube CheeseCake', 'Cheesey Cheesecake', 'Super Cheesecake', 'Jojo Cheesecake'],
-      page: '/accounts/bohxfaith'
-    },
-    {
-      username: '@bohx_airon',
-      themeColor: 'lightpurple',
-      assignedItems: ['Jojo CheeseCake', 'Cheesey Cheesecake', 'Ube Cheesecake'],
-      page: '/accounts/bohxairon'
-    },
-    {
-      username: '@bohx_pierre',
-      themeColor: 'darkpurple',
-      assignedItems: ['Cheesey CheeseCake', 'Jojo Cheesecake', 'Halo-halo Cheesecake'],
-      page: '/accounts/bohxpierre'
-    },
-    {
-      username: '@Giorgio_Giovanna',
-      themeColor: 'teal',
-      assignedItems: ['Jojo Cheesecake'],
-      page: '/accounts/jojo'
-    },
-    {
-      username: '@mamma_mia',
-      themeColor: 'pink',
-      assignedItems: ['Cheesey CheeseCake', 'Halo-halo Cheesecake', 'Ube Cheesecake', 'Super Cheesecake'],
-      page: '/accounts/mammamia'
-    }
-  ];
+<% 
+  const maxItems = 3;
+  const colorThemes = ["darkpurple","lightpurple","teal","pink"];
+  let ind = -1;
 %>
-<% const maxItems = 3; %>
 
 
 <div class="container-md w-75 fade-in-up">  
@@ -42,7 +12,6 @@
     <div class="col add-workspace px-5 py-4">
       <button type="button" class="add-btn d-flex align-items-center h-100"
               data-bs-toggle="modal" data-bs-target="#addModal" data-bs-add-type="collaborator">
-              <!-- data-bs-target="#<%= addModalId %>" -->
         <div class="w-100 text-center pb-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="10rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
@@ -52,14 +21,17 @@
       </button>
     </div>
       <!-- END Add Collaborator button -->
-
+    <%# 
+      TODO: Pass value `collaborators` from the server.
+      It contains the array of collaborators of the current workspace.
+    %>
     <% for(let person of collaborators) { %>
     <div class="col px-5 py-4">
-      <div class="card collaborator-card text-center h-100 border-<%= person.themeColor %>">
+      <div class="card collaborator-card text-center h-100 border-<%= colorThemes[++ind % 4] %>">
         <div class="card-body">
           <span class="position-absolute top-0 end-0 pt-2 pe-2">
             <%- include('partials/btn-delete-collab.ejs', {
-              deleteModalId: 'deleteCollaboratorModal'});
+              collabName: person.displayName });
             %>
           </span>
           <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
@@ -67,11 +39,11 @@
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
           </svg>
           <h3 class="card-title title-1 montserrat">
-            <a class="collab-user" href="<%= person.page %>">
-              <%- person.username %>
+            <a class="collab-user" href="/user/<%= person.viewId %>"> <%# TODO: change href path %>
+              @<%- person.displayName %>
             </a>
           </h3>
-          <hr class="text-<%=person.themeColor%>">
+          <hr class="text-<%= colorThemes[ind % 4] %>">
           <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">
             <strong>Assigned Items:</strong>
           </p>
@@ -87,7 +59,7 @@
           <br>
           <span class="collab-edit-btn">
             <%- include('partials/btn-edit-acct.ejs',  {
-                editOwner: person.username,
+                editOwner: person.displayName, // NOTE: Property for basis when deleting can be modified as fitted
                 editType: 'collaboratorItems'
               }) 
             %>
@@ -95,12 +67,11 @@
         </div>
       </div>
     </div>
-    <% index++; %>
     <% } %>
 
   </div>
 
 </div>
   
-    <%- include('./partials/btn-back-to-top.ejs') %>
+<%- include('./partials/btn-back-to-top.ejs') %>
 

@@ -42,17 +42,17 @@
 			3 - account
 		*/
 
-		if(hasDeleteWorkspace === true) {
+		if(isInWorkspace === true) {
 			deleteModals.push(deleteModalObjects[0]);
 
-			 if(deleteModalId === 'deleteHistoryModal') {
+			 if(deleteType === 'history') {
 				deleteModals.push(deleteModalObjects[1]);
 			}
 		} 
-		else if(deleteModalId === 'deleteItemModal' ) {
+		else if(deleteType === 'item' ) {
 			deleteModals.push(deleteModalObjects[2]);
 		}
-		else if(deleteModalId === 'deleteAccountModal' ) {
+		else if(deleteType === 'account' ) {
 			deleteModals.push(deleteModalObjects[3]);
 		}
 
@@ -74,7 +74,7 @@
 					<span class="text-danger">(This action can't be undone.)</span>
 				</p>
 			</div>
-			<form id="<%= deleteModal.formId %>" method="post" action="<%= deleteModal.submitPath %>" novalidate></form>
+			<form id="<%= deleteModal.formId %>" method="post" action="" onsubmit="initSubmitPath('<%= deleteModal.formId %>')" novalidate></form>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-gray" data-bs-dismiss="modal">Cancel</button>
 				<button type="submit" class="btn btn-danger" form="<%= deleteModal.formId %>">Confirm</button>
@@ -83,9 +83,17 @@
 	</div>
 </div>
 
+<script>
+	function initSubmitPath(id) {
+		let deleteForm = document.getElementById(id);
+		deleteForm.action = window.location.pathname + '/delete';
+		console.log(deleteForm.action);
+	}
+</script>
+
 <% } %>
 
-<% if(deleteModalId === 'deleteCollaboratorModal') { %>
+<% if(deleteType === 'collaborator') { %>
 
 <div class="modal fade montserrat" id="deleteCollaboratorModal" tabindex="-1" 
 	aria-labelledby="modalLabel" aria-hidden="true">
@@ -125,7 +133,7 @@
 		// Update the form's action attribute
 		let removeForm = document.getElementById("deleteCollaboratorForm");
 		let formPath = window.location.pathname;
-		removeForm.action = formPath + '/' + collaborator; // TODO: update POST delete path
+		removeForm.action = formPath + '/' + collaborator + '/delete'; // TODO: update POST delete path
 		console.log(removeForm.action)
 	});
 

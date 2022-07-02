@@ -1,7 +1,3 @@
-<%  const sampleList = new Object();
-    sampleList.workspaceColor = 'pink';
-    sampleList.items = sampleItems;
-%>
 
 <div class="container-lg my-3">
   <div class="row justify-content-center">
@@ -11,7 +7,6 @@
       <!-- `Add Item` button-->
       <button type="button" class="add-btn"
               data-bs-toggle="modal" data-bs-target="#addModal" data-bs-add-type="item">
-              <!-- data-bs-target="#<%= addModalId %>" -->
         <svg xmlns="http://www.w3.org/2000/svg" width="3rem" height="3rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
         </svg>
@@ -19,23 +14,24 @@
       </button>
 
       <!-- Item list -->
+      <%# TODO: Pass the `inventoryItems` array from the server %>
       <div class="d-grid gap-3 fade-in-up">
-        <% for(let item of sampleList.items) {                                       %>
-        <a class="item-list-card border-<%= sampleList.workspaceColor %>" href="/<%= workspacePath %>/<%= item.productCode %>">
+        <% for(let item of inventoryItems) {                                       %>
+        <a class="item-list-card border-pink" href="/<%= workspace._id %>/<%= item.pcode %>">
           <div class="card-body">
             <h4 class="item-name"><%- item.itemName %></h4>
-            <hr class="text-<%= sampleList.workspaceColor %>">
+            <hr class="text-pink">
             <p class="item-desc">
               <%- item.description %>
             </p>
             <p class="item-qty">
-              <strong>Qty:</strong> <%- item.qty %>
+              <strong>Qty:</strong> <%- item.qtyUnit %>
             </p>
             <p class="item-assigned-people">
               <strong>Assigned people:</strong> <span>
-                <% for(let indiv = 0; indiv < item.assignedPeople.length; indiv++) { %>
-                    <%- item.assignedPeople[indiv] %>
-                <%   if(indiv < item.assignedPeople.length - 1) {                    %>
+                <% for(let indiv = 0; indiv < item.assignedCollabs.length; indiv++) { %>
+                    <%- item.assignedCollabs[indiv] %>
+                <%   if(indiv < item.assignedCollabs.length - 1) {                    %>
                       ,
                 <%   }                                                               %>
                 <% }                                                                 %>

@@ -1,31 +1,6 @@
-<% // Sample Data
-  const workspaces = [
-    {
-      name: 'Default Workspace',
-      themeColor: 'pink',
-      pathName: 'default'
-    },
-    {
-      name: 'Shoppee',
-      themeColor: 'lightpurple',
-      pathName: 'shoppee'
-    },
-    {
-      name: 'Lozoda',
-      themeColor: 'darkpurple',
-      pathName: 'lozoda'
-    },
-    {
-      name: 'Lolamove',
-      themeColor: 'teal',
-      pathName: 'lolamove'
-    },
-    {
-      name: 'Tsubibo',
-      themeColor: 'pink',
-      pathName: 'tsubibo'
-    }
-  ];
+<%
+  const colorThemes = ["darkpurple","lightpurple","teal","pink"];
+  let ind = -1;
 %>
 
 <div class="container-xl px-0 main-content">
@@ -36,7 +11,6 @@
     <div class="col add-workspace">
       <button type="button" class="add-btn h-200 text-center"
               data-bs-toggle="modal" data-bs-target="#addModal" data-bs-add-type="workspace">
-              <!-- data-bs-target="#<%= addModalId %>" -->
         <svg xmlns="http://www.w3.org/2000/svg" width="9rem" height="9rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
         </svg><br>
@@ -46,12 +20,17 @@
     <!-- END Add Workspace Button -->
 
     <!-- Workspace Cards -->
+    <%# 
+      TODO: Pass value `workspaces` from the server.
+      It contains all the workspace of the current user.
+    %>
     <% for(let ws of workspaces) { %>
     <div class="col">
-      <a class="home-card h-200 bg-<%= ws.themeColor %>" href="/<%= ws.pathName %>/dashboard">
+      <%# TODO: Change the `ws.pathName` to its proper property %>
+      <a class="home-card h-200 bg-<%= colorThemes[++ind % 4] %>" href="/<%= ws._id %>/dashboard">
         <div class="card-body">
         </div>
-        <div class="card-footer border-top-0 bg-<%= ws.themeColor %>">
+        <div class="card-footer border-top-0 bg-<%= colorThemes[ind % 4] %>">
           <hr>
           <h6 class="card-title title-1 montserrat"><%- ws.name %></h6>
         </div>
