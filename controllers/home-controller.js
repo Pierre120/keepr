@@ -9,7 +9,7 @@ const viewHomePage = async (req,res) =>{
         workspaces: workspaces
       });
 };
-// Test mo na hehe ung npm run dev right?
+
 const addWorkspace = async (req,res) => {
     try {
         const newWorkspace = new Workspace({
