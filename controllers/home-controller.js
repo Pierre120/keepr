@@ -1,7 +1,12 @@
 const Workspace = require('../models/Workspace.js');
 
 const viewHomePage = async (req,res) =>{
-    res.render('home', {layout: './layouts/home-page' });
+    const workspace = Workspace.findById(req.params.workspace);
+    res.render('home', {
+        layout: './layouts/home-page',
+        hasAddModal: true,
+        workspace: workspace,
+      });
 };
 
 const addWorkspace = async (req,res) => {
@@ -10,7 +15,7 @@ const addWorkspace = async (req,res) => {
             name: req.body.workspace,
             owner: req.session.user,
         });
-        await user.save();
+        await newWorkspace.save();
         res.redirect('/app');
     }catch(err)
     {
