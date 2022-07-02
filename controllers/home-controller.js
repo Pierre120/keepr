@@ -1,26 +1,26 @@
 const Workspace = require('../models/Workspace.js');
 
 const viewHomePage = async (req,res) =>{
-    const workspace = Workspace.findById(req.params.workspace);
+    const workspaces = await Workspace.find({ owner: req.session.user });
+    console.log(workspaces);
     res.render('home', {
         layout: './layouts/home-page',
         hasAddModal: true,
-        workspace: workspace,
+        workspaces: workspaces
       });
 };
-
+// Test mo na hehe ung npm run dev right?
 const addWorkspace = async (req,res) => {
-    try{
+    try {
         const newWorkspace = new Workspace({
             name: req.body.workspace,
             owner: req.session.user,
         });
         await newWorkspace.save();
-        res.redirect('/app');
-    }catch(err)
-    {
+        res.status(200).redirect('/app');
+    } catch(err) {
         console.log(err);
-        res.redirect('back');
+        res.status(500).redirect('/app'); 
     }
 };
 
