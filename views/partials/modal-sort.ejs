@@ -4,14 +4,12 @@
 		{
 			id: 'sortItemModal', //for Sorting the Items 
 			title: 'Sort Items',
-			formId: 'sortItemForm',
-			submitPath: '/item/sort'
+			formId: 'sortItemForm'
 		},
 		{
 			id: 'sortHistoryModal', //for Sorting the History contents
 			title: 'Sort History',
-			formId: 'sortHistoryForm',
-			submitPath: '/history/sort'
+			formId: 'sortHistoryForm'
     }
 	];
 %>
@@ -33,7 +31,7 @@
     <div class="modal-body">
 
       <form id="<%= sortModal[index].formId %>" class="needs-validation"
-            method="post" action="<%= sortModal[index].submitPath %>" novalidate>
+            method="post" action="" oninput="initSubmitPath('<%= sortModal[index].formId %>')" novalidate>
         
 					<% if(index === 0) { %>  <!-- For Item Name -->
 						<div class="mb-3 form-floating">
@@ -79,11 +77,17 @@
 					<% } %>
 
     <div class="modal-footer">
-      <button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
-      <button type="submit" class="btn btn-secondary" form="<%= sortModal[index].formId %>">Confirm</button>
+		<button type="button" class="btn btn-gray" data-bs-dismiss="modal" onclick="clearForm()">Close</button>
+    	<button type="submit" class="btn btn-secondary" form="<%= sortModal[index].formId %>">Confirm</button>
     </div>
 		</div>
 	</div>
 </div>
 </div>
+
+<script>
+	function initSubmitPath(formId) {
+		$('#' + formId).attr({ action: window.location.pathname });
+	}
+</script>
 <% } %>
