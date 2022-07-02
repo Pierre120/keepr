@@ -1,9 +1,24 @@
 const Workspace = require('../models/Workspace.js');
+const Collaborator = require('../models/Collaborator.js');
+const User = require('../models/User.js')
 
 // For viewing the app/home page
 const viewHomePage = async (req,res) =>{
-    // Get all the workspace of the current user
-    const workspaces = await Workspace.find({ owner: req.session.user });
+    // Get user record of current user
+    const currUser = await User.findById(req.session.user);
+    // Get all the personal workspace of the current user
+    let workspaces = await Workspace.find({owner: currUser._id});
+    // Find all the collabs of the current user
+    const collabs = await Collaborator.find({displayName: currUser.displayName});
+    const collabWorkspaces = [];
+
+    // Find all the workspace collabs of the current user
+    for(let work of collabs) {
+        collabWorkspaces.push(await Workspace.findById(work.workspace));
+    }
+
+    // Store all the personal and collab workspaces of the current user
+    workspaces = workspaces.concat(collabWorkspaces);  //appends the collab works with the user's owned workspaces
     
     // Render the app/home page
     res.render('home', {
