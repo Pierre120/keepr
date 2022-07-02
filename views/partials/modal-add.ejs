@@ -52,7 +52,7 @@
     switch(type) {
       case "workspace":
         $('#addModalLabel').text('Add Workspace');
-        $('#addForm').attr({ action: '/add-workspace'});//change the path
+        $('#addForm').attr({ action: window.location.pathname + '/add-workspace'});//change the path
         // Get all the necessary elements for adding workspace
         let workspaceInput = $('#input1').children()[0];
         let workspaceLabel = $('#input1').children()[1];
