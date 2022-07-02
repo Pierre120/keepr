@@ -2,6 +2,7 @@
 const express = require('express');
 const tempRouter = require('./web.js');
 const regRouter = require('./register-router.js');
+const workspaceDeleteRouter = require('./delete-router.js');
 const homeRouter = require('./home-router.js');
 const logRouter = require('./loginlogout-router.js');
 const userRouter = require('./user-router.js');
@@ -17,9 +18,10 @@ const initRoutes = (app) => {
   app.use('/', logRouter);
   // app.use('/', tempRouter); // use web.js as a temporary router
   app.use('/register', regRouter); // Register Page
-  app.use('/app', homeRouter); // App or Home Page
   app.use('/user', userRouter); // User/Account Page
+  app.use('/app', homeRouter); // App or Home Page
   app.use('/', inventoryRouter); // Workspace Inventory Page
+  app.use('/', workspaceDeleteRouter); // For deleting workspaces
 };
 
 // Exports the function for the app.js to use
