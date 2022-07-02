@@ -13,6 +13,8 @@ const clearHistory = async(req,res) => {
         {
             await History.findByIdAndDelete(history_arr[i]);
         }
+        targetHistory.history = [];
+        await targetHistory.save();
         res.redirect('/:workspace/history');
     }catch(err){
         console.log(err);
@@ -24,12 +26,15 @@ const sortHistory = async(req,res) => {
     const targetHistory = await Workspace.findById(req.params.workspace);
     const history_arr = targetHistory.history;
     const order = req.body.sortHistory;
-
+    let history_sorted;
     try{
         switch(order){
-            case "ASC": history_arr.find({}).sort({"editDate": 1}) //ascending order
-            break;
-            case "DESC": history_arr.find({}).sort({"editDate": -1}) //descending order
+            
+            case "ASC": 
+                history_sorted = await History.find({_id: {$in: targetHistory.history}})
+                                            .sort({editDate: 1}); //ascending order
+                break;
+            case "DESC": history_sorted = await History.find({_id: {$in: targetHistory.history}}).sort({editDate: -1}); //descending order
             break;
         }
         res.redirect('/:workspace/history');
@@ -37,8 +42,6 @@ const sortHistory = async(req,res) => {
         console.log(err);
         res.redirect('back');
     }
-
-
 };
 
 module.exports = {
