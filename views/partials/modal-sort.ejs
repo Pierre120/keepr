@@ -31,7 +31,7 @@
     <div class="modal-body">
 
       <form id="<%= sortModal[index].formId %>" class="needs-validation"
-            method="post" action="" oninput="initSubmitPath('<%= sortModal[index].formId %>')" novalidate>
+            method="post" action="" oninput="initSortSubmitPath('<%= sortModal[index].formId %>')" novalidate>
         
 					<% if(index === 0) { %>  <!-- For Item Name -->
 						<div class="mb-3 form-floating">
@@ -86,7 +86,7 @@
 </div>
 
 <script>
-	function initSubmitPath(formId) {
+	function initSortSubmitPath(formId) {
 		$('#' + formId).attr({ action: window.location.pathname });
 	}
 </script>
