@@ -94,6 +94,15 @@ const deleteCollaborator = async (req, res) => {
     const currWorkspace = await Workspace.findById(req.params.workspace);
     // Get username of collaborator added
     const collaborator = User.findOneByUsername(req.body.username);
+    // Delete from Collaborator in current Workspace
+		const index = currWorkspace.inventory.indexOf(collaborator._id);
+    // Delete item in workspace inventory
+		currWorkspace.collaborators.splice(index, 1);
+    // Save changes in currWorkspace
+    await currWorkspace.save(); 
+
+    // Delete the collaborator document
+    await Collaborator.findByIdAndDelete(collaborator._id);
 
     res.status(200).redirect('/' + req.params.workspace + '/collaborators');
   } catch (err) {
