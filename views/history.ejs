@@ -1,4 +1,5 @@
 <% // TODO: Remove this sample data once you can pass the array value of `history` 
+  /*
   const history = [
     {
       item: 'Super Cheesecake',
@@ -30,7 +31,7 @@
       date: 'April 24, 2022',
       user: '@JuanDelaCruz_96',
     }
-  ];
+  ];*/
 %>
 
 
@@ -40,11 +41,13 @@
   <div class="row p-0 w-100">
     <div class="col-10 ps-4">
       <h3 id="history-table-header"> Quantity Updates History 
+        <% if(isOwner) { %>
         <span class="hist-buttons">
           <%-include('partials/btn-delete-item.ejs', {
             deleteModalId: 'deleteHistoryModal'});
           %>
         </span>
+        <% } %>
       </h3>
       <hr class="hist-black-line">
     </div>
@@ -84,16 +87,20 @@
     <% for(let record of history) { %>
     <div class="table-row row-contents">
       <div class="table-cell">
-        <p><strong><%-record.item%></strong></p>
+        <p><strong><%- record.item %></strong></p>
       </div>
       <div class="table-cell">
-        <p><strong><%- record.qty %></strong></p>
+        <p><strong><%- record.quantity %></strong></p>
       </div>
       <div class="table-cell"> 
-        <p><strong><%- record.date %></strong></p>
+        <p>
+          <strong>
+            <%- record.date %>
+          </strong>
+        </p>
       </div>
       <div class="table-cell last-cell"> 
-        <p><strong><%-record.user%></strong></p>
+        <p><strong><%-record.editorsName %></strong></p>
       </div>
     </div>
     <% }                            %>

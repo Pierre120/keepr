@@ -15,7 +15,7 @@ const WorkspaceSchema = new mongoose.Schema({
 
     collaborators:{
         type: [mongoose.SchemaTypes.ObjectId],
-        ref: "Collaborators"
+        ref: "Collaborator"
     },
 
     history:{
@@ -25,7 +25,7 @@ const WorkspaceSchema = new mongoose.Schema({
 
     inventory:{
         type: [mongoose.SchemaTypes.ObjectId],
-        ref: "Inventory"
+        ref: "Item"
     }
 });
 

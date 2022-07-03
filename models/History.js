@@ -9,7 +9,7 @@ const HistorySchema = new mongoose.Schema({
 
     editorsName:{
         type: String,
-        required: true,
+        required: true
     },
 
     item:{
@@ -26,5 +26,15 @@ const HistorySchema = new mongoose.Schema({
 
 });
 
+//virtual schema to format the date
+HistorySchema.virtual('date').get(function() {
+    const months = [
+        "January ", "February ", "March ", "April ", "May ", "June ", 
+        "July ", "August ", "September ", "October ", "November ", "December "
+    ];
+    const date = months[this.editDate.getMonth()] + this.editDate.getDate() + ', ' + this.editDate.getFullYear();
+    const time = this.editDate.getHours() + ':' + this.editDate.getMinutes() + ':' + this.editDate.getSeconds();
+    return date + '<br>'  + time;
+  });
 
 module.exports = mongoose.model('History', HistorySchema);
