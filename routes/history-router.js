@@ -1,10 +1,11 @@
 const express = require('express');
 const historyController = require('../controllers/history-controller.js');
+const authMW = require('../middlewares/authentication.js');
 const router = express.Router();
 
-router.get('/', historyController.viewHistoryPage);
-router.post('/clear', historyController.clearHistory);
-router.post('/sort-history', historyController.sortHistory)
+router.get('/:workspace/history', authMW.isLoggedIn, historyController.viewHistoryPage);
+router.post('/:workspace/history/delete-history', authMW.isLoggedIn, historyController.clearHistory);
+router.post('/:workspace/history', authMW.isLoggedIn, historyController.sortHistory)
 
 
 module.exports = router;

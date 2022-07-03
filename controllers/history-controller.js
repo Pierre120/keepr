@@ -1,14 +1,13 @@
-const History = require('../database/models/History.js');
-const Workspace = require('../database/models/Workspace.js');
+const History = require('../models/History.js');
+const Workspace = require('../models/Workspace.js');
 
 const viewHistoryPage = async(req,res) =>{
-    const workspace = await Workspace.findById(req.params.workspace);
-    const history = workspace.history;
-    let histor_arr = [];
-    for(var i=0; i<history.length; i++)
-    {
-        history_arr[i] = await History.findById(history[i]);
-    }
+    const workspace = await Workspace.findById(req.params.workspace).populate('history');
+    // Current user is owner of workspace
+    const isOwner = (req.session.user.equals(workspace.owner)) ? true : false;
+    console.log('=== Checking content of workspace history ===');
+    console.log(workspace.history);
+
     res.render('history', {
         active: 3,
         layout: './layouts/workspace-page',
@@ -17,27 +16,24 @@ const viewHistoryPage = async(req,res) =>{
         hasAddModal: false,
         hasEditModal: false,
         hasSortModal: 'history',
-        // TODO: Pass the `Workspace` object of the current user retrieved from mongodb
+        isOwner: isOwner,
         workspace: workspace,
-        // TODO: Pass the array of history records of the current workspace.
-        // NOTE: Make the Workspace's `history` property array into an object array.
-        //      Since this properties contains only the ObjectId and it will not render itself in the frontend.
-         history: history_arr
-    
+        history: workspace.history
       })
 };
 
 const clearHistory = async(req,res) => {
+    
     try{
         const targetHistory = await Workspace.findById(req.params.workspace);
-        const history_arr = targetHistory.history;
-        for(var i=0; i<history_arr.length; i++)
-        {
-            await History.findByIdAndDelete(history_arr[i]);
+       // const history_arr = targetHistory.history;
+        for(let recordId of targetHistory.history) {
+            await History.findByIdAndDelete(recordId);
         }
         targetHistory.history = [];
         await targetHistory.save();
-        res.redirect('/:workspace/history');
+        console.log(`=== Successfully cleared history of ${targetHistory.name} (${targetHistory._id})`);
+        res.redirect('/' + req.params.workspace+ '/history');
     }catch(err){
         console.log(err);
         res.redirect('back');
@@ -45,26 +41,34 @@ const clearHistory = async(req,res) => {
 };
 
 const sortHistory = async(req,res) => {
-    const targetHistory = await Workspace.findById(req.params.workspace);
-    const history_arr = targetHistory.history;
+    const workspaceHistory = await Workspace.findById(req.params.workspace);
     const order = req.body.sortHistory;
     let history_sorted;
     try{
-        switch(order){
-            
-            case "ASC": 
-                history_sorted = await History.find({_id: {$in: targetHistory.history}})
-                                            .sort({editDate: 1}); //ascending order
+        switch(order) {
+            case "DESC": // Latest to Oldest
+                history_sorted = await History.find({_id: {$in: workspaceHistory.history}})
+                                            .sort({editDate: 1}); //Descending order
                 break;
-            case "DESC": 
-                history_sorted = await History.find({_id: {$in: targetHistory.history}})
-                                            .sort({editDate: -1}); //descending order
+            case "ASC": // Oldest to Latest
+                history_sorted = await History.find({_id: {$in: workspaceHistory.history}})
+                                            .sort({editDate: -1}); //Ascending order
             break;
         }
-        res.redirect('/:workspace/history');
+
+        // Clear history of workspace
+        workspaceHistory.history = [];
+        // Reassign sorted history record of current workspace
+        for(let record of history_sorted) {
+            workspaceHistory.history.push(record._id);
+        }
+        await workspaceHistory.save();
+        console.log(`=== Saved sorted history of ${workspaceHistory.name} (${workspaceHistory._id})`);
+
+        res.redirect('/' + req.params.workspace + '/history');
     }catch(err){
         console.log(err);
-        res.redirect('back');
+        res.redirect('/' + req.params.workspace + '/history');
     }
 };
 

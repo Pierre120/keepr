@@ -1,5 +1,7 @@
 const Workspace = require('../models/Workspace.js');
 const Item = require('../models/Item.js');
+const User = require('../models/User.js');
+const History = require('../models/History.js');
 
 // For getting the `Inventory` page
 const viewInventoryPage = async (req, res) => {
@@ -61,6 +63,24 @@ const addItem = async (req, res) => {
     // For checking
     console.log('New item created:');
     console.log(newItem);
+
+    // Get the user who added the new item in the workspace
+    const adder = await User.findById(req.session.user);
+    console.log(`Adder: ${adder}`);
+    // Track the newly added item in the current workspace
+		const newRecord = new History({
+			editorsName: adder.displayName,
+			item: newItem.itemName,
+			quantity: parseInt(newItem.qtyUnit)
+		});
+		// Save the new record
+		await newRecord.save();
+		console.log(`=== Add of item update recorded`);
+
+    // Add the record to the history of the current workspace
+		currWorkspace.history.unshift(newRecord._id);
+		await currWorkspace.save();
+		console.log(`=== Added record to ${currWorkspace.name} (${currWorkspace._id}) history`);
 
     res.status(200).redirect('/' + req.params.workspace + '/inventory');
   } catch(err) {
