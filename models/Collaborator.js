@@ -16,7 +16,8 @@ const CollaboratorSchema = new mongoose.Schema({
     }, 
     viewId: {
         type: mongoose.SchemaTypes.ObjectId,
-        required: true
+        required: true,
+        ref: 'User'
     }
 });
 

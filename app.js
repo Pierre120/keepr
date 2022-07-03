@@ -13,7 +13,7 @@ const connectDB = require('./models/connectDB.js');
 const initRoutes = require('./routes/main-router.js');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 3000;//process.env.PORT || 5000;
 
 // Connect to DB
 connectDB();

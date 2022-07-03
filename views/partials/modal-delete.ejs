@@ -132,7 +132,7 @@
 		// Update the form's action attribute
 		let removeForm = document.getElementById("deleteCollaboratorForm");
 		let formPath = window.location.pathname;
-		removeForm.action = formPath + '/delete'; // TODO: update POST delete path
+		removeForm.action = formPath + '/'+ collaborator + '/delete'; // TODO: update POST delete path
 		console.log(removeForm.action)
 	});
 

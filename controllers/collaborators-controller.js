@@ -5,57 +5,71 @@ const User = require('../models/User.js');
 
 // For getting the Collaborators page
 const viewCollaboratorsPage = async (req, res) => {
-    // Get current Workspace
-    const currWorkspace = await Workspace.findById(req.params.workspace); 
-    // Current user is owner of workspace
-    const isOwner = (req.session.user.equals(currWorkspace.owner)) ? true : false;
+  // Get current Workspace
+  const currWorkspace = await Workspace.findById(req.params.workspace); 
+  // Current user is owner of workspace
+  const isOwner = (req.session.user.equals(currWorkspace.owner)) ? true : false;
 
-    let collaborators = [];
-    for(let userId of currWorkspace.collaborators) {
-      collaborators.push(await User.findById(userId));
-    }
-
-    res.status(200).render('collaborators', {
-      active: 2,
-      layout: './layouts/workspace-page',
-      isInWorkspace: true,
-      deleteType: 'collaborator',
-      hasAddModal: true,
-      hasEditModal: true,
-      hasSortModal: false,
-      isOwner: isOwner,
-      workspace: currWorkspace,
-      collaborators: collaborators
-    });
-  };
+  let collaborators = [];
+  for(let userId of currWorkspace.collaborators) {
+    collaborators.push(await Collaborator.findById(userId));
+  }
+  console.log(collaborators);
+  res.status(200).render('collaborators', {
+    active: 2,
+    layout: './layouts/workspace-page',
+    isInWorkspace: true,
+    deleteType: 'collaborator',
+    hasAddModal: true,
+    hasEditModal: true,
+    hasSortModal: false,
+    isOwner: isOwner,
+    workspace: currWorkspace,
+    collaborators: collaborators
+  });
+};
 
 // For adding new collaborator
 const addCollaborator = async (req, res) => {  
 
   try {
-    console.log('=====req.body.username' + req.body.username);
+    console.log('=======req.body.username' + req.body.username);
     // Get username of collaborator added
-    const collaborator = User.findOneByUsername(req.body.username);
-    console.log('=====collaborator' + User.findOne({username: req.body.username}));
-    // Create Collaborator object
-    const newCollaborator = new Collaborator({
-        displayName: collaborator.displayName,
-        workspace: req.params.workspace,
-        assignedItems: [],
-        viewId: collaborator._id
-    });
-
-    console.log(newCollaborator);
-
-    // Store newCollaborator
-    await newCollaborator.save();
-
+    const user = await User.findOneByUsername(req.body.username);
     // Get current Workspace
     const currWorkspace = await Workspace.findById(req.params.workspace);
-    // Add the item to workspace
-    currWorkspace.collaborators.push(newCollaborator._id);
-    // Save changes in workspace
-    await currWorkspace.save();
+    if (user != null) {
+      // Checking for exisiting collaborator in workspace
+      const collaboratorInWorkspace = await Collaborator.find({
+        workspace: currWorkspace._id, 
+        viewId: user._id
+      });
+      // Current user is owner of workspace
+      const isOwner = (req.session.user.equals(user._id)) ? true : false;
+      if(collaboratorInWorkspace.length >= 0 || isOwner) {
+        console.log('Invalid Collaborator.');
+        return res.status(400).redirect('/' + req.params.workspace + '/collaborators');
+      }
+      // Create Collaborator object
+      const newCollaborator = new Collaborator({
+          displayName: user.displayName,
+          workspace: currWorkspace._id,
+          assignedItems: [],
+          viewId: user._id
+      });
+  
+      console.log(newCollaborator);
+  
+      // Store newCollaborator
+      await newCollaborator.save();
+      console.log('Saved new collaborator.');
+
+      // Add the item to workspace
+      currWorkspace.collaborators.push(newCollaborator._id);
+      // Save changes in workspace
+      await currWorkspace.save();
+      console.log('Saved new collaborator in current workspace.');
+    }
 
     res.status(200).redirect('/' + req.params.workspace + '/collaborators');
   } catch(err) {
@@ -95,17 +109,21 @@ const deleteCollaborator = async (req, res) => {
   try {
     // Get current Workspace
     const currWorkspace = await Workspace.findById(req.params.workspace);
-    // Get username of collaborator added
-    const collaborator = User.findOneByUsername(req.body.username);
-    // Delete from Collaborator in current Workspace
-		const index = currWorkspace.inventory.indexOf(collaborator._id);
-    // Delete item in workspace inventory
-		currWorkspace.collaborators.splice(index, 1);
-    // Save changes in currWorkspace
-    await currWorkspace.save(); 
+    for (let i = 0; i < currWorkspace.collaborators.length; ++i) {
+      let collaborator = await Collaborator.findById(currWorkspace.collaborators[i]);
+      if (collaborator.displayName == req.params.displayName) {
+        // Delete item in workspace inventory
+	      currWorkspace.collaborators.splice(i, 1);
+        // Save changes in currWorkspace
+        await currWorkspace.save(); 
+        console.log('===Removed collaborator from workspace');
+        // Delete the collaborator document
+        await Collaborator.findByIdAndDelete(collaborator._id);
+        console.log('===Removed collaborator from collaborators collection');
+        break;
+      }
+    }
 
-    // Delete the collaborator document
-    await Collaborator.findByIdAndDelete(currWorkspace);
 
     res.status(200).redirect('/' + req.params.workspace + '/collaborators');
   } catch (err) {
