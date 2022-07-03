@@ -7,6 +7,7 @@ const homeRouter = require('./home-router.js');
 const logRouter = require('./loginlogout-router.js');
 const userRouter = require('./user-router.js');
 const inventoryRouter = require('./inventory-router.js');
+const itemRouter = require('./item-router.js');
 
 // Main router
 let router = express.Router();
@@ -21,6 +22,7 @@ const initRoutes = (app) => {
   app.use('/user', userRouter); // User/Account Page
   app.use('/app', homeRouter); // App or Home Page
   app.use('/', inventoryRouter); // Workspace Inventory Page
+  app.use('/', itemRouter); // Item Page
   app.use('/', workspaceDeleteRouter); // For deleting workspaces
 };
 
