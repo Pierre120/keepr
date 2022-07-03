@@ -1,4 +1,4 @@
-<% // NOTE: Use these sample data as a guide on what to pass and how to organize the data.
+<%# // NOTE: Use these sample data as a guide on what to pass and how to organize the data.
   // TODO: Remove these sample data once done.
   const updates = [
     {
@@ -38,7 +38,7 @@
     }
   ];
 %>
-<%
+<%#
   const lowStock = [
     {
       item: 'Super Cheesecake',
@@ -62,9 +62,9 @@
     }
   ];
 %>
-<% const topItem = 'Super Cheesecake'; %>
-<% const totalItems = 5; %>
-<% const totalCollaborators = 4; %>
+<% //const topItem = 'Super Cheesecake'; %>
+<% //const totalItems = 5; %>
+<% //const totalCollaborators = 4; %>
 
 
 <div class="container-md w-75 fade-in-up">
@@ -75,14 +75,14 @@
           <h4 class="card-title">Recent Updates</h4>
           <hr class="text-teal">
           <% const maxUpdates = 3; %>
-          <% for(let i=0; i < maxUpdates; i++) { %>
+          <% for(let i=0; i < maxUpdates && updates.length > 0; i++) { %>
             <% if (i === 0) { %>
             <p class="card-text card-text-first fst-italic text-truncate">
-              <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> <%- updates[i].detail %>
+              <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> stock count
             </p>
             <% } else { %>
             <p class="card-text fst-italic text-truncate">
-              <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> <%- updates[i].detail %>
+              <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> stock count
             </p>
             <% } %>
           <% } %>
@@ -98,18 +98,18 @@
           <h4 class="card-title">Low on Stock</h4>
           <hr>
           <% const maxItems = 3; %>
-          <% for(let i=0; i < maxItems; i++) { %>
+          <% for(let i=0; i < maxItems && lowStock.length > 0; i++) { %>
             <% if(i === 0) { %>
             <p class="card-text card-text-first fs-5 fst-italic mb-1 text-truncate">
-              <%- lowStock[i].item %> - <%- lowStock[i].qty %>
+              <%- lowStock[i].itemName %> - <%- lowStock[i].qtyUnit %>
             </p>
             <% } else if (i === maxItems-1) { %>
             <p class="card-text fs-5 fst-italic text-truncate">
-              <%- lowStock[i].item %> - <%- lowStock[i].qty %>
+              <%- lowStock[i].itemName %> - <%- lowStock[i].qtyUnit %>
             </p>
             <% } else { %>
             <p class="card-text fs-5 fst-italic mb-1 text-truncate">
-              <%- lowStock[i].item %> - <%- lowStock[i].qty %>
+              <%- lowStock[i].itemName %> - <%- lowStock[i].qtyUnit %>
             </p>
             <% } %>
           <% } %>
