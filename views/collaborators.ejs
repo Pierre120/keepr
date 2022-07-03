@@ -46,34 +46,11 @@
             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
           </svg>
           <h3 class="card-title title-1 montserrat">
-            <a class="collab-user" href="/user/<%= person.viewId %>"> <%# TODO: change href path %>
+            <a class="collab-user" href="/user/<%= person.viewId %>"> 
               @<%- person.displayName %>
             </a>
           </h3>
           <hr class="text-<%= colorThemes[ind % 4] %>">
-          <p class="card-text card-text-first fs-5 fst-italic mb-1 text-start collaborator-content-1">
-            <strong>Assigned Items:</strong>
-          </p>
-          <% let i = 0; %>
-          <% if (person.assignedItems != null) { %>
-          <% for(let item of person.assignedItems) { %>
-            <p class="card-text fs-5 fst-italic text-start collaborator-content-2 mb-1">
-              <%- item %>
-            </p>
-            <% i++; %>
-            <% if(i >= maxItems) { break; } %>
-          <% }} %>
-          <!-- see more option here soon!-->
-          <br>
-          <span class="collab-edit-btn">
-            <% if(isOwner) { %>
-              <%- include('partials/btn-edit-acct.ejs',  {
-                editOwner: person.displayName, // NOTE: Property for basis when deleting can be modified as fitted
-                editType: 'collaboratorItems'
-              })  
-              %>
-            <% } %>
-          </span>
         </div>
       </div>
     </div>

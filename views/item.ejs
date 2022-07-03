@@ -43,7 +43,7 @@
             </div>
           </div>
         </div>
-        
+
         <div class="col">
           <div class="card keepr-card border-teal h-100">
             <div class="card-body">
@@ -80,39 +80,6 @@
               </p>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="row mx-0">
-        <div class="col-3"></div>
-        <div class="col-6">
-          <div class="card keepr-card border-pink h-100">
-            <div class="card-body">
-              <h4 class="card-title fw-bold">Assigned to
-                <% if(isOwner) { %>
-                  <%- include('partials/btn-edit-item.ejs',  {
-                        editOwner: item._id,
-                        editType: 'assignedCollabs'
-                      }) 
-                  %>
-                <% } %>
-              </h4>
-              <hr class="text-pink">
-              <p class="card-text fs-4 fst-italic mt-5">
-                <ul style="list-style-type:disc;">
-                <% for(let i=0; i < item.assignedCollabs.length; i++) { %>
-                  <% if(i === 0) { %>
-                  <li class="card-text card-text-first fs-5 fst-italic mb-1"><%- item.assignedCollabs[i] %></li>
-                  <% } else { %>
-                  <li class="card-text fs-5 fst-italic mb-1"><%- item.assignedCollabs[i] %></li>
-                  <% } %>
-                <% } %>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
         </div>
       </div>
 
