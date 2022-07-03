@@ -107,7 +107,7 @@
         break;
       case "collaborator":
         $('#addModalLabel').text('Add Collaborator');
-        $('#addForm').attr({ action: '/add-collaborator'});//change the path
+        $('#addForm').attr({ action: window.location.pathname + '/add-collaborator'});//change the path
         // Get all the necessary elements for adding collaborator
         let collaboratorInput = $('#input1').children()[0];
         let collaboratorLabel = $('#input1').children()[1];

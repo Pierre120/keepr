@@ -55,13 +55,14 @@
             <strong>Assigned Items:</strong>
           </p>
           <% let i = 0; %>
+          <% if (person.assignedItems != null) { %>
           <% for(let item of person.assignedItems) { %>
             <p class="card-text fs-5 fst-italic text-start collaborator-content-2 mb-1">
               <%- item %>
             </p>
             <% i++; %>
             <% if(i >= maxItems) { break; } %>
-          <% } %>
+          <% }} %>
           <!-- see more option here soon!-->
           <br>
           <span class="collab-edit-btn">

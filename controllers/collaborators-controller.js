@@ -12,7 +12,7 @@ const viewCollaboratorsPage = async (req, res) => {
 
     let collaborators = [];
     for(let userId of currWorkspace.collaborators) {
-      collaborators.push(await Collaborator.findById(userId));
+      collaborators.push(await User.findById(userId));
     }
 
     res.status(200).render('collaborators', {
@@ -30,19 +30,22 @@ const viewCollaboratorsPage = async (req, res) => {
   };
 
 // For adding new collaborator
-const addItem = async (req, res) => {  
+const addCollaborator = async (req, res) => {  
 
   try {
+    console.log('=====req.body.username' + req.body.username);
     // Get username of collaborator added
-    const username = req.body.username;
-
+    const collaborator = User.findOneByUsername(req.body.username);
+    console.log('=====collaborator' + User.findOne({username: req.body.username}));
     // Create Collaborator object
     const newCollaborator = new Collaborator({
-        displayName: username.displayName,
+        displayName: collaborator.displayName,
         workspace: req.params.workspace,
-        assignedItems: []//,
-        //viewId: 
+        assignedItems: [],
+        viewId: collaborator._id
     });
+
+    console.log(newCollaborator);
 
     // Store newCollaborator
     await newCollaborator.save();
@@ -102,7 +105,7 @@ const deleteCollaborator = async (req, res) => {
     await currWorkspace.save(); 
 
     // Delete the collaborator document
-    await Collaborator.findByIdAndDelete(collaborator._id);
+    await Collaborator.findByIdAndDelete(currWorkspace);
 
     res.status(200).redirect('/' + req.params.workspace + '/collaborators');
   } catch (err) {
