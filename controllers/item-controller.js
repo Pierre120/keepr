@@ -54,13 +54,13 @@ const deleteItem = async (req, res) => {
 		const item = await Item.findOneByProductCode(req.params.pcode);
 		// Delete from Inventory in current Workspace
 		const index = currWorkspace.inventory.indexOf(item._id);
+		// Delete item in workspace inventory
 		currWorkspace.inventory.splice(index, 1);
-
+		await currWorkspace.save(); // Save changes in `currWorkspace`
 		console.log('===currworkspace inventory spliced===' + currWorkspace.inventory);
 		console.log('====item id of item to delete===' + item._id);
 
     // Delete the item document
-		// ISSUE: not deleting in db
     await Item.findByIdAndDelete(item._id);
 		// Redirect to inventory page (tentative)
 		res.status(200).redirect('/' + req.params.workspace + '/inventory');
