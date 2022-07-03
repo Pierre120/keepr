@@ -27,13 +27,17 @@ const updateItemInfo = async (req, res) => {
   try {
 		// Get item
     const item = await Item.findOneByProductCode(req.params.pcode);
-
     // Apply edits or updates
 		// ISSUE: changing itemName doesn't work when pcode is still the same
     item[req.body.property] = req.body[req.body.property];
+
     console.log(`Item property being updated: ${req.body.property}`);
-    await item.save(); // save the changes
+
+    // save the changes
+    await item.save(); 
+
     console.log(`Updated item: ${item}`);
+
     res.status(200).redirect('/' + req.params.workspace + '/' + req.params.pcode);
   } catch (err) {
     // Error encountered
@@ -51,12 +55,13 @@ const deleteItem = async (req, res) => {
 		// Delete from Inventory in current Workspace
 		const index = currWorkspace.inventory.indexOf(item._id);
 		currWorkspace.inventory.splice(index, 1);
+
 		console.log('===currworkspace inventory spliced===' + currWorkspace.inventory);
 		console.log('====item id of item to delete===' + item._id);
+
     // Delete the item document
 		// ISSUE: not deleting in db
     await Item.findByIdAndDelete(item._id);
-
 		// Redirect to inventory page (tentative)
 		res.status(200).redirect('/' + req.params.workspace + '/inventory');
 	} catch (err) {
