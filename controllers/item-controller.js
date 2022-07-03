@@ -40,7 +40,7 @@ const updateItemInfo = async (req, res) => {
   } catch (err) {
     // Error encountered
     console.log(err);
-    res.status(500).redirect('/' + req.params.workspace + '/' + item.pcode);
+    res.status(500).redirect('/' + req.params.workspace + '/' + req.params.pcode);
   }
 }
 
