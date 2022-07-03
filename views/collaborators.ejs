@@ -10,8 +10,13 @@
 
     <!-- Add Collaborator button -->
     <div class="col add-workspace px-5 py-4">
+      <% if(isOwner) { %>
       <button type="button" class="add-btn d-flex align-items-center h-100"
               data-bs-toggle="modal" data-bs-target="#addModal" data-bs-add-type="collaborator">
+      <% } else { %>
+        <button type="button" class="add-btn d-flex align-items-center h-100"
+              data-bs-toggle="modal" data-bs-target="#addModal" data-bs-add-type="collaborator" disabled>
+      <% } %>
         <div class="w-100 text-center pb-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="10rem" height="10rem" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
@@ -30,9 +35,11 @@
       <div class="card collaborator-card text-center h-100 border-<%= colorThemes[++ind % 4] %>">
         <div class="card-body">
           <span class="position-absolute top-0 end-0 pt-2 pe-2">
-            <%- include('partials/btn-delete-collab.ejs', {
-              collabName: person.displayName });
-            %>
+            <% if(isOwner) { %>
+              <%- include('partials/btn-delete-collab.ejs', {
+                  collabName: person.displayName }); 
+              %>
+            <% } %>
           </span>
           <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-person-circle prof-pic" viewBox="0 0 16 16">
             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -58,11 +65,13 @@
           <!-- see more option here soon!-->
           <br>
           <span class="collab-edit-btn">
-            <%- include('partials/btn-edit-acct.ejs',  {
+            <% if(isOwner) { %>
+              <%- include('partials/btn-edit-acct.ejs',  {
                 editOwner: person.displayName, // NOTE: Property for basis when deleting can be modified as fitted
                 editType: 'collaboratorItems'
-              }) 
-            %>
+              })  
+              %>
+            <% } %>
           </span>
         </div>
       </div>
