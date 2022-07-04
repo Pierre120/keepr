@@ -11,12 +11,14 @@ const viewHistoryPage = async(req,res) =>{
     res.render('history', {
         active: 3,
         layout: './layouts/workspace-page',
+        searchDisabled: false,
         isInWorkspace: true,
         deleteType: 'history',
         hasAddModal: false,
         hasEditModal: false,
         hasSortModal: 'history',
         isOwner: isOwner,
+        userId: req.session.user,
         workspace: workspace,
         history: workspace.history
       })

@@ -18,10 +18,12 @@ const viewItemPage = async (req, res) => {
 	// Render the account page of the user being viewed
 	res.status(200).render('item', {
 		layout: './layouts/item-page',
+		searchDisabled: false,
 		isInWorkspace: false,
 		deleteType: 'item',
 		hasEditModal: true,
 		isOwner: isOwner,
+		userId: req.session.user,
 		item: item
 	})
 };

@@ -19,12 +19,14 @@ const viewCollaboratorsPage = async (req, res) => {
   res.status(200).render('collaborators', {
     active: 2,
     layout: './layouts/workspace-page',
+    searchDisabled: false,
     isInWorkspace: true,
     deleteType: 'collaborator',
     hasAddModal: true,
     hasEditModal: false,
     hasSortModal: false,
     isOwner: isOwner,
+    userId: req.session.user,
     workspace: currWorkspace,
     collaborators: collaborators
   });
