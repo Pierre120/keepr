@@ -90,7 +90,7 @@
         input = $('#input3').children()[0];
         label = $('#input3').children()[1];
         feedback = $('#input3').children()[2];
-        $(input).attr({ name: 'qtyUnit', placeholder: 'Qty/Unit' });
+        $(input).attr({ name: 'qtyUnit', placeholder: 'Qty/Unit', type: "number" });
         $(label).attr({ for: 'qtyUnit' }).text('Qty/Unit');
         $(feedback).text('Please provide a valid quantity and unit.');
         // Modify input4 div `Description`

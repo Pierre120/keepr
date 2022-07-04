@@ -32,7 +32,12 @@ const updateItemInfo = async (req, res) => {
   try {
 	console.log(`=== Item being modified:  ${item._id} (${item.itemName})`)
     // Apply edits or updates
-    item[req.body.property] = req.body[req.body.property];
+	if(req.body.property === 'qtyUnit') {
+		item[req.body.property] = parseInt(req.body[req.body.property]);
+	}
+	else {
+		item[req.body.property] = req.body[req.body.property];
+	}
     console.log(`=== Item property being updated: ${req.body.property}`);
 
     // save the changes
@@ -49,7 +54,7 @@ const updateItemInfo = async (req, res) => {
 		const newRecord = new History({
 			editorsName: editor.displayName,
 			item: item.itemName,
-			quantity: parseInt(item.qtyUnit)
+			quantity: item.qtyUnit
 		});
 		// Save the new record
 		await newRecord.save();

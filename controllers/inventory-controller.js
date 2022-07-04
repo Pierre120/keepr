@@ -46,7 +46,7 @@ const addItem = async (req, res) => {
     const newItem = new Item({
         itemName: req.body.itemName,
         pcode: req.body.pcode,
-        qtyUnit: req.body.qtyUnit,
+        qtyUnit: parseInt(req.body.qtyUnit),
         description: req.body.description
     });
 
@@ -71,7 +71,7 @@ const addItem = async (req, res) => {
 		const newRecord = new History({
 			editorsName: adder.displayName,
 			item: newItem.itemName,
-			quantity: parseInt(newItem.qtyUnit)
+			quantity: newItem.qtyUnit
 		});
 		// Save the new record
 		await newRecord.save();
