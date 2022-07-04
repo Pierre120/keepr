@@ -1,6 +1,5 @@
-// Imports
+// Import routers
 const express = require('express');
-const tempRouter = require('./web.js');
 const regRouter = require('./register-router.js');
 const searchRouter = require('./search-router.js');
 const dashboardRouter = require('./dashboard-router.js');
@@ -22,7 +21,6 @@ const initRoutes = (app) => {
 
   // Routing on main path
   app.use('/', logRouter);
-  // app.use('/', tempRouter); // use web.js as a temporary router
   app.use('/register', regRouter); // Register Page
   app.use('/app', homeRouter); // App or Home Page
   app.use('/user', userRouter); // User/Account Page
