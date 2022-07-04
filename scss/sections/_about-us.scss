@@ -1,0 +1,23 @@
+@use '../custom' as *;
+@use '../components/typography' as *;
+
+.about-us-bg {
+    background: rgb(229,229,229);
+    background: radial-gradient(circle, rgba(229,229,229,1) 0%, rgba(113,98,217,1) 100%);
+    overflow-y: hidden;
+}
+
+a {
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .bg-teal;
+    @extend .rounded-pill;
+    @extend .text-gray;
+    @extend .border-gray;
+    @extend .shadow;
+}
+
+a:hover {
+    @extend .bg-gray;
+    @extend .text-white;
+}
