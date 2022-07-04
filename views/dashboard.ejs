@@ -75,7 +75,7 @@
           <h4 class="card-title">Recent Updates</h4>
           <hr class="text-teal">
           <% const maxUpdates = 3; %>
-          <% for(let i=0; i < maxUpdates && updates.length > 0; i++) { %>
+          <% for(let i=0; i < maxUpdates && i < updates.length && updates.length > 0; i++) { %>
             <% if (i === 0) { %>
             <p class="card-text card-text-first fst-italic text-truncate">
               <%- updates[i].date %> - <strong><%- updates[i].user %></strong> <%- updates[i].action %> <strong><%- updates[i].item %></strong> stock count
@@ -98,7 +98,7 @@
           <h4 class="card-title">Low on Stock</h4>
           <hr>
           <% const maxItems = 3; %>
-          <% for(let i=0; i < maxItems && lowStock.length > 0; i++) { %>
+          <% for(let i=0; i < maxItems && i < lowStock.length && lowStock.length > 0; i++) { %>
             <% if(i === 0) { %>
             <p class="card-text card-text-first fs-5 fst-italic mb-1 text-truncate">
               <%- lowStock[i].itemName %> - <%- lowStock[i].qtyUnit %>

@@ -8,6 +8,10 @@ const viewDashboardPage = async (req,res) =>{
     // determine if the owner is viewing his/her account page
     const isOwner = (req.session.user.equals(workspace.owner)) ? true : false;
 
+    const updates = await generateUpdates(workspace.history);
+    const lowStock = await lowOnStock(workspace.inventory);
+    const topItem = await getTopItem(workspace.history);
+
     console.log(`=== in workspace: ${workspace}`);
     res.render('dashboard', {
         active: 0,
@@ -19,9 +23,9 @@ const viewDashboardPage = async (req,res) =>{
         hasSortModal: false,
         isOwner: isOwner,
         workspace: workspace,
-        updates: generateUpdates(workspace.history),
-        lowStock: lowOnStock(workspace.inventory),
-        topItem: getTopItem(workspace.history),
+        updates: updates,
+        lowStock: lowStock,
+        topItem: topItem,
         totalItems: workspace.inventory.length,
         totalCollaborators: workspace.collaborators.length
     });
@@ -29,17 +33,21 @@ const viewDashboardPage = async (req,res) =>{
 
 const generateUpdates = async (history) => {
     const histRecords = await History.find({_id: {$in: history}})
-                                            .sort({editDate: 1});
+                                            .sort({editDate: -1});
     const length = histRecords.length;
     const updates = [];
     let updateObj;
-    for(let x = 0; x < length-1; ++x) {
+    let isNew;
+
+    for(let x = 0; x < length; ++x) {
+        isNew = true;
         for(let y = x+1; y < length; ++y) {
             console.log(`Comparing ${histRecords[x]._id} and ${histRecords[y]._id}`);
             // Find 2 most recent update of each record from latest to oldest
-            if(histRecords[x]._id.equals(histRecords[y]._id)) {
+            if(histRecords[x].item === histRecords[y].item) {
+                isNew = false;
                 updateObj = {
-                    date: histRecords[x].editDate,
+                    date: histRecords[x].datetime2,
                     user: histRecords[x].editorsName,
                     item: histRecords[x].item
                 }
@@ -48,13 +56,25 @@ const generateUpdates = async (history) => {
                 if(histRecords[x].quantity - histRecords[y].quantity > 0) {
                     updateObj.action = 'incremented';
                 } else {
-                    updateObj.action = 'incremented';
+                    updateObj.action = 'decremented';
                 }
                 // Add to array of updates
                 updates.push(updateObj);
                 console.log(`Successfully added update: ${updateObj}`);
                 break;
             }
+        }
+
+        if(isNew) {
+            updateObj = {
+                date: histRecords[x].datetime2,
+                user: histRecords[x].editorsName,
+                item: histRecords[x].item,
+                action: 'added'
+            };
+            // Add to array of updates
+            updates.push(updateObj);
+            console.log(`Successfully added update: ${updateObj}`);
         }
     }
 
@@ -64,6 +84,8 @@ const generateUpdates = async (history) => {
 //this searches for the items that have less than 5 qtyUnits
 const lowOnStock = async (inventory) => {
     const lowStockItems = await Item.find({_id: {$in: inventory}, qtyUnit: {$lt:6}});
+    console.log(`=== low on stock items: ${lowStockItems[0]}`);
+    console.log(`${lowStockItems.length}`);
     return lowStockItems;
 }
 
@@ -74,10 +96,9 @@ const getTopItem = async (history) => {
     let summedObj = []; // [{item:, total:}]
 
     // Getting total decrement
-
     for(let i = 1; i < itemsRecord.length; ++i) 
     {
-        if(itemsRecord[i-1].item !== itemRecord[i].item) {
+        if(itemsRecord[i-1].item !== itemsRecord[i].item && total < 0) {
             let sumObj = {
                 item: itemsRecord[i-1].item,
                 totalDec: total

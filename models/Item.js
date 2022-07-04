@@ -12,7 +12,7 @@ const ItemSchema = new mongoose.Schema({
         unique: true
     },
     qtyUnit: {
-        type: String,
+        type: Number,
         required: true
     },
     description: {
