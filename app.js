@@ -1,7 +1,5 @@
-// Use local environment variables during development
-if(process.env.NODE_ENV !== 'production') {
-  require('dotenv').config();
-}
+// Use Environment variables
+require('dotenv').config();
 
 // Imports
 const express = require('express');
