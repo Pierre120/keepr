@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.get('/:userId', authMW.isLoggedIn, userController.viewAccountPage);
 router.post('/:userId/edit', authMW.isLoggedIn, userController.updateUserInfo);
-router.post('/:userId/delete', authMW.isLoggedIn, userController.deleteUser);
+router.post('/:userId/delete-account', authMW.isLoggedIn, userController.deleteUser);
 
 module.exports = router;

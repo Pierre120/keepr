@@ -2,6 +2,7 @@
 const express = require('express');
 const tempRouter = require('./web.js');
 const regRouter = require('./register-router.js');
+const searchRouter = require('./search-router.js');
 const dashboardRouter = require('./dashboard-router.js');
 const historyRouter = require('./history-router.js');
 const workspaceDeleteRouter = require('./delete-router.js');
@@ -25,6 +26,7 @@ const initRoutes = (app) => {
   app.use('/register', regRouter); // Register Page
   app.use('/app', homeRouter); // App or Home Page
   app.use('/user', userRouter); // User/Account Page
+  app.use('/', searchRouter); // For Item search Page
   app.use('/', dashboardRouter); // Dashboard
   app.use('/', inventoryRouter); // Workspace Inventory Page
   app.use('/', collaboratorsRouter); // For Collaborators Page

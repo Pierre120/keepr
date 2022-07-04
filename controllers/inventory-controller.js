@@ -27,12 +27,14 @@ const viewInventoryPage = async (req, res) => {
   res.status(200).render('inventory', {
     active: 1,
     layout: './layouts/workspace-page',
+    searchDisabled: false,
     isInWorkspace: true,
     deleteType: '',
     hasAddModal: true,
     hasEditModal: false,
     hasSortModal: 'item',
     isOwner: isOwner,
+    userId: req.session.user,
     workspace: currWorkspace,
     inventoryItems: inventoryItems
   });
