@@ -7,7 +7,7 @@
     overflow-y: hidden;
 }
 
-a {
+.dependency-link {
     @extend .btn;
     @extend .btn-primary;
     @extend .bg-teal;
@@ -17,7 +17,7 @@ a {
     @extend .shadow;
 }
 
-a:hover {
+.dependency-link:hover {
     @extend .bg-gray;
     @extend .text-white;
 }

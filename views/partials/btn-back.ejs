@@ -1,8 +1,14 @@
-<a class="back-btn" onclick="goBack()" role="button"><span class="fw-bolder"><</span> Go back</a>
+<a class="back-btn" onclick="goBack('<%= type %>')" role="button"><span class="fw-bolder"><</span> Go back</a>
 
 <script>
-  function goBack() {
-    // window.history.go(-1);
-    window.location.assign(document.referrer);
+  function goBack(backType) {
+    if(backType == 'account') {
+      window.location.assign('/app');
+    } else {
+      let path = window.location.pathname;
+      workspace = path.split('/')[1];
+      window.location.assign('/' + workspace + '/inventory');
+    }
+    
   }
 </script>

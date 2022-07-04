@@ -125,7 +125,7 @@
         $('#inputDiv > textarea').remove();
         $('#inputDiv > select').remove();
         $('#inputDiv > ul').remove();
-        $('#inputDiv > input').attr({ name: 'qtyUnit', placeholder: 'Item Qty/Unit' });
+        $('#inputDiv > input').attr({ name: 'qtyUnit', placeholder: 'Item Qty/Unit', type: "number" });
         $('#inputDiv > label').attr({ for: 'qtyUnit' }).text('Item Qty/Unit');
         $('#inputDiv div.invalid-feedback').text('Please provide a valid item qty/unit.');
 

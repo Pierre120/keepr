@@ -26,8 +26,8 @@ const HistorySchema = new mongoose.Schema({
 
 });
 
-//virtual schema to format the date
-HistorySchema.virtual('date').get(function() {
+//virtual schema to format the date time
+HistorySchema.virtual('datetime1').get(function() {
     const months = [
         "January ", "February ", "March ", "April ", "May ", "June ", 
         "July ", "August ", "September ", "October ", "November ", "December "
@@ -35,6 +35,16 @@ HistorySchema.virtual('date').get(function() {
     const date = months[this.editDate.getMonth()] + this.editDate.getDate() + ', ' + this.editDate.getFullYear();
     const time = this.editDate.getHours() + ':' + this.editDate.getMinutes() + ':' + this.editDate.getSeconds();
     return date + '<br>'  + time;
-  });
+});
+
+HistorySchema.virtual('datetime2').get(function() {
+    const months = [
+        "January ", "February ", "March ", "April ", "May ", "June ", 
+        "July ", "August ", "September ", "October ", "November ", "December "
+    ];
+    const date = months[this.editDate.getMonth()] + this.editDate.getDate() + ', ' + this.editDate.getFullYear();
+    const time = this.editDate.getHours() + ':' + this.editDate.getMinutes() + ':' + this.editDate.getSeconds();
+    return date + ' ['  + time + ']';
+});
 
 module.exports = mongoose.model('History', HistorySchema);
