@@ -10,6 +10,7 @@ const userRouter = require('./user-router.js');
 const inventoryRouter = require('./inventory-router.js');
 const collaboratorsRouter = require('./collaborators-router.js');
 const itemRouter = require('./item-router.js');
+const aboutusRouter = require('./aboutus-router.js');
 
 // Main router
 let router = express.Router();
@@ -29,6 +30,7 @@ const initRoutes = (app) => {
   app.use('/', historyRouter); // History page
   app.use('/', workspaceDeleteRouter); // For deleting workspaces
   app.use('/', itemRouter); // Item Page
+  app.use('/', aboutusRouter); // About Us Page
 };
 
 // Exports the function for the app.js to use
