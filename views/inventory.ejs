@@ -33,16 +33,6 @@
             <p class="item-qty">
               <strong>Qty:</strong> <%- item.qtyUnit %>
             </p>
-            <p class="item-assigned-people">
-              <strong>Assigned people:</strong> <span>
-                <% for(let indiv = 0; indiv < item.assignedCollabs.length; indiv++) { %>
-                    <%- item.assignedCollabs[indiv] %>
-                <%   if(indiv < item.assignedCollabs.length - 1) {                    %>
-                      ,
-                <%   }                                                               %>
-                <% }                                                                 %>
-              </span>
-            </p>
           </div>
         </a>
         <% }}                                                                         %>
