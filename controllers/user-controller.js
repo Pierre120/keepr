@@ -3,6 +3,8 @@ const Collaborator = require('../models/Collaborator.js');
 const Workspace = require('../models/Workspace.js');
 const Item = require('../models/Item.js');
 const History = require('../models/History.js');
+const bcrypt = require('bcrypt');
+
 
 // For viewing the account page of a user
 const viewAccountPage = async (req, res) => {
@@ -45,7 +47,11 @@ const updateUserInfo = async (req, res) => {
     }
   
     // Apply edits or updates
-    user[req.body.property] = req.body[req.body.property];
+    if(req.body.property === 'password') {
+      user.password = await bcrypt.hash(req.body.password, 10);
+    } else {
+      user[req.body.property] = req.body[req.body.property];
+    }
     console.log(`=== User property being updated: ${req.body.property}`);
     await user.save(); // save the changes
     console.log(`=== Updated user: ${user}`);
